@@ -1,0 +1,356 @@
+/* ************************************************************************************************
+Fonts, colors, classes
+************************************************************************************************** */
+/*@font-face { font-family: Roboto; font-weight: regular; src: url('/fonts/Roboto-Regular.ttf'); } 
+@font-face { font-family: Roboto; font-weight: lighter; src: url('/fonts/Roboto-Light.ttf'); }
+@font-face { font-family: Roboto; font-weight: medium; src: url('/fonts/Roboto-Medium.ttf'); } 
+@font-face { font-family: Roboto; font-weight: bold; src: url('/fonts/Roboto-Bold.ttf'); } */
+.background-gradient {
+  background-color: #aaa;
+  background-image: linear-gradient(bottom, #f5f5f5 2%, #fafafa 51%, #f5f5f5 100%);
+  background-image: -o-linear-gradient(bottom, #f5f5f5 2%, #fafafa 51%, #f5f5f5 100%);
+  background-image: -moz-linear-gradient(bottom, #f5f5f5 2%, #fafafa 51%, #f5f5f5 100%);
+  background-image: -webkit-linear-gradient(bottom, #f5f5f5 2%, #fafafa 51%, #f5f5f5 100%);
+  background-image: -ms-linear-gradient(bottom, #f5f5f5 2%, #fafafa 51%, #f5f5f5 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.02, #f5f5f5), color-stop(0.51, #fafafa), color-stop(1, #f5f5f5));
+}
+.box {
+  background: url('/img/bg-snow.png') repeat #eeeeee;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #dedede\9;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+}
+.list-t1 li {
+  padding-left: 10px;
+  background: url("/img/icon-listarrow.png") left center no-repeat transparent;
+  margin-bottom: 6px;
+}
+/* colors */
+/* ************************************************************************************************
+Body Styles
+************************************************************************************************** */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  color: #555555;
+}
+#content {
+  width: 960px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+h2 {
+  margin: 0 0 8px;
+  color: #1685be;
+}
+h3 {
+  margin: 0 0 8px;
+  font-weight: normal;
+  font-size: 13px;
+}
+h4 {
+  font-weight: normal;
+  margin: 0;
+}
+p a {
+  color: #1685be;
+  border-bottom: 1px dotted #1685be;
+}
+p a:hover {
+  border-type: solid;
+}
+p a:visited {
+  color: #1685be;
+}
+.section {
+  margin-bottom: 36px;
+}
+/* ************************************************************************************************
+Header
+************************************************************************************************** */
+header {
+  background: url('/img/bg-snow.png') repeat #eeeeee;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #dedede\9;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+  border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  padding: 0;
+  position: fixed;
+  width: inherit;
+  z-index: 1000;
+}
+header img {
+  margin: 4px 30px 4px 5px;
+}
+header ul li {
+  margin: 24px 30px 0 0;
+  display: inline-block;
+}
+header ul li a {
+  padding: 10px 20px;
+  font-size: 13px;
+  text-align: center;
+}
+header ul li.selected a {
+  color: #1685be;
+}
+/* ************************************************************************************************
+Hero
+************************************************************************************************** */
+#hero {
+  height: 330px;
+  padding: 90px 100px 0 69px;
+  overflow: hidden;
+}
+#hero h5 {
+  margin: 70px 0 0;
+  font-size: 33px;
+  font-weight: lighter;
+  line-height: 38px;
+}
+#hero h6 {
+  margin: 0;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: -2px;
+}
+/* ************************************************************************************************
+Projects
+************************************************************************************************** */
+#projects {
+  background: url('/img/bg-snow.png') repeat #eeeeee;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #dedede\9;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+  padding: 18px 0 0 18px;
+}
+#projects ul li {
+  float: left;
+  width: 295px;
+  height: 206px;
+  background-color: white;
+  margin: 0 18px 18px 0;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+#projects ul li div {
+  position: absolute;
+  top: 206px;
+  padding: 12px 18px;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 260px;
+  height: 206px;
+}
+#projects ul li div h3 {
+  margin: 0 0 6px;
+  color: #1685be;
+  font-weight: bold;
+}
+#projects ul li div p {
+  color: white;
+}
+#projects ul li div h4 a {
+  color: #1685be;
+}
+#projects ul li div h4 a:hover {
+  text-decoration: underline;
+}
+/* ************************************************************************************************
+Skills
+************************************************************************************************** */
+#skills {
+  background: url('/img/bg-snow.png') repeat #eeeeee;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #dedede\9;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+  padding: 36px;
+}
+#skills > div.left {
+  width: 308px;
+}
+#skills > div.right {
+  width: 530px;
+}
+#skills > div.right > div {
+  width: 230px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+#skills #icons li {
+  width: 140px;
+  padding: 110px 20px 0;
+}
+#skills #icons li h3 {
+  text-align: center;
+  font-weight: lighter;
+}
+#skills #icons li.first {
+  padding-left: 0;
+}
+#skills #icons li.first h3 {
+  padding-left: 20px;
+}
+#skills #icons li.last {
+  padding-right: 0;
+}
+#skills #icons li.last h3 {
+  padding-right: 20px;
+}
+#skills div.bottom {
+  margin: 24px 0 0 240px;
+}
+#skills #html5 {
+  background: url("/img/skills-icons/html5.png") no-repeat center top transparent;
+}
+#skills #css3 {
+  background: url("/img/skills-icons/css3.png") no-repeat center top transparent;
+}
+#skills #jquery {
+  background: url("/img/skills-icons/jquery.png") no-repeat center top transparent;
+}
+#skills #ps {
+  background: url("/img/skills-icons/ps.png") no-repeat center top transparent;
+}
+#skills #ai {
+  background: url("/img/skills-icons/ai.png") no-repeat center top transparent;
+}
+/* ************************************************************************************************
+About
+************************************************************************************************** */
+#about {
+  background: url('/img/bg-snow.png') repeat #eeeeee;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #dedede\9;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+}
+#about > div.left {
+  width: 308px;
+}
+#about > ul.right {
+  width: 560px;
+}
+#about > ul > li {
+  margin: 0 0 30px;
+}
+#about li {
+  margin: 0 0 16px;
+}
+#about li p {
+  margin: 0;
+}
+#about h4 strong {
+  color: #1685be;
+}
+/* ************************************************************************************************
+Contact
+************************************************************************************************** */
+#contact {
+  background: url('/img/bg-snow.png') repeat #eeeeee;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #dedede\9;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+}
+#contact input,
+#contact textarea {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  border: 1px solid #dddddd;
+  box-shadow: inset 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+  color: #555555;
+  display: block;
+  padding: 12px 8px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-bottom: 12px;
+}
+#Name {
+  margin-right: 12px;
+}
+#contact textarea {
+  width: 478px;
+}
+form {
+  width: 550px;
+}
+form div.message {
+  width: 230px;
+}
+form input {
+  width: 224px;
+}
+#contact input.button {
+  background-color: #1685be;
+  color: white;
+}
+#contact input.button:hover {
+  box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+#contact > div {
+  width: 308px;
+  margin-right: 56px;
+}
+#contact div ul li a {
+  display: block;
+  height: 70px;
+  width: 90px;
+  float: left;
+}
+#contact div ul li a.twitter {
+  background: url("/img/icon-twitter.png") no-repeat center center transparent;
+}
+#contact div ul li a.linkedin {
+  background: url("/img/icon-linkedin.png") no-repeat center center transparent;
+}
+#contact div ul li a.forrst {
+  background: url("/img/icon-forrst.png") no-repeat center center transparent;
+}
+#contact #error {
+  margin: 4px 20px;
+  color: red;
+}
+#contact #success {
+  margin: 4px 20px;
+  color: green;
+}
