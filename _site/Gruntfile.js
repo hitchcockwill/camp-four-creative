@@ -14,12 +14,12 @@ module.exports = function(grunt) {
 
     watch: {
       coffee: {
-        files: ['/coffee/*.coffee'],
-        tasks: ['default']        
+        files: ['coffee/*.coffee'],
+        tasks: ['coffee']        
       },
       sass: {
-        files: ['/scss/*.scss'],
-        tasks: ['default']
+        files: ['scss/*.scss'],
+        tasks: ['sass']
       }
     },
 
@@ -39,5 +39,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-jekyll');
 
-  grunt.registerTask('default', ['coffee', 'sass']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('compile', ['coffee', 'sass']);
 };
