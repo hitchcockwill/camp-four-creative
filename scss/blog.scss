@@ -1,0 +1,29 @@
+@import "config";
+
+#content.blog-layout {
+  max-width: 600px;
+  margin: 60px auto;
+
+  h2 + p {
+    margin: -5px 0 28px; 
+  }
+  h3 {
+    font-size: 18px;
+    @include single-transition(color, 0.25s, ease-out);
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+ul.post-list{
+  li {
+    margin-bottom: 12px;
+    > a {
+      @include clearfix;
+      display: block;
+      h3 { float: left; }
+      p { float: right; }
+    }
+  }
+}

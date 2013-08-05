@@ -1,0 +1,9 @@
+@import "compass/css3";
+
+@mixin clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}

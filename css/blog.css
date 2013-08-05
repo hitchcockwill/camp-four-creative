@@ -1,0 +1,44 @@
+/* line 3, ../scss/blog.scss */
+#content.blog-layout {
+  max-width: 600px;
+  margin: 60px auto;
+}
+/* line 7, ../scss/blog.scss */
+#content.blog-layout h2 + p {
+  margin: -5px 0 28px;
+}
+/* line 10, ../scss/blog.scss */
+#content.blog-layout h3 {
+  font-size: 18px;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+/* line 13, ../scss/blog.scss */
+#content.blog-layout h3:hover {
+  color: #333;
+}
+
+/* line 20, ../scss/blog.scss */
+ul.post-list li {
+  margin-bottom: 12px;
+}
+/* line 22, ../scss/blog.scss */
+ul.post-list li > a {
+  display: block;
+}
+/* line 4, ../scss/config.scss */
+ul.post-list li > a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 25, ../scss/blog.scss */
+ul.post-list li > a h3 {
+  float: left;
+}
+/* line 26, ../scss/blog.scss */
+ul.post-list li > a p {
+  float: right;
+}
