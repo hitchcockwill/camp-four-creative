@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  Creating Backbone Belay |  Will Hitchcock </title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/post.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <!--[if lte IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <div id="content" class="blog-post">
+    
+<div class="image-wrap">
+  
+    <img src="/blog/img/half-dome.jpg" class="main-image">
+  
+</div>
+
+ 
+
+<article>
+  <h1>Creating Backbone Belay</h1>
+  <div class="meta">
+    <img src="/img/profilepic.jpg" width="25" alt="Will Hitchcock profile">
+    <p>
+      <span class="author">Will Hitchcock</span>
+      <span class="published">05 August 2013</span>
+    </p>
+  </div>
+  <div class="post-content"><p>I recently made the last commit for the initial version of my first open source project, a simple Backbone plugin called Backbone Belay. I find it fitting that along with my first open source project, I publish my first blog post about my experience making the plugin.</p>
+
+<h2 id='inception'>Inception</h2>
+
+<p>The idea for Backbone Belay came from a common problem in many Backbone applications. When a user triggers a route change, common application behavior is to create a new model or collection, fetch that entity, and then do something such as display or render a view when that entity is returned by the server.</p>
+
+<p>Because AJAX is asynchronous and requests inherently have latency, it isn’t uncommon that by the time the server responds to a request the user has moved on to a different part of the application. The application has discarded the views, layouts, and modules that were expected to be present when the request returned.</p>
+
+<p>If you have added an extra callback to the entities success method that references missing views, layouts, or modules then, at the very least, errors will be thrown. Depending on how your application is structured your callback might even create a new view in an application level region even after the user no longer desires said view.</p>
+
+<h2 id='what_is_backbone_belay'>What is Backbone Belay?</h2>
+
+<p>To solve this problem I created a simple plugin called Backbone Belay. Belay manages your pending HTTP requests and either forgets about them when they return complete or aborts them when the response is no longer needed in the application.</p>
+
+<h2 id='how_it_works'>How it works</h2>
+
+<p>The functionality of Backbone Belay is simple. When the application makes a new request with model.fetch() or collection.fetch(), it returns the XHR request object. Using the Backbone.Belay.spot() method, this request is now associated with the current route that the application is on and added to the list of pending requests.</p>
+
+<p>When a route change is triggered, all pending requests that are associated with that route are aborted. If requests finish before a route change as they are expected to, they will be automatically cleaned up and cleared out of Belay.</p>
+
+<h2 id='tools'>Tools</h2>
+
+<p>Backbone Belay is my first stab at an open source project. Needless to say, there was a lot of learning along the way.</p>
+
+<h3 id='watch_me_code'>Watch Me Code</h3>
+
+<p>A big help for me while I was conceptualizing the project was Derik Bailey’s Watch Me Code series. The plugin architecture is modeled after the patterns he uses in his Refactoring Javascript tutorial.</p>
+
+<h3 id='jasmine'>Jasmine</h3>
+
+<p>Working on Belay finally gave me the perfect opportunity to explore JavaScript test suites. Even though I read almost every day about the importance of automated testing in web development, I still have never taken the plunge until now.</p>
+
+<p>The suite that I have written so far for Belay is simple and still has a long way to go before it is complete, but each time I save a change to backbone-belay.js, it’s a great feeling to know that at least the basics are not broken.</p>
+
+<h3 id='grunt'>Grunt</h3>
+
+<p>While working on Belay, I got my first exposure to Grunt.js and instantly fell in love. Grunt is a javascript based task runner that automates every step of the deployment process and can handle everything from CoffeeScript compiling to automated testing.</p>
+
+<p>For this project, I configured grunt to compile CoffeeScript and run the Jasmine test suite. The best part is that it runs automatically and unobtrusively every time the codebase changes.</p>
+
+<h2 id='challenges'>Challenges</h2>
+
+<h3 id='architecture__grouping_requests'>Architecture - Grouping requests</h3>
+
+<p>By far the biggest challenge that I face while working on Belay was making a decision on how to architect the plugin.</p>
+
+<p>One of the requirements of the plugin was that it needed to be able to manage multiple pending requests associated with a single layout if that layout was to change. Using Backbone Marionette, I had a few options for objects that could be responsible for maintaining the status of multiple requests. Those objects were a Marionette Layout, a Marionette Module, or simply the history fragment that represented the current view.</p>
+
+<p>To avoid having a dependency on Marionette, I opted to use history fragments as the lookup key for managing requests. I believe that using fragments will cover the majority of use cases for Belay.</p>
+
+<p>For the times when history fragments will not work, it is possible to set custom keys when calling Backbone.Belay.spot() and call a custom clean up method on that same key with Backbone.Belay.release(). See the docs for more info.</p>
+
+<h3 id='jasmine'>Jasmine</h3>
+
+<p>When I set out to write my test suite I found it difficult to figure out where to start. Even after spending some time on it and getting a couple of basic tests out there, I think there is still a long way to go before the Belay test suite is up to par.</p>
+
+<h2 id='next_steps'>Next steps</h2>
+
+<p>As a next step for the project, I plan on spending more time adding tests that fully cover all of the components in the plugin. Using only Jasmine, I was unable to find a good way to spoof requests in a way that was sufficient enough to completely test all of the use cases.</p>
+
+<p>Since writing the initial version of the Jasmine spec, I came across Sinon.js. Sinon is a library that brings added functionality, including fake XHR requests, to any unit testing framework. I have yet to start writing test with Sinon, but I think that it will be the answer to many of my problems with standalone Jasmine.</p>
+
+<h2 id='check_it_out'>Check it out</h2>
+
+<p>Creating a Backbone Belay was a fantastic experience for me. I was able to experiment with some really cool technologies, get more hands on with common JavaScript patterns, and most importantly, contribute to the open source world.</p>
+
+<p>As I mentioned before, Belay is my first open source plugin ever. I am sure that there are many aspects of the project that can be improved on. If you see any bugs or room for improvement feel free to shoot me an email, create an issue, or submit a pull request. Let me know what you think!</p>
+
+<h2 id='repo'>Repo</h2>
+
+<p><a href='https://github.com/hitchcockwill/backbone.belay'>https://github.com/hitchcockwill/backbone.belay</a></p></div>
+  <a class="all-posts btn arrow-left" href="/blog/">Back to posts</a>
+</article>
+
+    <footer>&copy;2013 Will Hitchcock | willhitchcock.com</footer>
+  </div> <!-- end of content -->
+
+  <script src="/javascripts/libs/jquery-1.7.1.min.js"></script>
+  <script src="/javascripts/plugins.js"></script>
+
+  
+    <script type="text/javascript" src="/javascripts/base.js"></script>
+  
+
+  <script>
+    var _gaq=[['_setAccount','UA-20413357-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
