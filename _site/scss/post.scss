@@ -9,6 +9,7 @@
     position: relative;
     height: 500px;
     overflow: hidden;
+    @include single-transition(height .15s ease-in);
     img.main-image {
       position: absolute;
       width: 100%;
