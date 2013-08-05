@@ -1,23 +1,27 @@
 ---
 layout: default
 className: blog-post
+scripts: ["base.js"]
 ---
 
 {% if page.image %}
 <div class="image-wrap">
-  <img src="{{ page.image }}" />
+  {% if page.image %}
+    <img src="{{ page.image }}" class="main-image">
+  {% endif %}
 </div>
 {% endif %}
  
 
-<article class="post-content">
+<article>
   <h1>{{page.title}}</h1>
   <div class="meta">
     <img src="/img/profilepic.jpg" width="25" alt="Will Hitchcock profile">
     <p>
       <span class="author">Will Hitchcock</span>
-      {% if page.published %}<span class="published">{{page.published}}</span>{% endif %}
+      <span class="published">{{page.date | date_to_long_string}}</span>
     </p>
   </div>
-  {{ content }}  
+  <div class="post-content">{{ content }}</div>
+  <a class="all-posts btn arrow-left" href="/blog/">Back to posts</a>
 </article>

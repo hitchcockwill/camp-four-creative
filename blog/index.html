@@ -4,7 +4,7 @@ title: Getting Clever with Code
 className: blog-layout
 ---
  
-<div class="content">
+<div class="title">
   <h2>Getting Clever with Code</h2>
   <p>A blog about code, design, and anything else that I feel like musing about.</p>
 </div>
@@ -15,7 +15,7 @@ className: blog-layout
   <li>
     <a href="{{ post.url }}">
       <h3>{{ post.title }}</h3>
-      {% if post.published %}<p class="published">{{post.published}}</p>{% endif %}
+      <p class="published">{{post.date | date_to_long_string}}</p>
     </a>
   </li>
  

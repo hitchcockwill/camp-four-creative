@@ -9,19 +9,31 @@
   }
   h3 {
     font-size: 18px;
-    @include single-transition(color, 0.25s, ease-out);
-    &:hover {
-      color: #333;
-    }
+    margin: 0;
+  }
+
+  p.published {
+    margin: 3px 0 0;
+    color: $gray-lighten;
   }
 }
 
 ul.post-list{
   li {
-    margin-bottom: 12px;
+    border-bottom: 1px solid #ececec;
+    &:last-child {
+      border-bottom: none;
+    }
     > a {
+      padding: 10px 0;
       @include clearfix;
       display: block;
+
+      @include single-transition(color, 0.25s, ease-out);
+      &:hover {
+        color: $gray-darken;
+      }
+
       h3 { float: left; }
       p { float: right; }
     }

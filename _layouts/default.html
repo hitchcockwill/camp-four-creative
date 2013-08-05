@@ -20,7 +20,10 @@
 
   <script src="/javascripts/libs/jquery-1.7.1.min.js"></script>
   <script src="/javascripts/plugins.js"></script>
-  <script src="/javascripts/script.js"></script>
+
+  {% for script in page.scripts %}
+    <script type="text/javascript" src="/javascripts/{{script}}"></script>
+  {% endfor %}
 
   <script>
     var _gaq=[['_setAccount','UA-20413357-1'],['_trackPageview']];

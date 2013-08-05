@@ -10,35 +10,46 @@
 /* line 10, ../scss/blog.scss */
 #content.blog-layout h3 {
   font-size: 18px;
+  margin: 0;
+}
+/* line 15, ../scss/blog.scss */
+#content.blog-layout p.published {
+  margin: 3px 0 0;
+  color: #999999;
+}
+
+/* line 22, ../scss/blog.scss */
+ul.post-list li {
+  border-bottom: 1px solid #ececec;
+}
+/* line 24, ../scss/blog.scss */
+ul.post-list li:last-child {
+  border-bottom: none;
+}
+/* line 27, ../scss/blog.scss */
+ul.post-list li > a {
+  padding: 10px 0;
+  display: block;
   -webkit-transition: color 0.25s ease-out;
   -moz-transition: color 0.25s ease-out;
   -o-transition: color 0.25s ease-out;
   transition: color 0.25s ease-out;
 }
-/* line 13, ../scss/blog.scss */
-#content.blog-layout h3:hover {
-  color: #333;
-}
-
-/* line 20, ../scss/blog.scss */
-ul.post-list li {
-  margin-bottom: 12px;
-}
-/* line 22, ../scss/blog.scss */
-ul.post-list li > a {
-  display: block;
-}
-/* line 4, ../scss/config.scss */
+/* line 39, ../scss/config.scss */
 ul.post-list li > a:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 25, ../scss/blog.scss */
+/* line 33, ../scss/blog.scss */
+ul.post-list li > a:hover {
+  color: #333333;
+}
+/* line 37, ../scss/blog.scss */
 ul.post-list li > a h3 {
   float: left;
 }
-/* line 26, ../scss/blog.scss */
+/* line 38, ../scss/blog.scss */
 ul.post-list li > a p {
   float: right;
 }
