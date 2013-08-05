@@ -1,11 +1,13 @@
 ---
 layout: default
-title: Blog
+title: Getting Clever with Code
+className: blog-layout
 ---
  
-<section class="content">
-  <h2>My Musings and Ramblings</h2>
-</section>
+<div class="content">
+  <h2>Getting Clever with Code</h2>
+  <p>A blog about code, design, and anything else that I feel like musing about.</p>
+</div>
  
 <ul class="post-list entries">
   {% for post in site.posts %}
@@ -13,6 +15,7 @@ title: Blog
   <li>
     <a href="{{ post.url }}">
       <h3>{{ post.title }}</h3>
+      {% if post.published %}<p class="published">{{post.published}}</p>{% endif %}
     </a>
   </li>
  

@@ -1,11 +1,12 @@
 {
-  "name" : "hitchcockwill.github.io",
-  "version" : "0.0.1",
-  "devDependencies" : {
-    "grunt"                 : "latest",
-    "grunt-contrib-coffee"  : "*",
-    "grunt-contrib-watch"   : "*",
-    "grunt-contrib-sass"    : "*",
-    "grunt-jekyll"          : "*"
+  "name": "hitchcockwill.github.io",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-jekyll": "*",
+    "grunt-contrib-compass": "~0.4.1"
   }
 }

@@ -1,1 +1,1 @@
-exclude: 		["/coffee/", "/scss/", "/node_modules/"]
+exclude: 		['coffee/', 'scss/', 'node_modules/']

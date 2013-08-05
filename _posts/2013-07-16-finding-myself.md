@@ -1,7 +1,7 @@
 ---
 layout: blog_post
 image: /img/belay_background.jpg
-title: Creating Backbone Belay 
+title: Finding Myself
 ---
 # Creating Backbone Belay
 I recently made the last commit for the initial version of my first open source project, a simple Backbone plugin called Backbone Belay. I find it fitting that along with my first open source project, I publish my first blog post about my experience making the plugin.

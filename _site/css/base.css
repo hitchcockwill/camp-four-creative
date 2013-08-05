@@ -1,7 +1,5 @@
-body {
-  background: orange !important;
-}
-
-p {
-  color: pink !important;
+/* line 3, ../scss/base.scss */
+footer {
+  margin: 30px 0 0;
+  color: #999;
 }

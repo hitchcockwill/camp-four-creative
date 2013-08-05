@@ -17,28 +17,25 @@ module.exports = function(grunt) {
         files: ['coffee/*.coffee'],
         tasks: ['coffee']        
       },
-      sass: {
+      compass: {
         files: ['scss/*.scss'],
-        tasks: ['sass']
+        tasks: ['compass']
       }
     },
 
-    sass: {
+    compass: {
       dist: {
         options: {
-          style: 'expanded'
-        },
-        files: {
-          'css/base.css': 'scss/base.scss'
+          sassDir: 'scss',
+          cssDir: 'css'
         }
       }
     }
   }); 
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('compile', ['coffee', 'sass']);
+  grunt.registerTask('compile', ['coffee', 'compass']);
 };
