@@ -16,12 +16,6 @@
     }
   }
 
-  h1 {
-    font-size: 32px;
-    margin: 40px 0 30px;
-    line-height: 32px;
-  }
-
   article {
     max-width: 660px;
     padding: 0 30px;
@@ -55,5 +49,29 @@
     }
   }
 
+  h1 {
+    font-size: 32px;
+    margin: 40px 0 10px;
+    line-height: 32px;
+  }
+
+  div.meta {
+    margin: 0 0 30px;
+    @include clearfix;
+    > * { float: left; }
+
+    img {
+      border-radius: 30px;
+      margin-right: 10px;
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      span.published {
+        color: #999;
+        margin-left: 18px;
+      }
+    }
+  }
 
 }

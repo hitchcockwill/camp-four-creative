@@ -12,5 +12,12 @@ className: blog-post
 
 <article class="post-content">
   <h1>{{page.title}}</h1>
+  <div class="meta">
+    <img src="/img/profilepic.jpg" width="25" alt="Will Hitchcock profile">
+    <p>
+      <span class="author">Will Hitchcock</span>
+      {% if page.published %}<span class="published">{{page.published}}</span>{% endif %}
+    </p>
+  </div>
   {{ content }}  
 </article>
