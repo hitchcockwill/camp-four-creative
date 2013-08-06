@@ -11,7 +11,7 @@ The idea for Backbone Belay came from a common problem in many Backbone applicat
 
 Because AJAX is asynchronous and requests inherently have latency, it isn’t uncommon that by the time the server responds to a request the user has moved on to a different part of the application. The application has discarded the views, layouts, and modules that were expected to be present when the request returned. 
 
-If you have added an extra callback to the entities success method that references missing views, layouts, or modules then, at the very least, errors will be thrown. Depending on how your application is structured your callback might even create a new view in an application level region even after the user no longer desires said view.
+If you have added an extra callback to the entity's success method that references missing views, layouts, or modules then, at the very least, errors will be thrown. Depending on how your application is structured your callback might even create a new view in an application level region even after the user no longer desires said view.
 
 ## What is Backbone Belay?
 
@@ -36,9 +36,9 @@ Working on Belay finally gave me the perfect opportunity to explore JavaScript t
 The suite that I have written so far for Belay is simple and still has a long way to go before it is complete, but each time I save a change to backbone-belay.js, it’s a great feeling to know that at least the basics are not broken.
 
 ### Grunt
-While working on Belay, I got my first exposure to Grunt.js and instantly fell in love. Grunt is a javascript based task runner that automates every step of the deployment process and can handle everything from CoffeeScript compiling to automated testing. 
+While working on Belay, I got my first exposure to Grunt.js and instantly fell in love. Grunt is a JavaScript based task runner that automates every step of the deployment process and can handle everything from CoffeeScript and SASS compiling to linting and automated testing.
 
-For this project, I configured grunt to compile CoffeeScript and run the Jasmine test suite. The best part is that it runs automatically and unobtrusively every time the codebase changes.
+For this project, I configured Grunt to compile CoffeeScript and run the Jasmine test suite. The best part is that it runs automatically and unobtrusively every time the codebase changes.
 
 ## Challenges
 
@@ -49,7 +49,7 @@ One of the requirements of the plugin was that it needed to be able to manage mu
 
 To avoid having a dependency on Marionette, I opted to use history fragments as the lookup key for managing requests. I believe that using fragments will cover the majority of use cases for Belay.
 
-For the times when history fragments will not work, it is possible to set custom keys when calling Backbone.Belay.spot() and call a custom clean up method on that same key with Backbone.Belay.release(). See the docs for more info.
+For the times when history fragments will not work, it is possible to set custom keys when calling Backbone.Belay.spot() and call a clean up method on that same key with Backbone.Belay.release(). See the docs for more info.
 
 ### Jasmine
 When I set out to write my test suite I found it difficult to figure out where to start. Even after spending some time on it and getting a couple of basic tests out there, I think there is still a long way to go before the Belay test suite is up to par.
@@ -57,10 +57,10 @@ When I set out to write my test suite I found it difficult to figure out where t
 ## Next steps
 As a next step for the project, I plan on spending more time adding tests that fully cover all of the components in the plugin. Using only Jasmine, I was unable to find a good way to spoof requests in a way that was sufficient enough to completely test all of the use cases. 
 
-Since writing the initial version of the Jasmine spec, I came across Sinon.js. Sinon is a library that brings added functionality, including fake XHR requests, to any unit testing framework. I have yet to start writing test with Sinon, but I think that it will be the answer to many of my problems with standalone Jasmine.
+Since writing the initial version of the Jasmine spec, I came across Sinon.js. Sinon is a library that brings added functionality, including fake XHR requests, to any unit testing framework. I have yet to start writing tests with Sinon, but I think that it will be the answer to many of my problems with standalone Jasmine.
 
 ## Check it out
-Creating a Backbone Belay was a fantastic experience for me. I was able to experiment with some really cool technologies, get more hands on with common JavaScript patterns, and most importantly, contribute to the open source world.
+Creating Backbone Belay was a fantastic experience for me. I was able to experiment with some really cool technologies, get more hands on with common JavaScript patterns, and most importantly for me, make my first contribution to the open source community.
 
 As I mentioned before, Belay is my first open source plugin ever. I am sure that there are many aspects of the project that can be improved on. If you see any bugs or room for improvement feel free to shoot me an email, create an issue, or submit a pull request. Let me know what you think!
 
