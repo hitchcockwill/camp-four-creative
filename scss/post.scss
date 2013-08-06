@@ -6,14 +6,24 @@
   margin: 0;
 
   div.image-wrap {
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     height: 500px;
     overflow: hidden;
-    @include single-transition(height .15s ease-in);
+    // @include single-transition(height .15s ease-in);
     img.main-image {
       position: absolute;
       width: 100%;
     }
+  }
+
+  div.article-wrap {
+    background: white;
+    margin-top: 500px;
+    padding-top: 1px;
+    position: relative;
+    z-index: 100;
   }
 
   article, footer {

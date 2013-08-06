@@ -2,25 +2,28 @@
   var handleImageSizing, imageLoad, setImageSize;
 
   handleImageSizing = function($image) {
-    var resizing;
-    setImageSize($image);
+    var $article, resizing;
+    $article = $("div.article-wrap");
+    setImageSize($image, $article);
     resizing = false;
     $(window).resize(function() {
       return resizing = true;
     });
     return setInterval(function() {
       if (resizing) {
-        setImageSize($image);
+        setImageSize($image, $article);
         return resizing = false;
       }
     }, 100);
   };
 
-  setImageSize = function($image) {
+  setImageSize = function($image, $article) {
     if ($image.height() < $image.parent().height()) {
-      return $image.parent().css("height", String($image.height()) + "px");
+      $image.parent().css("height", String($image.height()) + "px");
+      return $article.css("margin-top", String($image.height()) + "px");
     } else {
-      return $image.parent().css("height", "500px");
+      $image.parent().css("height", "500px");
+      return $article.css("margin-top", "500px");
     }
   };
 

@@ -1,7 +1,9 @@
 
 handleImageSizing = ($image) ->
 
-  setImageSize($image)
+  $article = $("div.article-wrap")
+
+  setImageSize($image, $article)
 
   resizing = false
   $(window).resize ->
@@ -9,15 +11,17 @@ handleImageSizing = ($image) ->
 
   setInterval ->
     if resizing
-      setImageSize($image)
+      setImageSize($image, $article)
       resizing = false
   , 100
 
-setImageSize = ($image) ->
+setImageSize = ($image, $article) ->
   if $image.height() < $image.parent().height()
     $image.parent().css("height", String($image.height()) + "px")
+    $article.css("margin-top", String($image.height()) + "px")
   else 
     $image.parent().css("height", "500px")
+    $article.css("margin-top","500px")
  
 imageLoad = (self, cb) ->    
   $this = $(self)
