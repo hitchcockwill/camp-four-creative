@@ -1,5 +1,5 @@
 (function() {
-  var handleImageSizing, setImageSize;
+  var handleImageSizing, imageLoad, setImageSize;
 
   handleImageSizing = function($image) {
     var resizing;
@@ -24,12 +24,35 @@
     }
   };
 
-  $(function() {
-    var $imageWrap;
-    $imageWrap = $("img.main-image");
-    if ($imageWrap.length) {
-      return handleImageSizing($imageWrap);
+  imageLoad = function(self, cb) {
+    var $this, img, src;
+    $this = $(self);
+    src = $this.attr("data-src");
+    if (src) {
+      img = new Image();
+      img.style.display = "none";
+      img.onload = function() {
+        var $image;
+        $image = $(this);
+        $image.addClass("main-image").fadeIn(1000);
+        $this.remove();
+        if (cb) {
+          return cb($image);
+        }
+      };
+      $this.parent().append(img);
+      return img.src = src;
     }
+  };
+
+  $(document).ready(function() {
+    var $imageWrap;
+    $imageWrap = $("span.main-image");
+    return $imageWrap.each(function() {
+      return imageLoad(this, function($image) {
+        return handleImageSizing($image);
+      });
+    });
   });
 
 }).call(this);
