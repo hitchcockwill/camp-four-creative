@@ -35,7 +35,7 @@ ul.post-list li > a {
   -o-transition: color 0.25s ease-out;
   transition: color 0.25s ease-out;
 }
-/* line 39, ../scss/config.scss */
+/* line 40, ../scss/config.scss */
 ul.post-list li > a:after {
   content: "";
   display: table;

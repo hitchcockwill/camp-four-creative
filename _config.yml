@@ -1,1 +1,2 @@
 exclude: 		['coffee/', 'scss/', 'node_modules/']
+pygments:   true
