@@ -70,13 +70,19 @@
   padding: 10px;
   border-radius: 2px;
 }
-/* line 74, ../scss/post.scss */
+/* line 73, ../scss/post.scss */
+#content.blog-post article .post-content img {
+  margin-bottom: 16px;
+  border-radius: 2px;
+  width: 100%;
+}
+/* line 80, ../scss/post.scss */
 #content.blog-post h1 {
   font-size: 32px;
   margin: 40px 0 10px;
   line-height: 32px;
 }
-/* line 80, ../scss/post.scss */
+/* line 86, ../scss/post.scss */
 #content.blog-post div.meta {
   margin: 0 0 30px;
 }
@@ -86,26 +92,26 @@
   display: table;
   clear: both;
 }
-/* line 83, ../scss/post.scss */
+/* line 89, ../scss/post.scss */
 #content.blog-post div.meta > * {
   float: left;
 }
-/* line 85, ../scss/post.scss */
+/* line 91, ../scss/post.scss */
 #content.blog-post div.meta img {
   border-radius: 30px;
   margin-right: 10px;
 }
-/* line 89, ../scss/post.scss */
+/* line 95, ../scss/post.scss */
 #content.blog-post div.meta p {
   margin: 0;
   font-size: 14px;
 }
-/* line 92, ../scss/post.scss */
+/* line 98, ../scss/post.scss */
 #content.blog-post div.meta p span.published {
   color: #999;
   margin-left: 18px;
 }
-/* line 99, ../scss/post.scss */
+/* line 105, ../scss/post.scss */
 #content.blog-post a.all-posts {
   margin-top: 20px;
   margin-bottom: 10px;

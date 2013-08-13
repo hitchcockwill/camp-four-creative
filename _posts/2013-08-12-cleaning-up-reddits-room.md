@@ -1,10 +1,14 @@
 ---
 layout: blog_post
-image: /blog/img/half-dome.jpg
-title: Flatit Cleaning up reddit's room
+image: /blog/img/flatit-1400.jpg
+title: Flatit, cleaning up reddit's room
 ---
 
 Last week, having found myself recently unemployed with nothing to do, I tried to make it a point to learn about something new every day. My favorite experiment of the week and the one that I’m writing about today is flatit. flatit is a Chrome extension that adds extra styling to reddit giving it a flatter, cleaner look and feel.
+
+##Screenshots
+[![flatit working on the reddit front page.](/blog/img/flatit-screen1.jpg)](/blog/img/flatit-screen1.jpg)
+[![flatit working on a reddit comment page.](/blog/img/flatit-screen2.jpg)](/blog/img/flatit-screen2.jpg)
 
 ##Goals
 The main focus of my project was to create a Chrome extension and explore some of the tools available to developers working with Chrome. 
