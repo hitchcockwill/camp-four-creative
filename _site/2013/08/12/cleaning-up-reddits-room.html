@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  Flatit Cleaning up reddit's room |  Will Hitchcock </title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/post.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+</head>
+<body>
+  <!--[if lte IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <div id="content" class="blog-post">
+    
+<div class="image-wrap">
+  
+    <span class="main-image" data-src="/blog/img/half-dome.jpg">
+  
+</div>
+
+ 
+<div class="article-wrap">
+  <article>
+    <h1>Flatit Cleaning up reddit's room</h1>
+    <div class="meta">
+      <img src="/img/profilepic.jpg" width="25" alt="Will Hitchcock profile">
+      <p>
+        <span class="author">Will Hitchcock</span>
+        <span class="published">12 August 2013</span>
+      </p>
+    </div>
+    <div class="post-content"><p>Last week, having found myself recently unemployed with nothing to do, I tried to make it a point to learn about something new every day. My favorite experiment of the week and the one that I’m writing about today is flatit. flatit is a Chrome extension that adds extra styling to reddit giving it a flatter, cleaner look and feel.</p>
+
+<h2 id='goals'>Goals</h2>
+
+<p>The main focus of my project was to create a Chrome extension and explore some of the tools available to developers working with Chrome.</p>
+
+<p>When I started to think about exactly what I wanted to build, the idea of cleaning up reddit’s interface was something that I found quite appealing; I could experiment with the building blocks of Chrome extensions and something involving mostly CSS could be accomplished in a single day.</p>
+
+<p>It’s no secret that reddit looks like shit. That being said, there is something appealing about the simple and stripped down styling of certain elements in the interface. Part of me has grown to love the look and feel of reddit and by creating this plugin I didn’t want to subtract from the feeling that I get when clicking through links. With that in mind, I made it a point to not be too disruptive with reddit’s traditional design and instead just remove noise, tidy up clutter, and add space. I guess you could say that my goal was to clean up reddit’s messy room.</p>
+
+<h2 id='building_flatit'>Building flatit</h2>
+
+<p>Getting the extension set up was actually incredibly simple. To create a Chrome extension, all you need to do is save a new file called manifest.json in to the directory in which you want your plugin. manifest.json works as the configuration file for the entire extension. In this file you define the assets that you want to include, the Chrome API actions that you will use, and all of the general settings for the extension.</p>
+
+<p>Once my manifest file was created and configured, I added a new file called style.css where I would write all of the new styling for the pages. Now it was just a matter of clicking through each page element with the inspector and overwriting offending styles.</p>
+
+<p>I purposely will not go into more detail about how I created the extension just because there are already great resources out there to help out first time extension developers. Here are two resources that got me up and running quickly:</p>
+
+<p><a href='http://developer.chrome.com/extensions/getstarted.html'>http://developer.chrome.com/extensions/getstarted.html</a> <a href='http://lifehacker.com/5857721/how-to-build-a-chrome-extension'>http://lifehacker.com/5857721/how-to-build-a-chrome-extension</a></p>
+
+<h2 id='challenges'>Challenges</h2>
+
+<h3 id='css_specificity'>CSS Specificity</h3>
+
+<p>Because Chrome extension assets are injected after the rest of the page elements have been defined, it would stand to reason that CSS files with matching specificity would actually take precedence over the default page includes. Unfortunately, this is not the case with Chrome extensions. In order to overwrite styles that have previously been defined on the page the css selectors in the extension must be more specific than those that currently exist.</p>
+
+<p>There are two easy ways to increase specificity without accidentally becoming so specific that you exclude elements that you intend to target: prefixing selectors with a common parent element or suffixing style attributes with an <code>!important</code> tag. There are pros and cons to both methods.</p>
+
+<h4 id='common_parents_universal_selectors'>Common parents, universal selectors</h4>
+
+<p>The most simple solution to this problem would be to give each selector a parent prefix that is a common element to all elements on the page.</p>
+
+<p>For example:</p>
+<div class='highlight'><pre><code class='css'><span class='nt'>body</span> <span class='p'>{</span>
+  <span class='k'>background</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>would be written as:</p>
+<div class='highlight'><pre><code class='css'><span class='nt'>html</span> <span class='nt'>body</span> <span class='p'>{</span>
+  <span class='k'>background</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>The main advantage to this solution is simplicity. Using a universal selector is far less verbose than the alternative solution which, as you will see below, involves added text after each style attribute.</p>
+
+<p>The major disadvantage is that although this will almost always be more specific than the styles that are included on the page, it will not ever be more specific than inline styles or anything with an <code>!important</code> tag. As I learned when dealing with the Reddit Enhancement Suite styling and have seen in many JavaScript plugins, many extensions and plugins use CSS’s <code>!important</code> tag very liberally and would thus be more specific than flatit’s styling.</p>
+
+<p>Another major disadvantage is the performance of using universal selectors like <code>html</code> or <code>body</code> as prefixes. The browser reads CSS styles from right to left and travels up through the DOM tree to check for the existence of the next selector. This means that prefixing a selector with something that exists at the top level of the DOM will create a pretty large performance hit.</p>
+
+<h4 id='_tags'><code>!important</code> tags</h4>
+
+<p>Anyone that has worked on a web development project of almost any size has probably learned that you should almost never use the CSS <code>!important</code> tag. For those who are unfamiliar, any css attribute that has been suffixed with <code>!important</code> becomes more specific than even inline styles. The problem with using <code>!important</code> in most cases is that the codebase quickly becomes very hard to debug and maintain when there is a confusing web of conflicting <code>!important</code> attributes.</p>
+
+<p>For this extension and probably most Chrome extensions, using the <code>!important</code> tag to overwrite existing default page styles is a necessity. Even though in many projects using <code>!important</code> can cause confusion with specificity down the road, I wanted my extension to have the final say in what the page looked like. As I mentioned above, many other extensions and plugins use the <code>!important</code> tag liberally. Because of this, the only way to be sure that flatit’s styles took precedence over other extensions or plugins was to also use <code>!important</code>.</p>
+
+<h3 id='subreddit_styling'>Subreddit styling</h3>
+
+<p>One of the features of reddit is that subreddit moderators are able to author and upload custom styling to their community’s page. The styling of many of the subreddits actually looks pretty good, but each moderator has their own style and workflow which causes every subreddit to be completely unique.</p>
+
+<p>At first, I tried to go through some of the most popular subreddits to see if there was a way that I could gracefully maintain some of the custom styling that the moderators had added. After looking over half a dozen subreddits I concluded that the simplest solution would be to use JavaScript to just remove the stylesheet for the subreddit altogether.</p>
+
+<h2 id='wrapping_it_up'>Wrapping it up</h2>
+
+<p>Building this extension was a great opportunity for me to learn more about Chrome extensions and what can be done with them. I was very impressed with how simple it was to author a new extension and publish it in to the web store.</p>
+
+<p>I definitely plan to continue making updates to flatit when I see things that I think need some improvement. Flatit is an open source project and can be found on Github (link below). If you have ideas or want to contribute, please send an email or a pull request and I would be happy to try to fit it in!</p>
+
+<h2 id='links'>Links</h2>
+
+<p><a href='https://chrome.google.com/webstore/detail/flatit/blkfjcojlgcgillkmcaahalnnibhkpdl'>https://chrome.google.com/webstore/detail/flatit/blkfjcojlgcgillkmcaahalnnibhkpdl</a> <a href='https://github.com/hitchcockwill/flat-reddit'>https://github.com/hitchcockwill/flat-reddit</a></p></div>
+    <a class="all-posts btn arrow-left" href="/blog/">Back to posts</a>
+  </article> 
+</div>
+  
+
+    <footer>&copy;2013 Will Hitchcock | willhitchcock.com</footer>
+  </div> <!-- end of content -->
+
+  <script src="/javascripts/libs/jquery-1.7.1.min.js"></script>
+  <script src="/javascripts/plugins.js"></script>
+
+  
+    <script type="text/javascript" src="/javascripts/base.js"></script>
+  
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-20413357-2', 'hitchcockwill.github.io');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
