@@ -1,0 +1,13 @@
+/* line 3, ../scss/landing.scss */
+#landing-hero {
+  background-image: url("/img/camp-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 750px;
+}
+
+/* line 11, ../scss/landing.scss */
+div.project {
+  background: #555;
+  color: white;
+}
