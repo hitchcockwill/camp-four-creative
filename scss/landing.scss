@@ -5,10 +5,80 @@
   background-size: cover;
   background-position: center;
   height: 750px;
+  img {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 370px;
+  }
 }
 
+section.content-section {
+  padding: 50px 0;
+}
+
+section.dark {
+  background: $blue-gray;
+  color: $gray-lighten;
+}
+
+section.navigation {
+  border: 1px solid $light-gray;
+  border-left: none;
+  border-right: none;
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    position: relative;
+    &.active:after {
+      content: ""; 
+      position: absolute;
+      height: 6px;
+      bottom: -3px;
+      right: 0;
+      left: 0;
+      background: $orange;
+    }
+  }
+}
 
 div.project {
   background: #555;
   color: white;
+}
+
+section.about {
+  h2 {
+    text-align: center;
+  }
+  div.profile:first-child {
+    text-align: right;
+  }
+}
+
+section.contact {
+  padding: 200px 0;
+  p {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  a {
+    display: block;
+    padding: 14px 10px;
+    border: 2px solid $blue-gray;
+    color: $blue-gray;
+    border-radius: 2px;
+    text-align: center;
+    width: 180px;
+    margin: 0 auto;
+    @include transition(background .25s ease-in, color .25s ease-in);
+    &:hover {
+      background: $blue-gray;
+      color: $off-white;
+    }
+  }
 }

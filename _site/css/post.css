@@ -86,7 +86,7 @@
 #content.blog-post div.meta {
   margin: 0 0 30px;
 }
-/* line 40, ../scss/config.scss */
+/* line 45, ../scss/config.scss */
 #content.blog-post div.meta:after {
   content: "";
   display: table;

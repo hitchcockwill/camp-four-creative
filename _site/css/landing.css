@@ -5,9 +5,92 @@
   background-position: center;
   height: 750px;
 }
+/* line 8, ../scss/landing.scss */
+#landing-hero img {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  top: 370px;
+}
 
-/* line 11, ../scss/landing.scss */
+/* line 16, ../scss/landing.scss */
+section.content-section {
+  padding: 50px 0;
+}
+
+/* line 20, ../scss/landing.scss */
+section.dark {
+  background: #333944;
+  color: #999999;
+}
+
+/* line 25, ../scss/landing.scss */
+section.navigation {
+  border: 1px solid #d7d7d7;
+  border-left: none;
+  border-right: none;
+}
+/* line 29, ../scss/landing.scss */
+section.navigation a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  position: relative;
+}
+/* line 34, ../scss/landing.scss */
+section.navigation a.active:after {
+  content: "";
+  position: absolute;
+  height: 6px;
+  bottom: -3px;
+  right: 0;
+  left: 0;
+  background: #f09232;
+}
+
+/* line 46, ../scss/landing.scss */
 div.project {
   background: #555;
   color: white;
+}
+
+/* line 52, ../scss/landing.scss */
+section.about h2 {
+  text-align: center;
+}
+/* line 55, ../scss/landing.scss */
+section.about div.profile:first-child {
+  text-align: right;
+}
+
+/* line 60, ../scss/landing.scss */
+section.contact {
+  padding: 200px 0;
+}
+/* line 62, ../scss/landing.scss */
+section.contact p {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 200;
+  text-align: center;
+}
+/* line 69, ../scss/landing.scss */
+section.contact a {
+  display: block;
+  padding: 14px 10px;
+  border: 2px solid #333944;
+  color: #333944;
+  border-radius: 2px;
+  text-align: center;
+  width: 180px;
+  margin: 0 auto;
+  -webkit-transition: background 0.25s ease-in, color 0.25s ease-in;
+  -moz-transition: background 0.25s ease-in, color 0.25s ease-in;
+  -o-transition: background 0.25s ease-in, color 0.25s ease-in;
+  transition: background 0.25s ease-in, color 0.25s ease-in;
+}
+/* line 79, ../scss/landing.scss */
+section.contact a:hover {
+  background: #333944;
+  color: #f1f1f1;
 }
