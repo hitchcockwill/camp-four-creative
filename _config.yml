@@ -1,2 +1,3 @@
-exclude: 		['coffee/', 'scss/', 'node_modules/']
-pygments:   true
+exclude: 		    ['coffee/', 'scss/', 'node_modules/']
+pygments:       true
+permalink:      none

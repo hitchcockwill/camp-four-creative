@@ -26,6 +26,7 @@ section.navigation {
   border: 1px solid $light-gray;
   border-left: none;
   border-right: none;
+  > div { @include clearfix; }
   a {
     display: inline-block;
     padding: 10px 20px;
@@ -41,9 +42,17 @@ section.navigation {
       background: $orange;
     }
   }
+
+  div.right-nav {
+    float: right;
+  }
+  div.left-nav {
+    float: left;
+  }
 }
 
 section.projects {
+  position: relative;
   div.toprow .project,
   div.siderows .project {
     height: 300px;
@@ -51,7 +60,9 @@ section.projects {
   div.split .project {
     height: 630px;
   }
-  div.p {
+  div.p, 
+  a.p {
+    display: block;
     position: absolute;
     top: 0;
     left:0;
@@ -61,6 +72,10 @@ section.projects {
     padding:10px;
   }
 }
+
+// #project-wrapper {
+//   display: none;
+// }
 
 div.project {
   position: relative;

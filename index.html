@@ -2,6 +2,7 @@
 layout: default
 styles: ["landing.css"]
 className: "landing-page"
+scripts: ["landing.js"]
 ---
 
 <div id="landing-hero">
@@ -18,54 +19,68 @@ className: "landing-page"
 
 <section class="navigation">
   <div class="row">
-    <a href="" class="about">About</a>
-    <a href="" class="projects">Projects</a>
-    <a href="" class="contact">Contact</a>
+    <div class="left-nav">
+      <a href="/" class="home"><img src="" alt="" class="logo-small"></a>
+    </div>
+    <div class="right-nav">
+      <a href="" class="about">About</a>
+      <a href="" class="projects">Projects</a>
+      <a href="" class="contact">Contact</a>      
+    </div>
   </div>
 </section>
 
 <section class="projects content-section">
-  <div class="row toprow">
-    <div class="large-8 columns">
-      <div class="project">
-        <div class="p">Grappple</div>
+
+
+  <div id="projects-gallery">
+    <div class="row toprow">
+      <div class="large-8 columns">
+        <div class="project">
+          <a href="/portfolio/sample-project.html" class="p">Grappple</a>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="project">
+          <div class="p">GroupTie</div>
+        </div>
       </div>
     </div>
-    <div class="large-4 columns">
-      <div class="project">
-        <div class="p">GroupTie</div>
+    <div class="row">
+      <div class="project-container split large-4 columns">
+        <div class="project">
+          <div class="p">Split</div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="project-container split large-4 columns">
-      <div class="project">
-        <div class="p">Split</div>
-      </div>
-    </div>
-    <div class="project-container siderows large-8 columns">
-      <div class="row">
-        <div class="project large-6 columns">
-          <div class="project">
-            <div class="p">Rentlytics</div>
+      <div class="project-container siderows large-8 columns">
+        <div class="row">
+          <div class="project large-6 columns">
+            <div class="project">
+              <div class="p">Rentlytics</div>
+            </div>
+          </div>
+          <div class="large-6 columns">
+            <div class="project">
+              <div class="p">Backbone.Belay</div>
+            </div>
           </div>
         </div>
-        <div class="large-6 columns">
-          <div class="project">
-            <div class="p">Backbone.Belay</div>
+        <div class="row">
+          <div class="columns">
+            <div class="project">
+              <div class="p">Other Project</div>
+            </div>          
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="columns">
-          <div class="project">
-            <div class="p">Other Project</div>
-          </div>          
-        </div>
-      </div>
-    </div>
+    </div>    
   </div>
-  
+
+  <div id="project-wrapper">
+    <h1>Sample project</h1>
+    <p>Will is a frontend developer and graphic designer. He is passionate about web application development, dashboard design, and writing clean, elegant code. When he is not working or tinkering with side projects, Will likes to spend his time outdoors rock climbing and hiking.</p>
+  </div>
+
 </section>
 
 
@@ -79,44 +94,44 @@ className: "landing-page"
           <p>Will is a frontend developer and graphic designer. He is passionate about web application development, dashboard design, and writing clean, elegant code. When he is not working or tinkering with side projects, Will likes to spend his time outdoors rock climbing and hiking.</p>
           <div class="social-links">
             <a href="http://dribbble.com/willhitchcock" class="social-link dribbble" title="Will Hitchcock's dribbble" target="_blank">
-              <img src="/img/social-icons/dribbble-bw.png" alt="dribbble icon">
-              <img src="/img/social-icons/dribbble-c.png" alt="dribbble icon" class="color">
+              <img src="/img/social-icons/dribbble-bw.png" alt="dribbble icon" class="retina">
+              <img src="/img/social-icons/dribbble-c.png" alt="dribbble icon" class="color retina">
             </a> 
             <a href="https://twitter.com/willhitchcock" class="social-link twitter" title="Will Hitchcock's twitter" target="_blank">
-              <img src="/img/social-icons/twitter-bw.png" alt="twitter icon">
-              <img src="/img/social-icons/twitter-c.png" alt="twitter icon" class="color">
+              <img src="/img/social-icons/twitter-bw.png" alt="twitter icon" class="retina">
+              <img src="/img/social-icons/twitter-c.png" alt="twitter icon" class="color retina">
             </a> 
             <a href="http://www.linkedin.com/pub/will-hitchcock/31/88b/135/" class="social-link linkedin" title="Will Hitchcock's LinkedIn" target="_blank">
-              <img src="/img/social-icons/linkedin-bw.png" alt="LinkedIn icon">
-              <img src="/img/social-icons/linkedin-c.png" alt="LinkedIn icon" class="color">
+              <img src="/img/social-icons/linkedin-bw.png" alt="LinkedIn icon" class="retina">
+              <img src="/img/social-icons/linkedin-c.png" alt="LinkedIn icon" class="color retina">
             </a> 
           </div>
         </div>
         <div class="large-4 columns">
-          <img src="/img/portraits/will-round.png" alt="Will Hitchcock portrait" class="profile">
+          <img src="/img/portraits/will-round.png" alt="Will Hitchcock portrait" class="profile retina">
         </div>
       </div>
     </div>
     <div class="profile large-6 columns">
       <div class="row">
         <div class="large-4 columns">
-          <img src="/img/portraits/alyssa-round.png" alt="Alyssa Pelletier portrait" class="profile">
+          <img src="/img/portraits/alyssa-round.png" alt="Alyssa Pelletier portrait" class="profile retina">
         </div>
         <div class="large-8 columns">
           <h3>Alyssa Pelletier</h3>
           <p>Alyssa is a visual designer and creator of great user experiences. She is passionate about design solutions that are simple and intuitive. In her spare time, Alyssa enjoys backpacking, baking, and playing with fuzzy creatures.</p>
           <div class="social-links">
             <a href="http://www.linkedin.com/in/alyssapelletier" class="social-link linkedin" title="Alyssa Pelletier's LinkedIn" target="_blank">
-              <img src="/img/social-icons/linkedin-bw.png" alt="LinkedIn icon">
-              <img src="/img/social-icons/linkedin-c.png" alt="LinkedIn icon" class="color">
+              <img src="/img/social-icons/linkedin-bw.png" alt="LinkedIn icon" class="retina">
+              <img src="/img/social-icons/linkedin-c.png" alt="LinkedIn icon" class="color retina">
             </a> 
             <a href="https://twitter.com/MoveOnFrog" class="social-link twitter" title="Alyssa Pelletier's twitter" target="_blank">
-              <img src="/img/social-icons/twitter-bw.png" alt="twitter icon">
-              <img src="/img/social-icons/twitter-c.png" alt="twitter icon" class="color">
+              <img src="/img/social-icons/twitter-bw.png" alt="twitter icon" class="retina">
+              <img src="/img/social-icons/twitter-c.png" alt="twitter icon" class="color retina">
             </a> 
             <a href="http://dribbble.com/rouxete" class="social-link dribbble" title="Alyssa Pelletier's dribbble" target="_blank">
-              <img src="/img/social-icons/dribbble-bw.png" alt="dribbble icon">
-              <img src="/img/social-icons/dribbble-c.png" alt="dribbble icon" class="color">
+              <img src="/img/social-icons/dribbble-bw.png" alt="dribbble icon" class="retina">
+              <img src="/img/social-icons/dribbble-c.png" alt="dribbble icon" class="color retina">
             </a>
           </div>      
         </div>
