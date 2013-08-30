@@ -48,33 +48,84 @@ section.navigation a.active:after {
   background: #f09232;
 }
 
-/* line 46, ../scss/landing.scss */
-div.project {
+/* line 48, ../scss/landing.scss */
+section.projects div.toprow .project,
+section.projects div.siderows .project {
+  height: 300px;
+}
+/* line 51, ../scss/landing.scss */
+section.projects div.split .project {
+  height: 630px;
+}
+/* line 54, ../scss/landing.scss */
+section.projects div.p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: #555;
-  color: white;
+  padding: 10px;
 }
 
-/* line 52, ../scss/landing.scss */
+/* line 65, ../scss/landing.scss */
+div.project {
+  position: relative;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* line 72, ../scss/landing.scss */
 section.about h2 {
   text-align: center;
 }
-/* line 55, ../scss/landing.scss */
+/* line 75, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
+/* line 80, ../scss/landing.scss */
+section.about div.social-links > a {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+}
+/* line 87, ../scss/landing.scss */
+section.about div.social-links > a:hover img {
+  opacity: 0;
+}
+/* line 90, ../scss/landing.scss */
+section.about div.social-links > a:hover img.color {
+  opacity: 1;
+}
+/* line 95, ../scss/landing.scss */
+section.about div.social-links img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -o-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+}
+/* line 101, ../scss/landing.scss */
+section.about div.social-links img.color {
+  opacity: 0;
+}
 
-/* line 60, ../scss/landing.scss */
+/* line 107, ../scss/landing.scss */
 section.contact {
   padding: 200px 0;
 }
-/* line 62, ../scss/landing.scss */
+/* line 109, ../scss/landing.scss */
 section.contact p {
   font-size: 50px;
   line-height: 50px;
   font-weight: 200;
   text-align: center;
 }
-/* line 69, ../scss/landing.scss */
+/* line 116, ../scss/landing.scss */
 section.contact a {
   display: block;
   padding: 14px 10px;
@@ -89,7 +140,7 @@ section.contact a {
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 79, ../scss/landing.scss */
+/* line 126, ../scss/landing.scss */
 section.contact a:hover {
   background: #333944;
   color: #f1f1f1;

@@ -43,9 +43,29 @@ section.navigation {
   }
 }
 
+section.projects {
+  div.toprow .project,
+  div.siderows .project {
+    height: 300px;
+  }
+  div.split .project {
+    height: 630px;
+  }
+  div.p {
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: #555;
+    padding:10px;
+  }
+}
+
 div.project {
-  background: #555;
+  position: relative;
   color: white;
+  margin-bottom: 30px;
 }
 
 section.about {
@@ -54,6 +74,33 @@ section.about {
   }
   div.profile:first-child {
     text-align: right;
+  }
+
+  div.social-links {
+    > a {
+      position: relative;
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      margin-left: 5px;
+      &:hover {
+        img {
+          opacity: 0;
+        }
+        img.color {
+          opacity: 1;
+        }
+      }
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include transition(opacity .25s ease-in);
+    }
+    img.color {
+      opacity: 0;
+    }
   }
 }
 
