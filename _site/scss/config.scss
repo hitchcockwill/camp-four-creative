@@ -48,3 +48,18 @@ $body-font: "ratio", sans-serif;
     clear:both;
   }
 }
+
+
+// **********************************************************************
+// Global Classes
+// **********************************************************************
+
+span.icon {
+  display: inline-block;
+}
+
+.icon-leftarrow {
+  background: url("/img/icons/leftarrow.png");
+  width: 8px;
+  height: 12px;
+}

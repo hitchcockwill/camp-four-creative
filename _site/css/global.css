@@ -1,3 +1,15 @@
+/* line 57, ../scss/config.scss */
+span.icon {
+  display: inline-block;
+}
+
+/* line 61, ../scss/config.scss */
+.icon-leftarrow {
+  background: url("/img/icons/leftarrow.png");
+  width: 8px;
+  height: 12px;
+}
+
 /* line 7, ../scss/global.scss */
 body {
   font-family: "ratio", sans-serif;

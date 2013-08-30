@@ -52,7 +52,7 @@ section.navigation {
 }
 
 section.projects {
-  position: relative;
+  overflow: hidden;
   div.toprow .project,
   div.siderows .project {
     height: 300px;
@@ -71,17 +71,38 @@ section.projects {
     background: #555;
     padding:10px;
   }
+  > * {
+    position: relative;
+  }
 }
 
-// #project-wrapper {
-//   display: none;
-// }
+div.projects-container {
+  position: relative;
+  width: 200%;
+  @include clearfix;
+  @include transition(left .5s ease-in);
+  > * { 
+    float: left; 
+    width: 50%;
+  }
+  &.open {
+    left: -100%;
+  }
+}
 
 div.project {
   position: relative;
   color: white;
   margin-bottom: 30px;
 }
+
+
+div.portfolio-content {
+  a.close {
+
+  }
+}
+
 
 section.about {
   h2 {

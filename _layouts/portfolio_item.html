@@ -4,7 +4,13 @@ scripts: ["portfolio-item.js"]
 styles: ["portfolio-item.css", "syntax.css"]
 ---
 
-<div class="portfolio-content">
+<div class="portfolio-content row">
+
+  <a href="" class="close">
+    <span class="icon icon-leftarrow"></span>
+    View all projects
+  </a>
+
   {% if page.image %}
   <div class="image-wrap">
     {% if page.image %}

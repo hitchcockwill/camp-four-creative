@@ -1,3 +1,15 @@
+/* line 57, ../scss/config.scss */
+span.icon {
+  display: inline-block;
+}
+
+/* line 61, ../scss/config.scss */
+.icon-leftarrow {
+  background: url("/img/icons/leftarrow.png");
+  width: 8px;
+  height: 12px;
+}
+
 /* line 3, ../scss/landing.scss */
 #landing-hero {
   background-image: url("/img/camp-hero.jpg");
@@ -64,7 +76,7 @@ section.navigation div.left-nav {
 
 /* line 54, ../scss/landing.scss */
 section.projects {
-  position: relative;
+  overflow: hidden;
 }
 /* line 57, ../scss/landing.scss */
 section.projects div.toprow .project,
@@ -87,23 +99,52 @@ section.projects a.p {
   background: #555;
   padding: 10px;
 }
+/* line 74, ../scss/landing.scss */
+section.projects > * {
+  position: relative;
+}
 
-/* line 80, ../scss/landing.scss */
+/* line 79, ../scss/landing.scss */
+div.projects-container {
+  position: relative;
+  width: 200%;
+  -webkit-transition: left 0.5s ease-in;
+  -moz-transition: left 0.5s ease-in;
+  -o-transition: left 0.5s ease-in;
+  transition: left 0.5s ease-in;
+}
+/* line 45, ../scss/config.scss */
+div.projects-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 84, ../scss/landing.scss */
+div.projects-container > * {
+  float: left;
+  width: 50%;
+}
+/* line 88, ../scss/landing.scss */
+div.projects-container.open {
+  left: -100%;
+}
+
+/* line 93, ../scss/landing.scss */
 div.project {
   position: relative;
   color: white;
   margin-bottom: 30px;
 }
 
-/* line 87, ../scss/landing.scss */
+/* line 108, ../scss/landing.scss */
 section.about h2 {
   text-align: center;
 }
-/* line 90, ../scss/landing.scss */
+/* line 111, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 95, ../scss/landing.scss */
+/* line 116, ../scss/landing.scss */
 section.about div.social-links > a {
   position: relative;
   display: inline-block;
@@ -111,15 +152,15 @@ section.about div.social-links > a {
   width: 40px;
   margin-left: 5px;
 }
-/* line 102, ../scss/landing.scss */
+/* line 123, ../scss/landing.scss */
 section.about div.social-links > a:hover img {
   opacity: 0;
 }
-/* line 105, ../scss/landing.scss */
+/* line 126, ../scss/landing.scss */
 section.about div.social-links > a:hover img.color {
   opacity: 1;
 }
-/* line 110, ../scss/landing.scss */
+/* line 131, ../scss/landing.scss */
 section.about div.social-links img {
   position: absolute;
   top: 0;
@@ -129,23 +170,23 @@ section.about div.social-links img {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 116, ../scss/landing.scss */
+/* line 137, ../scss/landing.scss */
 section.about div.social-links img.color {
   opacity: 0;
 }
 
-/* line 122, ../scss/landing.scss */
+/* line 143, ../scss/landing.scss */
 section.contact {
   padding: 200px 0;
 }
-/* line 124, ../scss/landing.scss */
+/* line 145, ../scss/landing.scss */
 section.contact p {
   font-size: 50px;
   line-height: 50px;
   font-weight: 200;
   text-align: center;
 }
-/* line 131, ../scss/landing.scss */
+/* line 152, ../scss/landing.scss */
 section.contact a {
   display: block;
   padding: 14px 10px;
@@ -160,7 +201,7 @@ section.contact a {
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 141, ../scss/landing.scss */
+/* line 162, ../scss/landing.scss */
 section.contact a:hover {
   background: #333944;
   color: #f1f1f1;
