@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $navBar, $navLinks, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, initActiveNav, initPortfolio, initScrolling, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+  var $doc, $navBar, $navLinks, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, initActiveNav, initNavEvents, initPortfolio, initScrolling, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
 
   galleryHeight = null;
 
@@ -112,9 +112,25 @@
     return $navBar.removeClass("fixed");
   };
 
+  initNavEvents = function() {
+    $navLinks.on("click", function(e) {
+      e.preventDefault();
+      return $("html, body").animate({
+        scrollTop: $(this).attr("data-anchor") - 50 + "px"
+      }, 350);
+    });
+    return $navBar.find("a.home-anchor").on("click", function(e) {
+      e.preventDefault();
+      return $("html, body").animate({
+        scrollTop: 0
+      }, 350);
+    });
+  };
+
   $(document).ready(function() {
     initPortfolio();
     initScrolling();
+    initNavEvents();
     return $(window).scroll(function() {
       return didScroll = true;
     });

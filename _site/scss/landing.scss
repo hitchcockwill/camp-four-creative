@@ -1,7 +1,15 @@
 @import "config";
 
 
+// **********************************************************************
+// Base Landing page styles
+// **********************************************************************
 
+div.landing-page {
+  p {
+    font-weight: 300;
+  }
+}
 
 
 // **********************************************************************
@@ -54,6 +62,11 @@ section.navigation {
     right: 0;
     left: 0;
   }
+
+  &.fixed div.nav-wrapper a.home-anchor {
+    display: inline-block;
+    opacity: 1;
+  }
 }
 
 section.navigation div.nav-wrapper {
@@ -65,6 +78,7 @@ section.navigation div.nav-wrapper {
     display: inline-block;
     padding: 10px 20px;
     position: relative;
+    @include transition(color .25s ease-in .2s);
     &:after {
       content: ""; 
       position: absolute;
@@ -73,11 +87,21 @@ section.navigation div.nav-wrapper {
       right: 0;
       left: 0;
       background: transparent;
+      border-radius: 2px;
       @include transition(background .4s ease-in);
     }
     &.active:after {
       background: $orange;
     }
+    &:hover {
+      color: lighten($gray, 15%);
+    }
+  }
+
+  a.home-anchor {
+    opacity: 0;
+    display: none;
+    @include transition(opacity .25s ease-in);
   }
 
   div.right-nav {
@@ -212,14 +236,38 @@ section.about {
 
   h2 {
     text-align: center;
-    font-size: 110px;
+    font-size: 46px;
     font-weight: 600;
     text-transform: uppercase;
-    margin: 0 0 30px;
+    margin: 0 0 8px;
+    line-height: 1em;
     color: $blue-gray-dark;
   }
+  p.about-us {
+    color: $blue-gray-dark;
+    margin: 0 0 30px;
+    font-size: 23px;
+    line-height: 33px;
+    font-weight: normal;
+    text-align: center;
+    font-style: italic;
+  }
+
+  div.profile > p {
+    padding-right: 20px;
+  }
+
   div.profile:first-child {
     text-align: right;
+
+    > p {
+      padding: 0;
+      padding-left: 20px;      
+    }
+  }
+
+  img.profile {
+    margin-bottom: 12px;
   }
 
   h3 {

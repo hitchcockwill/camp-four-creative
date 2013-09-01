@@ -10,14 +10,19 @@ span.icon {
   height: 12px;
 }
 
-/* line 11, ../scss/landing.scss */
+/* line 9, ../scss/landing.scss */
+div.landing-page p {
+  font-weight: 300;
+}
+
+/* line 19, ../scss/landing.scss */
 #landing-hero {
   background-image: url("/img/camp-hero.jpg");
   background-size: cover;
   background-position: center;
   height: 750px;
 }
-/* line 16, ../scss/landing.scss */
+/* line 24, ../scss/landing.scss */
 #landing-hero img {
   margin: 0 auto;
   display: block;
@@ -25,22 +30,22 @@ span.icon {
   top: 370px;
 }
 
-/* line 24, ../scss/landing.scss */
+/* line 32, ../scss/landing.scss */
 section.content-section {
   padding: 100px 0;
 }
 
-/* line 28, ../scss/landing.scss */
+/* line 36, ../scss/landing.scss */
 section.dark {
-  background: #333944;
+  background: #3d4451;
   color: #999999;
 }
 
-/* line 46, ../scss/landing.scss */
+/* line 54, ../scss/landing.scss */
 section.navigation {
   border-top: 1px solid #d7d7d7;
 }
-/* line 49, ../scss/landing.scss */
+/* line 57, ../scss/landing.scss */
 section.navigation.fixed div.nav-wrapper {
   position: fixed;
   background: white;
@@ -49,8 +54,13 @@ section.navigation.fixed div.nav-wrapper {
   right: 0;
   left: 0;
 }
+/* line 66, ../scss/landing.scss */
+section.navigation.fixed div.nav-wrapper a.home-anchor {
+  display: inline-block;
+  opacity: 1;
+}
 
-/* line 59, ../scss/landing.scss */
+/* line 72, ../scss/landing.scss */
 section.navigation div.nav-wrapper {
   border-bottom: 1px solid #d7d7d7;
   -webkit-transition: top 0.15s eas-in;
@@ -64,13 +74,18 @@ section.navigation div.nav-wrapper > div:after {
   display: table;
   clear: both;
 }
-/* line 64, ../scss/landing.scss */
+/* line 77, ../scss/landing.scss */
 section.navigation div.nav-wrapper a {
   display: inline-block;
   padding: 10px 20px;
   position: relative;
+  -webkit-transition: color 0.25s ease-in;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition: color 0.25s ease-in 0.2s;
+  -o-transition: color 0.25s ease-in 0.2s;
+  transition: color 0.25s ease-in 0.2s;
 }
-/* line 68, ../scss/landing.scss */
+/* line 82, ../scss/landing.scss */
 section.navigation div.nav-wrapper a:after {
   content: "";
   position: absolute;
@@ -79,39 +94,53 @@ section.navigation div.nav-wrapper a:after {
   right: 0;
   left: 0;
   background: transparent;
+  border-radius: 2px;
   -webkit-transition: background 0.4s ease-in;
   -moz-transition: background 0.4s ease-in;
   -o-transition: background 0.4s ease-in;
   transition: background 0.4s ease-in;
 }
-/* line 78, ../scss/landing.scss */
+/* line 93, ../scss/landing.scss */
 section.navigation div.nav-wrapper a.active:after {
   background: #f09232;
 }
-/* line 83, ../scss/landing.scss */
+/* line 96, ../scss/landing.scss */
+section.navigation div.nav-wrapper a:hover {
+  color: #7b7b7b;
+}
+/* line 101, ../scss/landing.scss */
+section.navigation div.nav-wrapper a.home-anchor {
+  opacity: 0;
+  display: none;
+  -webkit-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -o-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+}
+/* line 107, ../scss/landing.scss */
 section.navigation div.nav-wrapper div.right-nav {
   float: right;
 }
-/* line 86, ../scss/landing.scss */
+/* line 110, ../scss/landing.scss */
 section.navigation div.nav-wrapper div.left-nav {
   float: left;
 }
 
-/* line 108, ../scss/landing.scss */
+/* line 132, ../scss/landing.scss */
 section.projects {
   overflow: hidden;
   padding: 0;
 }
-/* line 112, ../scss/landing.scss */
+/* line 136, ../scss/landing.scss */
 section.projects div.toprow .project,
 section.projects div.siderows .project {
   height: 300px;
 }
-/* line 115, ../scss/landing.scss */
+/* line 139, ../scss/landing.scss */
 section.projects div.split .project {
   height: 630px;
 }
-/* line 119, ../scss/landing.scss */
+/* line 143, ../scss/landing.scss */
 section.projects div.p,
 section.projects a.p {
   display: block;
@@ -123,12 +152,12 @@ section.projects a.p {
   background: #555;
   padding: 10px;
 }
-/* line 129, ../scss/landing.scss */
+/* line 153, ../scss/landing.scss */
 section.projects > * {
   position: relative;
 }
 
-/* line 134, ../scss/landing.scss */
+/* line 158, ../scss/landing.scss */
 div.projects-container {
   position: relative;
   width: 200%;
@@ -143,42 +172,42 @@ div.projects-container:after {
   display: table;
   clear: both;
 }
-/* line 139, ../scss/landing.scss */
+/* line 163, ../scss/landing.scss */
 div.projects-container > * {
   float: left;
   width: 50%;
 }
-/* line 143, ../scss/landing.scss */
+/* line 167, ../scss/landing.scss */
 div.projects-container.open {
   left: -100%;
 }
 
-/* line 148, ../scss/landing.scss */
+/* line 172, ../scss/landing.scss */
 div.project {
   position: relative;
   color: white;
   margin-bottom: 30px;
 }
 
-/* line 154, ../scss/landing.scss */
+/* line 178, ../scss/landing.scss */
 #projects-gallery {
   padding: 100px 0;
   overflow: hidden;
 }
 
-/* line 163, ../scss/landing.scss */
+/* line 187, ../scss/landing.scss */
 div.portfolio-content div.image-wrap {
   height: 400px;
   background: url("/img/projects/ansel-adams.jpg");
   background-size: cover;
   background-position: center;
 }
-/* line 169, ../scss/landing.scss */
+/* line 193, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close {
   display: block;
   padding: 14px 10px;
   background: #f1f1f1;
-  color: #333944;
+  color: #3d4451;
   border-radius: 2px;
   text-align: center;
   width: 180px;
@@ -189,45 +218,69 @@ div.portfolio-content div.image-wrap a.close {
   -o-transition: opacity 0.5s ease-in, background 0.25s ease-in;
   transition: opacity 0.5s ease-in, background 0.25s ease-in;
 }
-/* line 180, ../scss/landing.scss */
+/* line 204, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close:hover {
   background: #d7d7d7;
 }
-/* line 183, ../scss/landing.scss */
+/* line 207, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close span.icon {
   margin-right: 3px;
 }
 
-/* line 190, ../scss/landing.scss */
+/* line 214, ../scss/landing.scss */
 div.portfolio-content:hover div.image-wrap a.close {
   opacity: 1;
 }
 
-/* line 210, ../scss/landing.scss */
+/* line 234, ../scss/landing.scss */
 section.about {
   padding: 100px 0 150px;
 }
-/* line 213, ../scss/landing.scss */
+/* line 237, ../scss/landing.scss */
 section.about h2 {
   text-align: center;
-  font-size: 110px;
+  font-size: 46px;
   font-weight: 600;
   text-transform: uppercase;
-  margin: 0 0 30px;
+  margin: 0 0 8px;
+  line-height: 1em;
   color: #1a1d23;
 }
-/* line 221, ../scss/landing.scss */
+/* line 246, ../scss/landing.scss */
+section.about p.about-us {
+  color: #1a1d23;
+  margin: 0 0 30px;
+  font-size: 23px;
+  line-height: 33px;
+  font-weight: normal;
+  text-align: center;
+  font-style: italic;
+}
+/* line 256, ../scss/landing.scss */
+section.about div.profile > p {
+  padding-right: 20px;
+}
+/* line 260, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 225, ../scss/landing.scss */
+/* line 263, ../scss/landing.scss */
+section.about div.profile:first-child > p {
+  padding: 0;
+  padding-left: 20px;
+}
+/* line 269, ../scss/landing.scss */
+section.about img.profile {
+  margin-bottom: 12px;
+}
+/* line 273, ../scss/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 233, ../scss/landing.scss */
+/* line 281, ../scss/landing.scss */
 section.about div.social-links > a {
   position: relative;
   display: inline-block;
@@ -235,15 +288,15 @@ section.about div.social-links > a {
   width: 40px;
   margin-left: 5px;
 }
-/* line 240, ../scss/landing.scss */
+/* line 288, ../scss/landing.scss */
 section.about div.social-links > a:hover img {
   opacity: 0;
 }
-/* line 243, ../scss/landing.scss */
+/* line 291, ../scss/landing.scss */
 section.about div.social-links > a:hover img.color {
   opacity: 1;
 }
-/* line 248, ../scss/landing.scss */
+/* line 296, ../scss/landing.scss */
 section.about div.social-links img {
   position: absolute;
   top: 0;
@@ -253,28 +306,28 @@ section.about div.social-links img {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 254, ../scss/landing.scss */
+/* line 302, ../scss/landing.scss */
 section.about div.social-links img.color {
   opacity: 0;
 }
 
-/* line 277, ../scss/landing.scss */
+/* line 325, ../scss/landing.scss */
 section.contact {
   padding: 260px 0;
 }
-/* line 279, ../scss/landing.scss */
+/* line 327, ../scss/landing.scss */
 section.contact p {
   font-size: 50px;
   line-height: 50px;
   font-weight: 200;
   text-align: center;
 }
-/* line 286, ../scss/landing.scss */
+/* line 334, ../scss/landing.scss */
 section.contact a {
   display: block;
   padding: 14px 10px;
-  border: 2px solid #333944;
-  color: #333944;
+  border: 2px solid #3d4451;
+  color: #3d4451;
   border-radius: 2px;
   text-align: center;
   width: 180px;
@@ -284,8 +337,8 @@ section.contact a {
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 296, ../scss/landing.scss */
+/* line 344, ../scss/landing.scss */
 section.contact a:hover {
-  background: #333944;
+  background: #3d4451;
   color: #f1f1f1;
 }

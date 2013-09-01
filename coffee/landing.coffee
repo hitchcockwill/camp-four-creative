@@ -78,9 +78,21 @@ unFixNav = ->
   navFixed = false
   $navBar.removeClass("fixed")
 
+# Nav events
+
+initNavEvents = ->
+  $navLinks.on "click", (e) ->
+    e.preventDefault()
+    $("html, body").animate({scrollTop: $(this).attr("data-anchor")-50+"px"}, 350)
+
+  $navBar.find("a.home-anchor").on "click", (e) ->
+    e.preventDefault()
+    $("html, body").animate({scrollTop: 0}, 350)
+
 $(document).ready () ->
   initPortfolio()
   initScrolling()
+  initNavEvents()
 
   $(window).scroll ->
     didScroll = true
