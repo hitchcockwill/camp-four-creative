@@ -1,9 +1,9 @@
-/* line 57, ../scss/config.scss */
+/* line 58, ../scss/config.scss */
 span.icon {
   display: inline-block;
 }
 
-/* line 61, ../scss/config.scss */
+/* line 62, ../scss/config.scss */
 .icon-leftarrow {
   background: url("/img/icons/leftarrow.png");
   width: 8px;
@@ -14,4 +14,14 @@ span.icon {
 body {
   font-family: "ratio", sans-serif;
   color: #555555;
+}
+
+/* line 12, ../scss/global.scss */
+footer {
+  padding: 40px 0 20px;
+}
+/* line 14, ../scss/global.scss */
+footer div {
+  text-align: center;
+  font-size: 12px;
 }

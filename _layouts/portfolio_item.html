@@ -2,33 +2,31 @@
 className: portfolio-item
 scripts: ["portfolio-item.js"]
 styles: ["portfolio-item.css", "syntax.css"]
+image: /img/projects/ansel-adams.jpg
 ---
 
-<div class="portfolio-content row">
+<div class="portfolio-content">
 
-  <a href="" class="close">
-    <span class="icon icon-leftarrow"></span>
-    View all projects
-  </a>
-
-  {% if page.image %}
+  <!-- {% if page.image %} -->
   <div class="image-wrap">
-    {% if page.image %}
+    <!-- {% if page.image %} -->
       <span class="main-image" data-src="{{ page.image }}">
-    {% endif %}
-  </div>
-  {% endif %}  
-
-  <article>
-    <h1>{{page.title}}</h1>
-    <div class="meta">
-      <img src="/img/profilepic.jpg" width="25" alt="Will Hitchcock profile">
-      <p>
-        <span class="author">Will Hitchcock</span>
-        <span class="published">{{page.date | date_to_long_string}}</span>
-      </p>
+    <!-- {% endif %} -->
+    <div class="row">
+      <a href="" class="close">
+        <span class="icon icon-leftarrow"></span>
+        View all projects
+      </a>
     </div>
-    <div class="post-content">{{ content }}</div>
-    <a class="all-posts btn arrow-left" href="/blog/">Back to posts</a>
-  </article> 
+  </div>
+  <!-- {% endif %} -->
+
+  <div class="row">
+    <article class="large-8 large-centered small-10 small-centered columns">
+      <h2>{{page.title}}</h2>
+      <div class="post-content">{{ content }}</div>
+    </article>     
+  </div>
+
+
 </div>

@@ -1,9 +1,9 @@
-/* line 57, ../scss/config.scss */
+/* line 58, ../scss/config.scss */
 span.icon {
   display: inline-block;
 }
 
-/* line 61, ../scss/config.scss */
+/* line 62, ../scss/config.scss */
 .icon-leftarrow {
   background: url("/img/icons/leftarrow.png");
   width: 8px;
@@ -98,7 +98,7 @@ span.icon {
 #content.blog-post div.meta {
   margin: 0 0 30px;
 }
-/* line 45, ../scss/config.scss */
+/* line 46, ../scss/config.scss */
 #content.blog-post div.meta:after {
   content: "";
   display: table;

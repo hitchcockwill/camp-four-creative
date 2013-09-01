@@ -1,5 +1,13 @@
 @import "config";
 
+
+
+
+
+// **********************************************************************
+// Landing Hero
+// **********************************************************************
+
 #landing-hero {
   background-image: url("/img/camp-hero.jpg");
   background-size: cover;
@@ -14,7 +22,7 @@
 }
 
 section.content-section {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 section.dark {
@@ -22,23 +30,52 @@ section.dark {
   color: $gray-lighten;
 }
 
+
+
+
+
+
+
+
+
+
+// **********************************************************************
+// Navigation
+// **********************************************************************
+
 section.navigation {
-  border: 1px solid $light-gray;
-  border-left: none;
-  border-right: none;
+  border-top: 1px solid $light-gray;
+
+  &.fixed div.nav-wrapper {
+    position: fixed;
+    background: white;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+section.navigation div.nav-wrapper {
+  border-bottom: 1px solid $light-gray;
+  @include transition(top .15s eas-in);
+
   > div { @include clearfix; }
   a {
     display: inline-block;
     padding: 10px 20px;
-    font-weight: bold;
     position: relative;
-    &.active:after {
+    &:after {
       content: ""; 
       position: absolute;
       height: 6px;
       bottom: -3px;
       right: 0;
       left: 0;
+      background: transparent;
+      @include transition(background .4s ease-in);
+    }
+    &.active:after {
       background: $orange;
     }
   }
@@ -51,8 +88,26 @@ section.navigation {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// **********************************************************************
+// Projects
+// **********************************************************************
+
 section.projects {
   overflow: hidden;
+  padding: 0;
   div.toprow .project,
   div.siderows .project {
     height: 300px;
@@ -96,20 +151,81 @@ div.project {
   margin-bottom: 30px;
 }
 
+#projects-gallery {
+  padding: 100px 0;
+}
 
-div.portfolio-content {
+// **********************************************************************
+// Single project
+// **********************************************************************
+
+div.portfolio-content div.image-wrap {
+  height: 400px;
+  background: url("/img/projects/ansel-adams.jpg");
+  background-size: cover;
+  background-position: center;
+
   a.close {
+    display: block;
+    padding: 14px 10px;
+    background: $off-white;
+    color: $blue-gray;
+    border-radius: 2px;
+    text-align: center;
+    width: 180px;
+    margin: 30px 0 0;
+    opacity: 0;
+    @include transition(opacity .5s ease-in, background .25s ease-in);
+    &:hover {
+      background: darken($off-white, 10%);
+    }
+    span.icon {
+      margin-right: 3px;
+    }
+  }
+}
 
+div.portfolio-content:hover {
+  div.image-wrap a.close {
+    opacity: 1;
   }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+// **********************************************************************
+// About Me
+// **********************************************************************
+
 section.about {
+  padding: 100px 0 150px;
+
   h2 {
     text-align: center;
+    font-size: 110px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+    color: $blue-gray-dark;
   }
   div.profile:first-child {
     text-align: right;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: $teal-light;
   }
 
   div.social-links {
@@ -140,8 +256,25 @@ section.about {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+// **********************************************************************
+// Contact
+// **********************************************************************
+
+
 section.contact {
-  padding: 200px 0;
+  padding: 260px 0;
   p {
     font-size: 50px;
     line-height: 50px;
