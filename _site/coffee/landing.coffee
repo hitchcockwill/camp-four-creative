@@ -1,25 +1,31 @@
 
+galleryHeight = null
+
 initPortfolio = ->
   $gallery = $("#projects-gallery")
   $project = $("#project-wrapper")
 
   $gallery.find("a.p").on "click", (e) ->
     e.preventDefault()
-    setProjectContent($(this), $project)
+    setProjectContent($(this), $project, $gallery)
 
   $project.on "click", "a.close", (e) ->
     e.preventDefault()
-    slideOutProject($project)
+    slideOutProject($project, $gallery)
 
-setProjectContent = ($item, $project) ->
+setProjectContent = ($item, $project, $gallery) ->
   src = $item.attr("src")
   $project.load $item.attr("href"), () ->
-    slideInProject($project)
+    slideInProject($project, $gallery)
 
-slideInProject = ($project) ->
+slideInProject = ($project, $gallery) ->
   $project.parent().addClass("open")
+  galleryHeight = $gallery.height()
+  $gallery.delay(250).animate({height: "1px"}, 250)
 
-slideOutProject = ($project) ->
+slideOutProject = ($project, $gallery) ->
+  $gallery.animate {height: galleryHeight+"px"}, 500, ->
+    $gallery.css("height", "auto")
   $project.parent().removeClass("open")
 
 # Scrolling events
@@ -47,7 +53,6 @@ initScrolling = ->
 
 handleFixedBar = (scrollTop) ->
   position = $navBar.position().top - scrollTop
-  console.log position, navFixed
   if position <= 0 and navFixed is false then fixNav() 
   else if position > 0 then unFixNav()
 
@@ -62,7 +67,6 @@ handleActiveNav = (scrollTop) ->
     $navLinks.each ->
       $this = $(this)
       anchor = parseInt($this.attr("data-anchor"))
-      console.log anchor, scrollTop
       if anchor <= (scrollTop+100) then $this.addClass("active").siblings().removeClass("active")
   else $navLinks.removeClass("active")
 

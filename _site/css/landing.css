@@ -163,16 +163,17 @@ div.project {
 /* line 154, ../scss/landing.scss */
 #projects-gallery {
   padding: 100px 0;
+  overflow: hidden;
 }
 
-/* line 162, ../scss/landing.scss */
+/* line 163, ../scss/landing.scss */
 div.portfolio-content div.image-wrap {
   height: 400px;
   background: url("/img/projects/ansel-adams.jpg");
   background-size: cover;
   background-position: center;
 }
-/* line 168, ../scss/landing.scss */
+/* line 169, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close {
   display: block;
   padding: 14px 10px;
@@ -188,25 +189,25 @@ div.portfolio-content div.image-wrap a.close {
   -o-transition: opacity 0.5s ease-in, background 0.25s ease-in;
   transition: opacity 0.5s ease-in, background 0.25s ease-in;
 }
-/* line 179, ../scss/landing.scss */
+/* line 180, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close:hover {
   background: #d7d7d7;
 }
-/* line 182, ../scss/landing.scss */
+/* line 183, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close span.icon {
   margin-right: 3px;
 }
 
-/* line 189, ../scss/landing.scss */
+/* line 190, ../scss/landing.scss */
 div.portfolio-content:hover div.image-wrap a.close {
   opacity: 1;
 }
 
-/* line 209, ../scss/landing.scss */
+/* line 210, ../scss/landing.scss */
 section.about {
   padding: 100px 0 150px;
 }
-/* line 212, ../scss/landing.scss */
+/* line 213, ../scss/landing.scss */
 section.about h2 {
   text-align: center;
   font-size: 110px;
@@ -215,18 +216,18 @@ section.about h2 {
   margin: 0 0 30px;
   color: #1a1d23;
 }
-/* line 220, ../scss/landing.scss */
+/* line 221, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 224, ../scss/landing.scss */
+/* line 225, ../scss/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 232, ../scss/landing.scss */
+/* line 233, ../scss/landing.scss */
 section.about div.social-links > a {
   position: relative;
   display: inline-block;
@@ -234,15 +235,15 @@ section.about div.social-links > a {
   width: 40px;
   margin-left: 5px;
 }
-/* line 239, ../scss/landing.scss */
+/* line 240, ../scss/landing.scss */
 section.about div.social-links > a:hover img {
   opacity: 0;
 }
-/* line 242, ../scss/landing.scss */
+/* line 243, ../scss/landing.scss */
 section.about div.social-links > a:hover img.color {
   opacity: 1;
 }
-/* line 247, ../scss/landing.scss */
+/* line 248, ../scss/landing.scss */
 section.about div.social-links img {
   position: absolute;
   top: 0;
@@ -252,23 +253,23 @@ section.about div.social-links img {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 253, ../scss/landing.scss */
+/* line 254, ../scss/landing.scss */
 section.about div.social-links img.color {
   opacity: 0;
 }
 
-/* line 276, ../scss/landing.scss */
+/* line 277, ../scss/landing.scss */
 section.contact {
   padding: 260px 0;
 }
-/* line 278, ../scss/landing.scss */
+/* line 279, ../scss/landing.scss */
 section.contact p {
   font-size: 50px;
   line-height: 50px;
   font-weight: 200;
   text-align: center;
 }
-/* line 285, ../scss/landing.scss */
+/* line 286, ../scss/landing.scss */
 section.contact a {
   display: block;
   padding: 14px 10px;
@@ -283,7 +284,7 @@ section.contact a {
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 295, ../scss/landing.scss */
+/* line 296, ../scss/landing.scss */
 section.contact a:hover {
   background: #333944;
   color: #f1f1f1;

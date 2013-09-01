@@ -1,5 +1,7 @@
 (function() {
-  var $doc, $navBar, $navLinks, didScroll, fixNav, handleActiveNav, handleFixedBar, initActiveNav, initPortfolio, initScrolling, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+  var $doc, $navBar, $navLinks, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, initActiveNav, initPortfolio, initScrolling, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+
+  galleryHeight = null;
 
   initPortfolio = function() {
     var $gallery, $project;
@@ -7,27 +9,36 @@
     $project = $("#project-wrapper");
     $gallery.find("a.p").on("click", function(e) {
       e.preventDefault();
-      return setProjectContent($(this), $project);
+      return setProjectContent($(this), $project, $gallery);
     });
     return $project.on("click", "a.close", function(e) {
       e.preventDefault();
-      return slideOutProject($project);
+      return slideOutProject($project, $gallery);
     });
   };
 
-  setProjectContent = function($item, $project) {
+  setProjectContent = function($item, $project, $gallery) {
     var src;
     src = $item.attr("src");
     return $project.load($item.attr("href"), function() {
-      return slideInProject($project);
+      return slideInProject($project, $gallery);
     });
   };
 
-  slideInProject = function($project) {
-    return $project.parent().addClass("open");
+  slideInProject = function($project, $gallery) {
+    $project.parent().addClass("open");
+    galleryHeight = $gallery.height();
+    return $gallery.delay(250).animate({
+      height: "1px"
+    }, 250);
   };
 
-  slideOutProject = function($project) {
+  slideOutProject = function($project, $gallery) {
+    $gallery.animate({
+      height: galleryHeight + "px"
+    }, 500, function() {
+      return $gallery.css("height", "auto");
+    });
     return $project.parent().removeClass("open");
   };
 
@@ -60,7 +71,6 @@
   handleFixedBar = function(scrollTop) {
     var position;
     position = $navBar.position().top - scrollTop;
-    console.log(position, navFixed);
     if (position <= 0 && navFixed === false) {
       return fixNav();
     } else if (position > 0) {
@@ -83,7 +93,6 @@
         var $this, anchor;
         $this = $(this);
         anchor = parseInt($this.attr("data-anchor"));
-        console.log(anchor, scrollTop);
         if (anchor <= (scrollTop + 100)) {
           return $this.addClass("active").siblings().removeClass("active");
         }
