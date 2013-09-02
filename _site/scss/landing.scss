@@ -6,10 +6,27 @@
 // **********************************************************************
 
 div.landing-page {
+  background: #393939;
   p {
     font-weight: 300;
   }
 }
+
+section.content-section {
+  padding: 100px 0;
+}
+
+section {
+  background: white;
+  position: relative;
+  z-index: 10;
+}
+
+section.dark {
+  background: $blue-gray;
+  color: $gray-lighten;
+}
+
 
 
 // **********************************************************************
@@ -21,25 +38,70 @@ div.landing-page {
   background-size: cover;
   background-position: center;
   height: 750px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+}
+
+#logo-wrap {
+  position: relative;
   img {
-    margin: 0 auto;
+    left: 50%;
+    margin-left: -200px;
     display: block;
-    position: relative;
-    top: 370px;
+    position: absolute;
+    top: -370px;
+    z-index: 5;
   }
 }
 
-section.content-section {
-  padding: 100px 0;
+section.top-text {
+  margin-top: 750px;
+  font-size: 23px;
+  line-height: 43px;
+  background: rgba(white, .92);
+  padding-bottom: 110px;
+
+  h2 {
+    font-size: 40px;
+    line-height: 1em;
+  }
+  p {
+    font-size: 23px;
+  }
 }
 
-section.dark {
-  background: $blue-gray;
-  color: $gray-lighten;
+section.services {
+  text-align: center;
+  padding-bottom: 0;
+  span.icon {
+    font-size: 80px;
+    color: $teal;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    font-weight: normal;
+    font-size: 26px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.6em;
+  }
+
+  div.applications {
+    span.icon { 
+      font-size: 120px;
+      margin-top: -40px;
+      position: relative;
+      top: 20px;
+    }
+  }
 }
-
-
-
 
 
 
@@ -53,11 +115,11 @@ section.dark {
 
 section.navigation {
   border-top: 1px solid $light-gray;
+  z-index: 1000;
 
   &.fixed div.nav-wrapper {
     position: fixed;
     background: white;
-    z-index: 1000;
     top: 0;
     right: 0;
     left: 0;
@@ -232,7 +294,7 @@ div.portfolio-content:hover {
 // **********************************************************************
 
 section.about {
-  padding: 100px 0 150px;
+  padding: 150px 0;
 
   h2 {
     text-align: center;

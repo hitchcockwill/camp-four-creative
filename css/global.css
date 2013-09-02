@@ -19,8 +19,11 @@ body {
 /* line 12, ../scss/global.scss */
 footer {
   padding: 40px 0 20px;
+  background: white;
+  position: relative;
+  z-index: 10;
 }
-/* line 14, ../scss/global.scss */
+/* line 17, ../scss/global.scss */
 footer div {
   text-align: center;
   font-size: 12px;

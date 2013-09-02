@@ -11,6 +11,9 @@ body {
 
 footer {
   padding: 40px 0 20px;
+  background: white;
+  position: relative;
+  z-index: 10;
   div {
     text-align: center;
     font-size: 12px;

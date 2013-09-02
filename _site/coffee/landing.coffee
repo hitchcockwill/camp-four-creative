@@ -52,7 +52,7 @@ initScrolling = ->
   , 50
 
 handleFixedBar = (scrollTop) ->
-  position = $navBar.position().top - scrollTop
+  position = $navBar.offset().top - scrollTop
   if position <= 0 and navFixed is false then fixNav() 
   else if position > 0 then unFixNav()
 

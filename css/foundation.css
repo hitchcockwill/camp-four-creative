@@ -90,6 +90,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 16px;
   max-width: 62.5em;
   *zoom: 1; }
   .row:before, .row:after {

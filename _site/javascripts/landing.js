@@ -70,7 +70,7 @@
 
   handleFixedBar = function(scrollTop) {
     var position;
-    position = $navBar.position().top - scrollTop;
+    position = $navBar.offset().top - scrollTop;
     if (position <= 0 && navFixed === false) {
       return fixNav();
     } else if (position > 0) {
