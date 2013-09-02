@@ -30,14 +30,17 @@
     galleryHeight = $gallery.height();
     return $gallery.delay(250).animate({
       height: "1px"
-    }, 250);
+    }, 250, function() {
+      return initActiveNav();
+    });
   };
 
   slideOutProject = function($project, $gallery) {
     $gallery.animate({
       height: galleryHeight + "px"
     }, 500, function() {
-      return $gallery.css("height", "auto");
+      $gallery.css("height", "auto");
+      return initActiveNav();
     });
     return $project.parent().removeClass("open");
   };
@@ -82,10 +85,13 @@
 
   initActiveNav = function() {
     return $navLinks.each(function() {
-      var $this, className;
+      var $section, $this, className;
       $this = $(this);
-      className = $this.attr("class");
-      return $this.attr("data-anchor", $("section." + className).position().top);
+      className = $this.attr("title");
+      $section = $("section." + className);
+      if ($section.length) {
+        return $this.attr("data-anchor", $section.offset().top);
+      }
     });
   };
 
@@ -118,7 +124,7 @@
     $navLinks.on("click", function(e) {
       e.preventDefault();
       return $("html, body").animate({
-        scrollTop: $(this).attr("data-anchor") - 50 + "px"
+        scrollTop: $(this).attr("data-anchor") - 40 + "px"
       }, 350);
     });
     return $navBar.find("a.home-anchor").on("click", function(e) {

@@ -15,6 +15,7 @@
   };
 
   $(document).ready(function() {
+    $("body").attr("data-device-type", categorizr());
     if (window.devicePixelRatio >= 2) {
       return setRetinaImage();
     }

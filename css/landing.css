@@ -116,7 +116,11 @@ section.services p {
   font-size: 18px;
   line-height: 1.6em;
 }
-/* line 107, ../scss/landing.scss */
+/* line 106, ../scss/landing.scss */
+section.services div.row > div {
+  margin-bottom: 20px;
+}
+/* line 111, ../scss/landing.scss */
 section.services div.applications span.icon {
   font-size: 120px;
   margin-top: -40px;
@@ -124,12 +128,12 @@ section.services div.applications span.icon {
   top: 20px;
 }
 
-/* line 126, ../scss/landing.scss */
+/* line 130, ../scss/landing.scss */
 section.navigation {
   border-top: 1px solid #d7d7d7;
   z-index: 1000;
 }
-/* line 130, ../scss/landing.scss */
+/* line 134, ../scss/landing.scss */
 section.navigation.fixed div.nav-wrapper {
   position: fixed;
   background: white;
@@ -137,13 +141,13 @@ section.navigation.fixed div.nav-wrapper {
   right: 0;
   left: 0;
 }
-/* line 138, ../scss/landing.scss */
+/* line 142, ../scss/landing.scss */
 section.navigation.fixed div.nav-wrapper a.home-anchor {
   display: inline-block;
   opacity: 1;
 }
 
-/* line 144, ../scss/landing.scss */
+/* line 148, ../scss/landing.scss */
 section.navigation div.nav-wrapper {
   border-bottom: 1px solid #d7d7d7;
   -webkit-transition: top 0.15s eas-in;
@@ -157,7 +161,7 @@ section.navigation div.nav-wrapper > div:after {
   display: table;
   clear: both;
 }
-/* line 149, ../scss/landing.scss */
+/* line 153, ../scss/landing.scss */
 section.navigation div.nav-wrapper a {
   display: inline-block;
   padding: 10px 20px;
@@ -168,7 +172,7 @@ section.navigation div.nav-wrapper a {
   -o-transition: color 0.25s ease-in 0.2s;
   transition: color 0.25s ease-in 0.2s;
 }
-/* line 154, ../scss/landing.scss */
+/* line 158, ../scss/landing.scss */
 section.navigation div.nav-wrapper a:after {
   content: "";
   position: absolute;
@@ -183,15 +187,15 @@ section.navigation div.nav-wrapper a:after {
   -o-transition: background 0.4s ease-in;
   transition: background 0.4s ease-in;
 }
-/* line 165, ../scss/landing.scss */
+/* line 169, ../scss/landing.scss */
 section.navigation div.nav-wrapper a.active:after {
   background: #f09232;
 }
-/* line 168, ../scss/landing.scss */
+/* line 172, ../scss/landing.scss */
 section.navigation div.nav-wrapper a:hover {
   color: #7b7b7b;
 }
-/* line 173, ../scss/landing.scss */
+/* line 177, ../scss/landing.scss */
 section.navigation div.nav-wrapper a.home-anchor {
   opacity: 0;
   display: none;
@@ -200,30 +204,30 @@ section.navigation div.nav-wrapper a.home-anchor {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 179, ../scss/landing.scss */
+/* line 183, ../scss/landing.scss */
 section.navigation div.nav-wrapper div.right-nav {
   float: right;
 }
-/* line 182, ../scss/landing.scss */
+/* line 186, ../scss/landing.scss */
 section.navigation div.nav-wrapper div.left-nav {
   float: left;
 }
 
-/* line 204, ../scss/landing.scss */
+/* line 208, ../scss/landing.scss */
 section.projects {
   overflow: hidden;
   padding: 0;
 }
-/* line 208, ../scss/landing.scss */
+/* line 212, ../scss/landing.scss */
 section.projects div.toprow .project,
 section.projects div.siderows .project {
   height: 300px;
 }
-/* line 211, ../scss/landing.scss */
+/* line 215, ../scss/landing.scss */
 section.projects div.split .project {
   height: 630px;
 }
-/* line 215, ../scss/landing.scss */
+/* line 219, ../scss/landing.scss */
 section.projects div.p,
 section.projects a.p {
   display: block;
@@ -235,12 +239,12 @@ section.projects a.p {
   background: #555;
   padding: 10px;
 }
-/* line 225, ../scss/landing.scss */
+/* line 229, ../scss/landing.scss */
 section.projects > * {
   position: relative;
 }
 
-/* line 230, ../scss/landing.scss */
+/* line 234, ../scss/landing.scss */
 div.projects-container {
   position: relative;
   width: 200%;
@@ -255,62 +259,53 @@ div.projects-container:after {
   display: table;
   clear: both;
 }
-/* line 235, ../scss/landing.scss */
+/* line 239, ../scss/landing.scss */
 div.projects-container > * {
   float: left;
   width: 50%;
 }
-/* line 239, ../scss/landing.scss */
+/* line 243, ../scss/landing.scss */
 div.projects-container.open {
   left: -100%;
 }
 
-/* line 244, ../scss/landing.scss */
+/* line 248, ../scss/landing.scss */
 div.project {
   position: relative;
   color: white;
   margin-bottom: 30px;
 }
 
-/* line 250, ../scss/landing.scss */
+/* line 254, ../scss/landing.scss */
 #projects-gallery {
-  padding: 100px 0;
+  padding: 80px 0 100px;
   overflow: hidden;
 }
 
-/* line 259, ../scss/landing.scss */
-div.portfolio-content div.image-wrap {
-  position: relative;
-}
-/* line 265, ../scss/landing.scss */
-div.portfolio-content div.image-wrap a.close {
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  display: block;
-  padding: 14px 10px;
+/* line 263, ../scss/landing.scss */
+div.portfolio-content a.close {
+  display: inline-block;
+  padding: 14px 16px;
   background: #f1f1f1;
   color: #3d4451;
   border-radius: 2px;
   text-align: center;
-  width: 180px;
-  margin: 30px 0 0;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s ease-in, background 0.25s ease-in;
-  -moz-transition: opacity 0.5s ease-in, background 0.25s ease-in;
-  -o-transition: opacity 0.5s ease-in, background 0.25s ease-in;
-  transition: opacity 0.5s ease-in, background 0.25s ease-in;
+  margin: 0 0 10px 0.9375em;
+  -webkit-transition: background 0.25s ease-in;
+  -moz-transition: background 0.25s ease-in;
+  -o-transition: background 0.25s ease-in;
+  transition: background 0.25s ease-in;
 }
-/* line 279, ../scss/landing.scss */
-div.portfolio-content div.image-wrap a.close:hover {
+/* line 272, ../scss/landing.scss */
+div.portfolio-content a.close:hover {
   background: #d7d7d7;
 }
-/* line 282, ../scss/landing.scss */
-div.portfolio-content div.image-wrap a.close span.icon {
+/* line 275, ../scss/landing.scss */
+div.portfolio-content a.close span.icon {
   margin-right: 3px;
 }
 
-/* line 288, ../scss/landing.scss */
+/* line 280, ../scss/landing.scss */
 div.browser-chrome {
   border-radius: 3px 3px 0 0;
   background: #d7d7d7;
@@ -322,7 +317,7 @@ div.browser-chrome:after {
   display: table;
   clear: both;
 }
-/* line 293, ../scss/landing.scss */
+/* line 285, ../scss/landing.scss */
 div.browser-chrome > span {
   float: left;
   height: 10px;
@@ -332,27 +327,27 @@ div.browser-chrome > span {
   margin-right: 5px;
 }
 
-/* line 303, ../scss/landing.scss */
+/* line 295, ../scss/landing.scss */
 div.browser-chrome-wrap {
   border: 4px solid #d7d7d7;
   border-top: none;
 }
 
-/* line 309, ../scss/landing.scss */
+/* line 301, ../scss/landing.scss */
 div.portfolio-content:hover div.image-wrap a.close {
   opacity: 1;
 }
 
-/* line 314, ../scss/landing.scss */
+/* line 306, ../scss/landing.scss */
 div#project-wrapper {
-  padding: 100px 0;
+  padding: 80px 0 100px;
 }
 
-/* line 333, ../scss/landing.scss */
+/* line 325, ../scss/landing.scss */
 section.about {
   padding: 150px 0;
 }
-/* line 336, ../scss/landing.scss */
+/* line 328, ../scss/landing.scss */
 section.about h2 {
   text-align: center;
   font-size: 46px;
@@ -362,7 +357,7 @@ section.about h2 {
   line-height: 1em;
   color: #1a1d23;
 }
-/* line 345, ../scss/landing.scss */
+/* line 337, ../scss/landing.scss */
 section.about p.about-us {
   color: #1a1d23;
   margin: 0 0 30px;
@@ -372,32 +367,36 @@ section.about p.about-us {
   text-align: center;
   font-style: italic;
 }
-/* line 355, ../scss/landing.scss */
+/* line 347, ../scss/landing.scss */
 section.about div.profile > p {
   padding-right: 20px;
   color: #f1f1f1;
 }
-/* line 360, ../scss/landing.scss */
+/* line 352, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 363, ../scss/landing.scss */
+/* line 355, ../scss/landing.scss */
 section.about div.profile:first-child > p {
   padding: 0;
   padding-left: 20px;
 }
-/* line 369, ../scss/landing.scss */
+/* line 361, ../scss/landing.scss */
 section.about img.profile {
   margin-bottom: 12px;
 }
-/* line 373, ../scss/landing.scss */
+/* line 365, ../scss/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 381, ../scss/landing.scss */
+/* line 372, ../scss/landing.scss */
+section.about div.social-links {
+  margin-bottom: 30px;
+}
+/* line 374, ../scss/landing.scss */
 section.about div.social-links > a {
   position: relative;
   display: inline-block;
@@ -405,15 +404,15 @@ section.about div.social-links > a {
   width: 40px;
   margin-left: 5px;
 }
-/* line 388, ../scss/landing.scss */
+/* line 381, ../scss/landing.scss */
 section.about div.social-links > a:hover img {
   opacity: 0;
 }
-/* line 391, ../scss/landing.scss */
+/* line 384, ../scss/landing.scss */
 section.about div.social-links > a:hover img.color {
   opacity: 1;
 }
-/* line 396, ../scss/landing.scss */
+/* line 389, ../scss/landing.scss */
 section.about div.social-links img {
   position: absolute;
   top: 0;
@@ -423,23 +422,23 @@ section.about div.social-links img {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 402, ../scss/landing.scss */
+/* line 395, ../scss/landing.scss */
 section.about div.social-links img.color {
   opacity: 0;
 }
 
-/* line 425, ../scss/landing.scss */
+/* line 418, ../scss/landing.scss */
 section.contact {
   padding: 260px 0;
 }
-/* line 427, ../scss/landing.scss */
+/* line 420, ../scss/landing.scss */
 section.contact p {
   font-size: 50px;
   line-height: 50px;
   font-weight: 200;
   text-align: center;
 }
-/* line 434, ../scss/landing.scss */
+/* line 427, ../scss/landing.scss */
 section.contact a {
   display: block;
   padding: 14px 10px;
@@ -454,8 +453,58 @@ section.contact a {
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 444, ../scss/landing.scss */
+/* line 437, ../scss/landing.scss */
 section.contact a:hover {
   background: #3d4451;
   color: #f1f1f1;
+}
+
+/* line 461, ../scss/landing.scss */
+body[data-device-type="tablet"] #landing-hero,
+body[data-device-type="tv"] #landing-hero,
+body[data-device-type="mobile"] #landing-hero {
+  position: relative;
+}
+/* line 465, ../scss/landing.scss */
+body[data-device-type="tablet"] section.top-text,
+body[data-device-type="tv"] section.top-text,
+body[data-device-type="mobile"] section.top-text {
+  margin-top: 0;
+  background: white;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 474, ../scss/landing.scss */
+  #landing-hero {
+    height: 600px;
+  }
+
+  /* line 478, ../scss/landing.scss */
+  #logo-wrap img {
+    width: 200px;
+    margin-left: -100px;
+    top: -250px;
+  }
+
+  /* line 484, ../scss/landing.scss */
+  section.top-text {
+    margin-top: 600px;
+  }
+
+  /* line 488, ../scss/landing.scss */
+  section.navigation div.nav-wrapper a {
+    padding: 5px 8px;
+  }
+
+  /* line 497, ../scss/landing.scss */
+  section.about div.profile,
+  section.about div.profile:first-child,
+  section.about div.profile > p,
+  section.about div.profile:first-child > p {
+    text-align: center;
+  }
+  /* line 500, ../scss/landing.scss */
+  section.about div.profile img {
+    width: 180px;
+  }
 }

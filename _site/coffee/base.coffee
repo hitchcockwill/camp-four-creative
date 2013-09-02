@@ -11,6 +11,9 @@ setRetinaImage = ->
 
 $(document).ready () ->
 
+  # set devive type
+  $("body").attr("data-device-type", categorizr())
+
   if window.devicePixelRatio >= 2
     setRetinaImage()
 

@@ -103,6 +103,10 @@ section.services {
     line-height: 1.6em;
   }
 
+  div.row > div {
+    margin-bottom: 20px;
+  }
+
   div.applications {
     span.icon { 
       font-size: 120px;
@@ -248,7 +252,7 @@ div.project {
 }
 
 #projects-gallery {
-  padding: 100px 0;
+  padding: 80px 0 100px;
   overflow: hidden;
 }
 
@@ -256,32 +260,20 @@ div.project {
 // Single project
 // **********************************************************************
 
-div.portfolio-content div.image-wrap {
-  // height: 400px;
-  // background: url("/img/projects/ansel-adams.jpg");
-  // background-size: cover;
-  // background-position: center;
-  position: relative;
-  a.close {
-    position: absolute;
-    top: 10px;
-    left: 12px;
-    display: block;
-    padding: 14px 10px;
-    background: $off-white;
-    color: $blue-gray;
-    border-radius: 2px;
-    text-align: center;
-    width: 180px;
-    margin: 30px 0 0;
-    opacity: 0;
-    @include transition(opacity .5s ease-in, background .25s ease-in);
-    &:hover {
-      background: darken($off-white, 10%);
-    }
-    span.icon {
-      margin-right: 3px;
-    }
+div.portfolio-content a.close {
+  display: inline-block;
+  padding: 14px 16px;
+  background: $off-white;
+  color: $blue-gray;
+  border-radius: 2px;
+  text-align: center;
+  margin: 0 0 10px 0.9375em;
+  @include transition(background .25s ease-in);
+  &:hover {
+    background: darken($off-white, 10%);
+  }
+  span.icon {
+    margin-right: 3px;
   }
 }
 
@@ -312,7 +304,7 @@ div.portfolio-content:hover {
 }
 
 div#project-wrapper {
-  padding: 100px 0;
+  padding: 80px 0 100px;
 }
 
 
@@ -378,6 +370,7 @@ section.about {
   }
 
   div.social-links {
+    margin-bottom: 30px;
     > a {
       position: relative;
       display: inline-block;
@@ -447,3 +440,69 @@ section.contact {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+// **********************************************************************
+// Mobile / tablet styles
+// **********************************************************************
+
+body[data-device-type="tablet"],
+body[data-device-type="tv"],
+body[data-device-type="mobile"] {
+  #landing-hero {
+    position: relative;
+  }
+
+  section.top-text {
+    margin-top: 0;
+    background: white;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  #landing-hero {
+    height: 600px;
+  }
+
+  #logo-wrap img {
+    width: 200px;
+    margin-left: -100px;
+    top: -250px;
+  }
+
+  section.top-text {
+    margin-top: 600px;
+  }
+
+  section.navigation div.nav-wrapper a {
+    padding: 5px 8px;
+  }
+
+
+  section.about {
+    div.profile,
+    div.profile:first-child,
+    div.profile > p,
+    div.profile:first-child > p {
+      text-align: center;
+    }
+    div.profile img {
+      width: 180px;
+    }
+  }
+
+
+}
+
+

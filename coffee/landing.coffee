@@ -21,11 +21,13 @@ setProjectContent = ($item, $project, $gallery) ->
 slideInProject = ($project, $gallery) ->
   $project.parent().addClass("open")
   galleryHeight = $gallery.height()
-  $gallery.delay(250).animate({height: "1px"}, 250)
+  $gallery.delay(250).animate {height: "1px"}, 250, ->
+    initActiveNav()
 
 slideOutProject = ($project, $gallery) ->
   $gallery.animate {height: galleryHeight+"px"}, 500, ->
     $gallery.css("height", "auto")
+    initActiveNav()
   $project.parent().removeClass("open")
 
 # Scrolling events
@@ -60,8 +62,10 @@ handleFixedBar = (scrollTop) ->
 initActiveNav = ->
   $navLinks.each ->
     $this = $(this)
-    className = $this.attr("class")
-    $this.attr("data-anchor", $("section.#{className}").position().top)
+    className = $this.attr("title")
+    $section = $("section.#{className}")
+    if $section.length
+      $this.attr("data-anchor", $section.offset().top)
 
 handleActiveNav = (scrollTop) ->
   if navFixed
@@ -84,7 +88,7 @@ unFixNav = ->
 initNavEvents = ->
   $navLinks.on "click", (e) ->
     e.preventDefault()
-    $("html, body").animate({scrollTop: $(this).attr("data-anchor")-50+"px"}, 350)
+    $("html, body").animate({scrollTop: $(this).attr("data-anchor")-40+"px"}, 350)
 
   $navBar.find("a.home-anchor").on "click", (e) ->
     e.preventDefault()
