@@ -55,16 +55,17 @@ section.dark {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/img/camp-hero.jpg") #3d4451;
+  background-color: #3d4451;
+  background-image: url("/img/camp-hero.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* line 57, ../scss/landing.scss */
+/* line 58, ../scss/landing.scss */
 #logo-wrap {
   position: relative;
 }
-/* line 59, ../scss/landing.scss */
+/* line 60, ../scss/landing.scss */
 #logo-wrap img {
   left: 50%;
   margin-left: -200px;
@@ -74,7 +75,7 @@ section.dark {
   z-index: 5;
 }
 
-/* line 69, ../scss/landing.scss */
+/* line 70, ../scss/landing.scss */
 section.top-text {
   margin-top: 750px;
   font-size: 23px;
@@ -82,40 +83,40 @@ section.top-text {
   background: rgba(255, 255, 255, 0.92);
   padding-bottom: 110px;
 }
-/* line 76, ../scss/landing.scss */
+/* line 77, ../scss/landing.scss */
 section.top-text h2 {
   font-size: 28px;
   margin: 0 0 16px;
   line-height: 1.2em;
 }
-/* line 81, ../scss/landing.scss */
+/* line 82, ../scss/landing.scss */
 section.top-text p {
   font-size: 26px;
 }
 
-/* line 86, ../scss/landing.scss */
+/* line 87, ../scss/landing.scss */
 section.services {
   text-align: center;
   padding-bottom: 0;
 }
-/* line 89, ../scss/landing.scss */
+/* line 90, ../scss/landing.scss */
 section.services span.icon {
   font-size: 80px;
   color: #71c8b9;
   margin-bottom: 16px;
 }
-/* line 95, ../scss/landing.scss */
+/* line 96, ../scss/landing.scss */
 section.services h3 {
   margin: 0 0 10px;
   font-weight: normal;
   font-size: 26px;
 }
-/* line 100, ../scss/landing.scss */
+/* line 101, ../scss/landing.scss */
 section.services p {
   font-size: 18px;
   line-height: 1.6em;
 }
-/* line 106, ../scss/landing.scss */
+/* line 107, ../scss/landing.scss */
 section.services div.applications span.icon {
   font-size: 120px;
   margin-top: -40px;
@@ -123,12 +124,12 @@ section.services div.applications span.icon {
   top: 20px;
 }
 
-/* line 125, ../scss/landing.scss */
+/* line 126, ../scss/landing.scss */
 section.navigation {
   border-top: 1px solid #d7d7d7;
   z-index: 1000;
 }
-/* line 129, ../scss/landing.scss */
+/* line 130, ../scss/landing.scss */
 section.navigation.fixed div.nav-wrapper {
   position: fixed;
   background: white;
@@ -136,13 +137,13 @@ section.navigation.fixed div.nav-wrapper {
   right: 0;
   left: 0;
 }
-/* line 137, ../scss/landing.scss */
+/* line 138, ../scss/landing.scss */
 section.navigation.fixed div.nav-wrapper a.home-anchor {
   display: inline-block;
   opacity: 1;
 }
 
-/* line 143, ../scss/landing.scss */
+/* line 144, ../scss/landing.scss */
 section.navigation div.nav-wrapper {
   border-bottom: 1px solid #d7d7d7;
   -webkit-transition: top 0.15s eas-in;
@@ -156,7 +157,7 @@ section.navigation div.nav-wrapper > div:after {
   display: table;
   clear: both;
 }
-/* line 148, ../scss/landing.scss */
+/* line 149, ../scss/landing.scss */
 section.navigation div.nav-wrapper a {
   display: inline-block;
   padding: 10px 20px;
@@ -167,7 +168,7 @@ section.navigation div.nav-wrapper a {
   -o-transition: color 0.25s ease-in 0.2s;
   transition: color 0.25s ease-in 0.2s;
 }
-/* line 153, ../scss/landing.scss */
+/* line 154, ../scss/landing.scss */
 section.navigation div.nav-wrapper a:after {
   content: "";
   position: absolute;
@@ -182,15 +183,15 @@ section.navigation div.nav-wrapper a:after {
   -o-transition: background 0.4s ease-in;
   transition: background 0.4s ease-in;
 }
-/* line 164, ../scss/landing.scss */
+/* line 165, ../scss/landing.scss */
 section.navigation div.nav-wrapper a.active:after {
   background: #f09232;
 }
-/* line 167, ../scss/landing.scss */
+/* line 168, ../scss/landing.scss */
 section.navigation div.nav-wrapper a:hover {
   color: #7b7b7b;
 }
-/* line 172, ../scss/landing.scss */
+/* line 173, ../scss/landing.scss */
 section.navigation div.nav-wrapper a.home-anchor {
   opacity: 0;
   display: none;
@@ -199,30 +200,30 @@ section.navigation div.nav-wrapper a.home-anchor {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 178, ../scss/landing.scss */
+/* line 179, ../scss/landing.scss */
 section.navigation div.nav-wrapper div.right-nav {
   float: right;
 }
-/* line 181, ../scss/landing.scss */
+/* line 182, ../scss/landing.scss */
 section.navigation div.nav-wrapper div.left-nav {
   float: left;
 }
 
-/* line 203, ../scss/landing.scss */
+/* line 204, ../scss/landing.scss */
 section.projects {
   overflow: hidden;
   padding: 0;
 }
-/* line 207, ../scss/landing.scss */
+/* line 208, ../scss/landing.scss */
 section.projects div.toprow .project,
 section.projects div.siderows .project {
   height: 300px;
 }
-/* line 210, ../scss/landing.scss */
+/* line 211, ../scss/landing.scss */
 section.projects div.split .project {
   height: 630px;
 }
-/* line 214, ../scss/landing.scss */
+/* line 215, ../scss/landing.scss */
 section.projects div.p,
 section.projects a.p {
   display: block;
@@ -234,12 +235,12 @@ section.projects a.p {
   background: #555;
   padding: 10px;
 }
-/* line 224, ../scss/landing.scss */
+/* line 225, ../scss/landing.scss */
 section.projects > * {
   position: relative;
 }
 
-/* line 229, ../scss/landing.scss */
+/* line 230, ../scss/landing.scss */
 div.projects-container {
   position: relative;
   width: 200%;
@@ -254,38 +255,38 @@ div.projects-container:after {
   display: table;
   clear: both;
 }
-/* line 234, ../scss/landing.scss */
+/* line 235, ../scss/landing.scss */
 div.projects-container > * {
   float: left;
   width: 50%;
 }
-/* line 238, ../scss/landing.scss */
+/* line 239, ../scss/landing.scss */
 div.projects-container.open {
   left: -100%;
 }
 
-/* line 243, ../scss/landing.scss */
+/* line 244, ../scss/landing.scss */
 div.project {
   position: relative;
   color: white;
   margin-bottom: 30px;
 }
 
-/* line 249, ../scss/landing.scss */
+/* line 250, ../scss/landing.scss */
 #projects-gallery {
   padding: 100px 0;
   overflow: hidden;
 }
 
-/* line 258, ../scss/landing.scss */
+/* line 259, ../scss/landing.scss */
 div.portfolio-content div.image-wrap {
-  height: 400px;
-  background: url("/img/projects/ansel-adams.jpg");
-  background-size: cover;
-  background-position: center;
+  position: relative;
 }
-/* line 264, ../scss/landing.scss */
+/* line 265, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close {
+  position: absolute;
+  top: 10px;
+  left: 12px;
   display: block;
   padding: 14px 10px;
   background: #f1f1f1;
@@ -300,25 +301,58 @@ div.portfolio-content div.image-wrap a.close {
   -o-transition: opacity 0.5s ease-in, background 0.25s ease-in;
   transition: opacity 0.5s ease-in, background 0.25s ease-in;
 }
-/* line 275, ../scss/landing.scss */
+/* line 279, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close:hover {
   background: #d7d7d7;
 }
-/* line 278, ../scss/landing.scss */
+/* line 282, ../scss/landing.scss */
 div.portfolio-content div.image-wrap a.close span.icon {
   margin-right: 3px;
 }
 
-/* line 285, ../scss/landing.scss */
+/* line 288, ../scss/landing.scss */
+div.browser-chrome {
+  border-radius: 3px 3px 0 0;
+  background: #d7d7d7;
+  padding: 10px;
+}
+/* line 46, ../scss/config.scss */
+div.browser-chrome:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 293, ../scss/landing.scss */
+div.browser-chrome > span {
+  float: left;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background: #999999;
+  margin-right: 5px;
+}
+
+/* line 303, ../scss/landing.scss */
+div.browser-chrome-wrap {
+  border: 4px solid #d7d7d7;
+  border-top: none;
+}
+
+/* line 309, ../scss/landing.scss */
 div.portfolio-content:hover div.image-wrap a.close {
   opacity: 1;
 }
 
-/* line 305, ../scss/landing.scss */
+/* line 314, ../scss/landing.scss */
+div#project-wrapper {
+  padding: 100px 0;
+}
+
+/* line 333, ../scss/landing.scss */
 section.about {
   padding: 150px 0;
 }
-/* line 308, ../scss/landing.scss */
+/* line 336, ../scss/landing.scss */
 section.about h2 {
   text-align: center;
   font-size: 46px;
@@ -328,7 +362,7 @@ section.about h2 {
   line-height: 1em;
   color: #1a1d23;
 }
-/* line 317, ../scss/landing.scss */
+/* line 345, ../scss/landing.scss */
 section.about p.about-us {
   color: #1a1d23;
   margin: 0 0 30px;
@@ -338,32 +372,32 @@ section.about p.about-us {
   text-align: center;
   font-style: italic;
 }
-/* line 327, ../scss/landing.scss */
+/* line 355, ../scss/landing.scss */
 section.about div.profile > p {
   padding-right: 20px;
   color: #f1f1f1;
 }
-/* line 332, ../scss/landing.scss */
+/* line 360, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 335, ../scss/landing.scss */
+/* line 363, ../scss/landing.scss */
 section.about div.profile:first-child > p {
   padding: 0;
   padding-left: 20px;
 }
-/* line 341, ../scss/landing.scss */
+/* line 369, ../scss/landing.scss */
 section.about img.profile {
   margin-bottom: 12px;
 }
-/* line 345, ../scss/landing.scss */
+/* line 373, ../scss/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 353, ../scss/landing.scss */
+/* line 381, ../scss/landing.scss */
 section.about div.social-links > a {
   position: relative;
   display: inline-block;
@@ -371,15 +405,15 @@ section.about div.social-links > a {
   width: 40px;
   margin-left: 5px;
 }
-/* line 360, ../scss/landing.scss */
+/* line 388, ../scss/landing.scss */
 section.about div.social-links > a:hover img {
   opacity: 0;
 }
-/* line 363, ../scss/landing.scss */
+/* line 391, ../scss/landing.scss */
 section.about div.social-links > a:hover img.color {
   opacity: 1;
 }
-/* line 368, ../scss/landing.scss */
+/* line 396, ../scss/landing.scss */
 section.about div.social-links img {
   position: absolute;
   top: 0;
@@ -389,23 +423,23 @@ section.about div.social-links img {
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 374, ../scss/landing.scss */
+/* line 402, ../scss/landing.scss */
 section.about div.social-links img.color {
   opacity: 0;
 }
 
-/* line 397, ../scss/landing.scss */
+/* line 425, ../scss/landing.scss */
 section.contact {
   padding: 260px 0;
 }
-/* line 399, ../scss/landing.scss */
+/* line 427, ../scss/landing.scss */
 section.contact p {
   font-size: 50px;
   line-height: 50px;
   font-weight: 200;
   text-align: center;
 }
-/* line 406, ../scss/landing.scss */
+/* line 434, ../scss/landing.scss */
 section.contact a {
   display: block;
   padding: 14px 10px;
@@ -420,7 +454,7 @@ section.contact a {
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 416, ../scss/landing.scss */
+/* line 444, ../scss/landing.scss */
 section.contact a:hover {
   background: #3d4451;
   color: #f1f1f1;

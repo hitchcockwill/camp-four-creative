@@ -48,7 +48,8 @@ section.dark {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("/img/camp-hero.jpg") $blue-gray;
+    background-color: $blue-gray;
+    background-image: url("/img/camp-hero.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -256,12 +257,15 @@ div.project {
 // **********************************************************************
 
 div.portfolio-content div.image-wrap {
-  height: 400px;
-  background: url("/img/projects/ansel-adams.jpg");
-  background-size: cover;
-  background-position: center;
-
+  // height: 400px;
+  // background: url("/img/projects/ansel-adams.jpg");
+  // background-size: cover;
+  // background-position: center;
+  position: relative;
   a.close {
+    position: absolute;
+    top: 10px;
+    left: 12px;
     display: block;
     padding: 14px 10px;
     background: $off-white;
@@ -281,10 +285,34 @@ div.portfolio-content div.image-wrap {
   }
 }
 
+div.browser-chrome {
+  border-radius: 3px 3px 0 0;
+  background: $light-gray;
+  @include clearfix;
+  padding: 10px;
+  > span {
+    float: left;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: $gray-lighten;
+    margin-right: 5px;
+  }
+}
+
+div.browser-chrome-wrap {
+  border: 4px solid $light-gray;
+  border-top: none;
+}
+
 div.portfolio-content:hover {
   div.image-wrap a.close {
     opacity: 1;
   }
+}
+
+div#project-wrapper {
+  padding: 100px 0;
 }
 
 
