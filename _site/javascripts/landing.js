@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $navBar, $navLinks, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, initActiveNav, initNavEvents, initPortfolio, initScrolling, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+  var $doc, $navBar, $navLinks, backgroundImageLoad, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
 
   galleryHeight = null;
 
@@ -43,6 +43,8 @@
   };
 
   didScroll = false;
+
+  didResize = false;
 
   navFixed = false;
 
@@ -127,12 +129,63 @@
     });
   };
 
+  initWindowResize = function() {
+    return setInterval(function() {
+      if (didResize) {
+        didResize = false;
+        return initActiveNav();
+      }
+    }, 250);
+  };
+
+  imageLoad = function(self, cb) {
+    var $this, img, src;
+    $this = $(self);
+    src = $this.attr("data-src");
+    if (src) {
+      img = new Image();
+      img.style.display = "none";
+      img.onload = function() {
+        var $image;
+        $image = $(this);
+        $image.addClass("main-image").fadeIn(1000);
+        $this.remove();
+        if (cb) {
+          return cb($image);
+        }
+      };
+      $this.parent().append(img);
+      return img.src = src;
+    }
+  };
+
+  backgroundImageLoad = function($this) {
+    var img, src;
+    src = $this.attr("data-src");
+    console.log("src: ", src);
+    if (src) {
+      img = new Image();
+      img.style.display = "none";
+      img.onload = function() {
+        $this.fadeIn(1000);
+        console.log("image loaded", $this);
+        return img.remove();
+      };
+    }
+    return img.src = src;
+  };
+
   $(document).ready(function() {
     initPortfolio();
     initScrolling();
     initNavEvents();
-    return $(window).scroll(function() {
+    initWindowResize();
+    backgroundImageLoad($("#landing-hero .image-wrapper"));
+    $(window).scroll(function() {
       return didScroll = true;
+    });
+    return $(window).resize(function() {
+      return didResize = true;
     });
   });
 

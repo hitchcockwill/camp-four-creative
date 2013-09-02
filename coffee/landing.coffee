@@ -31,6 +31,7 @@ slideOutProject = ($project, $gallery) ->
 # Scrolling events
 
 didScroll = false
+didResize = false
 navFixed = false
 $navBar = null
 $navLinks = null
@@ -89,10 +90,51 @@ initNavEvents = ->
     e.preventDefault()
     $("html, body").animate({scrollTop: 0}, 350)
 
+initWindowResize = ->
+  setInterval ->
+    if didResize
+      didResize = false
+      initActiveNav()
+  , 250
+
+
+# Image loading
+
+imageLoad = (self, cb) ->
+  $this = $(self)
+  src = $this.attr("data-src")
+  if src
+    img = new Image()
+    img.style.display = "none"
+    img.onload = ->
+      $image = $(this)
+      $image.addClass("main-image").fadeIn(1000)
+      $this.remove()
+      if cb then cb($image)
+    $this.parent().append(img)
+    img.src = src
+
+backgroundImageLoad = ($this) ->
+  src = $this.attr("data-src")
+  console.log "src: ", src
+  if src
+    img = new Image()
+    img.style.display = "none"
+    img.onload = ->
+      $this.fadeIn(1000)
+      console.log "image loaded", $this
+      img.remove()
+  img.src = src
+
 $(document).ready () ->
   initPortfolio()
   initScrolling()
   initNavEvents()
+  initWindowResize()
+
+  backgroundImageLoad($("#landing-hero .image-wrapper"))
 
   $(window).scroll ->
     didScroll = true
+  $(window).resize ->
+    didResize = true
