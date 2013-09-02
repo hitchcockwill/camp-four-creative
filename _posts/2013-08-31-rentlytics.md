@@ -1,6 +1,7 @@
 ---
 layout: portfolio_item
 image: /img/portfolio/rl-home_01.jpg
+image_bottom: /img/portfolio/rl-home_02.jpg
 title: Rentlytics
 category: portfolio
 ---

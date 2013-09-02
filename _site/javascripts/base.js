@@ -9,7 +9,7 @@
         attr = $this.attr("data-original") && $this.attr("data-original").length ? "data-original" : "src";
         src = $this.attr(attr);
         retinaSrc = src.replace(/\.(\w+)$/, "@2x.$1");
-        return $this.attr(attr, retinaSrc).addClass("isRetina");
+        return $this.removeAttr("data-src").attr(attr, retinaSrc).addClass("isRetina");
       }
     });
   };

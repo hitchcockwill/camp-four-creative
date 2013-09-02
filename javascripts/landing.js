@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $navBar, $navLinks, backgroundImageLoad, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, handleProjectImageLoad, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+  var $doc, $navBar, $navLinks, backgroundImageLoad, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, handleProjectImageLoad, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, loadSecondaryProjectImages, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
 
   galleryHeight = null;
 
@@ -28,12 +28,15 @@
   slideInProject = function($project, $gallery) {
     $project.parent().addClass("open");
     galleryHeight = $gallery.height();
-    return $gallery.delay(250).animate({
+    $gallery.delay(250).animate({
       height: "1px"
     }, 250, function() {
       handleProjectImageLoad($project);
       return initActiveNav();
     });
+    return $("html, body").animate({
+      scrollTop: $project.parent().offset().top
+    }, 250);
   };
 
   slideOutProject = function($project, $gallery) {
@@ -43,7 +46,10 @@
       $gallery.css("height", "auto");
       return initActiveNav();
     });
-    return $project.parent().removeClass("open");
+    $project.parent().removeClass("open");
+    return $("html, body").animate({
+      scrollTop: $project.parent().offset().top
+    }, 250);
   };
 
   didScroll = false;
@@ -145,7 +151,7 @@
     }, 250);
   };
 
-  imageLoad = function($image) {
+  imageLoad = function($image, cb) {
     var img, src;
     src = $image.attr("data-src");
     $image.parent().hide();
@@ -153,7 +159,13 @@
       img = new Image();
       img.style.display = "none";
       img.onload = function() {
-        return $image.attr("src", src).parent().slideDown(500);
+        console.log("load image: ", src);
+        $image.attr("src", src);
+        if (cb) {
+          return cb($image);
+        } else {
+          return $image.removeAttr("data-src").parent().fadeIn(1000);
+        }
       };
       return img.src = src;
     }
@@ -169,12 +181,27 @@
       img = new Image();
       img.style.display = "none";
       img.onload = function() {
-        $image.attr("src", src);
-        return $wrap.css("opacity", 0).animate({
+        $image.attr("src", src).removeAttr("data-src");
+        $wrap.css("opacity", 0).animate({
           opacity: 1
         }, 1000).slideDown(1000);
+        return loadSecondaryProjectImages($project);
       };
       return img.src = src;
+    }
+  };
+
+  loadSecondaryProjectImages = function($project) {
+    var $bottomImage, $otherImages;
+    $bottomImage = $project.find("#portfolio-hero-bottom");
+    $otherImages = $project.find("div.secondary-image img");
+    if ($bottomImage) {
+      imageLoad($bottomImage);
+    }
+    if ($otherImages.length) {
+      return $otherImages.each(function() {
+        return imageLoad($(this));
+      });
     }
   };
 

@@ -24,12 +24,14 @@ slideInProject = ($project, $gallery) ->
   $gallery.delay(250).animate {height: "1px"}, 250, ->
     handleProjectImageLoad($project)
     initActiveNav()
+  $("html, body").animate {scrollTop: $project.parent().offset().top}, 250
 
 slideOutProject = ($project, $gallery) ->
   $gallery.animate {height: galleryHeight+"px"}, 500, ->
     $gallery.css("height", "auto")
     initActiveNav()
   $project.parent().removeClass("open")
+  $("html, body").animate {scrollTop: $project.parent().offset().top}, 250
 
 # Scrolling events
 
@@ -105,14 +107,17 @@ initWindowResize = ->
 
 # Image loading
 
-imageLoad = ($image) ->
+imageLoad = ($image, cb) ->
   src = $image.attr("data-src")
   $image.parent().hide()
   if src
     img = new Image()
     img.style.display = "none"
     img.onload = ->
-      $image.attr("src", src).parent().slideDown(500)
+      console.log "load image: ", src
+      $image.attr("src", src)
+      if cb then cb $image
+      else $image.removeAttr("data-src").parent().fadeIn(1000)
     img.src = src
 
 handleProjectImageLoad = ($project) ->
@@ -124,9 +129,20 @@ handleProjectImageLoad = ($project) ->
     img = new Image()
     img.style.display = "none"
     img.onload = ->
-      $image.attr("src", src)
+      $image.attr("src", src).removeAttr("data-src")
       $wrap.css("opacity", 0).animate({opacity: 1}, 1000).slideDown(1000)
+      loadSecondaryProjectImages($project)
     img.src = src
+
+loadSecondaryProjectImages = ($project) ->
+  $bottomImage = $project.find("#portfolio-hero-bottom")
+  $otherImages = $project.find("div.secondary-image img")
+
+  if $bottomImage
+    imageLoad $bottomImage
+  if $otherImages.length
+    $otherImages.each ->
+      imageLoad $(this)
 
 backgroundImageLoad = ($this) ->
   src = $this.attr("data-src")

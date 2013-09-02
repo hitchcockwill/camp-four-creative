@@ -21,11 +21,31 @@ className: portfolio-item
         {% endif %}
           <div class="image-wrap">
             <img data-src="{{page.image}}" alt="{{page.title}} main image" class="retina" id="portfolio-hero">
+            {% if page.image_bottom %}
+              <img data-src="{{page.image_bottom}}" alt="{{page.title}} main image continued" class="retina" id="portfolio-hero-bottom">
+            {% endif %}
           </div>
         {% if page.hide_chrome != true %}
         </div>
         {% endif %}
-      </div>      
+      </div>
+
+      {% if page.secondary_images%}
+      <div class="secondary-images">
+        {% for image in page.secondary_images %}
+          <div class="secondary-image">
+            <div class="browser-chrome">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-chrome-wrap">
+              <div class="image-wrap">
+                <img data-src="{{image}}" alt="{{page.title}} secondary image" class="retina">
+              </div>
+            </div>            
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
 
     <div class="large-4 columns">
