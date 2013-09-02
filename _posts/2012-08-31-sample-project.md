@@ -5,4 +5,14 @@ title: Grappple
 category: portfolio
 ---
 
-Last week, having found myself recently unemployed with nothing to do, I tried to make it a point to learn about something new every day. My favorite experiment of the week and the one that I’m writing about today is flatit. flatit is a Chrome extension that adds extra styling to reddit giving it a flatter, cleaner look and feel.
+Grappple is a company we co-founded in January 2012, which was sold to GoalChi in May 2013. Described as the “online social bucket list”, Grappple was a web and mobile application that made it easy to create and track your life goals, connect with others who have "been there before," and share your accomplishments with the world. 
+
+<p class="author" markdown="1">
+  Alyssa was the team’s creative director, overseeing everything visual and experience related. This largely focused on the look, feel, and user experience of the web and iOS applications, but also included branding, positioning strategy and promotional materials, HTML email campaigns, pitch decks, and social media coordination.
+  <img src="/img/portraits/alyssa-round.png" alt="" class="profile">
+</p>
+
+<p class="author" markdown="1">
+  Will was the team’s senior front-end developer and was responsible for architecting and developing the web application. Will worked closely with Alyssa to turn her mockups into clean, semantic code and add in interactive elements using CSS and JavaScript.
+  <img src="/img/portraits/will-round.png" alt="" class="profile">
+</p>

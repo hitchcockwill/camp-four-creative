@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $navBar, $navLinks, backgroundImageLoad, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+  var $doc, $navBar, $navLinks, backgroundImageLoad, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, handleProjectImageLoad, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
 
   galleryHeight = null;
 
@@ -31,6 +31,7 @@
     return $gallery.delay(250).animate({
       height: "1px"
     }, 250, function() {
+      handleProjectImageLoad($project);
       return initActiveNav();
     });
   };
@@ -144,23 +145,35 @@
     }, 250);
   };
 
-  imageLoad = function(self, cb) {
-    var $this, img, src;
-    $this = $(self);
-    src = $this.attr("data-src");
+  imageLoad = function($image) {
+    var img, src;
+    src = $image.attr("data-src");
+    $image.parent().hide();
     if (src) {
       img = new Image();
       img.style.display = "none";
       img.onload = function() {
-        var $image;
-        $image = $(this);
-        $image.addClass("main-image").fadeIn(1000);
-        $this.remove();
-        if (cb) {
-          return cb($image);
-        }
+        return $image.attr("src", src).parent().slideDown(500);
       };
-      $this.parent().append(img);
+      return img.src = src;
+    }
+  };
+
+  handleProjectImageLoad = function($project) {
+    var $image, $wrap, img, src;
+    $image = $project.find("#portfolio-hero");
+    $wrap = $image.closest(".browser-chrome-wrap");
+    src = $image.attr("data-src");
+    $wrap.hide();
+    if (src) {
+      img = new Image();
+      img.style.display = "none";
+      img.onload = function() {
+        $image.attr("src", src);
+        return $wrap.css("opacity", 0).animate({
+          opacity: 1
+        }, 1000).slideDown(1000);
+      };
       return img.src = src;
     }
   };
@@ -168,13 +181,11 @@
   backgroundImageLoad = function($this) {
     var img, src;
     src = $this.attr("data-src");
-    console.log("src: ", src);
     if (src) {
       img = new Image();
       img.style.display = "none";
       img.onload = function() {
         $this.fadeIn(1000);
-        console.log("image loaded", $this);
         return img.remove();
       };
     }

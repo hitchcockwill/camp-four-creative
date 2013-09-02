@@ -22,6 +22,7 @@ slideInProject = ($project, $gallery) ->
   $project.parent().addClass("open")
   galleryHeight = $gallery.height()
   $gallery.delay(250).animate {height: "1px"}, 250, ->
+    handleProjectImageLoad($project)
     initActiveNav()
 
 slideOutProject = ($project, $gallery) ->
@@ -104,29 +105,36 @@ initWindowResize = ->
 
 # Image loading
 
-imageLoad = (self, cb) ->
-  $this = $(self)
-  src = $this.attr("data-src")
+imageLoad = ($image) ->
+  src = $image.attr("data-src")
+  $image.parent().hide()
   if src
     img = new Image()
     img.style.display = "none"
     img.onload = ->
-      $image = $(this)
-      $image.addClass("main-image").fadeIn(1000)
-      $this.remove()
-      if cb then cb($image)
-    $this.parent().append(img)
+      $image.attr("src", src).parent().slideDown(500)
+    img.src = src
+
+handleProjectImageLoad = ($project) ->
+  $image = $project.find("#portfolio-hero")
+  $wrap = $image.closest(".browser-chrome-wrap")
+  src = $image.attr("data-src")
+  $wrap.hide()
+  if src
+    img = new Image()
+    img.style.display = "none"
+    img.onload = ->
+      $image.attr("src", src)
+      $wrap.css("opacity", 0).animate({opacity: 1}, 1000).slideDown(1000)
     img.src = src
 
 backgroundImageLoad = ($this) ->
   src = $this.attr("data-src")
-  console.log "src: ", src
   if src
     img = new Image()
     img.style.display = "none"
     img.onload = ->
       $this.fadeIn(1000)
-      console.log "image loaded", $this
       img.remove()
   img.src = src
 
