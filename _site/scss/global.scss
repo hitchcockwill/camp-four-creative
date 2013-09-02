@@ -19,3 +19,22 @@ footer {
     font-size: 12px;
   }
 }
+
+
+// **********************************************************************
+// Components
+// **********************************************************************
+
+a.btn {
+  display: inline-block;
+  padding: 14px 20px;
+  border: 2px solid $blue-gray;
+  color: $blue-gray;
+  border-radius: 2px;
+  text-align: center;
+  @include transition(background .25s ease-in, color .25s ease-in);
+  &:hover {
+    background: $blue-gray;
+    color: $off-white;
+  }
+}

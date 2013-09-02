@@ -215,19 +215,36 @@ section.projects {
   div.split .project {
     height: 630px;
   }
-  div.p, 
-  a.p {
-    display: block;
-    position: absolute;
-    top: 0;
-    left:0;
-    right: 0;
-    bottom: 0;
-    background: #555;
-    padding:10px;
+  div.project {
+    img {
+      border-radius: 2px;
+      display: block;
+    }
+    a {
+      display: block;
+      @include transition(box-shadow .25s ease-in .1s);
+      &:hover {
+        box-shadow: 0 0 0 8px $off-white;
+      }
+    }
   }
   > * {
     position: relative;
+  }
+}
+
+section.projects div.cta {
+  margin-bottom: 30px;
+  p {
+    font-size: 32px;
+    line-height: 1em;
+    text-align: center;
+    margin-top: 60px;
+  }
+  a {
+    display: block;
+    width: 180px;
+    margin: 0 auto;
   }
 }
 
@@ -246,8 +263,6 @@ div.projects-container {
 }
 
 div.project {
-  position: relative;
-  color: white;
   margin-bottom: 30px;
 }
 
@@ -443,18 +458,8 @@ section.contact {
 
   a {
     display: block;
-    padding: 14px 10px;
-    border: 2px solid $blue-gray;
-    color: $blue-gray;
-    border-radius: 2px;
-    text-align: center;
     width: 180px;
     margin: 0 auto;
-    @include transition(background .25s ease-in, color .25s ease-in);
-    &:hover {
-      background: $blue-gray;
-      color: $off-white;
-    }
   }
 }
 

@@ -1,26 +1,30 @@
 ---
 className: portfolio-item
-image: /img/projects/ansel-adams.jpg
 ---
 
 <div class="portfolio-content">
 
   <div class="row">
-    <a href="" class="close">
+    <a href="#" title="Back to projects" class="close">
       <span class="icon icon-arrow-left"></span>
     </a>
   </div>
+
   <div class="row">
     <div class="large-8 columns">
       <div class="image-wrap">
+        {% if page.hide_chrome != true %}
         <div class="browser-chrome">
           <span></span><span></span><span></span>
         </div>
         <div class="browser-chrome-wrap">
+        {% endif %}
           <div class="image-wrap">
-            <img data-src="{{page.image}}" alt="" id="portfolio-hero">
+            <img data-src="{{page.image}}" alt="{{page.title}} main image" class="retina" id="portfolio-hero">
           </div>
+        {% if page.hide_chrome != true %}
         </div>
+        {% endif %}
       </div>      
     </div>
 
