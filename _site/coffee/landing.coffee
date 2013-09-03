@@ -30,6 +30,7 @@ slideOutProject = ($project, $gallery) ->
   $gallery.animate {height: galleryHeight+"px"}, 500, ->
     $gallery.css("height", "auto")
     initActiveNav()
+  $project.html("")
   $project.parent().removeClass("open")
   $("html, body").animate {scrollTop: $project.parent().offset().top}, 250
 

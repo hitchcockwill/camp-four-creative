@@ -62,7 +62,7 @@ section.dark {
     margin-left: -200px;
     display: block;
     position: absolute;
-    top: -370px;
+    top: -530px;
     z-index: 5;
   }
 }
@@ -177,6 +177,7 @@ section.navigation div.nav-wrapper {
   a.home-anchor {
     opacity: 0;
     display: none;
+    padding: 9px 20px 9px 0;
     @include transition(opacity .25s ease-in);
   }
 
@@ -456,7 +457,7 @@ section.about {
 
 
 section.contact {
-  padding: 260px 0;
+  padding: 300px 0;
   p {
     font-size: 50px;
     line-height: 50px;
@@ -508,7 +509,7 @@ body[data-device-type="mobile"] {
   #logo-wrap img {
     width: 200px;
     margin-left: -100px;
-    top: -250px;
+    top: -370px;
   }
 
   section.top-text {
@@ -517,6 +518,9 @@ body[data-device-type="mobile"] {
 
   section.navigation div.nav-wrapper a {
     padding: 5px 8px;
+    &.home-anchor {
+      padding: 4px 20px;
+    }
   }
 
 

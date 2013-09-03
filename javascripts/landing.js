@@ -46,6 +46,7 @@
       $gallery.css("height", "auto");
       return initActiveNav();
     });
+    $project.html("");
     $project.parent().removeClass("open");
     return $("html, body").animate({
       scrollTop: $project.parent().offset().top
