@@ -179,6 +179,9 @@ section.navigation div.nav-wrapper {
     display: none;
     padding: 9px 20px 9px 0;
     @include transition(opacity .25s ease-in);
+    img {
+      height: 20px;
+    }
   }
 
   div.right-nav {
@@ -279,14 +282,17 @@ div.project {
 div.portfolio-content a.close {
   display: inline-block;
   padding: 14px 16px;
-  background: $off-white;
-  color: $blue-gray;
+  background: $teal;
+  color: $teal-light;
   border-radius: 2px;
   text-align: center;
-  margin: 0 0 10px 0.9375em;
   @include transition(background .25s ease-in);
+  position: fixed;
+  top: 80px;
+  left: 40px;
+  z-index: 1000;
   &:hover {
-    background: darken($off-white, 10%);
+    background: darken($teal, 10%);
   }
   span.icon {
     margin-right: 3px;

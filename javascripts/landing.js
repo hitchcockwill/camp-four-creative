@@ -44,9 +44,9 @@
       height: galleryHeight + "px"
     }, 500, function() {
       $gallery.css("height", "auto");
-      return initActiveNav();
+      initActiveNav();
+      return $project.html("");
     });
-    $project.html("");
     $project.parent().removeClass("open");
     return $("html, body").animate({
       scrollTop: $project.parent().offset().top
@@ -162,10 +162,11 @@
       img.onload = function() {
         $image.attr("src", src);
         if (cb) {
-          return cb($image);
+          cb($image);
         } else {
-          return $image.removeAttr("data-src").parent().fadeIn(1000);
+          $image.removeAttr("data-src").parent().fadeIn(1000);
         }
+        return initActiveNav();
       };
       return img.src = src;
     }
