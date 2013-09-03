@@ -301,7 +301,7 @@ div.portfolio-content a.close {
 
 div.browser-chrome {
   border-radius: 3px 3px 0 0;
-  background: $off-white;
+  background: darken($off-white, 5%);
   @include clearfix;
   padding: 10px;
   > span {
@@ -344,6 +344,13 @@ div.post-content {
       top: 0;
       left: -50px;
     }
+  }
+
+  div.links {
+    margin-top: 40px;
+  }
+  div.links a {
+    margin-right: 10px;
   }
 }
 
