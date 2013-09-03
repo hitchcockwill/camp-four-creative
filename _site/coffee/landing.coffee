@@ -115,7 +115,6 @@ imageLoad = ($image, cb) ->
     img = new Image()
     img.style.display = "none"
     img.onload = ->
-      console.log "load image: ", src
       $image.attr("src", src)
       if cb then cb $image
       else $image.removeAttr("data-src").parent().fadeIn(1000)

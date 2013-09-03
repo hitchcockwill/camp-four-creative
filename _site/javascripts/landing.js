@@ -160,7 +160,6 @@
       img = new Image();
       img.style.display = "none";
       img.onload = function() {
-        console.log("load image: ", src);
         $image.attr("src", src);
         if (cb) {
           return cb($image);
