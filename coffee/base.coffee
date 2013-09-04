@@ -16,8 +16,3 @@ $(document).ready () ->
 
   if window.devicePixelRatio >= 2
     setRetinaImage()
-
-  # $imageWrap = $("span.main-image")
-  # $imageWrap.each ->
-  #   imageLoad this, ($image) ->
-  #     handleImageSizing($image)

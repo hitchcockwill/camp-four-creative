@@ -1,0 +1,53 @@
+/* line 10, ../scss/landing-responsive.scss */
+body[data-device-type="tablet"] #landing-hero,
+body[data-device-type="tv"] #landing-hero,
+body[data-device-type="mobile"] #landing-hero {
+  position: relative;
+}
+/* line 14, ../scss/landing-responsive.scss */
+body[data-device-type="tablet"] section.top-text,
+body[data-device-type="tv"] section.top-text,
+body[data-device-type="mobile"] section.top-text {
+  margin-top: 0;
+  background: white;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 27, ../scss/landing-responsive.scss */
+  #landing-hero {
+    height: 600px;
+  }
+
+  /* line 31, ../scss/landing-responsive.scss */
+  #logo-wrap img {
+    width: 200px;
+    margin-left: -100px;
+    top: -370px;
+  }
+
+  /* line 37, ../scss/landing-responsive.scss */
+  section.top-text {
+    margin-top: 600px;
+  }
+
+  /* line 41, ../scss/landing-responsive.scss */
+  section.navigation div.nav-wrapper a {
+    padding: 5px 8px;
+  }
+  /* line 43, ../scss/landing-responsive.scss */
+  section.navigation div.nav-wrapper a.home-anchor {
+    padding: 4px 20px;
+  }
+
+  /* line 53, ../scss/landing-responsive.scss */
+  section.about div.profile,
+  section.about div.profile:first-child,
+  section.about div.profile > p,
+  section.about div.profile:first-child > p {
+    text-align: center;
+  }
+  /* line 56, ../scss/landing-responsive.scss */
+  section.about div.profile img {
+    width: 180px;
+  }
+}

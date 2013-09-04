@@ -1,2 +1,0 @@
-Camp Four Collective
-=======================
