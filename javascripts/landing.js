@@ -221,10 +221,6 @@
   };
 
   $(document).ready(function() {
-    initPortfolio();
-    initScrolling();
-    initNavEvents();
-    initWindowResize();
     backgroundImageLoad($("#landing-hero .image-wrapper"));
     $(window).scroll(function() {
       return didScroll = true;

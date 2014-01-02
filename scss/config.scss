@@ -4,13 +4,18 @@
 // Colors
 // **********************************************************************
 
-$gray:          #555555;
+$gray:          #524d56;
 $gray-lighten:  #999999;
 $gray-darken:   #333333;
 $blue:          #1685be;
-$light-gray:    #d7d7d7;
+$light-gray:    #aebdbb;
 $off-white:     #f1f1f1;
-$dull-white:     #fafafa;
+$dull-white:    #fafafa;
+
+$primary:       #99c9a3;
+$primary-light: #c7d9d6;
+
+$bg:            #f8f8f8;
 
 $orange:          #f09232;
 $blue-gray:       #3D4451;
@@ -22,7 +27,12 @@ $teal-light:      #d0e7e3;
 // Fonts
 // **********************************************************************
 
-$body-font: "ratio", sans-serif;
+$body-font: "source-sans-pro", sans-serif;
+$body-serif: "minion-pro", serif;
+
+$fw-light:     300;
+$fw-sbold:     600;
+$fw-bold:      bold;
 
 // **********************************************************************
 // Mixins

@@ -60,7 +60,7 @@ initScrolling = ->
 
 handleFixedBar = (scrollTop) ->
   position = $navBar.offset().top - scrollTop
-  if position <= 0 and navFixed is false then fixNav() 
+  if position <= 0 and navFixed is false then fixNav()
   else if position > 0 then unFixNav()
 
 initActiveNav = ->
@@ -156,10 +156,10 @@ backgroundImageLoad = ($this) ->
   img.src = src
 
 $(document).ready () ->
-  initPortfolio()
-  initScrolling()
-  initNavEvents()
-  initWindowResize()
+  # initPortfolio()
+  # initScrolling()
+  # initNavEvents()
+  # initWindowResize( )
 
   backgroundImageLoad($("#landing-hero .image-wrapper"))
 

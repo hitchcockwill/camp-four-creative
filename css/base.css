@@ -1,60 +1,137 @@
 /* line 7, ../scss/base.scss */
 body {
-  font-family: "ratio", sans-serif;
-  color: #555555;
+  font-family: "source-sans-pro", sans-serif;
+  color: #524d56;
+  font-size: 16px;
+  line-height: 1.4em;
 }
 
-/* line 12, ../scss/base.scss */
+/* line 14, ../scss/base.scss */
 footer {
   padding: 40px 0 20px;
   background: white;
   position: relative;
   z-index: 10;
-  color: #d7d7d7;
+  color: #aebdbb;
 }
-/* line 18, ../scss/base.scss */
+/* line 20, ../scss/base.scss */
 footer div {
   text-align: center;
   font-size: 12px;
 }
 
-/* line 29, ../scss/base.scss */
-a.btn {
+/* line 30, ../scss/base.scss */
+h1, h2, h3, h4, h5, h5 {
+  margin: 0 0 .5em;
+}
+
+/* line 34, ../scss/base.scss */
+h2 {
+  font-size: 42px;
+  line-height: 1em;
+  font-family: "minion-pro", serif;
+  font-weight: normal;
+}
+
+/* line 41, ../scss/base.scss */
+p {
+  font-weight: 300;
+  line-height: 1.4em;
+}
+/* line 44, ../scss/base.scss */
+p.p-large {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 300;
+}
+
+/* line 52, ../scss/base.scss */
+div.hr-wrap {
+  position: relative;
+}
+/* line 54, ../scss/base.scss */
+div.hr-wrap.hr-centered {
+  text-align: center;
+}
+/* line 58, ../scss/base.scss */
+div.hr-wrap.hr-left h3 {
+  padding-left: 0;
+}
+/* line 63, ../scss/base.scss */
+div.hr-wrap.hr-right h3 {
+  padding-right: 0;
+}
+/* line 68, ../scss/base.scss */
+div.hr-wrap h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+  background: #f8f8f8;
+  padding: 0 20px;
+  display: inline-block;
+  color: #aebdbb;
+  position: relative;
+  z-index: 10;
+}
+/* line 81, ../scss/base.scss */
+div.hr-wrap:after {
+  content: '';
+  border-top: 1px solid #aebdbb;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 0;
+  z-index: 8;
+}
+
+/* line 100, ../scss/base.scss */
+.btn {
   display: inline-block;
   padding: 14px 20px;
-  border: 2px solid #3d4451;
   color: #3d4451;
-  border-radius: 2px;
+  border-radius: 3px;
   text-align: center;
+  box-shadow: none;
+  font-size: 18px;
+  -webkit-appearance: none;
+  border: none;
   -webkit-transition: background 0.25s ease-in, color 0.25s ease-in;
   -moz-transition: background 0.25s ease-in, color 0.25s ease-in;
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 37, ../scss/base.scss */
-a.btn:hover {
+/* line 111, ../scss/base.scss */
+.btn:hover {
   background: #3d4451;
   color: #f1f1f1;
 }
 
-/* line 43, ../scss/base.scss */
+/* line 117, ../scss/base.scss */
+.btn.btn-primary {
+  background: #99c9a3;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* line 123, ../scss/base.scss */
 span.icon {
   display: inline-block;
 }
 
-/* line 50, ../scss/base.scss */
+/* line 130, ../scss/base.scss */
 div.browser-chrome {
   border-radius: 3px 3px 0 0;
   background: #e4e4e4;
   padding: 10px;
 }
-/* line 47, ../scss/config.scss */
+/* line 57, ../scss/config.scss */
 div.browser-chrome:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 55, ../scss/base.scss */
+/* line 135, ../scss/base.scss */
 div.browser-chrome > span {
   float: left;
   height: 10px;
@@ -64,7 +141,7 @@ div.browser-chrome > span {
   margin-right: 5px;
 }
 
-/* line 65, ../scss/base.scss */
+/* line 145, ../scss/base.scss */
 div.browser-chrome-wrap {
   border: 4px solid #e4e4e4;
   border-top: none;

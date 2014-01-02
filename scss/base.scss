@@ -7,6 +7,8 @@
 body {
   font-family: $body-font;
   color:$gray;
+  font-size: 16px;
+  line-height: 1.4em;
 }
 
 footer {
@@ -21,23 +23,101 @@ footer {
   }
 }
 
+// **********************************************************************
+// TYPE
+// **********************************************************************
+
+h1, h2, h3, h4, h5, h5 {
+  margin: 0 0 .5em;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 1em;
+  font-family: $body-serif;
+  font-weight: normal;
+}
+
+p {
+  font-weight: $fw-light;
+  line-height: 1.4em;
+  &.p-large {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $fw-light;
+  }
+}
+
+
+div.hr-wrap {
+  position: relative;
+  &.hr-centered {
+    text-align: center;
+  }
+  &.hr-left {
+    h3 {
+      padding-left: 0;
+    }
+  }
+  &.hr-right {
+    h3 {
+      padding-right: 0;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    background: $bg;
+    padding: 0 20px;
+    display: inline-block;
+    color: $light-gray;
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: '';
+    border-top: 1px solid $light-gray;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    z-index: 8;
+  }
+}
+
+
+
+
 
 // **********************************************************************
 // Components
 // **********************************************************************
 
-a.btn {
+.btn {
   display: inline-block;
   padding: 14px 20px;
-  border: 2px solid $blue-gray;
   color: $blue-gray;
-  border-radius: 2px;
+  border-radius: 3px;
   text-align: center;
+  box-shadow: none;
+  font-size: 18px;
+  -webkit-appearance: none;
+  border: none;
   @include transition(background .25s ease-in, color .25s ease-in);
   &:hover {
     background: $blue-gray;
     color: $off-white;
   }
+}
+
+.btn.btn-primary {
+  background: $primary;
+  color: white;
+  text-transform: uppercase;
 }
 
 span.icon {
