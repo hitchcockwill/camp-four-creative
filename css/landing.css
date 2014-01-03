@@ -5,40 +5,41 @@ div.landing-page {
 /* line 10, ../scss/landing.scss */
 div.landing-page p {
   font-weight: 300;
+  font-size: 20px;
 }
 
-/* line 15, ../scss/landing.scss */
+/* line 16, ../scss/landing.scss */
 section.content-section {
   padding: 100px 0;
 }
 
-/* line 19, ../scss/landing.scss */
+/* line 20, ../scss/landing.scss */
 section {
   position: relative;
   z-index: 10;
 }
 
-/* line 24, ../scss/landing.scss */
+/* line 25, ../scss/landing.scss */
 section.dark {
   background: #c7d9d6;
 }
-/* line 26, ../scss/landing.scss */
+/* line 27, ../scss/landing.scss */
 section.dark .hr-wrap h3 {
   background: #c7d9d6;
 }
 
-/* line 31, ../scss/landing.scss */
+/* line 32, ../scss/landing.scss */
 section.hr {
   padding-top: 0;
 }
-/* line 33, ../scss/landing.scss */
+/* line 34, ../scss/landing.scss */
 section.hr .hr-wrap {
   margin-bottom: 50px;
 }
 
-/* line 43, ../scss/landing.scss */
+/* line 44, ../scss/landing.scss */
 #landing-hero {
-  height: 750px;
+  height: 500px;
   position: relative;
   left: 0;
   right: 0;
@@ -46,7 +47,7 @@ section.hr .hr-wrap {
   z-index: 1;
   background: #3d4451;
 }
-/* line 51, ../scss/landing.scss */
+/* line 52, ../scss/landing.scss */
 #landing-hero div.hero-overlay {
   position: absolute;
   top: 0;
@@ -56,7 +57,7 @@ section.hr .hr-wrap {
   background-color: rgba(153, 201, 163, 0.6);
   z-index: 10;
 }
-/* line 57, ../scss/landing.scss */
+/* line 58, ../scss/landing.scss */
 #landing-hero div.image-wrapper {
   display: none;
   position: absolute;
@@ -71,69 +72,88 @@ section.hr .hr-wrap {
   z-index: 8;
 }
 
-/* line 72, ../scss/landing.scss */
+/* line 73, ../scss/landing.scss */
 #logo-wrap {
   position: relative;
-  top: -530px;
+  top: -370px;
 }
-/* line 75, ../scss/landing.scss */
+/* line 76, ../scss/landing.scss */
 #logo-wrap img {
   left: 50%;
-  margin-left: -200px;
+  margin-left: -127px;
   display: block;
   position: absolute;
   z-index: 5;
 }
 
-/* line 84, ../scss/landing.scss */
+/* line 85, ../scss/landing.scss */
 section.top-text {
   padding-bottom: 110px;
 }
-/* line 88, ../scss/landing.scss */
+/* line 89, ../scss/landing.scss */
 section.top-text h2 {
   font-size: 40px;
   margin: 0 0 16px;
   line-height: 1.2em;
 }
-/* line 93, ../scss/landing.scss */
+/* line 94, ../scss/landing.scss */
 section.top-text p {
   font-size: 26px;
 }
 
-/* line 109, ../scss/landing.scss */
+/* line 110, ../scss/landing.scss */
 section.navigation {
   position: absolute;
-  top: 680px;
+  top: 430px;
   right: 0;
   left: 0;
   background: none;
 }
-/* line 115, ../scss/landing.scss */
-section.navigation.fixed div.nav-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-/* line 121, ../scss/landing.scss */
-section.navigation.fixed div.nav-wrapper a.home-anchor {
-  display: inline-block;
-  opacity: 1;
+/* line 116, ../scss/landing.scss */
+section.navigation .logo-wrap {
+  display: none;
 }
 
-/* line 128, ../scss/landing.scss */
-section.navigation div.nav-wrapper {
+/* line 121, ../scss/landing.scss */
+section.navigation.fixed-nav {
+  position: fixed;
+  z-index: 100;
+  height: 90px;
+  top: 0;
+  background: url("/img/camp-hero.jpg") center bottom no-repeat;
+  background-size: cover;
+  padding-top: 24px;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+/* line 57, ../scss/config.scss */
+section.navigation.fixed-nav > .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 133, ../scss/landing.scss */
+section.navigation.fixed-nav .logo-wrap {
+  display: block;
+  float: left;
+}
+/* line 138, ../scss/landing.scss */
+section.navigation.fixed-nav .main-nav {
+  float: right;
+}
+
+/* line 144, ../scss/landing.scss */
+div.nav-wrapper {
   -webkit-transition: top 0.15s eas-in;
   -moz-transition: top 0.15s eas-in;
   -o-transition: top 0.15s eas-in;
   transition: top 0.15s eas-in;
 }
-/* line 131, ../scss/landing.scss */
-section.navigation div.nav-wrapper .main-nav {
+/* line 147, ../scss/landing.scss */
+div.nav-wrapper .main-nav {
   margin-left: -20px;
 }
-/* line 135, ../scss/landing.scss */
-section.navigation div.nav-wrapper a {
+/* line 151, ../scss/landing.scss */
+div.nav-wrapper a {
   display: inline-block;
   padding: 10px 20px;
   position: relative;
@@ -141,122 +161,140 @@ section.navigation div.nav-wrapper a {
   font-size: 14px;
   color: white;
   border-radius: 3px;
-  -webkit-transition: color 0.25s ease-in;
-  -webkit-transition-delay: 0.2s;
-  -moz-transition: color 0.25s ease-in 0.2s;
-  -o-transition: color 0.25s ease-in 0.2s;
-  transition: color 0.25s ease-in 0.2s;
+  opacity: .9;
+  -webkit-transition: color 0.25s ease-in, background 0.25s ease-in, opacity 0.25s;
+  -webkit-transition-delay: 0.2s, 0.2s, 0.2s;
+  -moz-transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
+  -o-transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
+  transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
 }
-/* line 144, ../scss/landing.scss */
-section.navigation div.nav-wrapper a.active {
-  background: rgba(255, 255, 255, 0.15);
+/* line 161, ../scss/landing.scss */
+div.nav-wrapper a:hover {
+  opacity: 1;
 }
-/* line 147, ../scss/landing.scss */
-section.navigation div.nav-wrapper a:hover {
-  color: #78717e;
+/* line 164, ../scss/landing.scss */
+div.nav-wrapper a.active {
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 181, ../scss/landing.scss */
+/* line 197, ../scss/landing.scss */
 section.philosophy {
   padding-top: 100px;
 }
-/* line 184, ../scss/landing.scss */
+/* line 200, ../scss/landing.scss */
 section.philosophy > .row {
   border-bottom: 1px solid #aebdbb;
   padding-bottom: 40px;
 }
+/* line 205, ../scss/landing.scss */
+section.philosophy p {
+  font-size: 19px;
+}
+/* line 209, ../scss/landing.scss */
+section.philosophy h2 {
+  line-height: 55px;
+  margin: 0;
+}
 
-/* line 197, ../scss/landing.scss */
+/* line 222, ../scss/landing.scss */
 section.about {
   padding: 150px 0;
-  background: #505f53;
   color: white;
 }
-/* line 202, ../scss/landing.scss */
+/* line 226, ../scss/landing.scss */
 section.about h2 {
   line-height: 1em;
 }
-/* line 207, ../scss/landing.scss */
+/* line 231, ../scss/landing.scss */
 section.about div.about-us p {
   font-size: 20px;
   margin: 0 0 25px;
 }
-/* line 213, ../scss/landing.scss */
+/* line 237, ../scss/landing.scss */
 section.about div.profile > p {
   font-size: 14px;
   font-style: italic;
 }
-/* line 218, ../scss/landing.scss */
+/* line 242, ../scss/landing.scss */
 section.about img.profile {
   margin-bottom: 12px;
   width: 100%;
 }
-/* line 223, ../scss/landing.scss */
+/* line 247, ../scss/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 230, ../scss/landing.scss */
+/* line 254, ../scss/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 233, ../scss/landing.scss */
+/* line 257, ../scss/landing.scss */
 section.about div.profile:first-child > p {
   padding: 0;
   padding-left: 20px;
 }
 
-/* line 240, ../scss/landing.scss */
+/* line 264, ../scss/landing.scss */
 div.social-links {
   margin-bottom: 30px;
 }
-/* line 242, ../scss/landing.scss */
+/* line 266, ../scss/landing.scss */
 div.social-links > a {
   position: relative;
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 28px;
+  width: 28px;
   margin-left: 5px;
 }
-/* line 249, ../scss/landing.scss */
+/* line 273, ../scss/landing.scss */
 div.social-links > a:hover img {
-  opacity: 0;
-}
-/* line 252, ../scss/landing.scss */
-div.social-links > a:hover img.color {
   opacity: 1;
 }
-/* line 257, ../scss/landing.scss */
+/* line 278, ../scss/landing.scss */
 div.social-links img {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: .9;
   -webkit-transition: opacity 0.25s ease-in;
   -moz-transition: opacity 0.25s ease-in;
   -o-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
-/* line 263, ../scss/landing.scss */
-div.social-links img.color {
-  opacity: 0;
+
+/* line 298, ../scss/landing.scss */
+div.footer-wrap {
+  background: url("/img/camp-footer.jpg") center center no-repeat;
+  background-size: cover;
+}
+/* line 57, ../scss/config.scss */
+div.footer-wrap > .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 304, ../scss/landing.scss */
+div.footer-wrap .logo-wrap {
+  float: left;
+}
+/* line 308, ../scss/landing.scss */
+div.footer-wrap .footer-nav {
+  float: right;
+}
+/* line 311, ../scss/landing.scss */
+div.footer-wrap .footer-nav a.active {
+  background: #99c9a3;
 }
 
-/* line 285, ../scss/landing.scss */
-section.contact {
-  padding: 300px 0;
+/* line 318, ../scss/landing.scss */
+section.footer {
+  padding: 0;
 }
-/* line 287, ../scss/landing.scss */
-section.contact p {
-  font-size: 50px;
-  line-height: 50px;
-  font-weight: 200;
-  text-align: center;
-}
-/* line 294, ../scss/landing.scss */
-section.contact a {
-  display: block;
-  width: 180px;
-  margin: 0 auto;
+/* line 321, ../scss/landing.scss */
+section.footer > .row {
+  border-top: 1px solid #aebdbb;
+  padding: 35px 0 30px;
 }
