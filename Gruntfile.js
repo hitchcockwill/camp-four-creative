@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         tasks: ['coffee']
       },
       compass: {
-        files: ['scss/*.scss'],
+        files: ['scss/**/*.scss'],
         tasks: ['compass']
       }
     },

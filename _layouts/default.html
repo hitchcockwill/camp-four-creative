@@ -4,12 +4,15 @@
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> {% if page.title %} {{ page.title }} | {% endif %} Camp Four Creative</title>
-  <link rel="stylesheet" href="/css/foundation.css">
-  <link rel="stylesheet" href="/css/icons.css">
-  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/lib/foundation.css">
+  <link rel="stylesheet" href="/css/lib/icons.css">
+  <link rel="stylesheet" href="/css/lib/reset.css">
   <link rel="stylesheet" href="/css/base.css">
 
   {% for style in page.styles %}
+    <link rel="stylesheet" href="/css/{{style}}">
+  {% endfor %}
+  {% for style in page.post_styles %}
     <link rel="stylesheet" href="/css/{{style}}">
   {% endfor %}
 
@@ -33,7 +36,12 @@
   <script src="/javascripts/libs/categorizr.js"></script>
 
   <script type="text/javascript" src="/javascripts/base.js"></script>
+
   {% for script in page.scripts %}
+    <script type="text/javascript" src="/javascripts/{{script}}"></script>
+  {% endfor %}
+
+  {% for script in page.post_scripts %}
     <script type="text/javascript" src="/javascripts/{{script}}"></script>
   {% endfor %}
 

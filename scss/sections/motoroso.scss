@@ -1,0 +1,87 @@
+@import "../config/variables";
+
+// **********************************************************************
+// MOTOROSO VARIABLES
+// **********************************************************************
+
+$text:        #524d56;
+$text-dark:   #555555;
+
+// **********************************************************************
+// MOTOROSO BASE
+// **********************************************************************
+
+body {
+  color: $text;
+}
+
+// **********************************************************************
+// HERO
+// **********************************************************************
+
+.motoroso-hero {
+  background: url('/img/camp-hero.jpg') center top no-repeat;
+  background-size: cover;
+  height: 750px;
+  overflow: hidden;
+
+  > .row { position: relative; }
+}
+
+.hero-interface-1,
+.hero-interface-2 {
+  max-width: 700px;
+  position: absolute;
+}
+
+.hero-interface-1 {
+  top: 200px;
+  left: 0;
+  z-index: 8;
+}
+
+.hero-interface-2 {
+  top: 300px;
+  right: 0;
+  z-index: 10;
+}
+
+// **********************************************************************
+// SECTIONS
+// **********************************************************************
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.section.intro {
+  padding: 110px 0;
+  text-align: center;
+}
+
+// **********************************************************************
+// SORTING & FILTERING
+// **********************************************************************
+
+.section.sorting {
+  padding-top: 110px;
+  color: $text-dark;
+  background: #e3e3e3;
+
+  .sort-image-1 {
+    margin-left: 20px;
+  }
+
+  .sorting-content {
+    > * { margin-left: 40px; }
+  }
+
+  p {
+    margin-bottom: 50px;
+  }
+}

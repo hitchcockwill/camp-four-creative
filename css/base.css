@@ -46,34 +46,40 @@ h2 {
 }
 
 /* line 16, ../scss/components/type.scss */
+h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* line 21, ../scss/components/type.scss */
 p {
   font-weight: 300;
   line-height: 1.4em;
 }
-/* line 19, ../scss/components/type.scss */
+/* line 24, ../scss/components/type.scss */
 p.p-large {
   font-size: 24px;
   line-height: 32px;
   font-weight: 300;
 }
 
-/* line 27, ../scss/components/type.scss */
+/* line 32, ../scss/components/type.scss */
 div.hr-wrap {
   position: relative;
 }
-/* line 29, ../scss/components/type.scss */
+/* line 34, ../scss/components/type.scss */
 div.hr-wrap.hr-centered {
   text-align: center;
 }
-/* line 33, ../scss/components/type.scss */
+/* line 38, ../scss/components/type.scss */
 div.hr-wrap.hr-left h3 {
   padding-left: 0;
 }
-/* line 38, ../scss/components/type.scss */
+/* line 43, ../scss/components/type.scss */
 div.hr-wrap.hr-right h3 {
   padding-right: 0;
 }
-/* line 43, ../scss/components/type.scss */
+/* line 48, ../scss/components/type.scss */
 div.hr-wrap h3 {
   font-size: 18px;
   text-transform: uppercase;
@@ -86,7 +92,7 @@ div.hr-wrap h3 {
   position: relative;
   z-index: 10;
 }
-/* line 56, ../scss/components/type.scss */
+/* line 61, ../scss/components/type.scss */
 div.hr-wrap:after {
   content: '';
   border-top: 1px solid #aebdbb;
@@ -99,7 +105,7 @@ div.hr-wrap:after {
 
 /* line 10, ../scss/components/ui.scss */
 div.browser-chrome {
-  border-radius: 3px 3px 0 0;
+  border-radius: 5px 5px 0 0;
   background: #e4e4e4;
   padding: 10px;
 }
