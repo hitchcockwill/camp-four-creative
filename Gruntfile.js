@@ -6,17 +6,18 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     coffee: {
       compile: {
-        files: {
-          'javascripts/base.js': 'coffee/base.coffee',
-          'javascripts/landing.js': 'coffee/landing.coffee'
-        }
+        expand: true,
+        cwd: 'coffee/',
+        src: ['*.coffee'],
+        dest: 'javascripts/',
+        ext: '.js'
       }
     },
 
     watch: {
       coffee: {
         files: ['coffee/*.coffee'],
-        tasks: ['coffee']        
+        tasks: ['coffee']
       },
       compass: {
         files: ['scss/*.scss'],
@@ -25,13 +26,20 @@ module.exports = function(grunt) {
     },
 
     compass: {
-      dist: {
+      base: {
         options: {
           sassDir: 'scss',
+          specify: 'scss/base.scss',
           cssDir: 'css'
         }
+      },
+      sections: {
+        options: {
+          sassDir: 'scss/sections',
+          cssDir: 'css/sections'
+        }
       }
-    }, 
+    },
 
     uglify: {
       production: {
@@ -41,13 +49,13 @@ module.exports = function(grunt) {
         ]
       }
     }
-  }); 
+  });
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['compile', 'watch']);
   grunt.registerTask('compile', ['coffee', 'compass']);
   grunt.registerTask('production', ['coffee', 'compass', 'uglify']);
 };

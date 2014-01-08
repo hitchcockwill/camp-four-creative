@@ -1,0 +1,30 @@
+// **********************************************************************
+// Components
+// **********************************************************************
+
+.btn {
+  display: inline-block;
+  padding: 14px 20px;
+  color: $blue-gray;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: none;
+  font-size: 18px;
+  -webkit-appearance: none;
+  border: none;
+  @include transition(background .25s ease-in, color .25s ease-in);
+  &:hover {
+    background: $blue-gray;
+    color: $off-white;
+  }
+}
+
+.btn.btn-primary {
+  background: $primary;
+  color: white;
+  text-transform: uppercase;
+}
+
+span.icon {
+  display: inline-block;
+}
