@@ -7,12 +7,22 @@
 $text:        #524d56;
 $text-dark:   #555555;
 
+$red:         #d43c28;
+
 // **********************************************************************
 // MOTOROSO BASE
 // **********************************************************************
 
 body {
   color: $text;
+
+  p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  h4 {
+    margin: 0;
+  }
 }
 
 // **********************************************************************
@@ -83,5 +93,45 @@ body {
 
   p {
     margin-bottom: 50px;
+  }
+}
+
+// **********************************************************************
+// PULL QUOTE
+// **********************************************************************
+
+.section.quote {
+  background: $red;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  h2 {
+    line-height: 46px;
+    font-size: 40px;
+    margin: 0;
+  }
+}
+
+
+// **********************************************************************
+// VIEW MOTOR
+// **********************************************************************
+
+.section.single-motor {
+  position: relative;
+  background: #30353c;
+  .top-strip {
+    height: 100px;
+    background: #1c2228;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  h4, p {
+    color: white;
+  }
+  .about {
+    margin-top: 200px;
   }
 }

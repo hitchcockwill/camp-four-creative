@@ -1,68 +1,114 @@
-/* line 14, ../../scss/sections/motoroso.scss */
+/* line 16, ../../scss/sections/motoroso.scss */
 body {
   color: #524d56;
 }
+/* line 19, ../../scss/sections/motoroso.scss */
+body p {
+  font-size: 18px;
+  line-height: 26px;
+}
+/* line 23, ../../scss/sections/motoroso.scss */
+body h4 {
+  margin: 0;
+}
 
-/* line 22, ../../scss/sections/motoroso.scss */
+/* line 32, ../../scss/sections/motoroso.scss */
 .motoroso-hero {
   background: url("/img/camp-hero.jpg") center top no-repeat;
   background-size: cover;
   height: 750px;
   overflow: hidden;
 }
-/* line 28, ../../scss/sections/motoroso.scss */
+/* line 38, ../../scss/sections/motoroso.scss */
 .motoroso-hero > .row {
   position: relative;
 }
 
-/* line 32, ../../scss/sections/motoroso.scss */
+/* line 42, ../../scss/sections/motoroso.scss */
 .hero-interface-1,
 .hero-interface-2 {
   max-width: 700px;
   position: absolute;
 }
 
-/* line 37, ../../scss/sections/motoroso.scss */
+/* line 47, ../../scss/sections/motoroso.scss */
 .hero-interface-1 {
   top: 200px;
   left: 0;
   z-index: 8;
 }
 
-/* line 43, ../../scss/sections/motoroso.scss */
+/* line 53, ../../scss/sections/motoroso.scss */
 .hero-interface-2 {
   top: 300px;
   right: 0;
   z-index: 10;
 }
 
-/* line 53, ../../scss/sections/motoroso.scss */
+/* line 63, ../../scss/sections/motoroso.scss */
 .section {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-/* line 62, ../../scss/sections/motoroso.scss */
+/* line 72, ../../scss/sections/motoroso.scss */
 .section.intro {
   padding: 110px 0;
   text-align: center;
 }
 
-/* line 71, ../../scss/sections/motoroso.scss */
+/* line 81, ../../scss/sections/motoroso.scss */
 .section.sorting {
   padding-top: 110px;
   color: #555555;
   background: #e3e3e3;
 }
-/* line 76, ../../scss/sections/motoroso.scss */
+/* line 86, ../../scss/sections/motoroso.scss */
 .section.sorting .sort-image-1 {
   margin-left: 20px;
 }
-/* line 81, ../../scss/sections/motoroso.scss */
+/* line 91, ../../scss/sections/motoroso.scss */
 .section.sorting .sorting-content > * {
   margin-left: 40px;
 }
-/* line 84, ../../scss/sections/motoroso.scss */
+/* line 94, ../../scss/sections/motoroso.scss */
 .section.sorting p {
   margin-bottom: 50px;
+}
+
+/* line 103, ../../scss/sections/motoroso.scss */
+.section.quote {
+  background: #d43c28;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+/* line 108, ../../scss/sections/motoroso.scss */
+.section.quote h2 {
+  line-height: 46px;
+  font-size: 40px;
+  margin: 0;
+}
+
+/* line 120, ../../scss/sections/motoroso.scss */
+.section.single-motor {
+  position: relative;
+  background: #30353c;
+}
+/* line 123, ../../scss/sections/motoroso.scss */
+.section.single-motor .top-strip {
+  height: 100px;
+  background: #1c2228;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+/* line 131, ../../scss/sections/motoroso.scss */
+.section.single-motor h4, .section.single-motor p {
+  color: white;
+}
+/* line 134, ../../scss/sections/motoroso.scss */
+.section.single-motor .about {
+  margin-top: 200px;
 }
