@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 /* line 9, ../scss/components/type.scss */
-h2 {
+h1, h2 {
   font-size: 42px;
   line-height: 1em;
   font-family: "minion-pro", serif;
@@ -63,23 +63,38 @@ p.p-large {
   font-weight: 300;
 }
 
-/* line 32, ../scss/components/type.scss */
+/* line 31, ../scss/components/type.scss */
+.two-col {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  -ms-column-gap: 30px;
+  -o-column-gap: 30px;
+  column-gap: 30px;
+  text-align: justify;
+}
+
+/* line 37, ../scss/components/type.scss */
 div.hr-wrap {
   position: relative;
 }
-/* line 34, ../scss/components/type.scss */
+/* line 39, ../scss/components/type.scss */
 div.hr-wrap.hr-centered {
   text-align: center;
 }
-/* line 38, ../scss/components/type.scss */
+/* line 43, ../scss/components/type.scss */
 div.hr-wrap.hr-left h3 {
   padding-left: 0;
 }
-/* line 43, ../scss/components/type.scss */
+/* line 48, ../scss/components/type.scss */
 div.hr-wrap.hr-right h3 {
   padding-right: 0;
 }
-/* line 48, ../scss/components/type.scss */
+/* line 53, ../scss/components/type.scss */
 div.hr-wrap h3 {
   font-size: 18px;
   text-transform: uppercase;
@@ -92,7 +107,7 @@ div.hr-wrap h3 {
   position: relative;
   z-index: 10;
 }
-/* line 61, ../scss/components/type.scss */
+/* line 66, ../scss/components/type.scss */
 div.hr-wrap:after {
   content: '';
   border-top: 1px solid #aebdbb;

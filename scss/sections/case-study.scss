@@ -9,7 +9,7 @@
   right: 0;
   left: 0;
   top: 0;
-  padding-top: 20px;
+  padding: 20px 0;
   > .row { @include clearfix; }
 
   .logo-wrap {
@@ -24,7 +24,7 @@
     }
   }
 
-  div.nav-wrapper {
+  .nav-wrapper {
     @include transition(top .15s eas-in);
 
     .main-nav {
@@ -57,6 +57,10 @@
 // TYPE
 // **********************************************************************
 
-h1 {
-
+p {
+  font-size: 18px;
+  line-height: 26px;
+}
+h4 {
+  margin: 0;
 }
