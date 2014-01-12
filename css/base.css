@@ -146,7 +146,70 @@ div.browser-chrome-wrap {
   border-top: none;
 }
 
-/* line 12, ../scss/base.scss */
+/* line 5, ../scss/components/header.scss */
+header#secondary-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  padding: 20px 0;
+  z-index: 100;
+}
+/* line 57, ../scss/config/variables.scss */
+header#secondary-header > .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 15, ../scss/components/header.scss */
+header#secondary-header .logo-wrap {
+  float: left;
+}
+/* line 19, ../scss/components/header.scss */
+header#secondary-header .footer-nav {
+  float: right;
+}
+/* line 22, ../scss/components/header.scss */
+header#secondary-header .footer-nav a.active {
+  background: #99c9a3;
+}
+/* line 27, ../scss/components/header.scss */
+header#secondary-header .nav-wrapper {
+  -webkit-transition: top 0.15s eas-in;
+  -moz-transition: top 0.15s eas-in;
+  -o-transition: top 0.15s eas-in;
+  transition: top 0.15s eas-in;
+}
+/* line 30, ../scss/components/header.scss */
+header#secondary-header .nav-wrapper .main-nav {
+  margin-left: -20px;
+}
+/* line 34, ../scss/components/header.scss */
+header#secondary-header .nav-wrapper a {
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
+  border-radius: 3px;
+  opacity: .9;
+  -webkit-transition: color 0.25s ease-in, background 0.25s ease-in, opacity 0.25s;
+  -webkit-transition-delay: 0.2s, 0.2s, 0.2s;
+  -moz-transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
+  -o-transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
+  transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
+}
+/* line 44, ../scss/components/header.scss */
+header#secondary-header .nav-wrapper a:hover {
+  opacity: 1;
+}
+/* line 47, ../scss/components/header.scss */
+header#secondary-header .nav-wrapper a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 13, ../scss/base.scss */
 body {
   font-family: "source-sans-pro", sans-serif;
   color: #524d56;
@@ -154,7 +217,7 @@ body {
   line-height: 1.4em;
 }
 
-/* line 19, ../scss/base.scss */
+/* line 20, ../scss/base.scss */
 footer {
   padding: 40px 0 20px;
   background: white;
@@ -162,7 +225,7 @@ footer {
   z-index: 10;
   color: #aebdbb;
 }
-/* line 25, ../scss/base.scss */
+/* line 26, ../scss/base.scss */
 footer div {
   text-align: center;
   font-size: 12px;
