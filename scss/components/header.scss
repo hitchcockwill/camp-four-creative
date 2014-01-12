@@ -1,0 +1,53 @@
+// **********************************************************************
+// HEADER
+// **********************************************************************
+
+header#secondary-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  padding: 20px 0;
+  z-index: 100;
+
+  > .row { @include clearfix; }
+
+  .logo-wrap {
+    float: left;
+  }
+
+  .footer-nav {
+    float: right;
+
+    a.active {
+      background: $primary;
+    }
+  }
+
+  .nav-wrapper {
+    @include transition(top .15s eas-in);
+
+    .main-nav {
+      margin-left: -20px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: white;
+      border-radius: 3px;
+      opacity: .9;
+      @include transition(color .25s ease-in .2s, background .25s ease-in .2s, opacity .25s .2s);
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        background: rgba(white, .2);
+      }
+    }
+
+  }
+}

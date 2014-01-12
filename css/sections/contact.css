@@ -1,0 +1,110 @@
+/* line 13, ../../scss/sections/contact.scss */
+.contact-content {
+  background: url("/img/camp-footer.jpg") center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+/* line 22, ../../scss/sections/contact.scss */
+.contact-content p {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+/* line 33, ../../scss/sections/contact.scss */
+.contact-content .contact-intro {
+  padding: 175px 0 100px;
+}
+/* line 35, ../../scss/sections/contact.scss */
+.contact-content .contact-intro .about {
+  float: left;
+}
+
+/* line 44, ../../scss/sections/contact.scss */
+form {
+  border: 1px solid white;
+  border-bottom: none;
+}
+/* line 48, ../../scss/sections/contact.scss */
+form fieldset {
+  border-bottom: 1px solid white;
+}
+/* line 57, ../../scss/config/variables.scss */
+form fieldset.double:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 52, ../../scss/sections/contact.scss */
+form fieldset.double .control-group {
+  width: 50%;
+  float: left;
+}
+/* line 59, ../../scss/sections/contact.scss */
+form .control-group + .control-group {
+  border-left: 1px solid white;
+}
+/* line 63, ../../scss/sections/contact.scss */
+form .control-group {
+  padding: 4px 8px;
+  position: relative;
+  z-index: 10;
+}
+/* line 69, ../../scss/sections/contact.scss */
+form .control-group.focus {
+  border-color: transparent;
+  z-index: 12;
+}
+/* line 72, ../../scss/sections/contact.scss */
+form .control-group.focus:before {
+  border: 1px solid #99c9a3;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: 11px;
+  content: '';
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+/* line 84, ../../scss/sections/contact.scss */
+form .control-group + .control-group.focus:before {
+  left: -2px;
+}
+/* line 89, ../../scss/sections/contact.scss */
+form label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+  display: block;
+}
+/* line 95, ../../scss/sections/contact.scss */
+form label:hover {
+  cursor: default;
+}
+/* line 101, ../../scss/sections/contact.scss */
+form input,
+form textarea {
+  color: white;
+  width: 100%;
+  background: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 300;
+  margin-top: -5px;
+  padding: 7px 0;
+}
+/* line 115, ../../scss/sections/contact.scss */
+form textarea {
+  resize: none;
+  min-height: 120px;
+}

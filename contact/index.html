@@ -1,0 +1,88 @@
+---
+layout: default
+className: "_contact"
+scripts: ["contact.js"]
+styles: ["sections/contact.css"]
+---
+
+{% include header.html %}
+
+<div class="contact-content">
+  <div class="contact-intro">
+    <div class="row">
+      <div class="large-4 large-offset-1 columns">
+        <h2>Want to work together?</h2>
+      </div>
+      <div class="about large-6 columns">
+        <p>
+          We are currently looking for new projects for the 2014 year. If you think that your project might be a good match for us, feel free to get in contact by filling out our form. Want to just say hey? Send us a tweet!
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="contact-form">
+    <div class="row">
+      <div class="large-10 large-offset-1 columns">
+
+        <form>
+          <fieldset class="double">
+            <div class="control-group">
+              <label for="name">Name</label>
+              <div class="controls">
+                <input type="text" id="name" name="name">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="company">Company</label>
+              <div class="controls">
+                <input type="text" id="company" name="company">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="double">
+            <div class="control-group">
+              <label for="url">URL</label>
+              <div class="controls">
+                <input type="text" id="url" name="url">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="location">Location</label>
+              <div class="controls">
+                <input type="text" id="location" name="location">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <div class="control-group">
+              <label for="description">Description</label>
+              <div class="controls">
+                <textarea name="description" id="description"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="double">
+            <div class="control-group">
+              <label for="budget">Approximate Budget</label>
+              <div class="controls">
+                <input type="text" id="budget" name="budget">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="timeframe">Completion Timeframe</label>
+              <div class="controls">
+                <input type="text" id="timeframe" name="timeframe">
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

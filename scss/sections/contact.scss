@@ -1,0 +1,119 @@
+@import "../config/variables";
+
+// **********************************************************************
+// CONTACT VARIABLES
+// **********************************************************************
+
+$text:        rgba(white, .8);
+
+// **********************************************************************
+// CONTACT BASE
+// **********************************************************************
+
+.contact-content {
+  background: url('/img/camp-footer.jpg') center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  color: $text;
+
+  p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.contact-content .contact-intro {
+  padding: 175px 0 100px;
+  .about {
+    float: left;
+  }
+}
+
+// **********************************************************************
+// FORM
+// **********************************************************************
+
+form {
+  border: 1px solid white;
+  border-bottom: none;
+
+  fieldset {
+    border-bottom: 1px solid white;
+    &.double {
+      @include clearfix;
+      .control-group {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  .control-group + .control-group {
+    border-left: 1px solid white;
+  }
+
+  .control-group {
+    padding: 4px 8px;
+    // border: 1px solid white;
+    position: relative;
+    z-index: 10;
+
+    &.focus {
+      border-color: transparent;
+      z-index: 12;
+      &:before {
+        border: 1px solid $primary;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        z-index: 11px;
+        content: '';
+        @include transition(all .25s);
+      }
+    }
+    + .control-group.focus:before {
+      left: -2px;
+    }
+  }
+
+  label {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: $fw-sbold;
+    width: 100%;
+    display: block;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  input,
+  textarea {
+    color: white;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: $body-font;
+    font-weight: $fw-light;
+    margin-top: -5px;
+    padding: 7px 0;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 120px;
+  }
+}
