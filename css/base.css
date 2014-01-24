@@ -21,28 +21,32 @@
   background: #3d4451;
   color: #f1f1f1;
 }
+/* line 22, ../scss/components/buttons.scss */
+.btn:focus {
+  outline: none;
+}
 
-/* line 28, ../scss/components/buttons.scss */
+/* line 31, ../scss/components/buttons.scss */
 .btn.btn-primary {
   background: #99c9a3;
   color: white;
   text-transform: uppercase;
 }
 
-/* line 34, ../scss/components/buttons.scss */
+/* line 37, ../scss/components/buttons.scss */
 .btn.btn-secondary {
   background: #cc5126;
   color: white;
   text-transform: uppercase;
 }
 
-/* line 44, ../scss/components/buttons.scss */
+/* line 47, ../scss/components/buttons.scss */
 .btn.btn-wide {
   padding-left: 30px;
   padding-right: 30px;
 }
 
-/* line 49, ../scss/components/buttons.scss */
+/* line 52, ../scss/components/buttons.scss */
 span.icon {
   display: inline-block;
 }

@@ -67,20 +67,25 @@ form {
     z-index: 10;
     @include transition(all .25s);
 
+    &:before {
+      border: 1px solid transparent;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      z-index: 0;
+      @include transition(all .25s);
+    }
+
     &.focus {
       border-color: transparent;
       z-index: 12;
       background: rgba(white, .08);
       &:before {
         border: 1px solid $primary;
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        bottom: -1px;
-        left: -1px;
-        z-index: 11px;
+        z-index: 11;
         content: '';
-        @include transition(all .25s);
       }
       label {
         color: $primary;
@@ -88,6 +93,26 @@ form {
     }
     + .control-group.focus:before {
       left: -2px;
+    }
+
+    &.invalid {
+      border-color: transparent;
+      z-index: 12;
+      &:before {
+        border: 1px solid $secondary;
+        z-index: 11;
+        content: '';
+      }
+    }
+
+    &.invalid.focus {
+      label { color: white; }
+    }
+
+    input,
+    textarea {
+      position: relative;
+      z-index: 15;
     }
   }
 

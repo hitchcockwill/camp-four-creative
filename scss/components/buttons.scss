@@ -19,6 +19,9 @@
     background: $blue-gray;
     color: $off-white;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 // **********************************************************************

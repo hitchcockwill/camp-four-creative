@@ -8,7 +8,12 @@ setWindowHeight = ->
 
 
 initFormListeners = ->
-  $fields = $('form').find('input, textarea')
+  $form = $('form')
+  $fields = $form.find('input, textarea')
+
+  $('button[type="submit"]').on 'click', (e) ->
+    e.preventDefault()
+    $('form').submit()
 
   $fields.each ->
     $this = $(this)
@@ -18,16 +23,49 @@ initFormListeners = ->
         $this.parents('.control-group').removeClass('focus')
       )
 
+  $form.on 'submit', (e) ->
+    valid = validateForm(scrapeForm())
+    clearValidationErrors()
+    if valid is true
+      # send form
+    else
+      e.preventDefault()
+      showValidationErrors(valid)
+
+showValidationErrors = (errors) ->
+  $form = $('form')
+  for error of errors
+    $form.find("[name='#{error}']").parents('.control-group').addClass('invalid')
+
+clearValidationErrors = ->
+  $('form .control-group').removeClass('invalid');
+
+validateForm = (formData) ->
+  errors = {}
+  if !formData.name then errors.name = true
+  if !formData.url then errors.url = true
+  if !formData.company then errors.company = true
+  if !formData.email then errors.email = true
+  if !formData.description then errors.description = true
+  if !formData.budget then errors.budget = true
+  if !formData.timeframe then errors.timeframe = true
+
+  return if _.isEmpty(errors) then true else errors
+
+scrapeForm = ->
+  data = $('form').serializeArray();
+  dataObject = {}
+  _.each data, (f) ->
+    dataObject[f.name] = f.value
+  return dataObject
+
+
 initChosen = ->
   $('select').chosen
     disable_search_threshold: 10
 
 $(document).ready ->
-  console.log('contact page')
   setWindowHeight()
   initChosen()
   initFormListeners()
 
-  $('button[type="submit"]').on 'click', (e) ->
-    e.preventDefault()
-    $('form').submit()
