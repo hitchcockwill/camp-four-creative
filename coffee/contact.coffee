@@ -27,3 +27,7 @@ $(document).ready ->
   setWindowHeight()
   initChosen()
   initFormListeners()
+
+  $('button[type="submit"]').on 'click', (e) ->
+    e.preventDefault()
+    $('form').submit()

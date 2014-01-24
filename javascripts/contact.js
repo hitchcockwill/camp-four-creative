@@ -34,7 +34,11 @@
     console.log('contact page');
     setWindowHeight();
     initChosen();
-    return initFormListeners();
+    initFormListeners();
+    return $('button[type="submit"]').on('click', function(e) {
+      e.preventDefault();
+      return $('form').submit();
+    });
   });
 
 }).call(this);
