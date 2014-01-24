@@ -92,16 +92,23 @@ section.top-text {
 }
 /* line 89, ../../scss/sections/landing.scss */
 section.top-text h2 {
-  font-size: 40px;
+  font-size: 34px;
   margin: 0 0 16px;
   line-height: 1.2em;
 }
 /* line 94, ../../scss/sections/landing.scss */
 section.top-text p {
-  font-size: 26px;
+  font-size: 20px;
+}
+/* line 98, ../../scss/sections/landing.scss */
+section.top-text .laptop-wrap {
+  width: 953px;
+  height: 572px;
+  background: url("/img/landing/laptop.png") left center no-repeat;
+  margin: -220px 0 0 -80px;
 }
 
-/* line 110, ../../scss/sections/landing.scss */
+/* line 117, ../../scss/sections/landing.scss */
 section.navigation {
   position: absolute;
   top: 430px;
@@ -109,12 +116,12 @@ section.navigation {
   left: 0;
   background: none;
 }
-/* line 116, ../../scss/sections/landing.scss */
+/* line 123, ../../scss/sections/landing.scss */
 section.navigation .logo-wrap {
   display: none;
 }
 
-/* line 121, ../../scss/sections/landing.scss */
+/* line 128, ../../scss/sections/landing.scss */
 section.navigation.fixed-nav {
   position: fixed;
   z-index: 100;
@@ -125,34 +132,34 @@ section.navigation.fixed-nav {
   padding-top: 24px;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
-/* line 57, ../../scss/config/variables.scss */
+/* line 59, ../../scss/config/variables.scss */
 section.navigation.fixed-nav > .row:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 133, ../../scss/sections/landing.scss */
+/* line 140, ../../scss/sections/landing.scss */
 section.navigation.fixed-nav .logo-wrap {
   display: block;
   float: left;
 }
-/* line 138, ../../scss/sections/landing.scss */
+/* line 145, ../../scss/sections/landing.scss */
 section.navigation.fixed-nav .main-nav {
   float: right;
 }
 
-/* line 144, ../../scss/sections/landing.scss */
+/* line 151, ../../scss/sections/landing.scss */
 div.nav-wrapper {
   -webkit-transition: top 0.15s eas-in;
   -moz-transition: top 0.15s eas-in;
   -o-transition: top 0.15s eas-in;
   transition: top 0.15s eas-in;
 }
-/* line 147, ../../scss/sections/landing.scss */
+/* line 154, ../../scss/sections/landing.scss */
 div.nav-wrapper .main-nav {
   margin-left: -20px;
 }
-/* line 151, ../../scss/sections/landing.scss */
+/* line 158, ../../scss/sections/landing.scss */
 div.nav-wrapper a {
   display: inline-block;
   padding: 10px 20px;
@@ -168,80 +175,81 @@ div.nav-wrapper a {
   -o-transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
   transition: color 0.25s ease-in 0.2s, background 0.25s ease-in 0.2s, opacity 0.25s 0.2s;
 }
-/* line 161, ../../scss/sections/landing.scss */
+/* line 168, ../../scss/sections/landing.scss */
 div.nav-wrapper a:hover {
   opacity: 1;
 }
-/* line 164, ../../scss/sections/landing.scss */
+/* line 171, ../../scss/sections/landing.scss */
 div.nav-wrapper a.active {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 197, ../../scss/sections/landing.scss */
+/* line 204, ../../scss/sections/landing.scss */
 section.philosophy {
   padding-top: 100px;
 }
-/* line 200, ../../scss/sections/landing.scss */
+/* line 207, ../../scss/sections/landing.scss */
 section.philosophy > .row {
   border-bottom: 1px solid #aebdbb;
   padding-bottom: 40px;
 }
-/* line 205, ../../scss/sections/landing.scss */
+/* line 212, ../../scss/sections/landing.scss */
 section.philosophy p {
   font-size: 19px;
+  line-height: 32px;
 }
-/* line 209, ../../scss/sections/landing.scss */
+/* line 217, ../../scss/sections/landing.scss */
 section.philosophy h2 {
-  line-height: 55px;
-  margin: 0;
+  line-height: 52px;
+  margin: 10px 0 0;
 }
 
-/* line 222, ../../scss/sections/landing.scss */
+/* line 230, ../../scss/sections/landing.scss */
 section.about {
   padding: 150px 0;
   color: white;
 }
-/* line 226, ../../scss/sections/landing.scss */
+/* line 234, ../../scss/sections/landing.scss */
 section.about h2 {
   line-height: 1em;
 }
-/* line 231, ../../scss/sections/landing.scss */
+/* line 239, ../../scss/sections/landing.scss */
 section.about div.about-us p {
   font-size: 20px;
   margin: 0 0 25px;
 }
-/* line 237, ../../scss/sections/landing.scss */
+/* line 245, ../../scss/sections/landing.scss */
 section.about div.profile > p {
   font-size: 14px;
   font-style: italic;
 }
-/* line 242, ../../scss/sections/landing.scss */
+/* line 250, ../../scss/sections/landing.scss */
 section.about img.profile {
   margin-bottom: 12px;
   width: 100%;
 }
-/* line 247, ../../scss/sections/landing.scss */
+/* line 255, ../../scss/sections/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 254, ../../scss/sections/landing.scss */
+/* line 262, ../../scss/sections/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 257, ../../scss/sections/landing.scss */
+/* line 265, ../../scss/sections/landing.scss */
 section.about div.profile:first-child > p {
   padding: 0;
   padding-left: 20px;
 }
 
-/* line 264, ../../scss/sections/landing.scss */
+/* line 272, ../../scss/sections/landing.scss */
 div.social-links {
   margin-bottom: 30px;
 }
-/* line 266, ../../scss/sections/landing.scss */
+/* line 274, ../../scss/sections/landing.scss */
 div.social-links > a {
   position: relative;
   display: inline-block;
@@ -249,11 +257,11 @@ div.social-links > a {
   width: 28px;
   margin-left: 5px;
 }
-/* line 273, ../../scss/sections/landing.scss */
+/* line 281, ../../scss/sections/landing.scss */
 div.social-links > a:hover img {
   opacity: 1;
 }
-/* line 278, ../../scss/sections/landing.scss */
+/* line 286, ../../scss/sections/landing.scss */
 div.social-links img {
   position: absolute;
   top: 0;
@@ -265,35 +273,35 @@ div.social-links img {
   transition: opacity 0.25s ease-in;
 }
 
-/* line 298, ../../scss/sections/landing.scss */
+/* line 306, ../../scss/sections/landing.scss */
 div.footer-wrap {
   background: url("/img/camp-footer.jpg") center center no-repeat;
   background-size: cover;
 }
-/* line 57, ../../scss/config/variables.scss */
+/* line 59, ../../scss/config/variables.scss */
 div.footer-wrap > .row:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 304, ../../scss/sections/landing.scss */
+/* line 312, ../../scss/sections/landing.scss */
 div.footer-wrap .logo-wrap {
   float: left;
 }
-/* line 308, ../../scss/sections/landing.scss */
+/* line 316, ../../scss/sections/landing.scss */
 div.footer-wrap .footer-nav {
   float: right;
 }
-/* line 311, ../../scss/sections/landing.scss */
+/* line 319, ../../scss/sections/landing.scss */
 div.footer-wrap .footer-nav a.active {
   background: #99c9a3;
 }
 
-/* line 318, ../../scss/sections/landing.scss */
+/* line 326, ../../scss/sections/landing.scss */
 section.footer {
   padding: 0;
 }
-/* line 321, ../../scss/sections/landing.scss */
+/* line 329, ../../scss/sections/landing.scss */
 section.footer > .row {
   border-top: 1px solid #aebdbb;
   padding: 35px 0 30px;

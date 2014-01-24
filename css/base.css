@@ -1,7 +1,7 @@
 /* line 5, ../scss/components/buttons.scss */
 .btn {
   display: inline-block;
-  padding: 14px 20px;
+  padding: 10px 20px;
   color: #3d4451;
   border-radius: 3px;
   text-align: center;
@@ -9,25 +9,40 @@
   font-size: 18px;
   -webkit-appearance: none;
   border: none;
+  vertical-align: bottom;
+  font-weight: 300;
   -webkit-transition: background 0.25s ease-in, color 0.25s ease-in;
   -moz-transition: background 0.25s ease-in, color 0.25s ease-in;
   -o-transition: background 0.25s ease-in, color 0.25s ease-in;
   transition: background 0.25s ease-in, color 0.25s ease-in;
 }
-/* line 16, ../scss/components/buttons.scss */
+/* line 18, ../scss/components/buttons.scss */
 .btn:hover {
   background: #3d4451;
   color: #f1f1f1;
 }
 
-/* line 22, ../scss/components/buttons.scss */
+/* line 28, ../scss/components/buttons.scss */
 .btn.btn-primary {
   background: #99c9a3;
   color: white;
   text-transform: uppercase;
 }
 
-/* line 28, ../scss/components/buttons.scss */
+/* line 34, ../scss/components/buttons.scss */
+.btn.btn-secondary {
+  background: #cc5126;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* line 44, ../scss/components/buttons.scss */
+.btn.btn-wide {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* line 49, ../scss/components/buttons.scss */
 span.icon {
   display: inline-block;
 }
@@ -124,7 +139,7 @@ div.browser-chrome {
   background: #e4e4e4;
   padding: 10px;
 }
-/* line 57, ../scss/config/variables.scss */
+/* line 59, ../scss/config/variables.scss */
 div.browser-chrome:after {
   content: "";
   display: table;
@@ -146,6 +161,57 @@ div.browser-chrome-wrap {
   border-top: none;
 }
 
+/* line 16, ../scss/components/plugins.scss */
+.chosen-container-single:not(.chosen-with-drop) .chosen-single {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  padding-left: 0;
+  font: "source-sans-pro", sans-serif;
+}
+
+/* line 27, ../scss/components/plugins.scss */
+.chosen-container-single .chosen-single {
+  height: 33px;
+  padding: 5px 0 5px 8px;
+}
+/* line 31, ../scss/components/plugins.scss */
+.chosen-container-single .chosen-single div b {
+  position: relative;
+  top: 5px;
+}
+
+/* line 38, ../scss/components/plugins.scss */
+.chosen-container-single.chosen-with-drop .chosen-single {
+  background: rgba(255, 255, 255, 0.9);
+}
+/* line 42, ../scss/components/plugins.scss */
+.chosen-container-single.chosen-with-drop .chosen-drop {
+  background: rgba(255, 255, 255, 0.9);
+  margin-top: 0;
+}
+
+/* line 49, ../scss/components/plugins.scss */
+.chosen-container {
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+/* line 54, ../scss/components/plugins.scss */
+.chosen-container.chosen-with-drop {
+  color: #524d56;
+}
+/* line 59, ../scss/components/plugins.scss */
+.chosen-container .chosen-results li {
+  padding: 7px 6px;
+}
+/* line 61, ../scss/components/plugins.scss */
+.chosen-container .chosen-results li.highlighted {
+  background: #99c9a3;
+}
+
 /* line 5, ../scss/components/header.scss */
 header#secondary-header {
   position: absolute;
@@ -155,7 +221,7 @@ header#secondary-header {
   padding: 20px 0;
   z-index: 100;
 }
-/* line 57, ../scss/config/variables.scss */
+/* line 59, ../scss/config/variables.scss */
 header#secondary-header > .row:after {
   content: "";
   display: table;
@@ -209,15 +275,20 @@ header#secondary-header .nav-wrapper a.active {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 13, ../scss/base.scss */
-body {
+/* line 19, ../scss/base.scss */
+body,
+html,
+button,
+input,
+select,
+textarea {
   font-family: "source-sans-pro", sans-serif;
   color: #524d56;
   font-size: 16px;
   line-height: 1.4em;
 }
 
-/* line 20, ../scss/base.scss */
+/* line 26, ../scss/base.scss */
 footer {
   padding: 40px 0 20px;
   background: white;
@@ -225,7 +296,7 @@ footer {
   z-index: 10;
   color: #aebdbb;
 }
-/* line 26, ../scss/base.scss */
+/* line 32, ../scss/base.scss */
 footer div {
   text-align: center;
   font-size: 12px;

@@ -87,12 +87,19 @@ section.top-text {
   padding-bottom: 110px;
 
   h2 {
-    font-size: 40px;
+    font-size: 34px;
     margin: 0 0 16px;
     line-height: 1.2em;
   }
   p {
-    font-size: 26px;
+    font-size: 20px;
+  }
+
+  .laptop-wrap {
+    width: 953px;
+    height: 572px;
+    background: url('/img/landing/laptop.png') left center no-repeat;
+    margin: -220px 0 0 -80px;
   }
 }
 
@@ -204,11 +211,12 @@ section.philosophy {
 
   p {
     font-size: 19px;
+    line-height: 32px;
   }
 
   h2 {
-    line-height: 55px;
-    margin: 0;
+    line-height: 52px;
+    margin: 10px 0 0;
   }
 }
 

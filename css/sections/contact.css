@@ -15,7 +15,7 @@
 
 /* line 33, ../../scss/sections/contact.scss */
 .contact-content .contact-intro {
-  padding: 175px 0 100px;
+  padding: 175px 0 70px;
 }
 /* line 35, ../../scss/sections/contact.scss */
 .contact-content .contact-intro .about {
@@ -31,7 +31,7 @@ form {
 form fieldset {
   border-bottom: 1px solid white;
 }
-/* line 57, ../../scss/config/variables.scss */
+/* line 59, ../../scss/config/variables.scss */
 form fieldset.double:after {
   content: "";
   display: table;
@@ -51,13 +51,18 @@ form .control-group {
   padding: 4px 8px;
   position: relative;
   z-index: 10;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
 }
-/* line 69, ../../scss/sections/contact.scss */
+/* line 70, ../../scss/sections/contact.scss */
 form .control-group.focus {
   border-color: transparent;
   z-index: 12;
+  background: rgba(255, 255, 255, 0.08);
 }
-/* line 72, ../../scss/sections/contact.scss */
+/* line 74, ../../scss/sections/contact.scss */
 form .control-group.focus:before {
   border: 1px solid #99c9a3;
   position: absolute;
@@ -72,11 +77,15 @@ form .control-group.focus:before {
   -o-transition: all 0.25s;
   transition: all 0.25s;
 }
-/* line 84, ../../scss/sections/contact.scss */
+/* line 85, ../../scss/sections/contact.scss */
+form .control-group.focus label {
+  color: #99c9a3;
+}
+/* line 89, ../../scss/sections/contact.scss */
 form .control-group + .control-group.focus:before {
   left: -2px;
 }
-/* line 89, ../../scss/sections/contact.scss */
+/* line 94, ../../scss/sections/contact.scss */
 form label {
   font-size: 12px;
   text-transform: uppercase;
@@ -84,11 +93,11 @@ form label {
   width: 100%;
   display: block;
 }
-/* line 95, ../../scss/sections/contact.scss */
+/* line 100, ../../scss/sections/contact.scss */
 form label:hover {
   cursor: default;
 }
-/* line 101, ../../scss/sections/contact.scss */
+/* line 106, ../../scss/sections/contact.scss */
 form input,
 form textarea {
   color: white;
@@ -103,8 +112,21 @@ form textarea {
   margin-top: -5px;
   padding: 7px 0;
 }
-/* line 115, ../../scss/sections/contact.scss */
+/* line 120, ../../scss/sections/contact.scss */
+form select {
+  width: 100%;
+}
+/* line 124, ../../scss/sections/contact.scss */
 form textarea {
   resize: none;
   min-height: 120px;
+}
+
+/* line 130, ../../scss/sections/contact.scss */
+div.form-footer {
+  margin-top: 20px;
+}
+/* line 132, ../../scss/sections/contact.scss */
+div.form-footer button {
+  float: right;
 }

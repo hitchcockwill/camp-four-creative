@@ -31,7 +31,7 @@ $text:        rgba(white, .8);
 // **********************************************************************
 
 .contact-content .contact-intro {
-  padding: 175px 0 100px;
+  padding: 175px 0 70px;
   .about {
     float: left;
   }
@@ -65,10 +65,12 @@ form {
     // border: 1px solid white;
     position: relative;
     z-index: 10;
+    @include transition(all .25s);
 
     &.focus {
       border-color: transparent;
       z-index: 12;
+      background: rgba(white, .08);
       &:before {
         border: 1px solid $primary;
         position: absolute;
@@ -79,6 +81,9 @@ form {
         z-index: 11px;
         content: '';
         @include transition(all .25s);
+      }
+      label {
+        color: $primary;
       }
     }
     + .control-group.focus:before {
@@ -112,8 +117,19 @@ form {
     padding: 7px 0;
   }
 
+  select {
+    width: 100%;
+  }
+
   textarea {
     resize: none;
     min-height: 120px;
+  }
+}
+
+div.form-footer {
+  margin-top: 20px;
+  button {
+    float: right;
   }
 }

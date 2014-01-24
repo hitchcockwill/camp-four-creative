@@ -4,13 +4,19 @@
 @import "components/buttons";
 @import "components/type";
 @import "components/ui";
+@import "components/plugins";
 @import "components/header";
 
 // ************************************************************************************************
 // Body Styles
 // **************************************************************************************************
 
-body {
+body,
+html,
+button,
+input,
+select,
+textarea {
   font-family: $body-font;
   color:$gray;
   font-size: 16px;

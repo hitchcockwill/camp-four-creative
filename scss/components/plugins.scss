@@ -1,0 +1,66 @@
+// **********************************************************************
+// PLUGINS
+// **********************************************************************
+
+
+// **********************************************************************
+// CHOSEN
+// **********************************************************************
+
+$chosen-background:  rgba(white, .9);
+
+@mixin chosen-background {
+  background: rgba(white, .9);
+}
+
+.chosen-container-single:not(.chosen-with-drop) .chosen-single {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: white;
+  font-size: 18px;
+  font-weight: $fw-light;
+  padding-left: 0;
+  font: $body-font;
+}
+
+.chosen-container-single .chosen-single {
+  height: 33px;
+  padding: 5px 0 5px 8px;
+
+  div b {
+    position: relative;
+    top: 5px;
+  }
+}
+
+.chosen-container-single.chosen-with-drop {
+  .chosen-single {
+    // background: $chosen-background;
+    @include chosen-background();
+  }
+  .chosen-drop {
+    // background: $chosen-background;
+    @include chosen-background();
+    margin-top: 0;
+  }
+}
+
+.chosen-container {
+  // background: $chosen-background;
+  font-size: 16px;
+  margin: 0 0 5px;
+
+  &.chosen-with-drop {
+    color: $gray;
+  }
+
+  .chosen-results {
+    li {
+      padding: 7px 6px;
+      &.highlighted {
+        background: $primary;
+      }
+    }
+  }
+}

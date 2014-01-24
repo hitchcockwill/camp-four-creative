@@ -18,8 +18,12 @@ initFormListeners = ->
         $this.parents('.control-group').removeClass('focus')
       )
 
+initChosen = ->
+  $('select').chosen
+    disable_search_threshold: 10
 
 $(document).ready ->
   console.log('contact page')
   setWindowHeight()
+  initChosen()
   initFormListeners()

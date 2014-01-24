@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     uglify: {
       production: {
         files: [
-          {src: ['javascripts/libs/categorizr.js'], dest: 'javascripts/min/lib.min.js'},
+          {src: ['javascripts/libs/*.js'], dest: 'javascripts/min/lib.min.js'},
           {src: 'javascripts/*.js', dest: 'javascripts/min/scripts.min.js'}
         ]
       }

@@ -1,10 +1,10 @@
 // **********************************************************************
-// Components
+// BUTTONS
 // **********************************************************************
 
 .btn {
   display: inline-block;
-  padding: 14px 20px;
+  padding: 10px 20px;
   color: $blue-gray;
   border-radius: 3px;
   text-align: center;
@@ -12,6 +12,8 @@
   font-size: 18px;
   -webkit-appearance: none;
   border: none;
+  vertical-align: bottom;
+  font-weight: $fw-light;
   @include transition(background .25s ease-in, color .25s ease-in);
   &:hover {
     background: $blue-gray;
@@ -19,10 +21,29 @@
   }
 }
 
+// **********************************************************************
+// BUTTON TYPES
+// **********************************************************************
+
 .btn.btn-primary {
   background: $primary;
   color: white;
   text-transform: uppercase;
+}
+
+.btn.btn-secondary {
+  background: $secondary;
+  color: white;
+  text-transform: uppercase;
+}
+
+// **********************************************************************
+// BUTTON CHARACTERISTICS
+// **********************************************************************
+
+.btn.btn-wide {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 span.icon {

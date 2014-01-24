@@ -15,6 +15,8 @@ $dull-white:    #fafafa;
 $primary:       #99c9a3;
 $primary-light: #c7d9d6;
 
+$secondary:     #cc5126;
+
 $bg:            #f8f8f8;
 
 $orange:          #f09232;
@@ -59,4 +61,34 @@ $fw-bold:      bold;
     display:table;
     clear:both;
   }
+}
+
+// **********************************************************************
+// MEDIA QUERIES
+// **********************************************************************
+
+@mixin mq($media) {
+    @if $media == webkit {
+        @media (-webkit-min-device-pixel-ratio: 0) {
+            @content;
+        }
+    }
+
+    @else if $media == moz {
+        @media (-moz-min-device-pixel-ratio: 0) {
+            @content;
+        }
+    }
+
+    @else if $media == retina {
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $media) {
+            @content;
+        }
+    }
 }

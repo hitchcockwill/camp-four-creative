@@ -1,5 +1,5 @@
 (function() {
-  var initFormListeners, setWindowHeight;
+  var initChosen, initFormListeners, setWindowHeight;
 
   setWindowHeight = function() {
     var $content, $win;
@@ -24,9 +24,16 @@
     });
   };
 
+  initChosen = function() {
+    return $('select').chosen({
+      disable_search_threshold: 10
+    });
+  };
+
   $(document).ready(function() {
     console.log('contact page');
     setWindowHeight();
+    initChosen();
     return initFormListeners();
   });
 
