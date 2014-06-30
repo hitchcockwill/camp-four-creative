@@ -34,7 +34,13 @@ slideOutProject = ($project, $gallery) ->
   $project.parent().removeClass("open")
   $("html, body").animate {scrollTop: $project.parent().offset().top}, 250
 
-# Scrolling events
+
+
+
+
+# #######################################################################
+# SCROLLING EVENTS
+# #######################################################################
 
 didScroll = false
 didResize = false
@@ -60,7 +66,7 @@ initScrolling = ->
 
 handleFixedBar = (scrollTop) ->
   position = $navBar.offset().top - scrollTop
-  if position <= 0 and navFixed is false then fixNav() 
+  if position <= 0 and navFixed is false then fixNav()
   else if position > 0 then unFixNav()
 
 initActiveNav = ->
@@ -87,7 +93,13 @@ unFixNav = ->
   navFixed = false
   $navBar.removeClass("fixed")
 
-# Nav events
+
+
+
+
+# #######################################################################
+# NAV EVENTS
+# #######################################################################
 
 initNavEvents = ->
   $navLinks.on "click", (e) ->
@@ -106,7 +118,13 @@ initWindowResize = ->
   , 250
 
 
-# Image loading
+
+
+
+
+# #######################################################################
+# IMAGE LOADING
+# #######################################################################
 
 imageLoad = ($image, cb) ->
   src = $image.attr("data-src")
@@ -154,6 +172,41 @@ backgroundImageLoad = ($this) ->
       $this.fadeIn(1000)
       img.remove()
   img.src = src
+
+
+
+
+
+# #######################################################################
+# TRACKING EVENTS
+# #######################################################################
+
+# header clicks
+$('section.navigation .right-nav a').on 'click', ->
+  _trackEvent('Header', 'Click', $(this).attr('title'))
+
+# project clicks
+$('section.projects div.project a').on 'click', ->
+  _trackEvent('Project', 'Click', $(this).attr('data-project'))
+$('section.projects .share-project a').on 'click', ->
+  _trackEvent('Share', 'Click', 'Github')
+
+# social clicks
+$('section.about .social-links a').on 'click', ->
+  _trackEvent('Social', 'Click', $(this).attr('data-social'))
+
+# contact clicks
+$('section.contact a.mail').on 'click', ->
+  _trackEvent('Contact', 'Click', 'main contact')
+$('section.projects a.contact').on 'click', ->
+  _trackEvent('Contact', 'Click', 'project contact')
+
+
+
+
+# #######################################################################
+# DOCUMENT READY
+# #######################################################################
 
 $(document).ready () ->
   initPortfolio()

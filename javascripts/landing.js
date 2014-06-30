@@ -220,6 +220,30 @@
     return img.src = src;
   };
 
+  $('section.navigation .right-nav a').on('click', function() {
+    return _trackEvent('Header', 'Click', $(this).attr('title'));
+  });
+
+  $('section.projects div.project a').on('click', function() {
+    return _trackEvent('Project', 'Click', $(this).attr('data-project'));
+  });
+
+  $('section.projects .share-project a').on('click', function() {
+    return _trackEvent('Share', 'Click', 'Github');
+  });
+
+  $('section.about .social-links a').on('click', function() {
+    return _trackEvent('Social', 'Click', $(this).attr('data-social'));
+  });
+
+  $('section.contact a.mail').on('click', function() {
+    return _trackEvent('Contact', 'Click', 'main contact');
+  });
+
+  $('section.projects a.contact').on('click', function() {
+    return _trackEvent('Contact', 'Click', 'project contact');
+  });
+
   $(document).ready(function() {
     initPortfolio();
     initScrolling();
