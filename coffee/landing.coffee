@@ -183,23 +183,23 @@ backgroundImageLoad = ($this) ->
 
 # header clicks
 $('section.navigation .right-nav a').on 'click', ->
-  _trackEvent('Header', 'Click', $(this).attr('title'))
+  _gaq.push(['_trackEvent', 'Header', 'Click', $(this).attr('title')])
 
 # project clicks
 $('section.projects div.project a').on 'click', ->
-  _trackEvent('Project', 'Click', $(this).attr('data-project'))
+  _gaq.push(['_trackEvent', 'Project', 'Click', $(this).attr('data-project')])
 $('section.projects .share-project a').on 'click', ->
-  _trackEvent('Share', 'Click', 'Github')
+  _gaq.push(['_trackEvent', 'Share', 'Click', 'Github'])
 
 # social clicks
 $('section.about .social-links a').on 'click', ->
-  _trackEvent('Social', 'Click', $(this).attr('data-social'))
+  _gaq.push(['_trackEvent', 'Social', 'Click', $(this).attr('data-social')])
 
 # contact clicks
 $('section.contact a.mail').on 'click', ->
-  _trackEvent('Contact', 'Click', 'main contact')
+  _gaq.push(['_trackEvent', 'Contact', 'Click', 'main contact'])
 $('section.projects a.contact').on 'click', ->
-  _trackEvent('Contact', 'Click', 'project contact')
+  _gaq.push(['_trackEvent', 'Contact', 'Click', 'project contact'])
 
 
 
