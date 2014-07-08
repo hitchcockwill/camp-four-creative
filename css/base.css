@@ -290,9 +290,10 @@ textarea {
   color: #524d56;
   font-size: 16px;
   line-height: 1.4em;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 26, ../scss/base.scss */
+/* line 28, ../scss/base.scss */
 footer {
   padding: 40px 0 20px;
   background: white;
@@ -300,7 +301,7 @@ footer {
   z-index: 10;
   color: #aebdbb;
 }
-/* line 32, ../scss/base.scss */
+/* line 34, ../scss/base.scss */
 footer div {
   text-align: center;
   font-size: 12px;

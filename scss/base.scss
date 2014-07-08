@@ -21,6 +21,8 @@ textarea {
   color:$gray;
   font-size: 16px;
   line-height: 1.4em;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 footer {

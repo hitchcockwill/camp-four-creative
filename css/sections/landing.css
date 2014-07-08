@@ -184,72 +184,130 @@ div.nav-wrapper a.active {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 204, ../../scss/sections/landing.scss */
+/* line 195, ../../scss/sections/landing.scss */
+section.case-studies {
+  padding-top: 0;
+}
+/* line 198, ../../scss/sections/landing.scss */
+section.case-studies .hr-wrap {
+  margin-bottom: 50px;
+}
+/* line 205, ../../scss/sections/landing.scss */
+section.case-studies ul.studies li.case:hover .case-meta {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+/* line 209, ../../scss/sections/landing.scss */
+section.case-studies ul.studies li.case .case-content {
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+  height: 350px;
+  border-radius: 2px;
+}
+/* line 217, ../../scss/sections/landing.scss */
+section.case-studies ul.studies li.case .case-meta {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 124px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  -webkit-transform: translate(0, 129px);
+  -moz-transform: translate(0, 129px);
+  -ms-transform: translate(0, 129px);
+  -o-transform: translate(0, 129px);
+  transform: translate(0, 129px);
+  -webkit-transition: all 0.5s;
+  -webkit-transition-delay: 0.05s;
+  -moz-transition: all 0.5s 0.05s;
+  -o-transition: all 0.5s 0.05s;
+  transition: all 0.5s 0.05s;
+}
+/* line 230, ../../scss/sections/landing.scss */
+section.case-studies ul.studies li.case .case-meta h3 {
+  margin: 0 0 5px;
+}
+/* line 233, ../../scss/sections/landing.scss */
+section.case-studies ul.studies li.case .case-meta p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4em;
+  font-weight: normal;
+  color: #ccc;
+}
+
+/* line 254, ../../scss/sections/landing.scss */
 section.philosophy {
   padding-top: 100px;
 }
-/* line 207, ../../scss/sections/landing.scss */
+/* line 257, ../../scss/sections/landing.scss */
 section.philosophy > .row {
   border-bottom: 1px solid #aebdbb;
   padding-bottom: 40px;
 }
-/* line 212, ../../scss/sections/landing.scss */
+/* line 262, ../../scss/sections/landing.scss */
 section.philosophy p {
   font-size: 19px;
   line-height: 32px;
 }
-/* line 217, ../../scss/sections/landing.scss */
+/* line 267, ../../scss/sections/landing.scss */
 section.philosophy h2 {
   line-height: 52px;
   margin: 10px 0 0;
 }
 
-/* line 230, ../../scss/sections/landing.scss */
+/* line 280, ../../scss/sections/landing.scss */
 section.about {
   padding: 150px 0;
   color: white;
 }
-/* line 234, ../../scss/sections/landing.scss */
+/* line 284, ../../scss/sections/landing.scss */
 section.about h2 {
   line-height: 1em;
 }
-/* line 239, ../../scss/sections/landing.scss */
+/* line 289, ../../scss/sections/landing.scss */
 section.about div.about-us p {
   font-size: 20px;
   margin: 0 0 25px;
 }
-/* line 245, ../../scss/sections/landing.scss */
+/* line 295, ../../scss/sections/landing.scss */
 section.about div.profile > p {
   font-size: 14px;
   font-style: italic;
 }
-/* line 250, ../../scss/sections/landing.scss */
+/* line 300, ../../scss/sections/landing.scss */
 section.about img.profile {
   margin-bottom: 12px;
   width: 100%;
 }
-/* line 255, ../../scss/sections/landing.scss */
+/* line 305, ../../scss/sections/landing.scss */
 section.about h3 {
   margin-top: 0;
   font-size: 24px;
   margin-bottom: 10px;
   color: #d0e7e3;
 }
-/* line 262, ../../scss/sections/landing.scss */
+/* line 312, ../../scss/sections/landing.scss */
 section.about div.profile:first-child {
   text-align: right;
 }
-/* line 265, ../../scss/sections/landing.scss */
+/* line 315, ../../scss/sections/landing.scss */
 section.about div.profile:first-child > p {
   padding: 0;
   padding-left: 20px;
 }
 
-/* line 272, ../../scss/sections/landing.scss */
+/* line 322, ../../scss/sections/landing.scss */
 div.social-links {
   margin-bottom: 30px;
 }
-/* line 274, ../../scss/sections/landing.scss */
+/* line 324, ../../scss/sections/landing.scss */
 div.social-links > a {
   position: relative;
   display: inline-block;
@@ -257,11 +315,11 @@ div.social-links > a {
   width: 28px;
   margin-left: 5px;
 }
-/* line 281, ../../scss/sections/landing.scss */
+/* line 331, ../../scss/sections/landing.scss */
 div.social-links > a:hover img {
   opacity: 1;
 }
-/* line 286, ../../scss/sections/landing.scss */
+/* line 336, ../../scss/sections/landing.scss */
 div.social-links img {
   position: absolute;
   top: 0;
@@ -273,7 +331,7 @@ div.social-links img {
   transition: opacity 0.25s ease-in;
 }
 
-/* line 306, ../../scss/sections/landing.scss */
+/* line 356, ../../scss/sections/landing.scss */
 div.footer-wrap {
   background: url("/img/camp-footer.jpg") center center no-repeat;
   background-size: cover;
@@ -284,24 +342,24 @@ div.footer-wrap > .row:after {
   display: table;
   clear: both;
 }
-/* line 312, ../../scss/sections/landing.scss */
+/* line 362, ../../scss/sections/landing.scss */
 div.footer-wrap .logo-wrap {
   float: left;
 }
-/* line 316, ../../scss/sections/landing.scss */
+/* line 366, ../../scss/sections/landing.scss */
 div.footer-wrap .footer-nav {
   float: right;
 }
-/* line 319, ../../scss/sections/landing.scss */
+/* line 369, ../../scss/sections/landing.scss */
 div.footer-wrap .footer-nav a.active {
   background: #99c9a3;
 }
 
-/* line 326, ../../scss/sections/landing.scss */
+/* line 376, ../../scss/sections/landing.scss */
 section.footer {
   padding: 0;
 }
-/* line 329, ../../scss/sections/landing.scss */
+/* line 379, ../../scss/sections/landing.scss */
 section.footer > .row {
   border-top: 1px solid #aebdbb;
   padding: 35px 0 30px;

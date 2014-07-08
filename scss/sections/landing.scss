@@ -192,6 +192,56 @@ div.nav-wrapper {
 // **********************************************************************
 
 
+section.case-studies {
+  padding-top: 0;
+
+  .hr-wrap {
+    margin-bottom: 50px;
+  }
+
+  ul.studies {
+    li.case {
+
+      &:hover .case-meta {
+        @include transform(translate(0, 0));
+      }
+
+      .case-content {
+        overflow: hidden;
+        background-size: cover;
+        position: relative;
+        height: 350px;
+        border-radius: 2px;
+      }
+
+      .case-meta {
+        $meta-height: 124px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: $meta-height;
+        background: rgba(black, .7);
+        color: white;
+        padding: 10px;
+        @include transform(translate(0, $meta-height + 5));
+        @include transition(all .5s .05s);
+
+        h3 {
+          margin: 0 0 5px;
+        }
+        p {
+          margin: 0;
+          font-size: 14px;
+          line-height: 1.4em;
+          font-weight: normal;
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+}
 
 
 

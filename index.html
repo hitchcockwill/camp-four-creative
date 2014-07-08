@@ -56,6 +56,21 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       </h3>
     </div>
 
+    <ul class="studies row">
+      {% for post in site.posts %}
+        <li class="case large-4 small-4 columns">
+          <a href="{{ post.url }}">
+            <div class="case-content" style="background-image: url({{post.image}});">
+              <div class="case-meta">
+                <h3>{{post.title}}</h3>
+                <p>{{post.description}}</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
   </div>
 </section>
 
