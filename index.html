@@ -8,44 +8,51 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 
 <div id="landing-hero">
   <!-- <div class="hero-overlay"></div> -->
-  <div class="image-wrapper" data-src="/img/camp-hero.jpg"></div>
+  <div class="image-wrapper" data-src="/img/camp-hero.jpg"><div class="overlay"></div></div>
+  <div class="hero-content">
+    <img src="/img/logos/logo-lg-color.png" alt="" class="logo">
+    <h2>We help startups build products that perform.</h2>
+  </div>
 </div>
 
-<div id="logo-wrap">
-  <img src="/img/logos/logo-lg.png" class="retina" alt="Camp Four Creative Logo" width="255">
-</div>
 
 
-<section class="navigation">
+
+{% include header.html %}
+
+<!-- <section class="navigation">
   <div class="nav-wrapper">
     <div class="row">
       <div class="logo-wrap">
         <img src="/img/logos/footer-logo.png" alt="Camp Four Logo">
       </div>
       <div class="main-nav">
+        <a href="" title="Services" class="services" data-dropdown="serviceDrop">Services</a>
+        <ul id="serviceDrop" class="f-dropdown" data-dropdown-content>
+          <li><a href="/footprint">Footprint</a></li>
+        </ul>
         <a href="" title="Case Studies" class="case-studies">Case Studies</a>
         <a href="" title="Our Philosophy" class="philosophy">Our Philosophy</a>
         <a href="" title="About us" class="about">About Us</a>
-        <!-- a href="blog.campfourcreative.com" title="Blog" class="blog">Blog</a -->
-        <a href="/contact/" title="Contact Us" class="contact active">Contact Us</a>
+        <a href="/contact/" title="Contact" class="contact active">Contact</a>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="top-text content-section">
-  <div class="row">
-    <div class="large-8 small-8 columns">
-      <h2>We help startups build products that perform.</h2>
+  <div class="container">
+    <div class="section-content">
       <p class="p-large">Camp Four Creative is a studio focused on providing exceptional design and development solutions to up and coming companies. From complex user interfaces to pitch decks, we do work that helps your company succeed.</p>
-      <button class="btn btn-primary">Watch our video</button>
-    </div>
-    <div class="large-4 small-4 columns">
-      <div class="laptop-wrap"></div>
+      <button class="btn btn-secondary">Our Work</button>
     </div>
   </div>
 </section>
+
+
+
+
 
 <section class="case-studies content-section">
   <div class="row">
@@ -56,9 +63,9 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       </h3>
     </div>
 
-    <ul class="studies row">
+    <ul class="studies">
       {% for post in site.posts %}
-        <li class="case large-4 small-4 columns">
+        <li class="case">
           <a href="{{ post.url }}">
             <div class="case-content" style="background-image: url({{post.image}});">
               <div class="case-meta">
@@ -75,20 +82,24 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 </section>
 
 
+
+
+
 <section class="philosophy content-section hr dark">
+
+  <div class="hr-wrap hr-left">
+    <h3>
+      Our Philosophy
+    </h3>
+  </div>
+
   <div class="row">
 
-    <div class="hr-wrap hr-left">
-      <h3>
-        Our Philosophy
-      </h3>
-    </div>
-
-    <div class="large-5 small-6 columns">
+    <div class="title-text">
       <h2>We believe that good design works hard.</h2>
     </div>
 
-    <div class="large-7 small-6 columns">
+    <div class="description">
       <p>
         Whether it’s making a sale, getting an email address, or just keeping a user engaged longer, every design we create has a clearly defined objective. We set these goals at the beginning of a project and meet them by gathering constant feedback, measuring results, and iterating often.
       </p>
@@ -99,12 +110,14 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 
 
 
+
+
 <div class="footer-wrap">
   <section class="about content-section">
     <div class="row">
 
 
-      <div class="about-us large-7 columns">
+      <div class="about-us">
         <h2>Who we are</h2>
 
         <p>
@@ -115,11 +128,11 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
           We believe that our best work is produced by living a life full of “outside the office” inspiration, which is why you’ll often find us out hiking, backpacking, climbing, kayaking, biking, skiing, and enjoying many other outdoor activities in our spare time.
         </p>
 
-        <a href="" class="btn btn-primary">Work with us</a>
+        <a href="" class="btn btn-secondary">Work with us</a>
       </div>
 
 
-      <div class="profile large-2 large-offset-1 small-6 columns">
+      <div class="profile first">
         <img src="/img/portraits/alyssa-round.png" alt="Alyssa Pelletier portrait" class="profile retina">
         <p><strong>Alyssa Pelletier</strong> is a product designer who focuses on creating web and mobile (and sometimes print!) experiences that are simple, intuitive, and visually pleasing.</p>
         <div class="social-links">
@@ -136,7 +149,7 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       </div>
 
 
-      <div class="profile large-2 small-6 columns">
+      <div class="profile">
         <img src="/img/portraits/will-round.png" alt="Will Hitchcock portrait" class="profile retina">
         <p><strong>Will Hitchcock</strong> is a front end developer with a background in graphic design. He is passionate about web app development, data visualization, &amp; writing clean, elegant code. </p>
         <div class="social-links">
@@ -160,7 +173,7 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
   <section class="footer content-section">
     <div class="row">
       <div class="logo-wrap">
-        <img src="/img/logos/footer-logo.png" alt="Camp Four Logo">
+        <img src="/img/logos/header-logo.png" alt="Camp Four Logo">
       </div>
       <div class="footer-nav nav-wrapper">
         <a href="" title="Case Studies" class="case-studies">Case Studies</a>
@@ -171,6 +184,7 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       </div>
     </div>
   </section>
+
 </div>
 
 

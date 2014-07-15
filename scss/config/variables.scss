@@ -1,4 +1,5 @@
-@import "compass/css3";
+@import "../bourbon/bourbon";
+@import "../neat/neat";
 
 // **********************************************************************
 // Colors
@@ -12,10 +13,13 @@ $light-gray:    #aebdbb;
 $off-white:     #f1f1f1;
 $dull-white:    #fafafa;
 
-$primary:       #99c9a3;
-$primary-light: #c7d9d6;
+// $primary:       #99c9a3;
+// $primary-light: #c7d9d6;
+$primary:       #383d46;
+$primary-light: #6f747d;
 
-$secondary:     #cc5126;
+// $secondary:     #cc5126;
+$secondary:     #ca3113;
 
 $bg:            #f8f8f8;
 
@@ -39,6 +43,12 @@ $fw-bold:      bold;
 // **********************************************************************
 // Mixins
 // **********************************************************************
+
+@mixin container {
+  @include outer-container;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 @mixin shadow($opacity: .25) {
   box-shadow: 0 1px 1px 0px rgba(0, 0, 0, $opacity);

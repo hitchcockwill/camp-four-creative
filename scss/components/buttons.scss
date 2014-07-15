@@ -13,7 +13,7 @@
   -webkit-appearance: none;
   border: none;
   vertical-align: bottom;
-  font-weight: $fw-light;
+  font-weight: normal;
   @include transition(background .25s ease-in, color .25s ease-in);
   &:hover {
     background: $blue-gray;

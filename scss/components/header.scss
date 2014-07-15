@@ -2,20 +2,33 @@
 // HEADER
 // **********************************************************************
 
-header#secondary-header {
-  position: absolute;
+#primary-header {
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
-  padding: 20px 0;
+  background: $primary;
   z-index: 100;
+}
 
-  > .row { @include clearfix; }
+#primary-header,
+.footer {
+  padding: 10px 0;
+
+  > .row {
+    @include outer-container;
+    @include clearfix;
+  }
 
   .logo-wrap {
     float: left;
+    img {
+      width: 190px;
+      margin-top: 7px;
+    }
   }
 
+  .header-nav,
   .footer-nav {
     float: right;
 
@@ -49,5 +62,14 @@ header#secondary-header {
       }
     }
 
+  }
+}
+
+#serviceDrop {
+  &:before {
+    left: 40px;
+  }
+  &:after {
+    left: 39px;
   }
 }

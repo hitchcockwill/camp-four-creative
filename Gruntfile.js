@@ -17,34 +17,35 @@ module.exports = function(grunt) {
     watch: {
       coffee: {
         files: ['coffee/*.coffee'],
-        tasks: ['coffee']
+        tasks: ['newer:coffee']
       },
-      compass: {
+      sass: {
         files: ['scss/**/*.scss'],
-        tasks: ['compass']
+        tasks: ['newer:sass']
       }
     },
 
-    compass: {
+    sass: {
       base: {
-        options: {
-          sassDir: 'scss',
-          specify: 'scss/base.scss',
-          cssDir: 'css'
-        }
+        expand: true,
+        cwd: 'scss/',
+        src: ['base.scss'],
+        dest: 'css/',
+        ext: '.css'
       },
       sections: {
-        options: {
-          sassDir: 'scss/sections',
-          cssDir: 'css/sections'
-        }
+        expand: true,
+        cwd: 'scss/sections',
+        src: ['*.scss'],
+        dest: 'css/sections',
+        ext: '.css'
       }
     },
 
     uglify: {
       production: {
         files: [
-          {src: ['javascripts/libs/*.js'], dest: 'javascripts/min/lib.min.js'},
+          {src: ['javascripts/libs/**/*.js'], dest: 'javascripts/min/lib.min.js'},
           {src: 'javascripts/*.js', dest: 'javascripts/min/scripts.min.js'}
         ]
       }
@@ -52,10 +53,11 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-newer');
 
   grunt.registerTask('default', ['compile', 'watch']);
-  grunt.registerTask('compile', ['coffee', 'compass']);
-  grunt.registerTask('production', ['coffee', 'compass', 'uglify']);
+  grunt.registerTask('compile', ['coffee', 'sass']);
+  grunt.registerTask('production', ['coffee', 'sass', 'uglify']);
 };

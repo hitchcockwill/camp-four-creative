@@ -1,55 +1,38 @@
-/* line 13, ../../scss/sections/ascendify.scss */
-body {
-  color: #555555;
-}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
-/* line 18, ../../scss/sections/ascendify.scss */
+body {
+  color: #555555; }
+
 .section .main-img {
   max-width: 100%;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
-/* line 29, ../../scss/sections/ascendify.scss */
 #case-study-header {
   background: url("/img/camp-hero.jpg") center top no-repeat;
-  background-size: cover;
-}
+  background-size: cover; }
 
-/* line 38, ../../scss/sections/ascendify.scss */
 .section.ascendify-hero {
-  padding: 210px 0 100px;
-}
+  padding: 210px 0 100px; }
 
-/* line 46, ../../scss/sections/ascendify.scss */
 .section.group {
-  padding: 0 0 110px;
-}
+  padding: 0 0 110px; }
 
-/* line 54, ../../scss/sections/ascendify.scss */
 .section.search {
-  padding: 40px 0 180px;
-}
-/* line 56, ../../scss/sections/ascendify.scss */
-.section.search .main-img {
-  margin-bottom: 100px;
-}
-/* line 59, ../../scss/sections/ascendify.scss */
-.section.search .about {
-  font-size: 20px;
-  line-height: 28px;
-}
+  padding: 40px 0 180px; }
+  .section.search .main-img {
+    margin-bottom: 100px; }
+  .section.search .about {
+    font-size: 20px;
+    line-height: 28px; }
 
-/* line 69, ../../scss/sections/ascendify.scss */
 .section.showcase {
   background: #f5f5f5;
-  padding: 75px 0;
-}
-/* line 73, ../../scss/sections/ascendify.scss */
-.section.showcase .row .row img + img {
-  margin-top: 35px;
-}
-/* line 76, ../../scss/sections/ascendify.scss */
-.section.showcase .about {
-  margin-top: 20px;
-}
+  padding: 75px 0; }
+  .section.showcase .row .row img + img {
+    margin-top: 35px; }
+  .section.showcase .about {
+    margin-top: 20px; }

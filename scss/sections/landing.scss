@@ -19,7 +19,12 @@ section.content-section {
 
 section {
   position: relative;
+  background: $bg;
   z-index: 10;
+
+  .container {
+    @include container;
+  }
 }
 
 section.dark {
@@ -43,10 +48,10 @@ section.hr {
 
 #landing-hero {
   height: 500px;
-  position: relative;
+  position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 60px;
   z-index: 1;
   background: $blue-gray;
   div.hero-overlay {
@@ -63,10 +68,36 @@ section.hr {
     right: 0;
     bottom: 0;
     background-color: $blue-gray;
-    background-image: url("/img/camp-hero.jpg");
+    background: url("/img/camp-hero2-bw.jpg");
+    // background-image: url("/img/camp-hero.jpg");
+    // opacity: .3;
     background-size: cover;
     background-position: center;
     z-index: 8;
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($blue-gray, .5);
+    }
+  }
+
+  .hero-content {
+    color: $off-white;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    max-width: 540px;
+    z-index: 15;
+    @include transform(translate(0, -60%));
+    img {
+      display: block;
+      max-width: 180px;
+      margin: 0 auto 30px;
+    }
   }
 }
 
@@ -83,8 +114,14 @@ section.hr {
 }
 
 section.top-text {
-  // margin-top: 750px;
   padding-bottom: 110px;
+  margin-top: 560px;
+
+  .section-content {
+    @include span-columns(6);
+    @include shift(3);
+  }
+
 
   h2 {
     font-size: 34px;
@@ -114,66 +151,66 @@ section.top-text {
 // Navigation
 // **********************************************************************
 
-section.navigation {
-  position: absolute;
-  top: 430px;
-  right: 0; left: 0;
-  background: none;
+// section.navigation {
+//   position: absolute;
+//   top: 430px;
+//   right: 0; left: 0;
+//   background: none;
 
-  .logo-wrap {
-    display: none;
-  }
-}
+//   .logo-wrap {
+//     display: none;
+//   }
+// }
 
-section.navigation.fixed-nav {
-  position: fixed;
-  z-index: 100;
-  height: 90px;
-  top: 0;
-  background: url('/img/camp-hero.jpg') center bottom no-repeat;
-  background-size: cover;
-  padding-top: 24px;
-  box-shadow: 0 1px 12px rgba(black, 0.5);
+// section.navigation.fixed-nav {
+//   position: fixed;
+//   z-index: 100;
+//   height: 90px;
+//   top: 0;
+//   background: url('/img/camp-hero.jpg') center bottom no-repeat;
+//   background-size: cover;
+//   padding-top: 24px;
+//   box-shadow: 0 1px 12px rgba(black, 0.5);
 
-  > .row { @include clearfix; }
+//   > .row { @include clearfix; }
 
-  .logo-wrap {
-    display: block;
-    float: left;
-  }
+//   .logo-wrap {
+//     display: block;
+//     float: left;
+//   }
 
-  .main-nav {
-    float: right;
-  }
-}
+//   .main-nav {
+//     float: right;
+//   }
+// }
 
 
-div.nav-wrapper {
-  @include transition(top .15s eas-in);
+// div.nav-wrapper {
+//   @include transition(top .15s eas-in);
 
-  .main-nav {
-    margin-left: -20px;
-  }
+//   .main-nav {
+//     margin-left: -20px;
+//   }
 
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    position: relative;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: white;
-    border-radius: 3px;
-    opacity: .9;
-    @include transition(color .25s ease-in .2s, background .25s ease-in .2s, opacity .25s .2s);
-    &:hover {
-      opacity: 1;
-    }
-    &.active {
-      background: rgba(white, .2);
-    }
-  }
+//   a {
+//     display: inline-block;
+//     padding: 10px 20px;
+//     position: relative;
+//     text-transform: uppercase;
+//     font-size: 14px;
+//     color: white;
+//     border-radius: 3px;
+//     opacity: .9;
+//     @include transition(color .25s ease-in .2s, background .25s ease-in .2s, opacity .25s .2s);
+//     &:hover {
+//       opacity: 1;
+//     }
+//     &.active {
+//       background: rgba(white, .2);
+//     }
+//   }
 
-}
+// }
 
 
 
@@ -200,7 +237,10 @@ section.case-studies {
   }
 
   ul.studies {
+    @include container;
     li.case {
+      @include span-columns(4);
+      @include omega(3n);
 
       &:hover .case-meta {
         @include transform(translate(0, 0));
@@ -211,7 +251,7 @@ section.case-studies {
         background-size: cover;
         position: relative;
         height: 350px;
-        border-radius: 2px;
+        border-radius: 3px;
       }
 
       .case-meta {
@@ -253,20 +293,31 @@ section.case-studies {
 
 section.philosophy {
   padding-top: 100px;
+  @include container;
 
   > .row {
     border-bottom: 1px solid $light-gray;
     padding-bottom: 40px;
+    @include row;
+  }
+
+  .title-text {
+    @include span-columns(5);
+  }
+  .description {
+    @include span-columns(7);
   }
 
   p {
     font-size: 19px;
     line-height: 32px;
+    color: $off-white;
   }
 
   h2 {
     line-height: 52px;
     margin: 10px 0 0;
+    color: $off-white;
   }
 }
 
@@ -280,16 +331,27 @@ section.philosophy {
 section.about {
   padding: 150px 0;
   color: white;
+  @include container;
+
+  .row {
+    @include row;
+  }
 
   h2 {
     line-height: 1em;
   }
 
   div.about-us {
+    @include span-columns(7);
     p {
       font-size: 20px;
       margin: 0 0 25px;
     }
+  }
+
+  div.profile {
+    @include span-columns(2);
+    &.first { @include shift(1); }
   }
 
   div.profile > p {
@@ -356,7 +418,10 @@ div.social-links {
 div.footer-wrap {
   background: url('/img/camp-footer.jpg') center center no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: 50;
 
+  section { background: none; }
   > .row { @include clearfix; }
 
   .logo-wrap {
