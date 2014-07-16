@@ -1,9 +1,35 @@
 module.exports = function(grunt) {
   // set up grunt
 
+  // load all grunt tasks
+  require('load-grunt-tasks')(grunt);
+
   // Coffeescript compile
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    variables: {
+      site: '_site'
+    },
+
+    // The actual grunt server settings
+    connect: {
+      options: {
+        port: 9000,
+        // Change this to '0.0.0.0' to access the server from outside.
+        hostname: '0.0.0.0',
+        livereload: 35729
+      },
+      livereload: {
+        options: {
+          base: [
+            '<%= variables.site %>'
+          ]
+        }
+      }
+    },
+
+
     coffee: {
       compile: {
         expand: true,
@@ -17,12 +43,25 @@ module.exports = function(grunt) {
     watch: {
       coffee: {
         files: ['coffee/*.coffee'],
-        tasks: ['newer:coffee']
+        tasks: ['newer:coffee', 'jekyll']
       },
       sass: {
         files: ['scss/**/*.scss'],
-        tasks: ['newer:sass']
+        tasks: ['newer:sass', 'jekyll']
+      },
+      html: {
+        files: ['./**/*.html', '!**./_site/**/*.html**'],
+        tasks: ['jekyll']
       }
+    },
+
+    // Run some tasks in parallel to speed up the build process
+    concurrent: {
+      server: [
+        'coffee',
+        'sass:base',
+        'sass:sections'
+      ]
     },
 
     sass: {
@@ -42,6 +81,17 @@ module.exports = function(grunt) {
       }
     },
 
+    jekyll: {
+      options: {
+        src: '.'
+      },
+      serve: {
+        options: {
+          dest: './_site'
+        }
+      }
+    },
+
     uglify: {
       production: {
         files: [
@@ -51,13 +101,15 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-newer');
 
   grunt.registerTask('default', ['compile', 'watch']);
-  grunt.registerTask('compile', ['coffee', 'sass']);
+
+  grunt.registerTask('serve', [
+    'connect',
+    'compile',
+    'watch'
+  ]);
+
+  grunt.registerTask('compile', ['concurrent:server', 'jekyll']);
   grunt.registerTask('production', ['coffee', 'sass', 'uglify']);
 };
