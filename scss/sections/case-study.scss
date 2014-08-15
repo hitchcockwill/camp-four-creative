@@ -36,6 +36,15 @@ $banner-height: 910px;
 
   h2 {
     margin-bottom: 13px;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(black, .2);
+  }
+
+  .hero-interface-single {
+    width: 80%;
+    position: absolute;
+    top: 320px;
+    left: 10%;
   }
 
   .hero-interface-1,
@@ -86,6 +95,29 @@ $banner-height: 910px;
   z-index: 1;
 }
 
+#case-study-content {
+  .intro {
+    div.services {
+      margin-top: 50px;
+      p {
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;
+        font-size: 24px;
+        @include fa-before(plus-circle);
+        &:before {
+          opacity: .4;
+          left: 0;
+          top: 0;
+        }
+
+        + p {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}
 
 
 // **********************************************************************

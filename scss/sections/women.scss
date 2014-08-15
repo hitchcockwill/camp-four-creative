@@ -7,7 +7,7 @@
 $text:        #524d56;
 $text-dark:   #555555;
 
-$red:         #d43c28;
+$teal:        #c4e5de;
 
 // **********************************************************************
 // MOTOROSO BASE
@@ -21,27 +21,13 @@ body {
 // HERO
 // **********************************************************************
 
-.motoroso-hero {
-  overflow: hidden;
-  .row { position: relative; }
-}
-
-.hero-interface-1,
-.hero-interface-2 {
-  max-width: 700px;
-  position: absolute;
-}
-
-.hero-interface-1 {
-  top: 320px;
-  left: 0;
-  z-index: 8;
-}
-
-.hero-interface-2 {
-  top: 420px;
-  right: 0;
-  z-index: 10;
+.women-hero {
+  .case-study-hero-intro {
+    margin-top: 70px;
+    img {
+      max-width: 250px;
+    }
+  }
 }
 
 // **********************************************************************
@@ -49,8 +35,8 @@ body {
 // **********************************************************************
 
 .section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 // **********************************************************************
@@ -60,6 +46,7 @@ body {
 .section.intro {
   padding: 80px 0;
   text-align: center;
+  background: white;
   .container {
     @include row;
   }
@@ -72,74 +59,56 @@ body {
   }
 }
 
+
 // **********************************************************************
-// SORTING & FILTERING
+// PERSONALITY
 // **********************************************************************
 
-.section.sorting {
-  padding-top: 110px;
-  padding-bottom: 0;
-  color: $text-dark;
-  background: #e3e3e3;
-
-  .sorting-img {
-    @include span-columns(3);
+.section.personality {
+  .section-content {
+    @include span-columns(4);
+    padding-right: 30px;
   }
-  .sorting-content {
-    @include span-columns(9);
-    position: relative;
-    padding-left: 30px;
+  .section-img {
+    @include span-columns(8);
     img {
-      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 2px;
     }
   }
 }
 
 // **********************************************************************
-// PULL QUOTE
+// SIMPLE
 // **********************************************************************
 
-.section.quote {
-  background: $red;
-  color: white;
-  text-align: center;
-  padding: 100px 0;
-  h2 {
-    line-height: 46px;
-    font-size: 40px;
-    margin: 0;
+.section.simple {
+  background: $teal;
+  color: darken($teal, 50%);
+  padding-bottom: 0;
+
+  .section-content {
+    @include span-columns(6);
   }
 }
 
 
 // **********************************************************************
-// VIEW MOTOR
+// PROCESS
 // **********************************************************************
 
-.section.single-motor {
-  position: relative;
-  background: #30353c;
-  .top-strip {
-    height: 100px;
-    background: #1c2228;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
-  h4, p {
-    color: white;
-  }
-  .row {
-    z-index: 10;
-    position: relative;
-  }
-  .about {
+.section.process {
+  background: $teal;
+  color: white;
+  padding-top: 50px;
+
+  .process-img {
     @include span-columns(3);
-    margin-top: 200px;
-  }
-  .interface {
-    @include span-columns(9);
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 2px;
+    img {
+      max-width: 100%;
+    }
   }
 }
