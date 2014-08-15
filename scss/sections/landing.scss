@@ -129,13 +129,18 @@ section.case-studies {
     margin-bottom: 50px;
   }
 
+  div.studies-wrap {
+    @include row;
+  }
   ul.studies {
-    @include container;
-    margin-top: 80px;
+    @include span-columns(8);
+    @include shift(2);
+    margin-top: 50px;
     margin-bottom: 20px;
     li.case {
-      @include span-columns(4);
-      @include omega(3n);
+      @include span-columns(6);
+      @include omega(2n);
+      margin-bottom: 20px;
 
       &:hover {
         .overlay-color {
@@ -146,7 +151,7 @@ section.case-studies {
       .case-content {
         overflow: hidden;
         position: relative;
-        height: 350px;
+        height: 340px;
         border-radius: 3px;
       }
 
@@ -156,8 +161,7 @@ section.case-studies {
         top: 50%;
         left: 50%;
         @include transform(translate(-50%, -50%));
-        @include transition(translate .25s .05s);
-        width: 250px;
+        width: 50%;
       }
 
       .overlay-image {

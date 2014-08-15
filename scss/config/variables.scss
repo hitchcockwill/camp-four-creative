@@ -1,5 +1,10 @@
+// **********************************************************************
+// PLUGINS
+// **********************************************************************
+
 @import "../bourbon/bourbon";
 @import "../neat/neat";
+@import "../fontawesome/font-awesome";
 
 // **********************************************************************
 // Colors
@@ -28,6 +33,8 @@ $blue-gray:       #3D4451;
 $blue-gray-dark:  #1a1d23;
 $teal:            #71C8B9;
 $teal-light:      #d0e7e3;
+$red:             #f05329;
+$link:            #27a6ff;
 
 // **********************************************************************
 // Fonts
@@ -70,6 +77,14 @@ $fw-bold:      bold;
     content:"";
     display:table;
     clear:both;
+  }
+}
+
+@mixin fa-before($fa) {
+  &:before {
+    position: absolute;
+    @extend .fa;
+    @extend .fa-#{$fa};
   }
 }
 

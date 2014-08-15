@@ -24,9 +24,6 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
   <div class="container">
     <div class="section-content">
       <p class="p-large">Camp Four Creative is a studio focused on providing exceptional design and development solutions to up and coming companies. From complex user interfaces to pitch decks, we do work that helps your company succeed.</p>
-      <div class="buttons-wrap">
-        <button class="btn btn-secondary">Our Work</button>
-      </div>
     </div>
   </div>
 </section>
@@ -44,19 +41,21 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       </h3>
     </div>
 
-    <ul class="studies">
-      {% for post in site.posts %}
-        <li class="case">
-          <a href="{{ post.url }}">
-            <div class="case-content">
-              <div class="overlay-image" style="background-image: url({{post.thumbnail_image}});"></div>
-              <img src="{{post.thumbnail_logo}}" alt="">
-              <div class="overlay-color" style="background: {{post.thumbnail_color}};"></div>
-            </div>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    <div class="studies-wrap">
+      <ul class="studies">
+        {% for post in site.posts | limitTo:4 %}
+          <li class="case">
+            <a href="{{ post.url }}">
+              <div class="case-content">
+                <div class="overlay-image" style="background-image: url({{post.thumbnail_image}});"></div>
+                <img src="{{post.thumbnail_logo}}" alt="">
+                <div class="overlay-color" style="background: {{post.thumbnail_color}};"></div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 
   </div>
 </section>

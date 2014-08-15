@@ -3,6 +3,8 @@
 .footprint-page {
   .footprint-hero {
     background: $primary-light;
+    text-align: center;
+
     .container {
       color: white;
       position: relative;
@@ -10,19 +12,47 @@
     }
   }
 
+  .icon {
+    font-size: 160px;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    display: block;
+    max-width: 200px;
+    opacity: .8;
+  }
+
   h1 {
     @include span-columns(8);
     @include shift(2);
-    margin-top: 200px;
   }
   h3 {
     @include span-columns(8);
     @include shift(2);
-    font-weight: 300;
+    font-weight: normal;
     line-height: 1.6em;
+  }
+
+  ul.bulleted {
+    list-style: none;
+    li {
+      position: relative;
+      margin-bottom: 10px;
+      @include fa-before(circle-o);
+      &:before {
+        left: -21px;
+        top: 10px;
+        font-size: 11px;
+        opacity: .8;
+      }
+    }
   }
 }
 
+
+// **********************************************************************
+// CONTENT SECTIONS
+// **********************************************************************
 
 .footprint-page .content-section {
   background: white;
@@ -44,12 +74,129 @@
   li {
     font-size: 20px;
     line-height: 1.6em;
+
+    a {
+      color: $link;
+      text-decoration: underline;
+    }
+  }
+
+  p.subtle {
+    font-size: 18px;
+    font-style: italic;
+    opacity: .7;
+  }
+
+  ul + * {
+    margin-top: 30px;
   }
 
   h2 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 25px;
+    border-bottom: 1px solid rgba($light-gray, .5);
+    padding-bottom: 12px;
   }
 }
+
+.footprint-page {
+  %dark {
+    background: $primary;
+    color: white;
+  }
+}
+
+
+// **********************************************************************
+// INFO
+// **********************************************************************
+
+.footprint-page .info {
+  p {
+    font-size: 24px;
+  }
+}
+
+
+// **********************************************************************
+// TESTIMONIAL
+// **********************************************************************
+
+.footprint-page .content-section.testimonial-top {
+  @extend %dark;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  img.profile {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 0;
+    border-radius: 80px;
+    border: 2px solid $bg;
+  }
+  p {
+    padding-left: 110px;
+    position: relative;
+  }
+  .by-line {
+    text-align: right;
+    opacity: .6;
+    margin: 0;
+  }
+}
+
+
+
+// **********************************************************************
+// RIGHT FOR YOU
+// **********************************************************************
+
+.footprint-page .right-for-you {
+  ul.bulleted {
+    li {
+      @include fa-before(check);
+      &:before {
+        left: -28px;
+        color: $teal;
+        top: 7px;
+        font-size: inherit;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+// **********************************************************************
+// WRONG FOR YOU
+// **********************************************************************
+
+.footprint-page .not-right-for-you {
+  ul.bulleted {
+    li {
+      @include fa-before(times);
+      &:before {
+        left: -28px;
+        color: $red;
+        top: 7px;
+        font-size: inherit;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+// **********************************************************************
+// CONTACT
+// **********************************************************************
+
+.footprint-page .get-started {
+  a.btn {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+}
+
