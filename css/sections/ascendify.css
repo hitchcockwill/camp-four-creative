@@ -1555,33 +1555,69 @@
 body {
   color: #555555; }
 
-.section .main-img {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto; }
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .section:nth-child(even) {
+    background: #f8f8f8;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4; }
+  .section .main-img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
 
-#case-study-header {
-  background: url("/img/camp-hero.jpg") center top no-repeat;
-  background-size: cover; }
+.ascendify-hero.case-study-hero .case-study-hero-intro {
+  margin-top: 90px; }
 
-.section.ascendify-hero {
-  padding: 210px 0 100px; }
-
-.section.group {
-  padding: 0 0 110px; }
+.section.intro .section-content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  .section.intro .section-content:last-child {
+    margin-right: 0; }
 
 .section.search {
-  padding: 40px 0 180px; }
+  padding: 40px 0 60px; }
   .section.search .main-img {
-    margin-bottom: 100px; }
+    margin-bottom: 70px; }
   .section.search .about {
     font-size: 20px;
-    line-height: 28px; }
+    line-height: 28px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .section.search .about:last-child {
+      margin-right: 0; }
 
 .section.showcase {
   background: #f5f5f5;
   padding: 75px 0; }
+  .section.showcase .content-left {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .section.showcase .content-left:last-child {
+      margin-right: 0; }
+    .section.showcase .content-left .row > div {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .section.showcase .content-left .row > div:last-child {
+        margin-right: 0; }
+  .section.showcase .about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    margin-top: 20px; }
+    .section.showcase .about:last-child {
+      margin-right: 0; }
   .section.showcase .row .row img + img {
     margin-top: 35px; }
-  .section.showcase .about {
-    margin-top: 20px; }

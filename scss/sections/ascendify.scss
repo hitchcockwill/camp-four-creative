@@ -15,6 +15,15 @@ body {
 }
 
 .section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &:nth-child(even) {
+    background: $bg;
+    border-top: 1px solid darken($bg, 8%);
+    border-bottom: 1px solid darken($bg, 8%);
+  }
+
   .main-img {
     max-width: 100%;
     margin-left: auto;
@@ -22,21 +31,26 @@ body {
   }
 }
 
-// **********************************************************************
-// ASCENDIFY HEADER
-// **********************************************************************
 
-#case-study-header {
-  background: url('/img/camp-hero.jpg') center top no-repeat;
-  background-size: cover;
-}
 
 // **********************************************************************
 // HERO
 // **********************************************************************
+.ascendify-hero.case-study-hero {
+  .case-study-hero-intro {
+    margin-top: 90px;
+  }
+}
 
-.section.ascendify-hero {
-  padding: 210px 0 100px;
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.section.intro {
+  .section-content {
+    @include span-columns(10);
+    @include shift(1);
+  }
 }
 
 // **********************************************************************
@@ -44,7 +58,7 @@ body {
 // **********************************************************************
 
 .section.group {
-  padding: 0 0 110px;
+
 }
 
 // **********************************************************************
@@ -52,13 +66,15 @@ body {
 // **********************************************************************
 
 .section.search {
-  padding: 40px 0 180px;
+  padding: 40px 0 60px;
   .main-img {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
   }
   .about {
     font-size: 20px;
     line-height: 28px;
+    @include span-columns(10);
+    @include shift(1);
   }
 }
 
@@ -70,10 +86,18 @@ body {
   background: #f5f5f5;
   padding: 75px 0;
 
-  .row .row img + img {
-    margin-top: 35px;
+  .content-left {
+    @include span-columns(8);
+    .row > div {
+      @include span-columns(6);
+    }
   }
   .about {
+    @include span-columns(4);
     margin-top: 20px;
+  }
+
+  .row .row img + img {
+    margin-top: 35px;
   }
 }

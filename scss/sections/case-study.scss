@@ -20,7 +20,7 @@ $banner-height: 910px;
     right: 0;
     top: 0;
     bottom: 0;
-    opacity: .25;
+    opacity: .5;
   }
 }
 
@@ -30,9 +30,32 @@ $banner-height: 910px;
   background-size: cover;
   background-position: bottom center;
   height: $banner-height;
+  overflow: hidden;
+
+  .row { position: relative; }
+
   h2 {
     margin-bottom: 13px;
   }
+
+  .hero-interface-1,
+  .hero-interface-2 {
+    max-width: 700px;
+    position: absolute;
+  }
+
+  .hero-interface-1 {
+    top: 320px;
+    left: 0;
+    z-index: 8;
+  }
+
+  .hero-interface-2 {
+    top: 420px;
+    right: 0;
+    z-index: 10;
+  }
+
 }
 
 .case-study-hero-intro {
@@ -45,7 +68,7 @@ $banner-height: 910px;
 
   img {
     display: block;
-    max-width: 180px;
+    max-width: 220px;
     margin: 0 auto 30px;
   }
 }

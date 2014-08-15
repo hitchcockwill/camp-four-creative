@@ -1567,16 +1567,31 @@
     right: 0;
     top: 0;
     bottom: 0;
-    opacity: .25; }
+    opacity: .5; }
 
 .case-study-hero {
   padding-top: 80px;
   position: relative;
   background-size: cover;
   background-position: bottom center;
-  height: 910px; }
+  height: 910px;
+  overflow: hidden; }
+  .case-study-hero .row {
+    position: relative; }
   .case-study-hero h2 {
     margin-bottom: 13px; }
+  .case-study-hero .hero-interface-1,
+  .case-study-hero .hero-interface-2 {
+    max-width: 700px;
+    position: absolute; }
+  .case-study-hero .hero-interface-1 {
+    top: 320px;
+    left: 0;
+    z-index: 8; }
+  .case-study-hero .hero-interface-2 {
+    top: 420px;
+    right: 0;
+    z-index: 10; }
 
 .case-study-hero-intro {
   float: left;
@@ -1592,7 +1607,7 @@
     margin-right: 0; }
   .case-study-hero-intro img {
     display: block;
-    max-width: 180px;
+    max-width: 220px;
     margin: 0 auto 30px; }
 
 .case-study-interfaces {
