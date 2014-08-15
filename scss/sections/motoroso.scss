@@ -22,12 +22,8 @@ body {
 // **********************************************************************
 
 .motoroso-hero {
-  background: url('/img/camp-hero.jpg') center top no-repeat;
-  background-size: cover;
-  height: 750px;
   overflow: hidden;
-
-  > .row { position: relative; }
+  .row { position: relative; }
 }
 
 .hero-interface-1,
@@ -37,13 +33,13 @@ body {
 }
 
 .hero-interface-1 {
-  top: 200px;
+  top: 320px;
   left: 0;
   z-index: 8;
 }
 
 .hero-interface-2 {
-  top: 300px;
+  top: 420px;
   right: 0;
   z-index: 10;
 }
@@ -62,8 +58,18 @@ body {
 // **********************************************************************
 
 .section.intro {
-  padding: 110px 0;
+  padding: 80px 0;
   text-align: center;
+  .container {
+    @include row;
+  }
+  .section-content {
+    @include span-columns(8);
+    @include shift(2);
+  }
+  p {
+    margin: 0;
+  }
 }
 
 // **********************************************************************

@@ -8,6 +8,19 @@
 @import "components/plugins";
 @import "components/header";
 
+
+// **********************************************************************
+// SCAFFOLDING
+// **********************************************************************
+
+.container {
+  @include container;
+}
+
+.row {
+  @include row;
+}
+
 // ************************************************************************************************
 // Body Styles
 // **************************************************************************************************
@@ -38,3 +51,55 @@ footer {
   }
 }
 
+ul.bulleted {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+
+// **********************************************************************
+// COMPONENTS
+// **********************************************************************
+
+$hero-height: 500px;
+$header-height: 60px;
+
+.hero {
+  height: $hero-height;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 60px;
+  z-index: 0;
+  background: $blue-gray;
+
+  div.image-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $blue-gray;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($blue-gray, .5);
+    }
+  }
+}
+
+.first-section {
+  margin-top: ($hero-height + $header-height);
+}
+
+.content-section {
+  position: relative;
+  z-index: 10;
+}

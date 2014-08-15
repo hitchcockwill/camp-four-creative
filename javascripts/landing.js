@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $navBar, $navLinks, backgroundImageLoad, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, handleProjectImageLoad, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, loadSecondaryProjectImages, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
+  var $doc, $navBar, $navLinks, didResize, didScroll, fixNav, galleryHeight, handleActiveNav, handleFixedBar, handleProjectImageLoad, imageLoad, initActiveNav, initNavEvents, initPortfolio, initScrolling, initWindowResize, loadSecondaryProjectImages, navFixed, setProjectContent, slideInProject, slideOutProject, unFixNav;
 
   galleryHeight = null;
 
@@ -206,22 +206,7 @@
     }
   };
 
-  backgroundImageLoad = function($this) {
-    var img, src;
-    src = $this.attr("data-src");
-    if (src) {
-      img = new Image();
-      img.style.display = "none";
-      img.onload = function() {
-        $this.fadeIn(1000);
-        return img.remove();
-      };
-    }
-    return img.src = src;
-  };
-
   $(document).ready(function() {
-    backgroundImageLoad($("#landing-hero .image-wrapper"));
     $(window).scroll(function() {
       return didScroll = true;
     });

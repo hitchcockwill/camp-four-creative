@@ -8,6 +8,19 @@ setRetinaImage = ->
       retinaSrc = src.replace(/\.(\w+)$/, "@2x.$1")
       $this.removeAttr("data-src").attr(attr, retinaSrc).addClass("isRetina")
 
+backgroundImageLoad = ($images) ->
+  $images.each ->
+    $image = $(this)
+    src = $image.attr("data-src")
+    if src
+      img = new Image()
+      img.style.display = "none"
+      img.onload = ->
+        $image.css('background-image', "url(#{src})")
+        $image.fadeIn(750)
+        img.remove()
+    img.src = src
+
 
 $(document).ready () ->
 
@@ -16,6 +29,8 @@ $(document).ready () ->
 
   # init foundation
   # $(document).foundation()
+
+  backgroundImageLoad($(".image-wrapper"))
 
   if window.devicePixelRatio >= 2
     setRetinaImage()

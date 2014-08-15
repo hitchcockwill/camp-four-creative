@@ -2,39 +2,53 @@
 layout: case_study
 title: Motoroso
 category: case-studies
-description: 'MPV design for the first photo-sharing network centered around automotive lovers.'
-image: '/img/case-studies/motoroso/motoroso-interface1.jpg'
 className: _motoroso
 post_styles: ['sections/motoroso.css']
 post_scripts: ['motoroso.js']
+
+thumbnail_image: '/img/case-studies/thumbnails/motoroso_thumb.jpg'
+thumbnail_logo: '/img/case-studies/thumbnails/motoroso_logo.png'
+thumbnail_color: '#c71111'
+
+banner: '/img/case-studies/thumbnails/motoroso_banner.jpg'
 ---
 
-<div class="motoroso-hero">
-  <div class="row">
-    <div class="hero-interface-1">
-      <div class="image-wrap">
-        <div class="browser-chrome">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="browser-chrome-wrap">
-          <div class="image-wrap">
-            <img src="/img/case-studies/motoroso/motoroso-interface1.jpg">
+<div class="case-study-banner" style="background-image: url({{page.banner}});">
+  <div class="color-overlay" style="background: {{page.thumbnail_color}};"></div>
+</div>
+<div class="motoroso-hero case-study-hero">
+  <div class="container">
+    <div class="row case-study-hero-intro">
+      <img src="{{page.thumbnail_logo}}" alt="">
+      <h2>Motoroso MVP Design</h2>
+      <p class="p-large">The visual discovery network for gearheads.</p>
+    </div>
+    <div class="row case-study-interfaces">
+      <div class="hero-interface-1">
+        <div class="image-wrap">
+          <div class="browser-chrome">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="browser-chrome-wrap">
+            <div class="image-wrap">
+              <img src="/img/case-studies/motoroso/motoroso-interface1.jpg">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="hero-interface-2">
-      <div class="image-wrap">
-        <div class="browser-chrome">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="browser-chrome-wrap">
-          <div class="image-wrap">
-            <img src="/img/case-studies/motoroso/motoroso-interface2.jpg">
+      <div class="hero-interface-2">
+        <div class="image-wrap">
+          <div class="browser-chrome">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="browser-chrome-wrap">
+            <div class="image-wrap">
+              <img src="/img/case-studies/motoroso/motoroso-interface2.jpg">
+            </div>
           </div>
         </div>
       </div>
@@ -45,11 +59,12 @@ post_scripts: ['motoroso.js']
 
 
 <div class="section intro">
-  <div class="row">
-    <h2>Motoroso MVP Design</h2>
-    <p class="p-large large-10 large-offset-1 columns">
-      Motoroso is “the visual discovery network for gearheads.”Camp Four worked with the Motoroso team to define the core features for their minimum viable product and create several industry-specific prototypes to help secure partnerships and sponsors at tradeshows.
-    </p>
+  <div class="container">
+    <div class="section-content">
+      <p class="p-large">
+        Camp Four Creative worked with the Motoroso team to define the core features for their minimum viable product and create several industry-specific prototypes to help secure partnerships and sponsors at tradeshows.
+      </p>
+    </div>
   </div>
 </div>
 

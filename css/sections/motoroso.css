@@ -7,11 +7,8 @@ body {
   color: #524d56; }
 
 .motoroso-hero {
-  background: url("/img/camp-hero.jpg") center top no-repeat;
-  background-size: cover;
-  height: 750px;
   overflow: hidden; }
-  .motoroso-hero > .row {
+  .motoroso-hero .row {
     position: relative; }
 
 .hero-interface-1,
@@ -20,12 +17,12 @@ body {
   position: absolute; }
 
 .hero-interface-1 {
-  top: 200px;
+  top: 320px;
   left: 0;
   z-index: 8; }
 
 .hero-interface-2 {
-  top: 300px;
+  top: 420px;
   right: 0;
   z-index: 10; }
 
@@ -34,8 +31,24 @@ body {
   padding-bottom: 50px; }
 
 .section.intro {
-  padding: 110px 0;
+  padding: 80px 0;
   text-align: center; }
+  .section.intro .container {
+    display: block; }
+    .section.intro .container:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .section.intro .section-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%; }
+    .section.intro .section-content:last-child {
+      margin-right: 0; }
+  .section.intro p {
+    margin: 0; }
 
 .section.sorting {
   padding-top: 110px;

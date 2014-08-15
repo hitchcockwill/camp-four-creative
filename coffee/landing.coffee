@@ -145,23 +145,13 @@ loadSecondaryProjectImages = ($project) ->
     $otherImages.each ->
       imageLoad $(this)
 
-backgroundImageLoad = ($this) ->
-  src = $this.attr("data-src")
-  if src
-    img = new Image()
-    img.style.display = "none"
-    img.onload = ->
-      $this.fadeIn(1000)
-      img.remove()
-  img.src = src
+
 
 $(document).ready () ->
   # initPortfolio()
   # initScrolling()
   # initNavEvents()
   # initWindowResize( )
-
-  backgroundImageLoad($("#landing-hero .image-wrapper"))
 
   $(window).scroll ->
     didScroll = true

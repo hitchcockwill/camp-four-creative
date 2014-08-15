@@ -1,0 +1,55 @@
+@import "../config/variables";
+
+.footprint-page {
+  .footprint-hero {
+    background: $primary-light;
+    .container {
+      color: white;
+      position: relative;
+      z-index: 5;
+    }
+  }
+
+  h1 {
+    @include span-columns(8);
+    @include shift(2);
+    margin-top: 200px;
+  }
+  h3 {
+    @include span-columns(8);
+    @include shift(2);
+    font-weight: 300;
+    line-height: 1.6em;
+  }
+}
+
+
+.footprint-page .content-section {
+  background: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &:nth-child(even) {
+    background: $bg;
+    border-top: 1px solid darken($bg, 8%);
+    border-bottom: 1px solid darken($bg, 8%);
+  }
+
+  .row > * {
+    @include span-columns(8);
+    @include shift(2);
+  }
+
+  p,
+  li {
+    font-size: 20px;
+    line-height: 1.6em;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+}

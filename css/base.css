@@ -54,10 +54,14 @@ h4 {
   font-size: 16px;
   text-transform: uppercase; }
 
-p {
+p,
+ul,
+li {
   font-weight: 300;
   line-height: 1.4em; }
-  p.p-large {
+  p.p-large,
+  ul.p-large,
+  li.p-large {
     font-size: 24px;
     line-height: 32px;
     font-weight: 300; }
@@ -234,6 +238,24 @@ ul.f-dropdown {
 #serviceDrop:after {
   left: 39px; }
 
+.container {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.row {
+  display: block; }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both; }
+
 body,
 html,
 button,
@@ -255,3 +277,41 @@ footer {
   footer div {
     text-align: center;
     font-size: 12px; }
+
+ul.bulleted {
+  list-style: disc;
+  margin-left: 20px; }
+
+.hero {
+  height: 500px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 60px;
+  z-index: 0;
+  background: #3d4451; }
+  .hero div.image-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3d4451;
+    background-size: cover;
+    background-position: center;
+    z-index: 1; }
+    .hero div.image-wrapper .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(61, 68, 81, 0.5); }
+
+.first-section {
+  margin-top: 560px; }
+
+.content-section {
+  position: relative;
+  z-index: 10; }

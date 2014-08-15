@@ -18,7 +18,9 @@ h4 {
   text-transform: uppercase;
 }
 
-p {
+p,
+ul,
+li {
   font-weight: $fw-light;
   line-height: 1.4em;
   &.p-large {

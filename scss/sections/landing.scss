@@ -47,43 +47,6 @@ section.hr {
 // **********************************************************************
 
 #landing-hero {
-  height: 500px;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 60px;
-  z-index: 1;
-  background: $blue-gray;
-  div.hero-overlay {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background-color: rgba($primary, .6);
-    z-index:10;
-  }
-  div.image-wrapper {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $blue-gray;
-    background: url("/img/camp-hero2-bw.jpg");
-    // background-image: url("/img/camp-hero.jpg");
-    // opacity: .3;
-    background-size: cover;
-    background-position: center;
-    z-index: 8;
-    .overlay {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba($blue-gray, .5);
-    }
-  }
-
   .hero-content {
     color: $off-white;
     text-align: center;
@@ -129,90 +92,20 @@ section.top-text {
     line-height: 1.2em;
   }
   p {
-    font-size: 20px;
+    font-size: 28px;
+    line-height: 1.5em;
+    text-align: center;
+    margin-bottom: 30px;
   }
 
-  .laptop-wrap {
-    width: 953px;
-    height: 572px;
-    background: url('/img/landing/laptop.png') left center no-repeat;
-    margin: -220px 0 0 -80px;
+  .buttons-wrap {
+    text-align: center;
+    button {
+      display: inline-block;
+    }
   }
+
 }
-
-
-
-
-
-
-
-
-// **********************************************************************
-// Navigation
-// **********************************************************************
-
-// section.navigation {
-//   position: absolute;
-//   top: 430px;
-//   right: 0; left: 0;
-//   background: none;
-
-//   .logo-wrap {
-//     display: none;
-//   }
-// }
-
-// section.navigation.fixed-nav {
-//   position: fixed;
-//   z-index: 100;
-//   height: 90px;
-//   top: 0;
-//   background: url('/img/camp-hero.jpg') center bottom no-repeat;
-//   background-size: cover;
-//   padding-top: 24px;
-//   box-shadow: 0 1px 12px rgba(black, 0.5);
-
-//   > .row { @include clearfix; }
-
-//   .logo-wrap {
-//     display: block;
-//     float: left;
-//   }
-
-//   .main-nav {
-//     float: right;
-//   }
-// }
-
-
-// div.nav-wrapper {
-//   @include transition(top .15s eas-in);
-
-//   .main-nav {
-//     margin-left: -20px;
-//   }
-
-//   a {
-//     display: inline-block;
-//     padding: 10px 20px;
-//     position: relative;
-//     text-transform: uppercase;
-//     font-size: 14px;
-//     color: white;
-//     border-radius: 3px;
-//     opacity: .9;
-//     @include transition(color .25s ease-in .2s, background .25s ease-in .2s, opacity .25s .2s);
-//     &:hover {
-//       opacity: 1;
-//     }
-//     &.active {
-//       background: rgba(white, .2);
-//     }
-//   }
-
-// }
-
-
 
 
 
@@ -238,46 +131,83 @@ section.case-studies {
 
   ul.studies {
     @include container;
+    margin-top: 80px;
+    margin-bottom: 20px;
     li.case {
       @include span-columns(4);
       @include omega(3n);
 
-      &:hover .case-meta {
-        @include transform(translate(0, 0));
+      &:hover {
+        .overlay-color {
+          opacity: .75;
+        }
       }
 
       .case-content {
         overflow: hidden;
-        background-size: cover;
         position: relative;
         height: 350px;
         border-radius: 3px;
       }
 
-      .case-meta {
-        $meta-height: 124px;
+      img {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: $meta-height;
-        background: rgba(black, .7);
-        color: white;
-        padding: 10px;
-        @include transform(translate(0, $meta-height + 5));
-        @include transition(all .5s .05s);
-
-        h3 {
-          margin: 0 0 5px;
-        }
-        p {
-          margin: 0;
-          font-size: 14px;
-          line-height: 1.4em;
-          font-weight: normal;
-          color: #ccc;
-        }
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        @include transition(translate .25s .05s);
+        width: 250px;
       }
+
+      .overlay-image {
+        position: absolute;
+        left: -10px;
+        right: -10px;
+        top: -10px;
+        bottom: -10px;
+        border-radius: 3px;
+        z-index: 2;
+        background-size: cover;
+        @include filter(blur(3px));
+      }
+
+      .overlay-color {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 3px;
+        opacity: .7;
+        @include transition(opacity .25s .05s);
+        z-index: 5;
+      }
+
+      // .case-meta {
+      //   $meta-height: 124px;
+      //   position: absolute;
+      //   bottom: 0;
+      //   right: 0;
+      //   left: 0;
+      //   height: $meta-height;
+      //   background: rgba(black, .7);
+      //   color: white;
+      //   padding: 10px;
+      //   @include transform(translate(0, $meta-height + 5));
+      //   @include transition(all .5s .05s);
+
+      //   h3 {
+      //     margin: 0 0 5px;
+      //   }
+      //   p {
+      //     margin: 0;
+      //     font-size: 14px;
+      //     line-height: 1.4em;
+      //     font-weight: normal;
+      //     color: #ccc;
+      //   }
+      // }
     }
   }
 
@@ -293,9 +223,8 @@ section.case-studies {
 
 section.philosophy {
   padding-top: 100px;
-  @include container;
 
-  > .row {
+  .row {
     border-bottom: 1px solid $light-gray;
     padding-bottom: 40px;
     @include row;

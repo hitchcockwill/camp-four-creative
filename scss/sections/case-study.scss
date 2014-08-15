@@ -1,13 +1,69 @@
 @import "../config/variables";
 
 // **********************************************************************
-// HEADER
+// HERO
 // **********************************************************************
 
-#case-study-header {
-
-
+$banner-height: 910px;
+.case-study-banner {
+  position: fixed;
+  height: $banner-height;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-top: 80px;
+  z-index: 0;
+  .color-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .25;
+  }
 }
+
+.case-study-hero {
+  padding-top: 80px;
+  position: relative;
+  background-size: cover;
+  background-position: bottom center;
+  height: $banner-height;
+  h2 {
+    margin-bottom: 13px;
+  }
+}
+
+.case-study-hero-intro {
+  @include span-columns(6);
+  @include shift(3);
+  color: $off-white;
+  text-align: center;
+  z-index: 15;
+  margin-top: 50px;
+
+  img {
+    display: block;
+    max-width: 180px;
+    margin: 0 auto 30px;
+  }
+}
+
+.case-study-interfaces {
+  @include container;
+  img {
+    max-width: 100%;
+  }
+}
+
+.section {
+  background: $bg;
+  position: relative;
+  z-index: 1;
+}
+
+
 
 // **********************************************************************
 // TYPE

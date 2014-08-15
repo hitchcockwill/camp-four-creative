@@ -37,58 +37,23 @@ section.hr {
   section.hr .hr-wrap {
     margin-bottom: 50px; }
 
-#landing-hero {
-  height: 500px;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 60px;
-  z-index: 1;
-  background: #3d4451; }
-  #landing-hero div.hero-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(56, 61, 70, 0.6);
-    z-index: 10; }
-  #landing-hero div.image-wrapper {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #3d4451;
-    background: url("/img/camp-hero2-bw.jpg");
-    background-size: cover;
-    background-position: center;
-    z-index: 8; }
-    #landing-hero div.image-wrapper .overlay {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(61, 68, 81, 0.5); }
-  #landing-hero .hero-content {
-    color: #f1f1f1;
-    text-align: center;
-    position: relative;
-    top: 50%;
-    margin: 0 auto;
-    max-width: 540px;
-    z-index: 15;
-    -webkit-transform: translate(0, -60%);
-    -moz-transform: translate(0, -60%);
-    -ms-transform: translate(0, -60%);
-    -o-transform: translate(0, -60%);
-    transform: translate(0, -60%); }
-    #landing-hero .hero-content img {
-      display: block;
-      max-width: 180px;
-      margin: 0 auto 30px; }
+#landing-hero .hero-content {
+  color: #f1f1f1;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  max-width: 540px;
+  z-index: 15;
+  -webkit-transform: translate(0, -60%);
+  -moz-transform: translate(0, -60%);
+  -ms-transform: translate(0, -60%);
+  -o-transform: translate(0, -60%);
+  transform: translate(0, -60%); }
+  #landing-hero .hero-content img {
+    display: block;
+    max-width: 180px;
+    margin: 0 auto 30px; }
 
 #logo-wrap {
   position: relative;
@@ -116,12 +81,14 @@ section.top-text {
     margin: 0 0 16px;
     line-height: 1.2em; }
   section.top-text p {
-    font-size: 20px; }
-  section.top-text .laptop-wrap {
-    width: 953px;
-    height: 572px;
-    background: url("/img/landing/laptop.png") left center no-repeat;
-    margin: -220px 0 0 -80px; }
+    font-size: 28px;
+    line-height: 1.5em;
+    text-align: center;
+    margin-bottom: 30px; }
+  section.top-text .buttons-wrap {
+    text-align: center; }
+    section.top-text .buttons-wrap button {
+      display: inline-block; }
 
 section.case-studies {
   padding-top: 0; }
@@ -132,7 +99,9 @@ section.case-studies {
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
-    padding-right: 20px; }
+    padding-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 20px; }
     section.case-studies ul.studies:after {
       content: "";
       display: table;
@@ -148,60 +117,58 @@ section.case-studies {
         margin-right: 0; }
       section.case-studies ul.studies li.case:nth-child(3n+1) {
         clear: left; }
-      section.case-studies ul.studies li.case:hover .case-meta {
-        -webkit-transform: translate(0, 0);
-        -moz-transform: translate(0, 0);
-        -ms-transform: translate(0, 0);
-        -o-transform: translate(0, 0);
-        transform: translate(0, 0); }
+      section.case-studies ul.studies li.case:hover .overlay-color {
+        opacity: .75; }
       section.case-studies ul.studies li.case .case-content {
         overflow: hidden;
-        background-size: cover;
         position: relative;
         height: 350px;
         border-radius: 3px; }
-      section.case-studies ul.studies li.case .case-meta {
+      section.case-studies ul.studies li.case img {
         position: absolute;
-        bottom: 0;
-        right: 0;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: translate 0.25s 0.05s;
+        -moz-transition: translate 0.25s 0.05s;
+        transition: translate 0.25s 0.05s;
+        width: 250px; }
+      section.case-studies ul.studies li.case .overlay-image {
+        position: absolute;
+        left: -10px;
+        right: -10px;
+        top: -10px;
+        bottom: -10px;
+        border-radius: 3px;
+        z-index: 2;
+        background-size: cover;
+        -webkit-filter: blur(3px);
+        filter: blur(3px); }
+      section.case-studies ul.studies li.case .overlay-color {
+        position: absolute;
         left: 0;
-        height: 124px;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 10px;
-        -webkit-transform: translate(0, 129px);
-        -moz-transform: translate(0, 129px);
-        -ms-transform: translate(0, 129px);
-        -o-transform: translate(0, 129px);
-        transform: translate(0, 129px);
-        -webkit-transition: all 0.5s 0.05s;
-        -moz-transition: all 0.5s 0.05s;
-        transition: all 0.5s 0.05s; }
-        section.case-studies ul.studies li.case .case-meta h3 {
-          margin: 0 0 5px; }
-        section.case-studies ul.studies li.case .case-meta p {
-          margin: 0;
-          font-size: 14px;
-          line-height: 1.4em;
-          font-weight: normal;
-          color: #ccc; }
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 3px;
+        opacity: .7;
+        -webkit-transition: opacity 0.25s 0.05s;
+        -moz-transition: opacity 0.25s 0.05s;
+        transition: opacity 0.25s 0.05s;
+        z-index: 5; }
 
 section.philosophy {
-  padding-top: 100px;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px; }
-  section.philosophy:after {
-    content: "";
-    display: table;
-    clear: both; }
-  section.philosophy > .row {
+  padding-top: 100px; }
+  section.philosophy .row {
     border-bottom: 1px solid #aebdbb;
     padding-bottom: 40px;
     display: block; }
-    section.philosophy > .row:after {
+    section.philosophy .row:after {
       content: "";
       display: table;
       clear: both; }

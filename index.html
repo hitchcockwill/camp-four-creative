@@ -1,14 +1,13 @@
 ---
 layout: default
-styles: ["landing.css", "landing-responsive.css"]
 className: "landing-page"
 scripts: ["landing.js"]
 styles: ["sections/landing.css", "sections/landing-responsive.css"]
 ---
 
-<div id="landing-hero">
+<div id="landing-hero" class="hero">
   <!-- <div class="hero-overlay"></div> -->
-  <div class="image-wrapper" data-src="/img/camp-hero.jpg"><div class="overlay"></div></div>
+  <div class="image-wrapper" data-src="/img/camp-hero2-bw.jpg"><div class="overlay"></div></div>
   <div class="hero-content">
     <img src="/img/logos/logo-lg-color.png" alt="" class="logo">
     <h2>We help startups build products that perform.</h2>
@@ -20,32 +19,14 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 
 {% include header.html %}
 
-<!-- <section class="navigation">
-  <div class="nav-wrapper">
-    <div class="row">
-      <div class="logo-wrap">
-        <img src="/img/logos/footer-logo.png" alt="Camp Four Logo">
-      </div>
-      <div class="main-nav">
-        <a href="" title="Services" class="services" data-dropdown="serviceDrop">Services</a>
-        <ul id="serviceDrop" class="f-dropdown" data-dropdown-content>
-          <li><a href="/footprint">Footprint</a></li>
-        </ul>
-        <a href="" title="Case Studies" class="case-studies">Case Studies</a>
-        <a href="" title="Our Philosophy" class="philosophy">Our Philosophy</a>
-        <a href="" title="About us" class="about">About Us</a>
-        <a href="/contact/" title="Contact" class="contact active">Contact</a>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 
 <section class="top-text content-section">
   <div class="container">
     <div class="section-content">
       <p class="p-large">Camp Four Creative is a studio focused on providing exceptional design and development solutions to up and coming companies. From complex user interfaces to pitch decks, we do work that helps your company succeed.</p>
-      <button class="btn btn-secondary">Our Work</button>
+      <div class="buttons-wrap">
+        <button class="btn btn-secondary">Our Work</button>
+      </div>
     </div>
   </div>
 </section>
@@ -67,11 +48,10 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       {% for post in site.posts %}
         <li class="case">
           <a href="{{ post.url }}">
-            <div class="case-content" style="background-image: url({{post.image}});">
-              <div class="case-meta">
-                <h3>{{post.title}}</h3>
-                <p>{{post.description}}</p>
-              </div>
+            <div class="case-content">
+              <div class="overlay-image" style="background-image: url({{post.thumbnail_image}});"></div>
+              <img src="{{post.thumbnail_logo}}" alt="">
+              <div class="overlay-color" style="background: {{post.thumbnail_color}};"></div>
             </div>
           </a>
         </li>
@@ -87,25 +67,28 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 
 <section class="philosophy content-section hr dark">
 
-  <div class="hr-wrap hr-left">
-    <h3>
-      Our Philosophy
-    </h3>
-  </div>
-
-  <div class="row">
-
-    <div class="title-text">
-      <h2>We believe that good design works hard.</h2>
+  <div class="container">
+    <div class="hr-wrap hr-left">
+      <h3>
+        Our Philosophy
+      </h3>
     </div>
 
-    <div class="description">
-      <p>
-        Whether it’s making a sale, getting an email address, or just keeping a user engaged longer, every design we create has a clearly defined objective. We set these goals at the beginning of a project and meet them by gathering constant feedback, measuring results, and iterating often.
-      </p>
-    </div>
+    <div class="row">
 
+      <div class="title-text">
+        <h2>We believe that good design works hard.</h2>
+      </div>
+
+      <div class="description">
+        <p>
+          Whether it’s making a sale, getting an email address, or just keeping a user engaged longer, every design we create has a clearly defined objective. We set these goals at the beginning of a project and meet them by gathering constant feedback, measuring results, and iterating often.
+        </p>
+      </div>
+
+    </div>
   </div>
+
 </section>
 
 

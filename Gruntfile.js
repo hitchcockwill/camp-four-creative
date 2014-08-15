@@ -47,10 +47,10 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['scss/**/*.scss'],
-        tasks: ['newer:sass', 'jekyll']
+        tasks: ['sass:base', 'newer:sass:sections', 'jekyll']
       },
       html: {
-        files: ['./**/*.html', '!**./_site/**/*.html**'],
+        files: ['./**/*.html', './img/**/*', '!**./_site/**/*.html**'],
         tasks: ['jekyll']
       }
     },

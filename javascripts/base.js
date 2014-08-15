@@ -1,5 +1,5 @@
 (function() {
-  var setRetinaImage;
+  var backgroundImageLoad, setRetinaImage;
 
   setRetinaImage = function() {
     return $("img.retina").each(function() {
@@ -14,8 +14,27 @@
     });
   };
 
+  backgroundImageLoad = function($images) {
+    return $images.each(function() {
+      var $image, img, src;
+      $image = $(this);
+      src = $image.attr("data-src");
+      if (src) {
+        img = new Image();
+        img.style.display = "none";
+        img.onload = function() {
+          $image.css('background-image', "url(" + src + ")");
+          $image.fadeIn(750);
+          return img.remove();
+        };
+      }
+      return img.src = src;
+    });
+  };
+
   $(document).ready(function() {
     $("body").attr("data-device-type", categorizr());
+    backgroundImageLoad($(".image-wrapper"));
     if (window.devicePixelRatio >= 2) {
       return setRetinaImage();
     }
