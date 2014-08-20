@@ -131,3 +131,94 @@ p {
 h4 {
   margin: 0;
 }
+
+
+
+// **********************************************************************
+// CASE STUDIES INDEX
+// **********************************************************************
+
+.case-studies-index {
+  margin-top: 130px;
+}
+
+.case-studies_head {
+  text-align: center;
+}
+
+.case-studies_footer {
+  text-align: center;
+  padding-bottom: 80px;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: $gray-lighten;
+  }
+  .btn {
+    margin: 20px auto 0;
+    padding: 18px 30px;
+  }
+}
+
+div.studies-wrap {
+  @include row;
+}
+ul.studies {
+  @include span-columns(8);
+  @include shift(2);
+  margin-top: 50px;
+  margin-bottom: 20px;
+  li.case {
+    @include span-columns(6);
+    @include omega(2n);
+    margin-bottom: 20px;
+
+    &:hover {
+      .overlay-color {
+        opacity: .75;
+      }
+    }
+
+    .case-content {
+      overflow: hidden;
+      position: relative;
+      height: 340px;
+      border-radius: 3px;
+    }
+
+    img {
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+      width: 50%;
+    }
+
+    .overlay-image {
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      top: -10px;
+      bottom: -10px;
+      border-radius: 3px;
+      z-index: 2;
+      background-size: cover;
+      @include filter(blur(3px));
+    }
+
+    .overlay-color {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 3px;
+      opacity: .7;
+      @include transition(opacity .25s .05s);
+      z-index: 5;
+    }
+  }
+}

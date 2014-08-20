@@ -1621,3 +1621,27 @@ body {
       margin-right: 0; }
   .section.showcase .row .row img + img {
     margin-top: 35px; }
+
+.section.links {
+  padding: 80px 0;
+  text-align: center; }
+  .section.links .client-list {
+    margin-top: 70px;
+    margin-bottom: 50px; }
+    .section.links .client-list > li {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .section.links .client-list > li:last-child {
+        margin-right: 0; }
+      .section.links .client-list > li:first-child {
+        padding-left: 0; }
+      .section.links .client-list > li:last-child {
+        padding-right: 0; }
+      .section.links .client-list > li img {
+        display: block;
+        width: 80%;
+        margin: 0 auto; }
+      .section.links .client-list > li.zappos {
+        margin-top: -10px; }

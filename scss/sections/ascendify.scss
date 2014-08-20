@@ -101,3 +101,33 @@ body {
     margin-top: 35px;
   }
 }
+
+
+// **********************************************************************
+// LINKS
+// **********************************************************************
+
+.section.links {
+  padding: 80px 0;
+  text-align: center;
+  .client-list {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    > li {
+      @include span-columns(4);
+
+      &:first-child { padding-left: 0; }
+      &:last-child { padding-right: 0; }
+
+      img {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      &.zappos {
+        margin-top: -10px;
+      }
+    }
+  }
+}

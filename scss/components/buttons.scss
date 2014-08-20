@@ -11,7 +11,6 @@
   box-shadow: none;
   font-size: 18px;
   -webkit-appearance: none;
-  border: none;
   vertical-align: bottom;
   font-weight: normal;
   @include transition(background .25s ease-in, color .25s ease-in);
@@ -32,11 +31,20 @@
   background: $primary;
   color: white;
   text-transform: uppercase;
+  border: 1px solid $primary;
 }
 
 .btn.btn-secondary {
   background: $secondary;
   color: white;
+  text-transform: uppercase;
+  border: 1px solid $secondary;
+}
+
+.btn.btn-inverse {
+  background: none;
+  color: white;
+  border: 1px solid white;
   text-transform: uppercase;
 }
 
@@ -47,6 +55,11 @@
 .btn.btn-wide {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.btn.btn-slim {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 span.icon {

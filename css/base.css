@@ -1561,7 +1561,6 @@
   box-shadow: none;
   font-size: 18px;
   -webkit-appearance: none;
-  border: none;
   vertical-align: bottom;
   font-weight: normal;
   -webkit-transition: background 0.25s ease-in, color 0.25s ease-in;
@@ -1576,16 +1575,28 @@
 .btn.btn-primary {
   background: #383d46;
   color: white;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  border: 1px solid #383d46; }
 
 .btn.btn-secondary {
   background: #ca3113;
   color: white;
+  text-transform: uppercase;
+  border: 1px solid #ca3113; }
+
+.btn.btn-inverse {
+  background: none;
+  color: white;
+  border: 1px solid white;
   text-transform: uppercase; }
 
 .btn.btn-wide {
   padding-left: 30px;
   padding-right: 30px; }
+
+.btn.btn-slim {
+  padding-top: 5px;
+  padding-bottom: 5px; }
 
 span.icon {
   display: inline-block; }
@@ -1786,6 +1797,28 @@ ul.f-dropdown {
   left: 40px; }
 #serviceDrop:after {
   left: 39px; }
+
+.footer-wrap {
+  margin-top: -3px;
+  background: #383d46;
+  padding: 50px 0;
+  color: white;
+  position: relative;
+  z-index: 10; }
+  .footer-wrap h3 {
+    border-bottom: 1px solid #4f5662;
+    padding-bottom: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300; }
+  .footer-wrap p {
+    text-align: center;
+    color: #aebdbb; }
+    .footer-wrap p .btn {
+      margin: 0 10px;
+      position: relative;
+      top: 5px; }
 
 .container {
   max-width: 68em;

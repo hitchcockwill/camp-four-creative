@@ -1,0 +1,28 @@
+.footer-wrap {
+  margin-top: -3px;
+  background: $primary;
+  padding: 50px 0;
+  color: white;
+  position: relative;
+  z-index: 10;
+
+  h3 {
+    border-bottom: 1px solid lighten($primary, 10%);
+    padding-bottom: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  p {
+    text-align: center;
+    color: $light-gray;
+    .btn {
+      margin: 0 10px;
+      position: relative;
+      top: 5px;
+    }
+  }
+}
+

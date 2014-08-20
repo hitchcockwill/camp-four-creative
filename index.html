@@ -41,21 +41,7 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
       </h3>
     </div>
 
-    <div class="studies-wrap">
-      <ul class="studies">
-        {% for post in site.posts | limitTo:4 %}
-          <li class="case">
-            <a href="{{ post.url }}">
-              <div class="case-content">
-                <div class="overlay-image" style="background-image: url({{post.thumbnail_image}});"></div>
-                <img src="{{post.thumbnail_logo}}" alt="">
-                <div class="overlay-color" style="background: {{post.thumbnail_color}};"></div>
-              </div>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    {% include case-studies.html %}
 
   </div>
 </section>
