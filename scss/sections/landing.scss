@@ -47,6 +47,27 @@ section.hr {
 // **********************************************************************
 
 #landing-hero {
+  .video-wrapper {
+    .bgvid {
+      position: fixed;
+      right: 0;
+      top: 62px;
+      min-width: 100%;
+      // min-height: 100%;
+      z-index: -2;
+      background: url(/img/trees_short_720_slow.jpg) no-repeat;
+      background-size: cover;
+    }
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($blue-gray, .5);
+      z-index: -1;
+    }
+  }
   .hero-content {
     color: $off-white;
     text-align: center;
@@ -67,6 +88,7 @@ section.hr {
 #logo-wrap {
   position: relative;
   top: -370px;
+  opacity: .6;
   img {
     left: 50%;
     margin-left: -127px;
