@@ -10,9 +10,9 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
   <!-- <div class="image-wrapper" data-src="/img/camp-hero2-bw.jpg"><div class="overlay"></div></div> -->
   <div class="video-wrapper">
     <div class="overlay"></div>
-    <video autoplay loop poster="/img/trees_short_720_slow.jpg" class="bgvid">
-      <source src="/img/trees_short_720_slow.webm" type="video/webm">
-      <source src="/img/trees_short_720_slow.mp4" type="video/mp4">
+    <video autoplay loop poster="/img/trees.jpg" class="bgvid">
+      <source src="/img/trees.webm" type="video/webm">
+      <source src="/img/trees.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-content">
@@ -40,16 +40,18 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 
 
 <section class="case-studies content-section">
-  <div class="row">
+  <div class="container">
+    <div class="row">
 
-    <div class="hr-wrap hr-centered">
-      <h3>
-        Case Studies
-      </h3>
+      <div class="hr-wrap hr-centered">
+        <h3>
+          Case Studies
+        </h3>
+      </div>
+
+      {% include case-studies.html %}
+
     </div>
-
-    {% include case-studies.html %}
-
   </div>
 </section>
 
@@ -57,26 +59,34 @@ styles: ["sections/landing.css", "sections/landing-responsive.css"]
 
 
 
-<section class="philosophy content-section hr dark">
+<section class="services content-section hr">
 
   <div class="container">
     <div class="hr-wrap hr-left">
       <h3>
-        Our Philosophy
+        Services
       </h3>
     </div>
 
     <div class="row">
 
-      <div class="title-text">
-        <h2>We believe that good design works hard.</h2>
-      </div>
-
-      <div class="description">
-        <p>
-          Whether it’s making a sale, getting an email address, or just keeping a user engaged longer, every design we create has a clearly defined objective. We set these goals at the beginning of a project and meet them by gathering constant feedback, measuring results, and iterating often.
-        </p>
-      </div>
+      <ul class="services-list">
+        <li class="services-list_item">
+          <h3>MVP Consultation</h3>
+          <p>Nailing down your MVP feature set is hard. We'll help you figure out what to keep and what to cut, and what your strategy for moving forward should be.</p>
+          <a href="" class="btn btn-primary">Learn more</a>
+        </li>
+        <li class="services-list_item">
+          <h3>C4C Footprint</h3>
+          <p>Footprint gives you a brand new set of gorgeous landing and marketing pages with a focus on improving your conversation rates. Best of all, we deliver in 2 weeks or less.</p>
+          <a href="" class="btn btn-primary">Learn more</a>
+        </li>
+        <li class="services-list_item">
+          <h3>Custom Design &amp; Dev</h3>
+          <p>Whether you're looking to build a custom web, iOS, or Android app, we've got you covered. We'll work with you start to finish to design &amp; build whatever you need.</p>
+          <a href="" class="btn btn-primary">Learn more</a>
+        </li>
+      </ul>
 
     </div>
   </div>

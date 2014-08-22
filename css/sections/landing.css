@@ -1583,13 +1583,16 @@ section.hr {
   section.hr .hr-wrap {
     margin-bottom: 50px; }
 
+.hero {
+  height: 700px; }
+
 #landing-hero .video-wrapper .bgvid {
   position: fixed;
   right: 0;
   top: 62px;
   min-width: 100%;
   z-index: -2;
-  background: url(/img/trees_short_720_slow.jpg) no-repeat;
+  background: url(/img/trees.jpg) no-repeat;
   background-size: cover; }
 #landing-hero .video-wrapper .overlay {
   position: absolute;
@@ -1597,7 +1600,7 @@ section.hr {
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 68, 81, 0.5);
+  background: rgba(145, 182, 155, 0.7);
   z-index: -1; }
 #landing-hero .hero-content {
   color: #f1f1f1;
@@ -1630,7 +1633,7 @@ section.hr {
 
 section.top-text {
   padding-bottom: 110px;
-  margin-top: 560px; }
+  margin-top: 760px; }
   section.top-text .section-content {
     float: left;
     display: block;
@@ -1657,60 +1660,55 @@ section.case-studies {
   padding-top: 0; }
   section.case-studies .hr-wrap {
     margin-bottom: 50px; }
+  section.case-studies .studies .case {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    section.case-studies .studies .case:last-child {
+      margin-right: 0; }
+    section.case-studies .studies .case .case-content {
+      height: 230px; }
+    section.case-studies .studies .case img {
+      width: 70%; }
 
-section.philosophy {
-  padding-top: 100px; }
-  section.philosophy .row {
-    border-bottom: 1px solid #aebdbb;
-    padding-bottom: 40px;
-    display: block; }
-    section.philosophy .row:after {
-      content: "";
-      display: table;
-      clear: both; }
-  section.philosophy .title-text {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 40.29137%; }
-    section.philosophy .title-text:last-child {
-      margin-right: 0; }
-  section.philosophy .description {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%; }
-    section.philosophy .description:last-child {
-      margin-right: 0; }
-  section.philosophy p {
-    font-size: 19px;
-    line-height: 32px;
-    color: #f1f1f1; }
-  section.philosophy h2 {
-    line-height: 52px;
-    margin: 10px 0 0;
-    color: #f1f1f1; }
+.services-list {
+  display: block;
+  margin: 90px 0 80px; }
+  .services-list:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.services-list_item {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  padding-right: 30px; }
+  .services-list_item:last-child {
+    margin-right: 0; }
+  .services-list_item h3 {
+    font-size: 26px;
+    font-weight: normal; }
 
 section.about {
-  padding: 150px 0;
-  color: white;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
-  padding-right: 20px; }
+  padding-right: 20px;
+  padding: 150px 0;
+  color: white; }
   section.about:after {
     content: "";
     display: table;
     clear: both; }
-  section.about .row {
-    display: block; }
-    section.about .row:after {
-      content: "";
-      display: table;
-      clear: both; }
   section.about h2 {
     line-height: 1em; }
+  section.about p {
+    text-align: left;
+    font-weight: normal; }
   section.about div.about-us {
     float: left;
     display: block;

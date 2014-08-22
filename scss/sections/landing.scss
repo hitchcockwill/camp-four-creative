@@ -46,6 +46,10 @@ section.hr {
 // Landing Hero
 // **********************************************************************
 
+.hero {
+  height: 700px;
+}
+
 #landing-hero {
   .video-wrapper {
     .bgvid {
@@ -55,7 +59,7 @@ section.hr {
       min-width: 100%;
       // min-height: 100%;
       z-index: -2;
-      background: url(/img/trees_short_720_slow.jpg) no-repeat;
+      background: url(/img/trees.jpg) no-repeat;
       background-size: cover;
     }
     .overlay {
@@ -64,7 +68,7 @@ section.hr {
       top: 0;
       right: 0;
       bottom: 0;
-      background: rgba($blue-gray, .5);
+      background: rgba(#91b69b, .7);
       z-index: -1;
     }
   }
@@ -100,7 +104,7 @@ section.hr {
 
 section.top-text {
   padding-bottom: 110px;
-  margin-top: 560px;
+  margin-top: 760px;
 
   .section-content {
     @include span-columns(8);
@@ -150,6 +154,18 @@ section.case-studies {
   .hr-wrap {
     margin-bottom: 50px;
   }
+
+  .studies {
+    .case {
+      @include span-columns(3);
+      .case-content {
+        height: 230px;
+      }
+      img {
+        width: 70%;
+      }
+    }
+  }
 }
 
 
@@ -157,37 +173,30 @@ section.case-studies {
 
 
 // **********************************************************************
-// PHILOSOPHY
+// SERVICES
 // **********************************************************************
 
-section.philosophy {
-  padding-top: 100px;
+.services-list {
+  @include row;
+  margin: 90px 0 80px;
+}
 
-  .row {
-    border-bottom: 1px solid $light-gray;
-    padding-bottom: 40px;
-    @include row;
-  }
+.services-list_item {
+  @include span-columns(4);
+  padding-right: 30px;
 
-  .title-text {
-    @include span-columns(5);
-  }
-  .description {
-    @include span-columns(7);
-  }
-
-  p {
-    font-size: 19px;
-    line-height: 32px;
-    color: $off-white;
-  }
-
-  h2 {
-    line-height: 52px;
-    margin: 10px 0 0;
-    color: $off-white;
+  h3 {
+    font-size: 26px;
+    font-weight: normal;
   }
 }
+
+
+
+
+
+
+
 
 
 
@@ -197,16 +206,16 @@ section.philosophy {
 // **********************************************************************
 
 section.about {
+  @include container;
   padding: 150px 0;
   color: white;
-  @include container;
-
-  .row {
-    @include row;
-  }
 
   h2 {
     line-height: 1em;
+  }
+  p {
+    text-align: left;
+    font-weight: normal;
   }
 
   div.about-us {

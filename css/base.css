@@ -3499,27 +3499,10 @@ div.studies-wrap {
     clear: both; }
 
 ul.studies {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%;
-  margin-left: 17.05961%;
   margin-top: 50px;
   margin-bottom: 20px; }
-  ul.studies:last-child {
-    margin-right: 0; }
   ul.studies li.case {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
     margin-bottom: 20px; }
-    ul.studies li.case:last-child {
-      margin-right: 0; }
-    ul.studies li.case:nth-child(2n) {
-      margin-right: 0; }
-    ul.studies li.case:nth-child(2n+1) {
-      clear: left; }
     ul.studies li.case:hover .overlay-color {
       opacity: .75; }
     ul.studies li.case .case-content {
@@ -3561,6 +3544,26 @@ ul.studies {
       -moz-transition: opacity 0.25s 0.05s;
       transition: opacity 0.25s 0.05s;
       z-index: 5; }
+
+._case-studies .studies {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%; }
+  ._case-studies .studies:last-child {
+    margin-right: 0; }
+  ._case-studies .studies .case {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    ._case-studies .studies .case:last-child {
+      margin-right: 0; }
+    ._case-studies .studies .case:nth-child(2n) {
+      margin-right: 0; }
+    ._case-studies .studies .case:nth-child(2n+1) {
+      clear: left; }
 
 .container {
   max-width: 68em;
