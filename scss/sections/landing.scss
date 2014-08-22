@@ -48,6 +48,7 @@ section.hr {
 
 .hero {
   height: 700px;
+  top: 0;
 }
 
 #landing-hero {
@@ -55,9 +56,9 @@ section.hr {
     .bgvid {
       position: fixed;
       right: 0;
-      top: 62px;
+      top: 0px;
       min-width: 100%;
-      // min-height: 100%;
+      min-height: 700px;
       z-index: -2;
       background: url(/img/trees.jpg) no-repeat;
       background-size: cover;
@@ -104,7 +105,7 @@ section.hr {
 
 section.top-text {
   padding-bottom: 110px;
-  margin-top: 760px;
+  margin-top: 700px;
 
   .section-content {
     @include span-columns(8);

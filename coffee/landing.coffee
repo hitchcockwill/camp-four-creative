@@ -44,18 +44,21 @@ $navLinks = null
 $doc = null
 
 initScrolling = ->
-  $navBar = $("section.navigation")
-  $navLinks = $navBar.find("div.right-nav a")
+  $navBar = $("#primary-header")
+  $hero = $('#landing-hero')
+  heroHeight = $hero.outerHeight() - 50
   $doc = $(document)
-
-  initActiveNav()
 
   setInterval ->
     if didScroll
       didScroll = false
       scrollTop = $doc.scrollTop()
-      handleFixedBar(scrollTop)
-      handleActiveNav(scrollTop)
+      # handleFixedBar(scrollTop)
+      # handleActiveNav(scrollTop)
+      if !$navBar.hasClass('trans') and scrollTop < heroHeight
+        $navBar.addClass('trans')
+      else if $navBar.hasClass('trans') and scrollTop > heroHeight
+        $navBar.removeClass('trans')
   , 50
 
 handleFixedBar = (scrollTop) ->
@@ -149,9 +152,9 @@ loadSecondaryProjectImages = ($project) ->
 
 $(document).ready () ->
   # initPortfolio()
-  # initScrolling()
+  initScrolling()
   # initNavEvents()
-  # initWindowResize( )
+  # initWindowResize()
 
   $(window).scroll ->
     didScroll = true

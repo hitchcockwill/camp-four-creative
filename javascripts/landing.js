@@ -66,17 +66,21 @@
   $doc = null;
 
   initScrolling = function() {
-    $navBar = $("section.navigation");
-    $navLinks = $navBar.find("div.right-nav a");
+    var $hero, heroHeight;
+    $navBar = $("#primary-header");
+    $hero = $('#landing-hero');
+    heroHeight = $hero.outerHeight() - 50;
     $doc = $(document);
-    initActiveNav();
     return setInterval(function() {
       var scrollTop;
       if (didScroll) {
         didScroll = false;
         scrollTop = $doc.scrollTop();
-        handleFixedBar(scrollTop);
-        return handleActiveNav(scrollTop);
+        if (!$navBar.hasClass('trans') && scrollTop < heroHeight) {
+          return $navBar.addClass('trans');
+        } else if ($navBar.hasClass('trans') && scrollTop > heroHeight) {
+          return $navBar.removeClass('trans');
+        }
       }
     }, 50);
   };
@@ -207,6 +211,7 @@
   };
 
   $(document).ready(function() {
+    initScrolling();
     $(window).scroll(function() {
       return didScroll = true;
     });

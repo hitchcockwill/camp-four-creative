@@ -1725,7 +1725,12 @@ ul.f-dropdown {
   left: 0;
   top: 0;
   background: #383d46;
-  z-index: 100; }
+  z-index: 100;
+  -webkit-transition: background 0.25s;
+  -moz-transition: background 0.25s;
+  transition: background 0.25s; }
+  #primary-header.trans {
+    background: none; }
 
 #primary-header,
 .footer {
