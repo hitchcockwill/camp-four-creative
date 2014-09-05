@@ -60,12 +60,11 @@ scrapeForm = ->
   return dataObject
 
 
-initChosen = ->
-  $('select').chosen
-    disable_search_threshold: 10
+initDropdowns = ->
+  $('select').selectize()
 
 $(document).ready ->
   setWindowHeight()
-  initChosen()
+  initDropdowns()
   initFormListeners()
 

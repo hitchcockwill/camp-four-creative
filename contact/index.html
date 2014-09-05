@@ -8,102 +8,108 @@ styles: ["sections/contact.css"]
 {% include header.html %}
 
 <div class="contact-content">
-  <div class="contact-intro">
-    <div class="row">
-      <div class="large-4 large-offset-1 columns">
-        <h2>Want to work together?</h2>
-      </div>
-      <div class="about large-6 columns">
-        <p>
-          We are currently looking for new projects for the 2014 year. If you think that your project might be a good match for us, feel free to get in contact by filling out our form. Want to just say hey? Send us a tweet!
-        </p>
+  <div class="container">
+    <div class="contact-intro">
+      <div class="row">
+        <div class="contact-intro_title">
+          <h2>Want to work together?</h2>
+        </div>
+        <div class="contact-intro_about">
+          <p>
+            We are always looking for the next big thing. If you think that your project might be a good match for us, feel free to get in contact by filling out our form. Want to just say hey? Send us a tweet!
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="contact-form">
-    <div class="row">
+    <div class="contact-form">
+      <div class="row">
+        <div class="form-wrap">
+
+          <form name="contact" method="post" action="send_form.php">
+            <fieldset class="double">
+              <div class="control-group">
+                <label for="name">Name</label>
+                <div class="controls">
+                  <input type="text" id="name" name="name">
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="company">Company</label>
+                <div class="controls">
+                  <input type="text" id="company" name="company">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="double">
+              <div class="control-group">
+                <label for="email">Email</label>
+                <div class="controls">
+                  <input type="text" id="email" name="email">
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="url">URL</label>
+                <div class="controls">
+                  <input type="text" id="url" name="url">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="control-group">
+                <label for="pitch">Tell us about your company</label>
+                <div class="controls">
+                  <textarea name="pitch" id="pitch"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="control-group">
+                <label for="description">Description</label>
+                <div class="controls">
+                  <textarea name="description" id="description"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="double">
+              <div class="control-group">
+                <label for="budget">Approximate Budget</label>
+                <div class="controls">
+                  <select name="budget" id="budget">
+                    <option value="< 10k">&lt; $10,000</option>
+                    <option value="10-25k">$10,000&ndash;$25,000</option>
+                    <option value="25-50k">$25,000&ndash;$50,000</option>
+                    <option value="50k+">&gt; $50,000</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="timeframe">Completion Timeframe</label>
+                <div class="controls">
+                  <select name="timeframe" id="timeframe">
+                    <option value="yesterday">Yesterday</option>
+                    <option value="1 month">Within the month</option>
+                    <option value="3 months">Within 3 months</option>
+                    <option value="1 year">Within the year</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-footer row">
       <div class="large-10 large-offset-1 columns">
-
-        <form name="contact" method="post" action="send_form.php">
-          <fieldset class="double">
-            <div class="control-group">
-              <label for="name">Name</label>
-              <div class="controls">
-                <input type="text" id="name" name="name">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="company">Company</label>
-              <div class="controls">
-                <input type="text" id="company" name="company">
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="double">
-            <div class="control-group">
-              <label for="email">Email</label>
-              <div class="controls">
-                <input type="text" id="email" name="email">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="url">URL</label>
-              <div class="controls">
-                <input type="text" id="url" name="url">
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <div class="control-group">
-              <label for="description">Description</label>
-              <div class="controls">
-                <textarea name="description" id="description"></textarea>
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="double">
-            <div class="control-group">
-              <label for="budget">Approximate Budget</label>
-              <div class="controls">
-                <select name="budget" id="budget">
-                  <option value="1000">$1,000</option>
-                  <option value="5000">$1,000&ndash;$5,000</option>
-                  <option value="10000">$5,000&ndash;$10,000</option>
-                  <option value="20000">$10,000&ndash;$20,000</option>
-                  <option value="35000">$20,000&ndash;$35,000</option>
-                  <option value="50000">$35,000&ndash;$50,000</option>
-                  <option value="50000+">$50,000+</option>
-                </select>
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="timeframe">Completion Timeframe</label>
-              <div class="controls">
-                <select name="timeframe" id="timeframe">
-                  <option value="weeks">1-2 weeks</option>
-                  <option value="1 month">1 month</option>
-                  <option value="2 months">2 months</option>
-                  <option value="3-5 months">3-5 months</option>
-                  <option value="6+ months">6+ months</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-
+        <button type="submit" class="btn btn-secondary btn-wide">Send!</button>
       </div>
     </div>
   </div>
-
-  <div class="form-footer row">
-    <div class="large-10 large-offset-1 columns">
-      <button type="submit" class="btn btn-secondary btn-wide">Send!</button>
-    </div>
-  </div>
-
 </div>

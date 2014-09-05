@@ -1690,8 +1690,7 @@ ul.studies {
     ul.studies li.case .case-content {
       overflow: hidden;
       position: relative;
-      height: 340px;
-      border-radius: 3px; }
+      height: 340px; }
     ul.studies li.case img {
       position: absolute;
       z-index: 10;
@@ -1709,7 +1708,6 @@ ul.studies {
       right: -10px;
       top: -10px;
       bottom: -10px;
-      border-radius: 3px;
       z-index: 2;
       background-size: cover;
       -webkit-filter: blur(3px);
@@ -1720,7 +1718,6 @@ ul.studies {
       right: 0;
       top: 0;
       bottom: 0;
-      border-radius: 3px;
       opacity: .7;
       -webkit-transition: opacity 0.25s 0.05s;
       -moz-transition: opacity 0.25s 0.05s;

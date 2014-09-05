@@ -5,6 +5,8 @@
 // **********************************************************************
 
 $text:        #555555;
+$color:       #F5852B;
+$background:  "/img/case-studies/thumbnails/ascendify_banner.jpg";
 
 // **********************************************************************
 // ASCENDIFY BASE
@@ -56,18 +58,11 @@ body {
 
 .section.intro {
   .section-content {
-    @include span-columns(10);
-    @include shift(1);
+    @include span-columns(8);
+    @include shift(2);
   }
 }
 
-// **********************************************************************
-// GROUP
-// **********************************************************************
-
-.section.group {
-
-}
 
 // **********************************************************************
 // SEARCH
@@ -83,6 +78,64 @@ body {
     line-height: 28px;
     @include span-columns(10);
     @include shift(1);
+  }
+}
+
+
+// **********************************************************************
+// PULL QUOTE
+// **********************************************************************
+
+.section.pull-quote {
+  padding: 80px 0;
+  position: relative;
+  background: url(#{$background}) center top no-repeat;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba($color, .85),
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  div.quote {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  p {
+    font-size: 36px;
+    line-height: 1.15em;
+    font-weight: 200;
+    color: white;
+  }
+
+  p.quote {
+    text-indent: -10px;
+  }
+
+  p.by-line {
+    font-size: 30px;
+    text-align: right;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .profile-img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: url('/img/case-studies/ascendify/matt-profile.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid $gray-lighten;
+    margin: 0 10px -14px 0;
   }
 }
 
@@ -129,7 +182,7 @@ body {
 
       img {
         display: block;
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
       }
 

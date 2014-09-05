@@ -37,9 +37,24 @@ $text:        rgba(white, .8);
   }
 }
 
+.contact-intro_title {
+  @include span-columns(4);
+  @include shift(1);
+  padding-right: 30px;
+}
+
+.contact-intro_about {
+  @include span-columns(6);
+}
+
 // **********************************************************************
 // FORM
 // **********************************************************************
+
+.form-wrap {
+  @include span-columns(10);
+  @include shift(1);
+}
 
 form {
   border: 1px solid white;
@@ -56,13 +71,13 @@ form {
     }
   }
 
-  .control-group + .control-group {
+  .control-group + .control-group,
+  .control-group + .control-group.focus {
     border-left: 1px solid white;
   }
 
   .control-group {
     padding: 4px 8px;
-    // border: 1px solid white;
     position: relative;
     z-index: 10;
     @include transition(all .25s);
@@ -83,16 +98,15 @@ form {
       z-index: 12;
       background: rgba(white, .08);
       &:before {
-        border: 1px solid $primary;
         z-index: 11;
         content: '';
       }
       label {
-        color: $primary;
+        color: $green;
       }
     }
     + .control-group.focus:before {
-      left: -2px;
+      left: -1px;
     }
 
     &.invalid {
@@ -152,9 +166,46 @@ form {
   }
 }
 
+
+
+
+// **********************************************************************
+// DROPDOWNS
+// **********************************************************************
+
+.selectize-control.single {
+  z-index: 100;
+
+  .selectize-input,
+  .selectize-dropdown {
+    font-size: 18px;
+    font-family: $body-font;
+  }
+
+  .selectize-input {
+    background: none;
+    color: white;
+    border-color: transparent;
+    box-shadow: none;
+    &.focus {
+      background: white;
+      color: $gray-darken;
+    }
+  }
+}
+
+
+
+// **********************************************************************
+// FOOTER
+// **********************************************************************
+
 div.form-footer {
-  margin-top: 20px;
+  @include span-columns(10);
+  @include shift(1);
+  margin-top: 30px;
   button {
     float: right;
+    min-width: 200px;
   }
 }

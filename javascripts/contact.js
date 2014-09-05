@@ -1,5 +1,5 @@
 (function() {
-  var clearValidationErrors, initChosen, initFormListeners, scrapeForm, setWindowHeight, showValidationErrors, validateForm;
+  var clearValidationErrors, initDropdowns, initFormListeners, scrapeForm, setWindowHeight, showValidationErrors, validateForm;
 
   setWindowHeight = function() {
     var $content, $win;
@@ -95,15 +95,13 @@
     return dataObject;
   };
 
-  initChosen = function() {
-    return $('select').chosen({
-      disable_search_threshold: 10
-    });
+  initDropdowns = function() {
+    return $('select').selectize();
   };
 
   $(document).ready(function() {
     setWindowHeight();
-    initChosen();
+    initDropdowns();
     return initFormListeners();
   });
 

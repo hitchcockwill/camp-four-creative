@@ -181,7 +181,6 @@ ul.studies {
       overflow: hidden;
       position: relative;
       height: 340px;
-      border-radius: 3px;
     }
 
     img {
@@ -199,7 +198,6 @@ ul.studies {
       right: -10px;
       top: -10px;
       bottom: -10px;
-      border-radius: 3px;
       z-index: 2;
       background-size: cover;
       @include filter(blur(3px));
@@ -211,7 +209,6 @@ ul.studies {
       right: 0;
       top: 0;
       bottom: 0;
-      border-radius: 3px;
       opacity: .7;
       @include transition(opacity .25s .05s);
       z-index: 5;

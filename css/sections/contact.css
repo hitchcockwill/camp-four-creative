@@ -1565,6 +1565,33 @@
   .contact-content .contact-intro .about {
     float: left; }
 
+.contact-intro_title {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  margin-left: 8.5298%;
+  padding-right: 30px; }
+  .contact-intro_title:last-child {
+    margin-right: 0; }
+
+.contact-intro_about {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .contact-intro_about:last-child {
+    margin-right: 0; }
+
+.form-wrap {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  .form-wrap:last-child {
+    margin-right: 0; }
+
 form {
   border: 1px solid white;
   border-bottom: none; }
@@ -1577,7 +1604,8 @@ form {
     form fieldset.double .control-group {
       width: 50%;
       float: left; }
-  form .control-group + .control-group {
+  form .control-group + .control-group,
+  form .control-group + .control-group.focus {
     border-left: 1px solid white; }
   form .control-group {
     padding: 4px 8px;
@@ -1602,18 +1630,17 @@ form {
       z-index: 12;
       background: rgba(255, 255, 255, 0.08); }
       form .control-group.focus:before {
-        border: 1px solid #383d46;
         z-index: 11;
         content: ''; }
       form .control-group.focus label {
-        color: #383d46; }
+        color: #71C8B9; }
     form .control-group + .control-group.focus:before {
-      left: -2px; }
+      left: -1px; }
     form .control-group.invalid {
       border-color: transparent;
       z-index: 12; }
       form .control-group.invalid:before {
-        border: 1px solid #ca3113;
+        border: 1px solid #D14830;
         z-index: 11;
         content: ''; }
     form .control-group.invalid.focus label {
@@ -1649,9 +1676,32 @@ form {
     resize: none;
     min-height: 120px; }
 
+.selectize-control.single {
+  z-index: 100; }
+  .selectize-control.single .selectize-input,
+  .selectize-control.single .selectize-dropdown {
+    font-size: 18px;
+    font-family: "source-sans-pro", sans-serif; }
+  .selectize-control.single .selectize-input {
+    background: none;
+    color: white;
+    border-color: transparent;
+    box-shadow: none; }
+    .selectize-control.single .selectize-input.focus {
+      background: white;
+      color: #333333; }
+
 div.form-footer {
-  margin-top: 20px; }
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  margin-top: 30px; }
+  div.form-footer:last-child {
+    margin-right: 0; }
   div.form-footer button {
-    float: right; }
+    float: right;
+    min-width: 200px; }
 
 /*# sourceMappingURL=contact.css.map */
