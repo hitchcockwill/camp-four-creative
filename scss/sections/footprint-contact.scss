@@ -1,0 +1,28 @@
+@import "../config/variables";
+
+.contact-content {
+  background: url('/img/footprint/footprint-bw.jpg') center center no-repeat #555;
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include background(linear-gradient(rgba(#57695e, .8), rgba(#758e7f, .6)));
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.contact-intro_title {
+  @include span-columns(5);
+  @include shift(1);
+}
+
+.contact-intro_about {
+  @include span-columns(5);
+}
+
+

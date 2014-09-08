@@ -1,16 +1,17 @@
 @import "../config/variables";
 
+
 // **********************************************************************
-// WOMEN VARIABLES
+// SPINNAKR VARIABLES
 // **********************************************************************
 
 $text:        #524d56;
 $text-dark:   #555555;
 
-$teal:        #c4e5de;
+$blue:        #479dc0;
 
 // **********************************************************************
-// WOMEN BASE
+// SPINNAKR BASE
 // **********************************************************************
 
 body {
@@ -21,7 +22,7 @@ body {
 // HERO
 // **********************************************************************
 
-.women-hero {
+.spinnakr-hero {
   .case-study-hero-intro {
     margin-top: 70px;
     img {
@@ -37,6 +38,13 @@ body {
 .section {
   padding-top: 80px;
   padding-bottom: 80px;
+  background: white;
+
+  &:nth-child(even) {
+    background: $bg;
+    border-top: 1px solid darken($bg, 8%);
+    border-bottom: 1px solid darken($bg, 8%);
+  }
 }
 
 // **********************************************************************
@@ -55,87 +63,27 @@ body {
     @include shift(1);
   }
   p {
-    margin: 0;
+    margin: 0 0 30px;
   }
 }
 
 
 // **********************************************************************
-// PERSONALITY
+// HOME
 // **********************************************************************
 
-.section.personality {
+.section.home,
+.section.about,
+.section.case-studies {
   .section-content {
-    @include span-columns(4);
-    padding-right: 30px;
+    @include span-columns(3);
   }
   .section-img {
-    @include span-columns(8);
-    img {
-      max-width: 100%;
-      border-radius: 2px;
-    }
-  }
-}
-
-// **********************************************************************
-// SIMPLE
-// **********************************************************************
-
-.section.simple {
-  background: $teal;
-  color: darken($teal, 50%);
-  padding-bottom: 0;
-
-  .section-content {
-    @include span-columns(6);
-  }
-}
-
-
-// **********************************************************************
-// PROCESS
-// **********************************************************************
-
-.section.process {
-  background: $teal;
-  color: white;
-  padding-top: 50px;
-
-  .process-img {
-    @include span-columns(3);
-    max-height: 400px;
-    overflow: hidden;
-    border-radius: 2px;
+    @include span-columns(9);
+    border: 1px solid darken($bg, 15%);
     img {
       max-width: 100%;
     }
   }
 }
 
-
-
-// **********************************************************************
-// ACCOLADES
-// **********************************************************************
-
-.section.accolades {
-  .about {
-    @include span-columns(8);
-    @include shift(2);
-  }
-  h2 {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  li {
-    @include clearfix;
-    p {
-      float: left;
-    }
-    img {
-      float: right;
-      margin-top: -15px;
-    }
-  }
-}

@@ -4140,13 +4140,14 @@ span.req {
     display: inline-block;
     position: relative;
     padding-left: 30px;
-    font-size: 24px; }
+    font-size: 24px;
+    margin: 0; }
     #case-study-content .intro div.services p:before {
       position: absolute; }
     #case-study-content .intro div.services p:before {
       opacity: .4;
       left: 0;
-      top: 0; }
+      top: 4px; }
     #case-study-content .intro div.services p + p {
       margin-left: 40px; }
 

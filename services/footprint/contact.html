@@ -1,0 +1,106 @@
+---
+layout: default
+className: "_contact _footprint-contact"
+scripts: ["footprint-contact.js"]
+styles: ["sections/contact.css", "sections/footprint-contact.css"]
+---
+
+{% include header.html %}
+
+<div class="contact-content">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="contact-intro">
+      <div class="row">
+        <div class="contact-intro_title">
+          <h2>Ready to get started with Footprint?</h2>
+        </div>
+        <div class="contact-intro_about">
+          <p>
+            Tell us a little bit more about your project and why you think Footprint is a good service for your company.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="contact-form">
+      <div class="row">
+        <div class="form-wrap">
+
+          <form name="contact" method="post" action="send_footprint_form.php">
+            <fieldset class="double">
+              <div class="control-group">
+                <label for="name">Name<span class="req"></span></label>
+                <div class="controls">
+                  <input type="text" id="name" name="name">
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="company">Company<span class="req"></span></label>
+                <div class="controls">
+                  <input type="text" id="company" name="company">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="double">
+              <div class="control-group">
+                <label for="email">Email<span class="req"></span></label>
+                <div class="controls">
+                  <input type="text" id="email" name="email">
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="url">URL<span class="req"></span></label>
+                <div class="controls">
+                  <input type="text" id="url" name="url">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="control-group">
+                <label for="about_company">Tell us about your company<span class="req"></span></label>
+                <div class="controls">
+                  <textarea name="about_company" id="about_company"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="control-group">
+                <label for="project_goals">What are your goals with changing your landing / marketing pages?<span class="req"></span></label>
+                <div class="controls">
+                  <textarea name="project_goals" id="project_goals"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset >
+              <div class="control-group">
+                <label for="packages">What packages are you interested in?<span class="req"></span></label>
+                <div class="controls">
+                  <select name="packages" id="packages" multiple>
+                    <option value=""></option>
+                    <option value="basic">Basic</option>
+                    <option value="developer">Developer</option>
+                    <option value="analytics">Analytics</option>
+                    <option value="maintenance">Maintenance</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-footer row">
+      <div class="large-10 large-offset-1 columns">
+        <button type="submit" class="btn btn-secondary btn-wide">Send!</button>
+      </div>
+    </div>
+  </div>
+</div>
