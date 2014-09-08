@@ -1600,7 +1600,7 @@ body {
   padding-top: 110px;
   padding-bottom: 0;
   color: #555555;
-  background: #e3e3e3; }
+  background: #f7e6e4; }
   .section.sorting .sorting-img {
     float: left;
     display: block;
@@ -1620,15 +1620,50 @@ body {
     .section.sorting .sorting-content img {
       margin-top: 20px; }
 
-.section.quote {
-  background: #d43c28;
-  color: white;
-  text-align: center;
-  padding: 100px 0; }
-  .section.quote h2 {
-    line-height: 46px;
-    font-size: 40px;
+.section.pull-quote {
+  padding: 80px 0;
+  position: relative;
+  background: url(/img/case-studies/thumbnails/motoroso_banner.jpg) center bottom no-repeat;
+  background-size: cover; }
+  .section.pull-quote .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(212, 60, 40, 0.85); }
+  .section.pull-quote .container {
+    position: relative;
+    z-index: 2; }
+  .section.pull-quote div.quote {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .section.pull-quote div.quote:last-child {
+      margin-right: 0; }
+  .section.pull-quote p {
+    font-size: 36px;
+    line-height: 1.15em;
+    font-weight: 200;
+    color: white; }
+  .section.pull-quote p.quote {
+    text-indent: -10px; }
+  .section.pull-quote p.by-line {
+    font-size: 30px;
+    text-align: right;
+    font-style: italic;
     margin: 0; }
+  .section.pull-quote .profile-img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: url("/img/case-studies/motoroso/alex-profile.jpg") no-repeat center center;
+    background-size: cover;
+    border: 1px solid #7e2418;
+    margin: 0 10px -14px 0; }
 
 .section.single-motor {
   position: relative;
@@ -1641,7 +1676,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1; }
-  .section.single-motor h4, .section.single-motor p {
+  .section.single-motor h2, .section.single-motor p {
     color: white; }
   .section.single-motor .row {
     z-index: 10;
@@ -1661,5 +1696,63 @@ body {
     width: 74.41059%; }
     .section.single-motor .interface:last-child {
       margin-right: 0; }
+
+.section.brand-engagement {
+  padding-top: 100px;
+  padding-bottom: 50px; }
+  .section.brand-engagement .about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%; }
+    .section.brand-engagement .about:last-child {
+      margin-right: 0; }
+  .section.brand-engagement .logos {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+    position: relative; }
+    .section.brand-engagement .logos:last-child {
+      margin-right: 0; }
+  .section.brand-engagement .auto-logo {
+    max-width: 260px;
+    float: left;
+    margin: 0 20px 40px; }
+  .section.brand-engagement .bmw {
+    max-width: 150px; }
+  .section.brand-engagement .ducati {
+    margin-top: 15px;
+    float: right; }
+  .section.brand-engagement .porsche {
+    margin-left: 40px; }
+  .section.brand-engagement .suzuki {
+    margin-top: 14px;
+    float: right; }
+
+.section.accolades {
+  padding-bottom: 80px;
+  padding-top: 80px;
+  background: #f7e6e4; }
+  .section.accolades .about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%; }
+    .section.accolades .about:last-child {
+      margin-right: 0; }
+  .section.accolades h2 {
+    text-align: center;
+    margin-bottom: 50px; }
+  .section.accolades li:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .section.accolades li p {
+    float: left; }
+  .section.accolades li img {
+    float: right;
+    margin-top: -15px; }
 
 /*# sourceMappingURL=motoroso.css.map */

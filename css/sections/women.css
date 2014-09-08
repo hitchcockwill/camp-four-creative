@@ -1630,4 +1630,25 @@ body {
     .section.process .process-img img {
       max-width: 100%; }
 
+.section.accolades .about {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%; }
+  .section.accolades .about:last-child {
+    margin-right: 0; }
+.section.accolades h2 {
+  text-align: center;
+  margin-bottom: 50px; }
+.section.accolades li:after {
+  content: "";
+  display: table;
+  clear: both; }
+.section.accolades li p {
+  float: left; }
+.section.accolades li img {
+  float: right;
+  margin-top: -15px; }
+
 /*# sourceMappingURL=women.css.map */

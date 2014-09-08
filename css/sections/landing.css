@@ -1619,23 +1619,13 @@ section.hr {
   transform: translate(0, -60%); }
   #landing-hero .hero-content img {
     display: block;
-    max-width: 180px;
+    max-width: 360px;
     margin: 0 auto 30px; }
-
-#logo-wrap {
-  position: relative;
-  top: -370px;
-  opacity: .6; }
-  #logo-wrap img {
-    left: 50%;
-    margin-left: -127px;
-    display: block;
-    position: absolute;
-    z-index: 5; }
 
 section.top-text {
   padding-bottom: 110px;
-  margin-top: 700px; }
+  margin-top: 700px;
+  text-align: center; }
   section.top-text .section-content {
     float: left;
     display: block;
@@ -1646,12 +1636,11 @@ section.top-text {
       margin-right: 0; }
   section.top-text h2 {
     font-size: 34px;
-    margin: 0 0 16px;
+    margin: 0 0 24px;
     line-height: 1.2em; }
   section.top-text p {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.5em;
-    text-align: center;
     margin-bottom: 30px; }
   section.top-text .buttons-wrap {
     text-align: center; }

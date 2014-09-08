@@ -8,6 +8,8 @@ $text:        #524d56;
 $text-dark:   #555555;
 
 $red:         #d43c28;
+$brownred:    #f7e6e4;
+$background:  "/img/case-studies/thumbnails/motoroso_banner.jpg";
 
 // **********************************************************************
 // MOTOROSO BASE
@@ -80,7 +82,7 @@ body {
   padding-top: 110px;
   padding-bottom: 0;
   color: $text-dark;
-  background: #e3e3e3;
+  background: $brownred;
 
   .sorting-img {
     @include span-columns(3);
@@ -99,15 +101,57 @@ body {
 // PULL QUOTE
 // **********************************************************************
 
-.section.quote {
-  background: $red;
-  color: white;
-  text-align: center;
-  padding: 100px 0;
-  h2 {
-    line-height: 46px;
-    font-size: 40px;
+.section.pull-quote {
+  padding: 80px 0;
+  position: relative;
+  background: url(#{$background}) center bottom no-repeat;
+  background-size: cover;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba($red, .85),
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  div.quote {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  p {
+    font-size: 36px;
+    line-height: 1.15em;
+    font-weight: 200;
+    color: white;
+  }
+
+  p.quote {
+    text-indent: -10px;
+  }
+
+  p.by-line {
+    font-size: 30px;
+    text-align: right;
+    font-style: italic;
     margin: 0;
+  }
+
+  .profile-img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: url('/img/case-studies/motoroso/alex-profile.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid darken($red, 20%);
+    margin: 0 10px -14px 0;
   }
 }
 
@@ -128,7 +172,7 @@ body {
     right: 0;
     z-index: 1;
   }
-  h4, p {
+  h2, p {
     color: white;
   }
   .row {
@@ -141,5 +185,71 @@ body {
   }
   .interface {
     @include span-columns(9);
+  }
+}
+
+
+// **********************************************************************
+// BRAND ENGAGEMENT
+// **********************************************************************
+
+.section.brand-engagement {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  .about {
+    @include span-columns(5);
+  }
+  .logos {
+    @include span-columns(7);
+    position: relative;
+  }
+  .auto-logo {
+    max-width: 260px;
+    float: left;
+    margin: 0 20px 40px;
+  }
+  .bmw {
+    max-width: 150px;
+  }
+  .ducati {
+    margin-top: 15px;
+    float: right;
+  }
+  .porsche {
+    margin-left: 40px;
+  }
+  .suzuki {
+    margin-top: 14px;
+    float: right;
+  }
+}
+
+
+// **********************************************************************
+// ACCOLADES
+// **********************************************************************
+
+.section.accolades {
+  padding-bottom: 80px;
+  padding-top: 80px;
+  background: $brownred;
+
+  .about {
+    @include span-columns(8);
+    @include shift(2);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  li {
+    @include clearfix;
+    p {
+      float: left;
+    }
+    img {
+      float: right;
+      margin-top: -15px;
+    }
   }
 }
