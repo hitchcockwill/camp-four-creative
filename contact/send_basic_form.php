@@ -1,4 +1,4 @@
-<?php
+b<?php
 
 if(isset($_POST['email'])) {
 
@@ -28,7 +28,8 @@ if(isset($_POST['email'])) {
   $email_message .= "<strong>Company:</strong><br> ".clean_string($company)."<br><br>";
   $email_message .= "<strong>Email:</strong><br> ".clean_string($email_from)."<br><br>";
   $email_message .= "<strong>Url:</strong><br> ".clean_string($url)."<br><br>";
-  $email_message .= "<strong>Description:</strong><br> ".clean_string($description)."<br><br>";
+  $email_message .= "<strong>About Company:</strong><br> ".clean_string($about_company)."<br><br>";
+  $email_message .= "<strong>About Project:</strong><br> ".clean_string($about_project)."<br><br>";
   $email_message .= "<strong>Budget:</strong><br> ".clean_string($budget)."<br><br>";
   $email_message .= "<strong>Timeframe:</strong><br> ".clean_string($timeframe)."<br><br>";
 

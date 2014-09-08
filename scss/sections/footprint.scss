@@ -132,7 +132,7 @@
     position: absolute;
     left: 0;
     border-radius: 80px;
-    border: 2px solid $bg;
+    border: 3px solid rgba($bg, .5);
   }
   p {
     padding-left: 110px;
@@ -191,12 +191,43 @@
 // CONTACT
 // **********************************************************************
 
-.footprint-page .get-started {
+.footprint-page .content-section.get-started {
+  padding-top: 250px;
+  padding-bottom: 250px;
+  background: url('/img/footprint/footprint-bw.jpg') no-repeat center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($blue-gray, .5);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  h3 {
+    margin: 0 0 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    float: none;
+    font-family: $body-serif;
+    color: white;
+  }
   a.btn {
     display: block;
     width: 300px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px 30px;
   }
 }
 

@@ -246,10 +246,10 @@ body {
     @include clearfix;
     p {
       float: left;
+      max-width: 55%;
     }
     img {
       float: right;
-      margin-top: -15px;
     }
   }
 }

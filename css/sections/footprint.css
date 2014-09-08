@@ -1647,7 +1647,7 @@
     position: absolute;
     left: 0;
     border-radius: 80px;
-    border: 2px solid #f8f8f8; }
+    border: 3px solid rgba(248, 248, 248, 0.5); }
   .footprint-page .content-section.testimonial-top p {
     padding-left: 110px;
     position: relative; }
@@ -1674,10 +1674,36 @@
   font-size: inherit;
   opacity: 1; }
 
-.footprint-page .get-started a.btn {
-  display: block;
-  width: 300px;
-  margin: 0 auto;
-  padding: 30px; }
+.footprint-page .content-section.get-started {
+  padding-top: 250px;
+  padding-bottom: 250px;
+  background: url("/img/footprint/footprint-bw.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; }
+  .footprint-page .content-section.get-started .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(61, 68, 81, 0.5); }
+  .footprint-page .content-section.get-started .container {
+    position: relative;
+    z-index: 2; }
+  .footprint-page .content-section.get-started h3 {
+    margin: 0 0 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    float: none;
+    font-family: "minion-pro", serif;
+    color: white; }
+  .footprint-page .content-section.get-started a.btn {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px 30px; }
 
 /*# sourceMappingURL=footprint.css.map */

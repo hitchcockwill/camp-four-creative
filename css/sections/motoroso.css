@@ -1750,9 +1750,9 @@ body {
     display: table;
     clear: both; }
   .section.accolades li p {
-    float: left; }
+    float: left;
+    max-width: 55%; }
   .section.accolades li img {
-    float: right;
-    margin-top: -15px; }
+    float: right; }
 
 /*# sourceMappingURL=motoroso.css.map */

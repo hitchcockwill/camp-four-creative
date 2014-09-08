@@ -1550,7 +1550,7 @@
   content: ""; }
 
 .contact-content {
-  background: url("/img/camp-footer.jpg") center center no-repeat;
+  background: url("/img/camp-footer.jpg") center center no-repeat #555;
   background-size: cover;
   position: absolute;
   left: 0;
@@ -1678,24 +1678,39 @@ form {
     resize: none;
     min-height: 120px; }
 
-.selectize-control.single {
+.selectize-control.single,
+.selectize-control.multi {
   z-index: 100;
   margin-bottom: -5px; }
   .selectize-control.single .selectize-input,
-  .selectize-control.single .selectize-dropdown {
+  .selectize-control.single .selectize-dropdown,
+  .selectize-control.multi .selectize-input,
+  .selectize-control.multi .selectize-dropdown {
     font-size: 22px;
     line-height: 1.2em;
     font-family: "source-sans-pro", sans-serif; }
-  .selectize-control.single .selectize-input {
+  .selectize-control.single .selectize-input,
+  .selectize-control.multi .selectize-input {
     background: none;
     color: white;
     border-color: transparent;
     box-shadow: none;
     padding-top: 4px;
     padding-bottom: 4px; }
-    .selectize-control.single .selectize-input.focus {
+    .selectize-control.single .selectize-input.focus,
+    .selectize-control.multi .selectize-input.focus {
       background: white;
       color: #333333; }
+
+.selectize-control.multi .selectize-input [data-value] {
+  background: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  text-shadow: none;
+  color: #524d56;
+  font-size: 18px;
+  padding: 3px 12px; }
 
 div.form-footer {
   float: left;
