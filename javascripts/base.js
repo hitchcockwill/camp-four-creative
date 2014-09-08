@@ -1,5 +1,5 @@
 (function() {
-  var backgroundImageLoad, setRetinaImage;
+  var backgroundImageLoad, scrollToPosition, setRetinaImage;
 
   setRetinaImage = function() {
     return $("img.retina").each(function() {
@@ -32,11 +32,26 @@
     });
   };
 
+  scrollToPosition = function(target) {
+    return $('html,body').animate({
+      scrollTop: target
+    }, 500);
+  };
+
   $(document).ready(function() {
     $("body").attr("data-device-type", categorizr());
     backgroundImageLoad($(".image-wrapper"));
     if (window.devicePixelRatio >= 2) {
       return setRetinaImage();
+    }
+  });
+
+  $(window).load(function() {
+    var hash, target;
+    if (window.location.hash !== '') {
+      hash = window.location.hash.replace('#', '');
+      target = $("a[name='" + hash + "']").offset().top - 100;
+      return scrollToPosition(target);
     }
   });
 

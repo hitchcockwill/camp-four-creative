@@ -43,19 +43,19 @@ imageLoad = ($image, cb) ->
     img.src = src
 
 
-# link navigation
-linkNavigate = (target) ->
-  $link = $doc.find("[data-target='#{target}']")
-  console.log 'found link: ', $link, $link.offset().top
-  _.defer ->
-    console.log 'scroll to: ', $link.offset().top + 'px'
-    # $('html, body').animate({'scrollTop': $link.offset().top + 'px'}, 100)
-    $('html, body').scrollTop($link.offset().top)
+initLinkClicking = ->
+  $('a').click (e) ->
+    $this = $(this)
+    if $this.attr('href')?[1] is '#'
+      name = $this.attr('href').split('#')[1]
+      $target = $("a[name='#{name}']")
+      e.preventDefault()
+      scrollToPosition($target.offset().top - 100)
 
-initLinkNavigation = ->
-  setTimeout ->
-    if window.location.hash then linkNavigate(window.location.hash)
-  , 100
+scrollToPosition = (target) ->
+  $('html,body').animate({ scrollTop: target }, 500)
+
+
 
 
 
@@ -63,7 +63,8 @@ $(document).ready () ->
   initScrolling()
   scrollHandle(true)
 
-  # initLinkNavigation()
+  # init link clicking
+  initLinkClicking()
 
   $(window).scroll ->
     didScroll = true

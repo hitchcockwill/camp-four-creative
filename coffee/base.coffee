@@ -21,16 +21,26 @@ backgroundImageLoad = ($images) ->
         img.remove()
     img.src = src
 
+scrollToPosition = (target) ->
+  $('html,body').animate({ scrollTop: target }, 500)
+
+
+
 
 $(document).ready () ->
 
   # set devive type
   $("body").attr("data-device-type", categorizr())
 
-  # init foundation
-  # $(document).foundation()
-
   backgroundImageLoad($(".image-wrapper"))
 
   if window.devicePixelRatio >= 2
     setRetinaImage()
+
+$(window).load ->
+
+  if window.location.hash isnt ''
+    hash = window.location.hash.replace('#', '')
+    target = $("a[name='#{hash}']").offset().top - 100
+    scrollToPosition(target)
+

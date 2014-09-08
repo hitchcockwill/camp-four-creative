@@ -1,5 +1,5 @@
 (function() {
-  var clearValidationErrors, initDropdowns, initFormListeners, scrapeForm, setWindowHeight, showValidationErrors, validateForm;
+  var clearValidationErrors, initDropdowns, initFormListeners, scrapeForm, setWindowHeight, showValidationErrors, submitForm, validateForm;
 
   setWindowHeight = function() {
     var $content, $win;
@@ -28,16 +28,32 @@
       });
     });
     return $form.on('submit', function(e) {
-      var valid;
-      valid = validateForm(scrapeForm());
-      clearValidationErrors();
-      if (valid === true) {
-
-      } else {
-        e.preventDefault();
-        return showValidationErrors(valid);
-      }
+      return submitForm(e);
     });
+  };
+
+  submitForm = function(event) {
+    var formData, valid;
+    event.preventDefault();
+    formData = scrapeForm();
+    valid = validateForm(formData);
+    clearValidationErrors();
+    if (valid !== true) {
+      showValidationErrors(valid);
+      return false;
+    } else {
+      return $.ajax({
+        type: 'post',
+        url: 'send_basic_form.php',
+        data: formData,
+        success: function(data) {
+          return console.log('php success');
+        },
+        error: function(data, log) {
+          return console.log('there was an error: ', data, log);
+        }
+      });
+    }
   };
 
   showValidationErrors = function(errors) {
@@ -69,8 +85,11 @@
     if (!formData.email) {
       errors.email = true;
     }
-    if (!formData.description) {
-      errors.description = true;
+    if (!formData.about_company) {
+      errors.about_company = true;
+    }
+    if (!formData.about_project) {
+      errors.about_project = true;
     }
     if (!formData.budget) {
       errors.budget = true;

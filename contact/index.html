@@ -16,7 +16,7 @@ styles: ["sections/contact.css"]
         </div>
         <div class="contact-intro_about">
           <p>
-            We are always looking for the next big thing. If you think that your project might be a good match for us, feel free to get in contact by filling out our form. Want to just say hey? Send us a tweet!
+            We are always looking for the next big thing. If you are interested in working with us, we would love to hear from you!
           </p>
         </div>
       </div>
@@ -27,16 +27,16 @@ styles: ["sections/contact.css"]
       <div class="row">
         <div class="form-wrap">
 
-          <form name="contact" method="post" action="send_form.php">
+          <form name="contact" method="post" action="send_basic_form.php">
             <fieldset class="double">
               <div class="control-group">
-                <label for="name">Name</label>
+                <label for="name">Name<span class="req"></span></label>
                 <div class="controls">
                   <input type="text" id="name" name="name">
                 </div>
               </div>
               <div class="control-group">
-                <label for="company">Company</label>
+                <label for="company">Company<span class="req"></span></label>
                 <div class="controls">
                   <input type="text" id="company" name="company">
                 </div>
@@ -45,13 +45,13 @@ styles: ["sections/contact.css"]
 
             <fieldset class="double">
               <div class="control-group">
-                <label for="email">Email</label>
+                <label for="email">Email<span class="req"></span></label>
                 <div class="controls">
                   <input type="text" id="email" name="email">
                 </div>
               </div>
               <div class="control-group">
-                <label for="url">URL</label>
+                <label for="url">URL<span class="req"></span></label>
                 <div class="controls">
                   <input type="text" id="url" name="url">
                 </div>
@@ -60,27 +60,28 @@ styles: ["sections/contact.css"]
 
             <fieldset>
               <div class="control-group">
-                <label for="pitch">Tell us about your company</label>
+                <label for="about_company">Tell us about your company<span class="req"></span></label>
                 <div class="controls">
-                  <textarea name="pitch" id="pitch"></textarea>
+                  <textarea name="about_company" id="about_company"></textarea>
                 </div>
               </div>
             </fieldset>
 
             <fieldset>
               <div class="control-group">
-                <label for="description">Description</label>
+                <label for="about_project">Tell us about your project<span class="req"></span></label>
                 <div class="controls">
-                  <textarea name="description" id="description"></textarea>
+                  <textarea name="about_project" id="about_project"></textarea>
                 </div>
               </div>
             </fieldset>
 
             <fieldset class="double">
               <div class="control-group">
-                <label for="budget">Approximate Budget</label>
+                <label for="budget">Approximate Budget<span class="req"></span></label>
                 <div class="controls">
                   <select name="budget" id="budget">
+                    <option value=""></option>
                     <option value="< 10k">&lt; $10,000</option>
                     <option value="10-25k">$10,000&ndash;$25,000</option>
                     <option value="25-50k">$25,000&ndash;$50,000</option>
@@ -89,9 +90,10 @@ styles: ["sections/contact.css"]
                 </div>
               </div>
               <div class="control-group">
-                <label for="timeframe">Completion Timeframe</label>
+                <label for="timeframe">Completion Timeframe<span class="req"></span></label>
                 <div class="controls">
                   <select name="timeframe" id="timeframe">
+                    <option value=""></option>
                     <option value="yesterday">Yesterday</option>
                     <option value="1 month">Within the month</option>
                     <option value="3 months">Within 3 months</option>

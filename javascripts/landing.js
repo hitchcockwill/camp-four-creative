@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $navBar, didScroll, heroHeight, imageLoad, initLinkNavigation, initScrolling, linkNavigate, scrollHandle;
+  var $doc, $navBar, didScroll, heroHeight, imageLoad, initLinkClicking, initScrolling, scrollHandle, scrollToPosition;
 
   didScroll = false;
 
@@ -52,27 +52,29 @@
     }
   };
 
-  linkNavigate = function(target) {
-    var $link;
-    $link = $doc.find("[data-target='" + target + "']");
-    console.log('found link: ', $link, $link.offset().top);
-    return _.defer(function() {
-      console.log('scroll to: ', $link.offset().top + 'px');
-      return $('html, body').scrollTop($link.offset().top);
+  initLinkClicking = function() {
+    return $('a').click(function(e) {
+      var $target, $this, name, _ref;
+      $this = $(this);
+      if (((_ref = $this.attr('href')) != null ? _ref[1] : void 0) === '#') {
+        name = $this.attr('href').split('#')[1];
+        $target = $("a[name='" + name + "']");
+        e.preventDefault();
+        return scrollToPosition($target.offset().top - 100);
+      }
     });
   };
 
-  initLinkNavigation = function() {
-    return setTimeout(function() {
-      if (window.location.hash) {
-        return linkNavigate(window.location.hash);
-      }
-    }, 100);
+  scrollToPosition = function(target) {
+    return $('html,body').animate({
+      scrollTop: target
+    }, 500);
   };
 
   $(document).ready(function() {
     initScrolling();
     scrollHandle(true);
+    initLinkClicking();
     $(window).scroll(function() {
       return didScroll = true;
     });

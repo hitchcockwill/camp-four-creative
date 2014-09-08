@@ -24,13 +24,29 @@ initFormListeners = ->
       )
 
   $form.on 'submit', (e) ->
-    valid = validateForm(scrapeForm())
-    clearValidationErrors()
-    if valid is true
-      # send form
-    else
-      e.preventDefault()
-      showValidationErrors(valid)
+    submitForm(e)
+
+
+submitForm = (event) ->
+  event.preventDefault()
+
+  formData = scrapeForm()
+  valid = validateForm(formData)
+  clearValidationErrors()
+  if valid isnt true
+    showValidationErrors(valid)
+    return false
+  else
+    $.ajax
+      type: 'post'
+      url: 'send_basic_form.php'
+      data: formData
+      success: (data) ->
+        console.log 'php success'
+      error: (data, log) ->
+        console.log 'there was an error: ', data, log
+
+
 
 showValidationErrors = (errors) ->
   $form = $('form')
@@ -46,7 +62,8 @@ validateForm = (formData) ->
   if !formData.url then errors.url = true
   if !formData.company then errors.company = true
   if !formData.email then errors.email = true
-  if !formData.description then errors.description = true
+  if !formData.about_company then errors.about_company = true
+  if !formData.about_project then errors.about_project = true
   if !formData.budget then errors.budget = true
   if !formData.timeframe then errors.timeframe = true
 

@@ -2390,6 +2390,15 @@ ul.f-dropdown {
     .chosen-container .chosen-results li.highlighted {
       background: #383d46; }
 
+span.req {
+  position: relative; }
+  span.req:after {
+    content: '*';
+    position: absolute;
+    right: -8px;
+    font-size: 11px;
+    top: -2px; }
+
 #primary-header {
   position: fixed;
   right: 0;
@@ -2452,7 +2461,7 @@ ul.f-dropdown {
       padding: 10px 20px;
       position: relative;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 16px;
       color: white;
       border-radius: 3px;
       opacity: .9;

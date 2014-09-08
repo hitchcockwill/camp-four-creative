@@ -4,7 +4,7 @@
 // CONTACT VARIABLES
 // **********************************************************************
 
-$text:        rgba(white, .8);
+$text:        white;
 
 // **********************************************************************
 // CONTACT BASE
@@ -20,8 +20,8 @@ $text:        rgba(white, .8);
   color: $text;
 
   p {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 23px;
+    line-height: 1.4em;
   }
 }
 
@@ -31,7 +31,7 @@ $text:        rgba(white, .8);
 // **********************************************************************
 
 .contact-content .contact-intro {
-  padding: 175px 0 70px;
+  padding: 125px 0 50px;
   .about {
     float: left;
   }
@@ -41,6 +41,7 @@ $text:        rgba(white, .8);
   @include span-columns(4);
   @include shift(1);
   padding-right: 30px;
+  margin-top: 5px;
 }
 
 .contact-intro_about {
@@ -103,6 +104,7 @@ form {
       }
       label {
         color: $green;
+        text-shadow: 1px 1px 0 rgba(black, .3);
       }
     }
     + .control-group.focus:before {
@@ -131,9 +133,9 @@ form {
   }
 
   label {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    font-weight: $fw-sbold;
+    font-weight: $fw-bold;
     width: 100%;
     display: block;
     &:hover {
@@ -149,9 +151,9 @@ form {
     box-shadow: none;
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 22px;
     font-family: $body-font;
-    font-weight: $fw-light;
+    font-weight: normal;
     margin-top: -5px;
     padding: 7px 0;
   }
@@ -175,10 +177,12 @@ form {
 
 .selectize-control.single {
   z-index: 100;
+  margin-bottom: -5px;
 
   .selectize-input,
   .selectize-dropdown {
-    font-size: 18px;
+    font-size: 22px;
+    line-height: 1.2em;
     font-family: $body-font;
   }
 
@@ -187,6 +191,8 @@ form {
     color: white;
     border-color: transparent;
     box-shadow: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
     &.focus {
       background: white;
       color: $gray-darken;

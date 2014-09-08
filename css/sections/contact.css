@@ -1555,13 +1555,13 @@
   position: absolute;
   left: 0;
   right: 0;
-  color: rgba(255, 255, 255, 0.8); }
+  color: white; }
   .contact-content p {
-    font-size: 18px;
-    line-height: 26px; }
+    font-size: 23px;
+    line-height: 1.4em; }
 
 .contact-content .contact-intro {
-  padding: 175px 0 70px; }
+  padding: 125px 0 50px; }
   .contact-content .contact-intro .about {
     float: left; }
 
@@ -1571,7 +1571,8 @@
   margin-right: 2.35765%;
   width: 31.76157%;
   margin-left: 8.5298%;
-  padding-right: 30px; }
+  padding-right: 30px;
+  margin-top: 5px; }
   .contact-intro_title:last-child {
     margin-right: 0; }
 
@@ -1633,7 +1634,8 @@ form {
         z-index: 11;
         content: ''; }
       form .control-group.focus label {
-        color: #71C8B9; }
+        color: #71C8B9;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3); }
     form .control-group + .control-group.focus:before {
       left: -1px; }
     form .control-group.invalid {
@@ -1650,9 +1652,9 @@ form {
       position: relative;
       z-index: 15; }
   form label {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
     width: 100%;
     display: block; }
     form label:hover {
@@ -1665,9 +1667,9 @@ form {
     box-shadow: none;
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 22px;
     font-family: "source-sans-pro", sans-serif;
-    font-weight: 300;
+    font-weight: normal;
     margin-top: -5px;
     padding: 7px 0; }
   form select {
@@ -1677,16 +1679,20 @@ form {
     min-height: 120px; }
 
 .selectize-control.single {
-  z-index: 100; }
+  z-index: 100;
+  margin-bottom: -5px; }
   .selectize-control.single .selectize-input,
   .selectize-control.single .selectize-dropdown {
-    font-size: 18px;
+    font-size: 22px;
+    line-height: 1.2em;
     font-family: "source-sans-pro", sans-serif; }
   .selectize-control.single .selectize-input {
     background: none;
     color: white;
     border-color: transparent;
-    box-shadow: none; }
+    box-shadow: none;
+    padding-top: 4px;
+    padding-bottom: 4px; }
     .selectize-control.single .selectize-input.focus {
       background: white;
       color: #333333; }

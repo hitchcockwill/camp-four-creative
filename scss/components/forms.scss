@@ -1,0 +1,10 @@
+span.req {
+  position: relative;
+  &:after {
+    content: '*';
+    position: absolute;
+    right: -8px;
+    font-size: 11px;
+    top: -2px;
+  }
+}
