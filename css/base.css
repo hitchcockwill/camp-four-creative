@@ -2222,7 +2222,7 @@
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 30px;
   color: #3D4451;
   border-radius: 3px;
   text-align: center;
@@ -2243,20 +2243,20 @@
 .btn.btn-primary {
   background: #383d46;
   color: white;
-  text-transform: uppercase;
   border: 1px solid #383d46; }
 
 .btn.btn-secondary {
   background: #D14830;
   color: white;
-  text-transform: uppercase;
   border: 1px solid #D14830; }
 
 .btn.btn-inverse {
   background: none;
   color: white;
-  border: 1px solid white;
-  text-transform: uppercase; }
+  border: 1px solid white; }
+
+.btn.btn-default {
+  background: #f1f1f1; }
 
 .btn.btn-wide {
   padding-left: 30px;

@@ -1676,12 +1676,31 @@ section.case-studies {
   display: block;
   margin-right: 2.35765%;
   width: 31.76157%;
-  padding-right: 30px; }
+  padding-right: 30px;
+  border: 1px solid #f1f1f1;
+  background: white;
+  padding: 20px;
+  text-align: center; }
   .services-list_item:last-child {
     margin-right: 0; }
   .services-list_item h3 {
+    margin: 10px 0 20px;
     font-size: 26px;
     font-weight: normal; }
+  .services-list_item a.btn {
+    display: block;
+    width: 100%; }
+
+.services-list .services-list_item--main {
+  margin-top: -40px;
+  background: #383d46;
+  color: white;
+  border-color: #383d46; }
+  .services-list .services-list_item--main h3 {
+    font-size: 35px; }
+  .services-list .services-list_item--main p {
+    font-size: 24px;
+    line-height: 1.4em; }
 
 section.about {
   max-width: 68em;

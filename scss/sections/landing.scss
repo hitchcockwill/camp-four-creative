@@ -172,10 +172,36 @@ section.case-studies {
 .services-list_item {
   @include span-columns(4);
   padding-right: 30px;
+  border: 1px solid $off-white;
+  background: white;
+  padding: 20px;
+  text-align: center;
 
   h3 {
+    margin: 10px 0 20px;
     font-size: 26px;
     font-weight: normal;
+  }
+
+  a.btn {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+.services-list .services-list_item--main {
+  margin-top: -40px;
+  background: $primary;
+  color: white;
+  border-color: $primary;
+
+  h3 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 1.4em;
   }
 }
 
