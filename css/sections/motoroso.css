@@ -1600,7 +1600,8 @@ body {
   padding-top: 110px;
   padding-bottom: 0;
   color: #555555;
-  background: #f7e6e4; }
+  background: #fdf2f1;
+  border-top: 1px solid #f8d1cd; }
   .section.sorting .sorting-img {
     float: left;
     display: block;
@@ -1733,7 +1734,8 @@ body {
 .section.accolades {
   padding-bottom: 80px;
   padding-top: 80px;
-  background: #f7e6e4; }
+  background: #fdf2f1;
+  border-top: 1px solid #f8d1cd; }
   .section.accolades .about {
     float: left;
     display: block;

@@ -1,5 +1,6 @@
 @import "plugins/selectize";
 @import "plugins/selectize.default";
+@import "plugins/slicknav";
 
 @import "config/variables";
 @import "config/responsive";
@@ -22,6 +23,8 @@
 
 .container {
   @include container;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .row {

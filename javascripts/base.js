@@ -1,5 +1,5 @@
 (function() {
-  var backgroundImageLoad, scrollToPosition, setRetinaImage;
+  var backgroundImageLoad, initHeaderResponsiveness, scrollToPosition, setRetinaImage;
 
   setRetinaImage = function() {
     return $("img.retina").each(function() {
@@ -38,9 +38,18 @@
     }, 500);
   };
 
+  initHeaderResponsiveness = function() {
+    var $header;
+    $header = $('#primary-header');
+    return $header.find('.header-nav').slicknav({
+      prependTo: $header.find('.row'),
+      label: ''
+    });
+  };
+
   $(document).ready(function() {
-    $("body").attr("data-device-type", categorizr());
     backgroundImageLoad($(".image-wrapper"));
+    initHeaderResponsiveness();
     if (window.devicePixelRatio >= 2) {
       return setRetinaImage();
     }

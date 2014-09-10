@@ -1556,20 +1556,13 @@
     color: white;
     position: relative;
     z-index: 5; }
-.footprint-page .icon {
-  font-size: 160px;
-  margin: 0 auto;
-  margin-top: 80px;
-  margin-bottom: 30px;
-  display: block;
-  max-width: 200px;
-  opacity: .8; }
 .footprint-page h1 {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 65.88078%;
-  margin-left: 17.05961%; }
+  margin-left: 17.05961%;
+  margin-top: 170px; }
   .footprint-page h1:last-child {
     margin-right: 0; }
 .footprint-page h3 {
@@ -1651,6 +1644,8 @@
   .footprint-page .content-section.testimonial-top p {
     padding-left: 110px;
     position: relative; }
+  .footprint-page .content-section.testimonial-top .quote {
+    text-indent: -10px; }
   .footprint-page .content-section.testimonial-top .by-line {
     text-align: right;
     opacity: .6;

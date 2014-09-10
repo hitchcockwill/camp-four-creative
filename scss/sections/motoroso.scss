@@ -8,7 +8,7 @@ $text:        #524d56;
 $text-dark:   #555555;
 
 $red:         #d43c28;
-$brownred:    #f7e6e4;
+$brownred:    #fdf2f1;
 $background:  "/img/case-studies/thumbnails/motoroso_banner.jpg";
 
 // **********************************************************************
@@ -83,6 +83,7 @@ body {
   padding-bottom: 0;
   color: $text-dark;
   background: $brownred;
+  border-top: 1px solid darken($brownred, 8%);
 
   .sorting-img {
     @include span-columns(3);
@@ -233,6 +234,7 @@ body {
   padding-bottom: 80px;
   padding-top: 80px;
   background: $brownred;
+  border-top: 1px solid darken($brownred, 8%);
 
   .about {
     @include span-columns(8);

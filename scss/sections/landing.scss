@@ -51,42 +51,40 @@ section.hr {
   top: 0;
 }
 
-#landing-hero {
-  .video-wrapper {
-    .bgvid {
-      position: fixed;
-      right: 0;
-      top: 0px;
-      min-width: 100%;
-      min-height: 700px;
-      z-index: -2;
-      background: url(/img/trees.jpg) no-repeat;
-      background-size: cover;
-    }
-    .overlay {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(#91b69b, .7);
-      z-index: -1;
-    }
+.video-wrapper {
+  .bgvid {
+    position: fixed;
+    right: 0;
+    top: 0px;
+    min-width: 100%;
+    min-height: 700px;
+    z-index: -2;
+    background: url(/img/trees.jpg) no-repeat;
+    background-size: cover;
   }
-  .hero-content {
-    color: $off-white;
-    text-align: center;
-    position: relative;
-    top: 50%;
-    margin: 0 auto;
-    max-width: 540px;
-    z-index: 15;
-    @include transform(translate(0, -60%));
-    img {
-      display: block;
-      max-width: 360px;
-      margin: 0 auto 30px;
-    }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#91b69b, .7);
+    z-index: -1;
+  }
+}
+.hero-content {
+  color: $off-white;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  max-width: 540px;
+  z-index: 15;
+  @include transform(translate(0, -60%));
+  img {
+    display: block;
+    max-width: 360px;
+    margin: 0 auto 30px;
   }
 }
 
@@ -109,7 +107,7 @@ section.top-text {
   p {
     font-size: 26px;
     line-height: 1.5em;
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 
   .buttons-wrap {
@@ -122,7 +120,55 @@ section.top-text {
 }
 
 
+@include mq($tablet) {
+  .hero {
+    height: 500px;
+  }
+  #landing-hero .video-wrapper {
+    .bgvid {
+      min-height: 500px;
+    }
+  }
+  .hero-content img {
+    max-width: 270px;
+  }
+  section.top-text {
+    margin-top: 500px;
+  }
+}
 
+
+@include mq($mobile) {
+  .hero-content img {
+    max-width: 220px;
+  }
+
+  section.top-text {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .section-content {
+      @include span-columns(10);
+      @include shift(1);
+    }
+    h2 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+}
+
+
+@include mq($mobile-sm) {
+  section.top-text {
+    .section-content {
+      @include span-columns(12);
+      @include shift(0);
+    }
+  }
+}
 
 
 
@@ -156,6 +202,40 @@ section.case-studies {
   }
 }
 
+
+@include mq($tablet) {
+  section.case-studies {
+    .studies .case {
+      @include span-columns(6);
+      @include omega(2n);
+      .case-content {
+        height: 320px;
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  section.case-studies {
+    padding-bottom: 30px;
+    .studies .case {
+      .case-content {
+        height: 180px;
+      }
+    }
+  }
+}
+
+@include mq($mobile-sm) {
+  section.case-studies {
+    .studies .case {
+      @include span-columns(12);
+      .case-content {
+        height: 220px;
+      }
+    }
+  }
+}
 
 
 
@@ -206,10 +286,67 @@ section.case-studies {
 }
 
 
+@include mq($tablet) {
+  .services-list_item {
+    @include span-columns(8);
+    @include shift(2);
+  }
+  .services-list .services-list_item--main {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
 
+@include mq($mobile) {
+  section.services {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    .hr-wrap {
+      margin-bottom: 10px;
+    }
+  }
+  .services-list {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  .services-list_item {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  .services-list .services-list_item--main {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
 
-
-
+@include mq($mobile-sm) {
+  .services-list_item {
+    @include span-columns(12);
+    @include shift(0);
+    h3 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .services-list .services-list_item--main {
+    @include span-columns(12);
+    @include shift(0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    h3 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
 
 
 
@@ -296,6 +433,67 @@ div.social-links {
 }
 
 
+@include mq($tablet) {
+  section.about {
+    div.about-us {
+      @include span-columns(10);
+      @include shift(1);
+    }
+    div.profile {
+      margin-top: 70px;
+      @include span-columns(4);
+      @include shift(1);
+      text-align: center;
+      img {
+        max-width: 130px;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  section.about.content-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  section.about {
+    div.about-us {
+      @include span-columns(12);
+      @include shift(0);
+      a.btn {
+        display: block;
+        width: 100%;
+      }
+    }
+    div.profile {
+      margin-left: 0;
+      padding: 0 15px;
+      @include span-columns(6);
+      @include shift(0);
+      &.first {
+        @include shift(0);
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  section.about {
+    div.profile {
+      margin: 30px 0;
+      padding: 0 15px;
+      @include span-columns(12);
+      &.first {
+        margin-top: 60px;
+        margin-bottom: -30px;
+      }
+    }
+  }
+}
+
 
 
 
@@ -338,7 +536,11 @@ section.footer {
   }
 }
 
-
+@include mq($mobile) {
+  section.footer {
+    display: none;
+  }
+}
 
 
 

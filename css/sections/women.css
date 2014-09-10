@@ -1582,28 +1582,31 @@ body {
   .section.intro p {
     margin: 0; }
 
-.section.personality .section-content {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
-  padding-right: 30px; }
-  .section.personality .section-content:last-child {
-    margin-right: 0; }
-.section.personality .section-img {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%; }
-  .section.personality .section-img:last-child {
-    margin-right: 0; }
-  .section.personality .section-img img {
-    max-width: 100%;
-    border-radius: 2px; }
+.section.personality {
+  border-top: 1px solid #e4e4e4; }
+  .section.personality .section-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    padding-right: 30px; }
+    .section.personality .section-content:last-child {
+      margin-right: 0; }
+  .section.personality .section-img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .section.personality .section-img:last-child {
+      margin-right: 0; }
+    .section.personality .section-img img {
+      max-width: 100%;
+      border-radius: 2px; }
 
 .section.simple {
   background: #c4e5de;
   color: #347668;
+  border-top: 1px solid #a8d9ce;
   padding-bottom: 0; }
   .section.simple .section-content {
     float: left;
@@ -1616,7 +1619,8 @@ body {
 .section.process {
   background: #c4e5de;
   color: white;
-  padding-top: 50px; }
+  padding-top: 50px;
+  border-bottom: 1px solid #a8d9ce; }
   .section.process .process-img {
     float: left;
     display: block;

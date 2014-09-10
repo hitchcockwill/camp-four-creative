@@ -12,19 +12,10 @@
     }
   }
 
-  .icon {
-    font-size: 160px;
-    margin: 0 auto;
-    margin-top: 80px;
-    margin-bottom: 30px;
-    display: block;
-    max-width: 200px;
-    opacity: .8;
-  }
-
   h1 {
     @include span-columns(8);
     @include shift(2);
+    margin-top: 170px;
   }
   h3 {
     @include span-columns(8);
@@ -137,6 +128,9 @@
   p {
     padding-left: 110px;
     position: relative;
+  }
+  .quote {
+    text-indent: -10px;
   }
   .by-line {
     text-align: right;

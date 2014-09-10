@@ -24,15 +24,20 @@ backgroundImageLoad = ($images) ->
 scrollToPosition = (target) ->
   $('html,body').animate({ scrollTop: target }, 500)
 
+initHeaderResponsiveness = ->
+  $header = $('#primary-header')
+  $header.find('.header-nav').slicknav
+    prependTo: $header.find('.row')
+    label: ''
+
 
 
 
 $(document).ready () ->
 
-  # set devive type
-  $("body").attr("data-device-type", categorizr())
-
   backgroundImageLoad($(".image-wrapper"))
+
+  initHeaderResponsiveness()
 
   if window.devicePixelRatio >= 2
     setRetinaImage()

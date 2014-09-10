@@ -86,32 +86,42 @@ $fw-bold:      bold;
   }
 }
 
+
+
+
 // **********************************************************************
 // MEDIA QUERIES
 // **********************************************************************
 
+$full:         1020px;
+$desktop:      960px;
+$tablet:       768px;
+$mobile:       568px;
+$mobile-md:    450px;
+$mobile-sm:    320px;
+
 @mixin mq($media) {
-    @if $media == webkit {
-        @media (-webkit-min-device-pixel-ratio: 0) {
-            @content;
-        }
+  @if $media == webkit {
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      @content;
     }
+  }
 
-    @else if $media == moz {
-        @media (-moz-min-device-pixel-ratio: 0) {
-            @content;
-        }
+  @else if $media == moz {
+    @media (-moz-min-device-pixel-ratio: 0) {
+      @content;
     }
+  }
 
-    @else if $media == retina {
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            @content;
-        }
+  @else if $media == retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @content;
     }
+  }
 
-    @else {
-        @media (max-width: $media) {
-            @content;
-        }
+  @else {
+    @media (max-width: $media) {
+      @content;
     }
+  }
 }

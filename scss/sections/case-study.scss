@@ -96,6 +96,11 @@ $banner-height: 910px;
 }
 
 #case-study-content {
+
+}
+
+.case-study-content {
+
   .intro {
     div.services {
       margin-top: 50px;
@@ -117,6 +122,15 @@ $banner-height: 910px;
         }
       }
     }
+    p {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 300;
   }
 }
 

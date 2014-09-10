@@ -28,15 +28,19 @@
     {{ content }}
   </div> <!-- end of content -->
 
-  <script src="/javascripts/libs/jquery-1.10.2.min.js"></script>
+  <!-- dev dependencies -->
+  <script src="/javascripts/libs/jquery-2.1.1.js"></script>
   <script src="/javascripts/libs/underscore.js"></script>
 
+  <!-- prod dependencies -->
   <!-- script type="text/javascript" src="/javascripts/min/lib.min.js"></script -->
   <!-- script type="text/javascript" src="/javascripts/min/scripts.min.js"></script -->
 
-  <script src="/javascripts/libs/categorizr.js"></script>
+  <!-- plugins -->
   <script src="/javascripts/libs/selectize.js"></script>
+  <script src="/javascripts/libs/jquery.slicknav.js"></script>
 
+  <!-- app scripts -->
   <script type="text/javascript" src="/javascripts/base.js"></script>
 
   {% for script in page.scripts %}
