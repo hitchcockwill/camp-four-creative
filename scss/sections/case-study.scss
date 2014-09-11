@@ -104,21 +104,19 @@ $banner-height: 910px;
   .intro {
     div.services {
       margin-top: 50px;
+      text-align: left;
       p {
         display: inline-block;
         position: relative;
         padding-left: 30px;
         font-size: 24px;
-        margin: 0;
+        line-height: 1.1em;
+        margin: 0 40px 20px 0;
         @include fa-before(plus-circle);
         &:before {
           opacity: .4;
           left: 0;
-          top: 4px;
-        }
-
-        + p {
-          margin-left: 40px;
+          top: -1px;
         }
       }
     }
@@ -133,6 +131,60 @@ $banner-height: 910px;
     font-weight: 300;
   }
 }
+
+
+@include mq($tablet) {
+  .case-study-hero {
+    height: 750px;
+  }
+  .case-study-hero .case-study-hero-intro {
+    @include span-columns(8);
+    @include shift(2);
+    margin-top: 60px;
+  }
+}
+
+@include mq($mobile) {
+  .case-study-hero {
+    height: 630px;
+  }
+  .case-study-hero .case-study-hero-intro {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 40px;
+  }
+}
+
+@include mq($mobile-md) {
+  .case-study-hero {
+    height: 540px;
+  }
+  .case-study-hero .case-study-hero-intro {
+    @include span-columns(12);
+    @include shift(0);
+    margin-top: 30px;
+  }
+  .case-study-content {
+    .intro {
+      p {
+        font-size: 20px;
+      }
+
+      div.services {
+        margin-top: 50px;
+        text-align: left;
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
 
 
 

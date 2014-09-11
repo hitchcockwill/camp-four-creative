@@ -1566,14 +1566,24 @@ body {
 
 .ascendify-hero.case-study-hero .case-study-hero-intro {
   margin-top: 90px; }
-.ascendify-hero.case-study-hero .case-study-interfaces {
+.ascendify-hero.case-study-hero .case-study-interfaces-wrap {
   position: absolute;
-  bottom: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0; }
+.ascendify-hero.case-study-hero .case-study-interfaces {
   background-image: url("/img/case-studies/ascendify/header.png");
-  background-size: cover;
-  width: 100%;
-  height: 500px; }
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 500px;
+  display: block; }
 
+@media (max-width: 768px) {
+  .ascendify-hero.case-study-hero .case-study-hero-intro {
+    margin-top: 60px; } }
 .section.intro {
   padding: 80px 0;
   text-align: center;
@@ -1655,6 +1665,17 @@ body {
     border: 1px solid #b25408;
     margin: 0 10px -14px 0; }
 
+@media (max-width: 450px) {
+  .section.pull-quote p {
+    font-size: 26px; }
+    .section.pull-quote p.by-line {
+      font-size: 24px; }
+
+  .section.pull-quote .profile-img {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: -6px; } }
 .section.showcase {
   background: #f5f5f5;
   padding: 75px 0; }
@@ -1682,7 +1703,36 @@ body {
       margin-right: 0; }
   .section.showcase .row .row img + img {
     margin-top: 35px; }
+  .section.showcase img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto; }
 
+@media (max-width: 768px) {
+  .section.showcase .content-left {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .section.showcase .content-left:last-child {
+      margin-right: 0; }
+  .section.showcase .about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
+    margin-top: 40px; }
+    .section.showcase .about:last-child {
+      margin-right: 0; } }
+@media (max-width: 450px) {
+  .section.showcase .content-left .row > div {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .section.showcase .content-left .row > div:last-child {
+      margin-right: 0; } }
 .section.links {
   padding: 80px 0;
   text-align: center; }
@@ -1706,5 +1756,11 @@ body {
         margin: 0 auto; }
       .section.links .client-list > li.zappos {
         margin-top: -10px; }
+
+@media (max-width: 568px) {
+  .section.links .client-list > li img {
+    display: block;
+    width: 80%;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=ascendify.css.map */

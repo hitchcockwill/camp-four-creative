@@ -42,15 +42,30 @@ body {
   .case-study-hero-intro {
     margin-top: 90px;
   }
-  .case-study-interfaces {
+  .case-study-interfaces-wrap {
     position: absolute;
+    left: 20px;
+    right: 20px;
     bottom: 0;
+  }
+  .case-study-interfaces {
     background-image: url('/img/case-studies/ascendify/header.png');
-    background-size: cover;
-    width: 100%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    max-width: 1000px;
+    margin: 0 auto;
     height: 500px;
+    display: block;
   }
 }
+
+@include mq($tablet) {
+  .ascendify-hero.case-study-hero .case-study-hero-intro {
+    margin-top: 60px;
+  }
+}
+
 
 // **********************************************************************
 // INTRO
@@ -149,6 +164,22 @@ body {
   }
 }
 
+@include mq($mobile-md) {
+  .section.pull-quote p {
+    font-size: 26px;
+
+    &.by-line {
+      font-size: 24px;
+    }
+  }
+  .section.pull-quote .profile-img {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: -6px;
+  }
+}
+
 // **********************************************************************
 // SHOWCASE
 // **********************************************************************
@@ -171,7 +202,38 @@ body {
   .row .row img + img {
     margin-top: 35px;
   }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
 }
+
+@include mq($tablet) {
+  .section.showcase {
+    .content-left {
+      @include span-columns(12);
+    }
+    .about {
+      @include span-columns(10);
+      @include shift(1);
+      margin-top: 40px;
+    }
+  }
+}
+
+
+@include mq($mobile-md) {
+  .section.showcase {
+    .content-left {
+      .row > div {
+        @include span-columns(12);
+      }
+    }
+  }
+}
+
 
 
 // **********************************************************************
@@ -198,6 +260,20 @@ body {
 
       &.zappos {
         margin-top: -10px;
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.links {
+    .client-list {
+      > li {
+        img {
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+        }
       }
     }
   }

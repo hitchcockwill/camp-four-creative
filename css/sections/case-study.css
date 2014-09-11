@@ -1633,21 +1633,21 @@
   z-index: 1; }
 
 .case-study-content .intro div.services {
-  margin-top: 50px; }
+  margin-top: 50px;
+  text-align: left; }
   .case-study-content .intro div.services p {
     display: inline-block;
     position: relative;
     padding-left: 30px;
     font-size: 24px;
-    margin: 0; }
+    line-height: 1.1em;
+    margin: 0 40px 20px 0; }
     .case-study-content .intro div.services p:before {
       position: absolute; }
     .case-study-content .intro div.services p:before {
       opacity: .4;
       left: 0;
-      top: 4px; }
-    .case-study-content .intro div.services p + p {
-      margin-left: 40px; }
+      top: -1px; }
 .case-study-content .intro p {
   font-size: 24px; }
 .case-study-content p {
@@ -1655,6 +1655,53 @@
   line-height: 1.4em;
   font-weight: 300; }
 
+@media (max-width: 768px) {
+  .case-study-hero {
+    height: 750px; }
+
+  .case-study-hero .case-study-hero-intro {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%;
+    margin-top: 60px; }
+    .case-study-hero .case-study-hero-intro:last-child {
+      margin-right: 0; } }
+@media (max-width: 568px) {
+  .case-study-hero {
+    height: 630px; }
+
+  .case-study-hero .case-study-hero-intro {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
+    margin-top: 40px; }
+    .case-study-hero .case-study-hero-intro:last-child {
+      margin-right: 0; } }
+@media (max-width: 450px) {
+  .case-study-hero {
+    height: 540px; }
+
+  .case-study-hero .case-study-hero-intro {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 30px; }
+    .case-study-hero .case-study-hero-intro:last-child {
+      margin-right: 0; }
+
+  .case-study-content .intro p {
+    font-size: 20px; }
+  .case-study-content .intro div.services {
+    margin-top: 50px;
+    text-align: left; }
+    .case-study-content .intro div.services p {
+      font-size: 20px; } }
 .case-studies-index {
   margin-top: 130px; }
 
