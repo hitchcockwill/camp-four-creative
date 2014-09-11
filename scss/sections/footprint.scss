@@ -1,5 +1,10 @@
 @import "../config/variables";
 
+
+// **********************************************************************
+// HERO
+// **********************************************************************
+
 .footprint-page {
   .footprint-hero {
     background: $primary-light;
@@ -35,8 +40,18 @@
         top: 10px;
         font-size: 11px;
         opacity: .8;
+        padding-right: 2px;
       }
     }
+  }
+}
+
+@include mq($mobile) {
+  .footprint-page h1 {
+    font-size: 36px;
+    margin-top: 110px;
+    @include span-columns(10);
+    @include shift(1);
   }
 }
 
@@ -97,6 +112,30 @@
   }
 }
 
+@include mq($tablet) {
+  .footprint-page .content-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .row > * {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+
+@include mq($mobile-md) {
+  .footprint-page .content-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .row > * {
+      @include span-columns(12);
+      @include shift(0);
+    }
+  }
+}
+
 
 // **********************************************************************
 // INFO
@@ -105,6 +144,12 @@
 .footprint-page .info {
   p {
     font-size: 24px;
+  }
+}
+
+@include mq($mobile) {
+  .footprint-page h1 {
+    font-size: 36px;
   }
 }
 
@@ -136,6 +181,19 @@
     text-align: right;
     opacity: .6;
     margin: 0;
+  }
+}
+
+@include mq($mobile-md) {
+  .footprint-page .content-section.testimonial-top {
+    img.profile {
+      position: static;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    p {
+      padding-left: 0;
+    }
   }
 }
 
@@ -213,6 +271,7 @@
     width: 100%;
     text-align: center;
     font-size: 48px;
+    line-height: 1.1em;
     float: none;
     font-family: $body-serif;
     color: white;
@@ -222,6 +281,20 @@
     width: 300px;
     margin: 0 auto;
     padding: 20px 30px;
+  }
+}
+
+@include mq($mobile-md) {
+  .footprint-page .content-section.get-started {
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    a.btn {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 10px;
+    }
   }
 }
 

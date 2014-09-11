@@ -1586,8 +1586,20 @@
       left: -21px;
       top: 10px;
       font-size: 11px;
-      opacity: .8; }
+      opacity: .8;
+      padding-right: 2px; }
 
+@media (max-width: 568px) {
+  .footprint-page h1 {
+    font-size: 36px;
+    margin-top: 110px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .footprint-page h1:last-child {
+      margin-right: 0; } }
 .footprint-page .content-section {
   background: white;
   padding-top: 100px;
@@ -1628,9 +1640,36 @@
   background: #383d46;
   color: white; }
 
+@media (max-width: 768px) {
+  .footprint-page .content-section {
+    padding-top: 80px;
+    padding-bottom: 80px; }
+    .footprint-page .content-section .row > * {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 82.94039%;
+      margin-left: 8.5298%; }
+      .footprint-page .content-section .row > *:last-child {
+        margin-right: 0; } }
+@media (max-width: 450px) {
+  .footprint-page .content-section {
+    padding-top: 50px;
+    padding-bottom: 50px; }
+    .footprint-page .content-section .row > * {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      margin-left: 0%; }
+      .footprint-page .content-section .row > *:last-child {
+        margin-right: 0; } }
 .footprint-page .info p {
   font-size: 24px; }
 
+@media (max-width: 568px) {
+  .footprint-page h1 {
+    font-size: 36px; } }
 .footprint-page .content-section.testimonial-top {
   padding-top: 60px;
   padding-bottom: 60px; }
@@ -1651,6 +1690,13 @@
     opacity: .6;
     margin: 0; }
 
+@media (max-width: 450px) {
+  .footprint-page .content-section.testimonial-top img.profile {
+    position: static;
+    display: block;
+    margin: 0 auto 20px; }
+  .footprint-page .content-section.testimonial-top p {
+    padding-left: 0; } }
 .footprint-page .right-for-you ul.bulleted li:before {
   position: absolute; }
 .footprint-page .right-for-you ul.bulleted li:before {
@@ -1692,6 +1738,7 @@
     width: 100%;
     text-align: center;
     font-size: 48px;
+    line-height: 1.1em;
     float: none;
     font-family: "minion-pro", serif;
     color: white; }
@@ -1700,5 +1747,15 @@
     width: 300px;
     margin: 0 auto;
     padding: 20px 30px; }
+
+@media (max-width: 450px) {
+  .footprint-page .content-section.get-started {
+    padding-top: 150px;
+    padding-bottom: 150px; }
+    .footprint-page .content-section.get-started a.btn {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 10px; } }
 
 /*# sourceMappingURL=footprint.css.map */
