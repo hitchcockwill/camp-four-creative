@@ -16,6 +16,11 @@
   }
 }
 
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
 .contact-intro_title {
   @include span-columns(5);
   @include shift(1);
@@ -23,6 +28,31 @@
 
 .contact-intro_about {
   @include span-columns(5);
+}
+
+
+@include mq($tablet) {
+  .contact-intro_title {
+    @include span-columns(5);
+    @include shift(0);
+  }
+
+  .contact-intro_about {
+    @include span-columns(7);
+  }
+}
+
+@include mq($mobile) {
+  .contact-intro_title {
+    @include span-columns(12);
+    @include shift(0);
+    text-align: center;
+  }
+
+  .contact-intro_about {
+    @include span-columns(12);
+    text-align: center;
+  }
 }
 
 

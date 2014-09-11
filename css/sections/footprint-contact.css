@@ -1580,4 +1580,41 @@
   .contact-intro_about:last-child {
     margin-right: 0; }
 
+@media (max-width: 768px) {
+  .contact-intro_title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    margin-left: 0%; }
+    .contact-intro_title:last-child {
+      margin-right: 0; }
+
+  .contact-intro_about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%; }
+    .contact-intro_about:last-child {
+      margin-right: 0; } }
+@media (max-width: 568px) {
+  .contact-intro_title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%;
+    text-align: center; }
+    .contact-intro_title:last-child {
+      margin-right: 0; }
+
+  .contact-intro_about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    text-align: center; }
+    .contact-intro_about:last-child {
+      margin-right: 0; } }
+
 /*# sourceMappingURL=footprint-contact.css.map */

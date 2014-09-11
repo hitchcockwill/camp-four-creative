@@ -1792,5 +1792,11 @@ div.form-footer {
     margin-left: 0%; }
     div.form-footer:last-child {
       margin-right: 0; } }
+@media (max-width: 568px) {
+  div.form-footer button {
+    display: block;
+    width: 100%;
+    float: none;
+    min-width: 0; } }
 
 /*# sourceMappingURL=contact.css.map */
