@@ -13,6 +13,7 @@ $text:        white;
 .contact-content {
   background: url('/img/camp-footer.jpg') center center no-repeat #555;
   background-size: cover;
+  background-attachment: fixed;
   position: absolute;
   left: 0;
   right: 0;
@@ -46,6 +47,30 @@ $text:        white;
 
 .contact-intro_about {
   @include span-columns(6);
+}
+
+@include mq($tablet) {
+  .contact-intro_title {
+    @include span-columns(5);
+    @include shift(0);
+  }
+
+  .contact-intro_about {
+    @include span-columns(7);
+  }
+}
+
+@include mq($mobile) {
+  .contact-intro_title {
+    @include span-columns(12);
+    @include shift(0);
+    text-align: center;
+  }
+
+  .contact-intro_about {
+    @include span-columns(12);
+    text-align: center;
+  }
 }
 
 // **********************************************************************
@@ -170,6 +195,43 @@ form {
 
 
 
+@include mq($tablet) {
+  .form-wrap {
+    @include span-columns(12);
+    @include shift(0);
+  }
+}
+
+@include mq($mobile) {
+  form {
+    fieldset {
+      &.double {
+        .control-group {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+
+    .control-group + .control-group,
+    .control-group + .control-group.focus {
+      border-top: 1px solid white;
+      border-left: none;
+    }
+  }
+  textarea {
+    min-height: 150px;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 // **********************************************************************
 // DROPDOWNS
@@ -216,6 +278,11 @@ form {
 
 
 
+
+
+
+
+
 // **********************************************************************
 // FOOTER
 // **********************************************************************
@@ -224,8 +291,16 @@ div.form-footer {
   @include span-columns(10);
   @include shift(1);
   margin-top: 30px;
+  margin-bottom: 50px;
   button {
     float: right;
     min-width: 200px;
+  }
+}
+
+@include mq($tablet) {
+  div.form-footer {
+    @include span-columns(12);
+    @include shift(0);
   }
 }

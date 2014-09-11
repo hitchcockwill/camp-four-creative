@@ -4,7 +4,7 @@ setWindowHeight = ->
   $content = $('.contact-content')
 
   $content.css
-    'height': if $win.height() > 500 then $win.height() else 750
+    'min-height': if $win.height() > 500 then $win.height() else 750
 
 
 initFormListeners = ->

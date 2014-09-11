@@ -1552,6 +1552,7 @@
 .contact-content {
   background: url("/img/camp-footer.jpg") center center no-repeat #555;
   background-size: cover;
+  background-attachment: fixed;
   position: absolute;
   left: 0;
   right: 0;
@@ -1584,6 +1585,42 @@
   .contact-intro_about:last-child {
     margin-right: 0; }
 
+@media (max-width: 768px) {
+  .contact-intro_title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    margin-left: 0%; }
+    .contact-intro_title:last-child {
+      margin-right: 0; }
+
+  .contact-intro_about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%; }
+    .contact-intro_about:last-child {
+      margin-right: 0; } }
+@media (max-width: 568px) {
+  .contact-intro_title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%;
+    text-align: center; }
+    .contact-intro_title:last-child {
+      margin-right: 0; }
+
+  .contact-intro_about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    text-align: center; }
+    .contact-intro_about:last-child {
+      margin-right: 0; } }
 .form-wrap {
   float: left;
   display: block;
@@ -1678,6 +1715,26 @@ form {
     resize: none;
     min-height: 120px; }
 
+@media (max-width: 768px) {
+  .form-wrap {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%; }
+    .form-wrap:last-child {
+      margin-right: 0; } }
+@media (max-width: 568px) {
+  form fieldset.double .control-group {
+    width: 100%;
+    float: none; }
+  form .control-group + .control-group,
+  form .control-group + .control-group.focus {
+    border-top: 1px solid white;
+    border-left: none; }
+
+  textarea {
+    min-height: 150px; } }
 .selectize-control.single,
 .selectize-control.multi {
   z-index: 100;
@@ -1718,11 +1775,22 @@ div.form-footer {
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-left: 8.5298%;
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-bottom: 50px; }
   div.form-footer:last-child {
     margin-right: 0; }
   div.form-footer button {
     float: right;
     min-width: 200px; }
+
+@media (max-width: 768px) {
+  div.form-footer {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%; }
+    div.form-footer:last-child {
+      margin-right: 0; } }
 
 /*# sourceMappingURL=contact.css.map */

@@ -1744,4 +1744,46 @@ ul.studies {
     ._case-studies .studies .case:nth-child(2n+1) {
       clear: left; }
 
+@media (max-width: 768px) {
+  ._case-studies .studies {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    ._case-studies .studies:last-child {
+      margin-right: 0; }
+    ._case-studies .studies .case .case-content {
+      height: 280px; } }
+@media (max-width: 568px) {
+  ._case-studies .studies {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%; }
+    ._case-studies .studies:last-child {
+      margin-right: 0; }
+    ._case-studies .studies .case .case-content {
+      height: 230px; } }
+@media (max-width: 450px) {
+  ._case-studies .studies {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-left: 0%; }
+    ._case-studies .studies:last-child {
+      margin-right: 0; }
+    ._case-studies .studies .case {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      margin-right: 0; }
+      ._case-studies .studies .case:last-child {
+        margin-right: 0; }
+    ._case-studies .studies .case .case-content {
+      height: 230px; } }
+
 /*# sourceMappingURL=case-study.css.map */

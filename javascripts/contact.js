@@ -6,7 +6,7 @@
     $win = $(window);
     $content = $('.contact-content');
     return $content.css({
-      'height': $win.height() > 500 ? $win.height() : 750
+      'min-height': $win.height() > 500 ? $win.height() : 750
     });
   };
 

@@ -86,11 +86,14 @@
 
 .slicknav_menu {
   background: none;
+  position: relative;
+  padding: 0;
 
   .slicknav_btn {
     background: rgba($bg, .8);
     padding: 8px 10px;
     display: inline-block;
+    margin-right: 0;
     @include transition(background .25s .05s);
 
     &:hover {
@@ -109,7 +112,7 @@
     }
     .slicknav_icon-bar {
       position: absolute;
-      background: darken($bg, 22%);
+      background: darken($bg, 30%);
       left: 0;
       right: 0;
       height: 2px;
@@ -134,13 +137,20 @@
   .slicknav_nav {
     background: $bg;
     border-radius: 3px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    box-shadow: 1px 1px 5px 0 rgba(black, .2);
     a {
       color: $gray;
       display: block;
-      min-width: 175px;
+      min-width: 200px;
       background: $bg;
       border-radius: 0;
       margin: 0;
+      font-size: 16px;
+      line-height: 1.4em;
+      padding: 8px 14px;
       @include transition(background .25s .05s);
 
       &:hover {

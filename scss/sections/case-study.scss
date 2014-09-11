@@ -218,7 +218,14 @@ ul.studies {
   }
 }
 
-// specific styling for case study page
+
+
+
+
+// **********************************************************************
+// CASE STUDY PAGE
+// **********************************************************************
+
 ._case-studies .studies {
   @include span-columns(8);
   @include shift(2);
@@ -226,5 +233,43 @@ ul.studies {
   .case {
     @include span-columns(6);
     @include omega(2n);
+  }
+}
+
+@include mq($tablet) {
+  ._case-studies .studies {
+    @include span-columns(10);
+    @include shift(1);
+
+    .case .case-content {
+      height: 280px;
+    }
+  }
+}
+
+@include mq($mobile) {
+  ._case-studies .studies {
+    @include span-columns(12);
+    @include shift(0);
+
+    .case .case-content {
+      height: 230px;
+    }
+  }
+}
+
+@include mq($mobile-md) {
+  ._case-studies .studies {
+    @include span-columns(12);
+    @include shift(0);
+
+    .case {
+      @include span-columns(12);
+      @include omega();
+    }
+
+    .case .case-content {
+      height: 230px;
+    }
   }
 }
