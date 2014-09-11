@@ -95,7 +95,8 @@ body {
 .section.search {
   padding: 40px 0 60px;
   .main-img {
-    margin-bottom: 70px;
+    margin: 0 auto 70px;
+    display: block;
   }
   .about {
     font-size: 20px;

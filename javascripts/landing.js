@@ -1,19 +1,29 @@
 (function() {
-  var $doc, $navBar, didScroll, heroHeight, imageLoad, initLinkClicking, initScrolling, scrollHandle, scrollToPosition;
+  var $doc, $hero, $logo, $navBar, didScroll, heroHeight, imageLoad, initLinkClicking, initScrolling, logoBottom, logoTarget, scrollHandle, scrollToPosition;
 
   didScroll = false;
 
   $navBar = null;
+
+  $hero = null;
+
+  $logo = null;
+
+  logoBottom = null;
+
+  logoTarget = null;
 
   heroHeight = null;
 
   $doc = $(document);
 
   initScrolling = function() {
-    var $hero;
     $navBar = $("#primary-header");
     $hero = $('#landing-hero');
     heroHeight = $hero.outerHeight() - 50;
+    $logo = $('.landing-hero-image');
+    logoBottom = $logo.position().top + $logo.height();
+    logoTarget = $('.js--logo-target').offset().top;
     $doc = $(document);
     return setInterval(function() {
       return scrollHandle();
@@ -25,10 +35,14 @@
     if (didScroll || force) {
       didScroll = false;
       scrollTop = $doc.scrollTop();
-      if (!$navBar.hasClass('trans') && scrollTop < heroHeight) {
-        return $navBar.addClass('trans');
-      } else if ($navBar.hasClass('trans') && scrollTop > heroHeight) {
+      if (!$logo.hasClass('fixed') && scrollTop + logoBottom > logoTarget) {
+        $logo.addClass('fixed');
+        $hero.addClass('fixed-logo');
         return $navBar.removeClass('trans');
+      } else if ($logo.hasClass('fixed') && scrollTop + logoBottom < logoTarget) {
+        $logo.removeClass('fixed');
+        $hero.removeClass('fixed-logo');
+        return $navBar.addClass('trans');
       }
     }
   };

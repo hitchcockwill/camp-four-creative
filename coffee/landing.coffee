@@ -3,13 +3,23 @@
 
 didScroll = false
 $navBar = null
+$hero = null
+$logo = null
+logoBottom = null
+logoTarget = null
 heroHeight = null
 $doc = $(document)
 
 initScrolling = ->
   $navBar = $("#primary-header")
+
   $hero = $('#landing-hero')
   heroHeight = $hero.outerHeight() - 50
+
+  $logo = $('.landing-hero-image')
+  logoBottom = $logo.position().top + $logo.height()
+  logoTarget = $('.js--logo-target').offset().top
+
   $doc = $(document)
 
   setInterval ->
@@ -20,12 +30,18 @@ scrollHandle = (force) ->
   if didScroll or force
     didScroll = false
     scrollTop = $doc.scrollTop()
-    # handleFixedBar(scrollTop)
-    # handleActiveNav(scrollTop)
-    if !$navBar.hasClass('trans') and scrollTop < heroHeight
-      $navBar.addClass('trans')
-    else if $navBar.hasClass('trans') and scrollTop > heroHeight
+
+    # check navigation status
+    # check hero logo status
+    if !$logo.hasClass('fixed') and scrollTop + logoBottom > logoTarget
+      $logo.addClass('fixed')
+      $hero.addClass('fixed-logo')
       $navBar.removeClass('trans')
+
+    else if $logo.hasClass('fixed') and scrollTop + logoBottom < logoTarget
+      $logo.removeClass('fixed')
+      $hero.removeClass('fixed-logo')
+      $navBar.addClass('trans')
 
 
 # Image loading

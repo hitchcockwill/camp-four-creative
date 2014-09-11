@@ -1,14 +1,28 @@
 @import "../config/variables";
 
 .contact-content {
-  background: url('/img/footprint/footprint-bw.jpg') center center no-repeat #555;
+  position: relative;
+  background: none;
+  .bg-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+    background: url('/img/footprint/footprint-bw.jpg') center center no-repeat #555;
+    background-size: cover;
+    background-attachment: fixed;
+    @include filter(blur(3px));
+  }
   .overlay {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    @include background(linear-gradient(rgba(#57695e, .8), rgba(#758e7f, .6)));
+    z-index: -1;
+    @include background(linear-gradient(rgba(#89a594, .6), rgba(#758e7f, .4)));
   }
   .container {
     position: relative;

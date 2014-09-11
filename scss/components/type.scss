@@ -30,17 +30,37 @@ li {
   }
 }
 
+strong {
+  font-weight: 600;
+}
+
+::-moz-selection { background: #d0e7e3; color: #444; text-shadow: none; }
+::selection { background: #d0e7e3; color: #444; text-shadow: none; }
+
+
+
+
+
+
+// **********************************************************************
+// TYPE FORMATTING CLASSES
+// **********************************************************************
+
 .two-col {
   @include column-count(2);
   @include column-gap(30px);
   text-align: justify;
-  
+
   @include mq($mobile) {
     @include column-count(1);
     @include column-gap(0);
     text-align: left;
   }
 }
+
+
+
+
 
 div.hr-wrap {
   position: relative;

@@ -104,7 +104,7 @@ $banner-height: 910px;
   .intro {
     div.services {
       margin-top: 50px;
-      text-align: left;
+      text-align: center;
       p {
         display: inline-block;
         position: relative;
@@ -117,6 +117,9 @@ $banner-height: 910px;
           opacity: .4;
           left: 0;
           top: -1px;
+        }
+        &:last-child {
+          margin-right: 0;
         }
       }
     }
@@ -264,7 +267,7 @@ ul.studies {
       bottom: -10px;
       z-index: 2;
       background-size: cover;
-      @include filter(blur(3px));
+      @include filter(blur(1px));
     }
 
     .overlay-color {

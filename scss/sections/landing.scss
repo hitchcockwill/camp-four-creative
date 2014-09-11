@@ -46,18 +46,41 @@ section.hr {
 // Landing Hero
 // **********************************************************************
 
+$hero-height: 850px;
+
 .hero {
-  height: 700px;
+  height: $hero-height;
+  position: relative;
+  overflow: visible;
   top: 0;
+  z-index: 1;
+
+  &.fixed-logo .hero-overlay {
+    opacity: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $bg;
+    opacity: 0;
+    z-index: 10;
+    @include transition(opacity .5s);
+  }
 }
 
 .video-wrapper {
+  min-height: $hero-height;
+  position: relative;
   .bgvid {
     position: fixed;
     right: 0;
-    top: 0px;
+    top: 0;
     min-width: 100%;
-    min-height: 700px;
+    min-height: $hero-height;
     z-index: -2;
     background: url(/img/trees.jpg) no-repeat;
     background-size: cover;
@@ -72,25 +95,33 @@ section.hr {
     z-index: -1;
   }
 }
-.hero-content {
-  color: $off-white;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  margin: 0 auto;
-  max-width: 540px;
+
+
+.landing-hero-image {
+  position: fixed;
+  top: 260px;
+  width: 540px;
+  left: 50%;
+  margin-left: -270px;
   z-index: 15;
-  @include transform(translate(0, -60%));
   img {
     display: block;
     max-width: 360px;
     margin: 0 auto 30px;
   }
+
+  &.fixed {
+    position: absolute;
+    top: auto;
+    bottom: 20px;
+  }
 }
 
+
 section.top-text {
+  padding-top: 200px;
   padding-bottom: 110px;
-  margin-top: 700px;
+  margin: 0;
   text-align: center;
 
   .section-content {
@@ -523,6 +554,9 @@ div.footer-wrap {
     a.active {
       background: $primary;
     }
+  }
+  .footer {
+    padding-bottom: 30px;
   }
 }
 

@@ -8,16 +8,15 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/fonts/fontawesome/fontawesome-webfont.eot?v=4.1.0");
-  src: url("/fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("/fonts/fontawesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("/fonts/fontawesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("/fonts/fontawesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
+  src: url("/fonts/fontawesome/fontawesome-webfont.eot?v=4.2.0");
+  src: url("/fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("/fonts/fontawesome/fontawesome-webfont.woff?v=4.2.0") format("woff"), url("/fonts/fontawesome/fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("/fonts/fontawesome/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-.fa, .footprint-page ul.bulleted li:before, .footprint-page .right-for-you ul.bulleted li:before, .footprint-page .not-right-for-you ul.bulleted li:before {
+.fa, .footprint-page ul.bulleted li:before, .footprint-page .right-for-you ul.bulleted li:before, .footprint-page .not-right-for-you ul.bulleted li:before, .pricing_plan .pricing_plan_item:before, .pricing_plan .pricing_plan_item.pricing_plan_item--checked:before {
   display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -70,33 +69,23 @@
 .pull-left {
   float: left; }
 
-.fa.pull-left, .footprint-page ul.bulleted li.pull-left:before {
+.fa.pull-left, .footprint-page ul.bulleted li.pull-left:before, .pricing_plan .pull-left.pricing_plan_item:before {
   margin-right: .3em; }
-.fa.pull-right, .footprint-page ul.bulleted li.pull-right:before {
+.fa.pull-right, .footprint-page ul.bulleted li.pull-right:before, .pricing_plan .pull-right.pricing_plan_item:before {
   margin-left: .3em; }
 
 .fa-spin {
-  -webkit-animation: spin 2s infinite linear;
-  -moz-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
-  animation: spin 2s infinite linear; }
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear; }
 
-@-moz-keyframes spin {
+@-webkit-keyframes fa-spin {
   0% {
-    -moz-transform: rotate(0deg); }
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
   100% {
-    -moz-transform: rotate(359deg); } }
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg); } }
-@-o-keyframes spin {
-  0% {
-    -o-transform: rotate(0deg); }
-  100% {
-    -o-transform: rotate(359deg); } }
-@keyframes spin {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -106,42 +95,39 @@
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
-  -moz-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
-  -moz-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
-  -o-transform: scale(1, -1);
   transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none; }
 
 .fa-stack {
   position: relative;
@@ -204,10 +190,14 @@
 .fa-th-list:before {
   content: ""; }
 
-.fa-check:before, .footprint-page .right-for-you ul.bulleted li:before {
+.fa-check:before, .footprint-page .right-for-you ul.bulleted li:before, .pricing_plan .pricing_plan_item.pricing_plan_item--checked:before {
   content: ""; }
 
-.fa-times:before, .footprint-page .not-right-for-you ul.bulleted li:before {
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before,
+.footprint-page .not-right-for-you ul.bulleted li:before,
+.pricing_plan .pricing_plan_item:before {
   content: ""; }
 
 .fa-search-plus:before {
@@ -536,7 +526,8 @@
 .fa-arrows-h:before {
   content: ""; }
 
-.fa-bar-chart-o:before {
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
   content: ""; }
 
 .fa-twitter-square:before {
@@ -1365,7 +1356,6 @@
 .fa-digg:before {
   content: ""; }
 
-.fa-pied-piper-square:before,
 .fa-pied-piper:before {
   content: ""; }
 
@@ -1482,6 +1472,7 @@
   content: ""; }
 
 .fa-life-bouy:before,
+.fa-life-buoy:before,
 .fa-life-saver:before,
 .fa-support:before,
 .fa-life-ring:before {
@@ -1548,6 +1539,129 @@
 
 .fa-bomb:before {
   content: ""; }
+
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+  content: ""; }
+
+.fa-tty:before {
+  content: ""; }
+
+.fa-binoculars:before {
+  content: ""; }
+
+.fa-plug:before {
+  content: ""; }
+
+.fa-slideshare:before {
+  content: ""; }
+
+.fa-twitch:before {
+  content: ""; }
+
+.fa-yelp:before {
+  content: ""; }
+
+.fa-newspaper-o:before {
+  content: ""; }
+
+.fa-wifi:before {
+  content: ""; }
+
+.fa-calculator:before {
+  content: ""; }
+
+.fa-paypal:before {
+  content: ""; }
+
+.fa-google-wallet:before {
+  content: ""; }
+
+.fa-cc-visa:before {
+  content: ""; }
+
+.fa-cc-mastercard:before {
+  content: ""; }
+
+.fa-cc-discover:before {
+  content: ""; }
+
+.fa-cc-amex:before {
+  content: ""; }
+
+.fa-cc-paypal:before {
+  content: ""; }
+
+.fa-cc-stripe:before {
+  content: ""; }
+
+.fa-bell-slash:before {
+  content: ""; }
+
+.fa-bell-slash-o:before {
+  content: ""; }
+
+.fa-trash:before {
+  content: ""; }
+
+.fa-copyright:before {
+  content: ""; }
+
+.fa-at:before {
+  content: ""; }
+
+.fa-eyedropper:before {
+  content: ""; }
+
+.fa-paint-brush:before {
+  content: ""; }
+
+.fa-birthday-cake:before {
+  content: ""; }
+
+.fa-area-chart:before {
+  content: ""; }
+
+.fa-pie-chart:before {
+  content: ""; }
+
+.fa-line-chart:before {
+  content: ""; }
+
+.fa-lastfm:before {
+  content: ""; }
+
+.fa-lastfm-square:before {
+  content: ""; }
+
+.fa-toggle-off:before {
+  content: ""; }
+
+.fa-toggle-on:before {
+  content: ""; }
+
+.fa-bicycle:before {
+  content: ""; }
+
+.fa-bus:before {
+  content: ""; }
+
+.fa-ioxhost:before {
+  content: ""; }
+
+.fa-angellist:before {
+  content: ""; }
+
+.fa-cc:before {
+  content: ""; }
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+  content: ""; }
+
+.fa-meanpath:before {
+  content: ""; }
 
 .footprint-page .footprint-hero {
   background: #6f747d;
@@ -1622,14 +1736,14 @@
     line-height: 1.6em; }
     .footprint-page .content-section p a,
     .footprint-page .content-section li a {
-      color: #27a6ff;
+      color: #2393e2;
       text-decoration: underline; }
   .footprint-page .content-section p.subtle {
     font-size: 18px;
     font-style: italic;
     opacity: .7; }
   .footprint-page .content-section ul + * {
-    margin-top: 30px; }
+    margin-top: 50px; }
   .footprint-page .content-section h2 {
     font-size: 32px;
     margin-bottom: 25px;
@@ -1637,7 +1751,7 @@
     padding-bottom: 12px; }
 
 .footprint-page .content-section.testimonial-top {
-  background: #383d46;
+  background: #475958;
   color: white; }
 
 @media (max-width: 768px) {
@@ -1665,7 +1779,13 @@
       .footprint-page .content-section .row > *:last-child {
         margin-right: 0; } }
 .footprint-page .info p {
-  font-size: 24px; }
+  font-size: 24px;
+  font-weight: 300; }
+
+.info_bottom .fa, .info_bottom .footprint-page ul.bulleted li:before, .footprint-page ul.bulleted .info_bottom li:before, .info_bottom .pricing_plan .pricing_plan_item:before, .pricing_plan .info_bottom .pricing_plan_item:before {
+  position: relative;
+  top: 1px;
+  left: 3px; }
 
 @media (max-width: 568px) {
   .footprint-page h1 {
@@ -1702,7 +1822,7 @@
 .footprint-page .right-for-you ul.bulleted li:before {
   left: -28px;
   color: #71C8B9;
-  top: 7px;
+  top: 4px;
   font-size: inherit;
   opacity: 1; }
 
@@ -1711,9 +1831,124 @@
 .footprint-page .not-right-for-you ul.bulleted li:before {
   left: -28px;
   color: #f05329;
-  top: 7px;
+  top: 4px;
   font-size: inherit;
   opacity: 1; }
+
+.content-section.pricing {
+  padding-bottom: 80px; }
+  .content-section.pricing .section-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .content-section.pricing .section-content:last-child {
+      margin-right: 0; }
+
+.content-section.pricing .pricing_plans {
+  display: block; }
+  .content-section.pricing .pricing_plans:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .content-section.pricing .pricing_plans h2 {
+    border-bottom: none;
+    text-align: center;
+    font-size: 48px; }
+
+.pricing_plan {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 20px;
+  border: 1px solid #e4e4e4;
+  background: white; }
+  .pricing_plan:last-child {
+    margin-right: 0; }
+  .pricing_plan h4 {
+    text-transform: none;
+    font-size: 40px;
+    line-height: 1.1em;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px 0 8px; }
+  .pricing_plan h5 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 32px;
+    margin: 0 0 30px;
+    color: #999999; }
+  .pricing_plan ul {
+    list-style: none;
+    padding-left: 38px; }
+  .pricing_plan .pricing_plan_item {
+    margin-bottom: 14px;
+    position: relative;
+    line-height: 1.1em;
+    font-size: 20px;
+    font-weight: normal; }
+    .pricing_plan .pricing_plan_item:before {
+      position: absolute; }
+    .pricing_plan .pricing_plan_item:before {
+      left: -38px;
+      color: #f05329;
+      top: 4px;
+      font-size: 24px;
+      opacity: 1; }
+    .pricing_plan .pricing_plan_item.pricing_plan_item--checked:before {
+      position: absolute; }
+    .pricing_plan .pricing_plan_item.pricing_plan_item--checked:before {
+      left: -38px;
+      color: #71C8B9;
+      top: 4px;
+      font-size: 24px;
+      opacity: 1; }
+    .pricing_plan .pricing_plan_item span {
+      display: block;
+      font-size: 18px;
+      line-height: 1.4em;
+      color: #999999; }
+
+.content-section.pricing .pricing_addons {
+  margin: 50px 0; }
+  .content-section.pricing .pricing_addons h2 {
+    border: none;
+    text-align: center;
+    margin: 0 0 20px; }
+
+.content-section.pricing .pricing_addon {
+  padding: 20px;
+  border: 1px solid #e4e4e4;
+  background: white;
+  margin: 0 0 20px; }
+  .content-section.pricing .pricing_addon .pricing_addon_title h4, .content-section.pricing .pricing_addon .pricing_addon_title h5 {
+    display: inline-block; }
+  .content-section.pricing .pricing_addon h4 {
+    text-transform: none;
+    font-size: 28px;
+    line-height: 1.1em;
+    font-weight: 300;
+    margin: 0 0 4px;
+    position: relative;
+    padding-left: 35px; }
+    .content-section.pricing .pricing_addon h4 span {
+      font-size: 20px;
+      display: inline-block;
+      position: absolute;
+      top: 6px;
+      left: 0; }
+  .content-section.pricing .pricing_addon h5 {
+    font-size: 22px;
+    font-weight: 300;
+    color: #999999;
+    margin: 0 0 15px 10px; }
+  .content-section.pricing .pricing_addon p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4em;
+    padding-left: 35px; }
 
 .footprint-page .content-section.get-started {
   padding-top: 250px;
