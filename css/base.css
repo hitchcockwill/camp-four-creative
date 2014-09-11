@@ -4433,6 +4433,10 @@ span.req {
 @media (max-width: 768px) {
   .case-study-hero {
     height: 750px; }
+    .case-study-hero .hero-interface-1,
+    .case-study-hero .hero-interface-2 {
+      max-width: 65%;
+      position: absolute; }
 
   .case-study-hero .case-study-hero-intro {
     float: left;
@@ -4455,7 +4459,11 @@ span.req {
     margin-left: 8.5298%;
     margin-top: 40px; }
     .case-study-hero .case-study-hero-intro:last-child {
-      margin-right: 0; } }
+      margin-right: 0; }
+
+  .case-study-hero .hero-interface-single {
+    width: 90%;
+    left: 5%; } }
 @media (max-width: 450px) {
   .case-study-hero {
     height: 540px; }

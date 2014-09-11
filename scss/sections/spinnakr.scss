@@ -90,3 +90,32 @@ body {
   }
 }
 
+@include mq($tablet) {
+  .section.home,
+  .section.about,
+  .section.case-studies {
+    .section-content {
+      @include span-columns(8);
+      @include shift(2);
+      margin-bottom: 30px;
+    }
+    .section-img {
+      @include span-columns(10);
+      @include shift(1);
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+@include mq($mobile-md) {
+  .section.home,
+  .section.about,
+  .section.case-studies {
+    .section-content {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+

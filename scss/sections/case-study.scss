@@ -136,6 +136,12 @@ $banner-height: 910px;
 @include mq($tablet) {
   .case-study-hero {
     height: 750px;
+
+    .hero-interface-1,
+    .hero-interface-2 {
+      max-width: 65%;
+      position: absolute;
+    }
   }
   .case-study-hero .case-study-hero-intro {
     @include span-columns(8);
@@ -152,6 +158,10 @@ $banner-height: 910px;
     @include span-columns(10);
     @include shift(1);
     margin-top: 40px;
+  }
+  .case-study-hero .hero-interface-single {
+    width: 90%;
+    left: 5%;
   }
 }
 

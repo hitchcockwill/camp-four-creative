@@ -55,6 +55,10 @@ body {
   padding-bottom: 50px;
 }
 
+
+
+
+
 // **********************************************************************
 // INTRO
 // **********************************************************************
@@ -74,6 +78,10 @@ body {
   }
 }
 
+
+
+
+
 // **********************************************************************
 // SORTING & FILTERING
 // **********************************************************************
@@ -84,6 +92,10 @@ body {
   color: $text-dark;
   background: $brownred;
   border-top: 1px solid darken($brownred, 8%);
+
+  img {
+    max-width: 100%;
+  }
 
   .sorting-img {
     @include span-columns(3);
@@ -97,6 +109,38 @@ body {
     }
   }
 }
+
+@include mq($tablet) {
+  .section.sorting {
+    padding-top: 70px;
+    .sorting-img {
+      display: none;
+    }
+    .sorting-content {
+      @include span-columns(10);
+      @include shift(1);
+      padding-left: 0;
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.sorting {
+    padding-top: 50px;
+    .sorting-content {
+      @include span-columns(12);
+      @include shift(0);
+      padding-left: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
 
 // **********************************************************************
 // PULL QUOTE
@@ -156,6 +200,22 @@ body {
   }
 }
 
+@include mq($mobile-md) {
+  .section.pull-quote p {
+    font-size: 26px;
+
+    &.by-line {
+      font-size: 24px;
+    }
+  }
+  .section.pull-quote .profile-img {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: -6px;
+  }
+}
+
 
 // **********************************************************************
 // VIEW MOTOR
@@ -176,6 +236,9 @@ body {
   h2, p {
     color: white;
   }
+  img {
+    max-width: 100%;
+  }
   .row {
     z-index: 10;
     position: relative;
@@ -188,6 +251,39 @@ body {
     @include span-columns(9);
   }
 }
+
+@include mq($tablet) {
+  .section.single-motor {
+    .about {
+      @include span-columns(10);
+      @include shift(1);
+      margin-top: 40px;
+    }
+    .interface {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.single-motor {
+    .about {
+      @include span-columns(12);
+      @include shift(0);
+      margin-top: 40px;
+      padding: 0 14px;
+    }
+    .interface {
+      @include span-columns(12);
+      @include shift(0);
+    }
+  }
+}
+
+
+
+
 
 
 // **********************************************************************
@@ -225,6 +321,58 @@ body {
   }
 }
 
+@include mq($tablet) {
+  .section.brand-engagement {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    .about {
+      @include span-columns(6);
+    }
+    .logos {
+      @include span-columns(6);
+      padding-left: 30px;
+    }
+    .auto-logo {
+      margin: 0 0 40px;
+    }
+    .ducati {
+      margin-top: 0;
+      float: left;
+    }
+    .porsche {
+      margin-left: 0;
+    }
+    .suzuki {
+      margin-top: 0;
+      float: left;
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.brand-engagement {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    .about {
+      @include span-columns(10);
+      @include shift(1);
+    }
+    .logos {
+      @include span-columns(10);
+      @include shift(1);
+      @include clearfix;
+      padding: 0;
+      margin-top: 30px;
+
+      .auto-logo {
+        float: none;
+        margin: 0 auto 30px;
+        display: block;
+      }
+    }
+  }
+}
+
 
 // **********************************************************************
 // ACCOLADES
@@ -252,6 +400,24 @@ body {
     }
     img {
       float: right;
+    }
+  }
+}
+
+@include mq($tablet) {
+  .section.accolades {
+    li {
+      @include clearfix;
+      text-align: center;
+      p {
+        float: none;
+        margin-bottom: 10px;
+        max-width: 100%;
+      }
+      img {
+        float: none;
+        margin-top: 0;
+      }
     }
   }
 }

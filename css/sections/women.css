@@ -1603,6 +1603,25 @@ body {
       max-width: 100%;
       border-radius: 2px; }
 
+@media (max-width: 768px) {
+  .section.personality .section-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
+    margin-bottom: 30px;
+    padding-right: 0; }
+    .section.personality .section-content:last-child {
+      margin-right: 0; }
+  .section.personality .section-img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .section.personality .section-img:last-child {
+      margin-right: 0; } }
 .section.simple {
   background: #c4e5de;
   color: #347668;
@@ -1616,6 +1635,16 @@ body {
     .section.simple .section-content:last-child {
       margin-right: 0; }
 
+@media (max-width: 768px) {
+  .section.simple .section-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
+    margin-bottom: 30px; }
+    .section.simple .section-content:last-child {
+      margin-right: 0; } }
 .section.process {
   background: #c4e5de;
   color: white;
@@ -1634,6 +1663,36 @@ body {
     .section.process .process-img img {
       max-width: 100%; }
 
+@media (max-width: 768px) {
+  .section.process .process-img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    max-height: 500px;
+    margin-bottom: 15px; }
+    .section.process .process-img:last-child {
+      margin-right: 0; }
+    .section.process .process-img:nth-child(2n) {
+      margin-right: 0; }
+    .section.process .process-img:nth-child(2n+1) {
+      clear: left; }
+    .section.process .process-img img {
+      max-width: 100%; } }
+@media (max-width: 568px) {
+  .section.process .process-img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
+    margin-right: 0;
+    max-height: 600px;
+    margin-bottom: 20px; }
+    .section.process .process-img:last-child {
+      margin-right: 0; }
+    .section.process .process-img img {
+      max-width: 100%; } }
 .section.accolades .about {
   float: left;
   display: block;
@@ -1654,5 +1713,19 @@ body {
 .section.accolades li img {
   float: right;
   margin-top: -15px; }
+
+@media (max-width: 768px) {
+  .section.accolades li {
+    text-align: center; }
+    .section.accolades li:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .section.accolades li p {
+      float: none;
+      margin-bottom: 10px; }
+    .section.accolades li img {
+      float: none;
+      margin-top: 0; } }
 
 /*# sourceMappingURL=women.css.map */

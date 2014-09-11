@@ -79,6 +79,21 @@ body {
   }
 }
 
+@include mq($tablet) {
+  .section.personality {
+    .section-content {
+      @include span-columns(10);
+      @include shift(1);
+      margin-bottom: 30px;
+      padding-right: 0;
+    }
+    .section-img {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+
 // **********************************************************************
 // SIMPLE
 // **********************************************************************
@@ -93,6 +108,20 @@ body {
     @include span-columns(6);
   }
 }
+
+@include mq($tablet) {
+  .section.simple {
+    .section-content {
+      @include span-columns(10);
+      @include shift(1);
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+
+
 
 
 // **********************************************************************
@@ -112,6 +141,29 @@ body {
     border-radius: 2px;
     img {
       max-width: 100%;
+    }
+  }
+}
+
+@include mq($tablet) {
+  .section.process {
+    .process-img {
+      @include span-columns(6);
+      @include omega(2n);
+      max-height: 500px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.process {
+    .process-img {
+      @include span-columns(10);
+      @include shift(1);
+      @include omega();
+      max-height: 600px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -139,6 +191,23 @@ body {
     img {
       float: right;
       margin-top: -15px;
+    }
+  }
+}
+
+@include mq($tablet) {
+  .section.accolades {
+    li {
+      @include clearfix;
+      text-align: center;
+      p {
+        float: none;
+        margin-bottom: 10px;
+      }
+      img {
+        float: none;
+        margin-top: 0;
+      }
     }
   }
 }
