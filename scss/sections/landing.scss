@@ -151,31 +151,33 @@ section.top-text {
 }
 
 
-@include mq($tablet) {
-  .hero {
-    height: 500px;
-  }
-  #landing-hero .video-wrapper {
-    .bgvid {
-      min-height: 500px;
-    }
-  }
-  .hero-content img {
-    max-width: 270px;
-  }
-  section.top-text {
-    margin-top: 500px;
-  }
-}
-
 
 @include mq($mobile) {
-  .hero-content img {
-    max-width: 220px;
+  $hero-height: 500px;
+  .hero {
+    height: $hero-height;
+  }
+
+  .video-wrapper {
+    min-height: $hero-height;
+    .bgvid {
+      min-height: $hero-height;
+    }
+  }
+
+
+  .landing-hero-image {
+    top: 160px;
+    &.fixed {
+      bottom: 440px;
+    }
+  }
+  .landing-hero-image img {
+    max-width: 280px;
   }
 
   section.top-text {
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 80px;
 
     .section-content {

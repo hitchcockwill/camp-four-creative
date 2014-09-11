@@ -1779,24 +1779,25 @@ section.top-text {
     section.top-text .buttons-wrap button {
       display: inline-block; }
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .hero {
     height: 500px; }
 
-  #landing-hero .video-wrapper .bgvid {
+  .video-wrapper {
     min-height: 500px; }
+    .video-wrapper .bgvid {
+      min-height: 500px; }
 
-  .hero-content img {
-    max-width: 270px; }
+  .landing-hero-image {
+    top: 160px; }
+    .landing-hero-image.fixed {
+      bottom: 440px; }
+
+  .landing-hero-image img {
+    max-width: 280px; }
 
   section.top-text {
-    margin-top: 500px; } }
-@media (max-width: 568px) {
-  .hero-content img {
-    max-width: 220px; }
-
-  section.top-text {
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 80px; }
     section.top-text .section-content {
       float: left;
