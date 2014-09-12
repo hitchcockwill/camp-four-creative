@@ -2,6 +2,7 @@
 /.sass-cache/
 /_site/
 *.DS_Store
+.DS_Store
 npm-debug.log
 *.sublime-project
 *.sublime-workspace
