@@ -33,7 +33,7 @@ if(isset($_POST['email'])) {
 
 
   // create email headers
-  $headers = 'From: '.$email_from."\r\n".
+  $headers = 'From: '.$name."\r\n".
   'Reply-To: '.$email_from."\r\n" .
   'X-Mailer: PHP/' . phpversion() .
   $headers .= 'MIME-Version: 1.0' . "\r\n";
