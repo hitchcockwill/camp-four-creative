@@ -1,5 +1,5 @@
 (function() {
-  var $doc, $hero, $logo, $navBar, didScroll, heroHeight, imageLoad, initLinkClicking, initScrolling, logoBottom, logoTarget, scrollHandle, scrollToPosition;
+  var $doc, $hero, $logo, $navBar, didScroll, heroHeight, imageLoad, initLinkClicking, initScrolling, logoBottom, logoHeight, logoTarget, scrollHandle, scrollToPosition;
 
   didScroll = false;
 
@@ -13,6 +13,8 @@
 
   logoTarget = null;
 
+  logoHeight = null;
+
   heroHeight = null;
 
   $doc = $(document);
@@ -21,9 +23,11 @@
     $navBar = $("#primary-header");
     $hero = $('#landing-hero');
     heroHeight = $hero.outerHeight() - 50;
-    $logo = $('.landing-hero-image');
-    logoBottom = $logo.position().top + $logo.height();
-    logoTarget = $('.js--logo-target').offset().top;
+    $logo = $('.landing-hero-image img');
+    logoHeight = $logo.height();
+    logoBottom = $logo.position().top + logoHeight;
+    logoTarget = $('.js--logo-target').offset().top - 30;
+    console.log('logo height: ', $logo.height());
     $doc = $(document);
     return setInterval(function() {
       return scrollHandle();
@@ -33,6 +37,10 @@
   scrollHandle = function(force) {
     var scrollTop;
     if (didScroll || force) {
+      if (!logoHeight) {
+        logoHeight = $logo.height();
+        logoBottom = $logo.position().top + logoHeight;
+      }
       didScroll = false;
       scrollTop = $doc.scrollTop();
       if (!$logo.hasClass('fixed') && scrollTop + logoBottom > logoTarget) {

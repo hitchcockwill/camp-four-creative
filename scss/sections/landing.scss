@@ -91,29 +91,31 @@ $hero-height: 850px;
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(#91b69b, .7);
+    background: #596F6E;
+    @include background-image(radial-gradient(#6b8684,#3c4a49));
+    opacity: .7;
     z-index: -1;
   }
 }
 
 
 .landing-hero-image {
-  position: fixed;
-  top: 260px;
-  width: 540px;
-  left: 50%;
-  margin-left: -270px;
+  position: relative;
+  height: 0;
   z-index: 15;
   img {
     display: block;
-    max-width: 360px;
-    margin: 0 auto 30px;
+    position: fixed;
+    margin-left: -180px;
+    left: 50%;
+    width: 360px;
+    bottom: 430px;
   }
 
-  &.fixed {
+  img.fixed {
     position: absolute;
     top: auto;
-    bottom: 20px;
+    bottom: -164px;
   }
 }
 

@@ -7,6 +7,7 @@ $hero = null
 $logo = null
 logoBottom = null
 logoTarget = null
+logoHeight = null
 heroHeight = null
 $doc = $(document)
 
@@ -16,9 +17,12 @@ initScrolling = ->
   $hero = $('#landing-hero')
   heroHeight = $hero.outerHeight() - 50
 
-  $logo = $('.landing-hero-image')
-  logoBottom = $logo.position().top + $logo.height()
-  logoTarget = $('.js--logo-target').offset().top
+  $logo = $('.landing-hero-image img')
+  logoHeight = $logo.height()
+  logoBottom = $logo.position().top + logoHeight
+  logoTarget = $('.js--logo-target').offset().top - 30
+
+  console.log 'logo height: ', $logo.height()
 
   $doc = $(document)
 
@@ -28,6 +32,9 @@ initScrolling = ->
 
 scrollHandle = (force) ->
   if didScroll or force
+    if !logoHeight
+      logoHeight = $logo.height()
+      logoBottom = $logo.position().top + logoHeight
     didScroll = false
     scrollTop = $doc.scrollTop()
 
