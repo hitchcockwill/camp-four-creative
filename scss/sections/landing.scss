@@ -168,14 +168,13 @@ section.top-text {
   }
 
 
-  .landing-hero-image {
-    top: 160px;
-    &.fixed {
-      bottom: 440px;
-    }
-  }
   .landing-hero-image img {
-    max-width: 280px;
+    bottom: 610px;
+    width: 280px;
+    margin-left: -140px;
+    &.fixed {
+      bottom: -100px;
+    }
   }
 
   section.top-text {

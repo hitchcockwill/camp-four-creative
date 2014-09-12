@@ -1791,13 +1791,12 @@ section.top-text {
     .video-wrapper .bgvid {
       min-height: 500px; }
 
-  .landing-hero-image {
-    top: 160px; }
-    .landing-hero-image.fixed {
-      bottom: 440px; }
-
   .landing-hero-image img {
-    max-width: 280px; }
+    bottom: 610px;
+    width: 280px;
+    margin-left: -140px; }
+    .landing-hero-image img.fixed {
+      bottom: -100px; }
 
   section.top-text {
     padding-top: 120px;
