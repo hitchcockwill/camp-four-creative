@@ -1,0 +1,375 @@
+@import "../config/variables";
+
+// **********************************************************************
+// CONTACT VARIABLES
+// **********************************************************************
+
+$text:        white;
+
+// **********************************************************************
+// CONTACT BASE
+// **********************************************************************
+
+.contact-content {
+  background: url('/img/camp-footer.jpg') center center no-repeat #555;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  color: $text;
+
+  p {
+    font-size: 23px;
+    line-height: 1.4em;
+  }
+}
+
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.contact-content .contact-intro {
+  padding: 125px 0 50px;
+  .about {
+    float: left;
+  }
+}
+
+.contact-intro_title {
+  @include span-columns(4);
+  @include shift(1);
+  padding-right: 30px;
+  margin-top: 5px;
+}
+
+.contact-intro_about {
+  @include span-columns(6);
+}
+
+@include mq($tablet) {
+  .contact-intro_title {
+    @include span-columns(5);
+    @include shift(0);
+  }
+
+  .contact-intro_about {
+    @include span-columns(7);
+  }
+}
+
+@include mq($mobile) {
+  .contact-intro_title {
+    @include span-columns(12);
+    @include shift(0);
+    text-align: center;
+  }
+
+  .contact-intro_about {
+    @include span-columns(12);
+    text-align: center;
+  }
+}
+
+// **********************************************************************
+// FORM
+// **********************************************************************
+
+.form-wrap {
+  @include span-columns(10);
+  @include shift(1);
+}
+
+form {
+  border: 1px solid white;
+  border-bottom: none;
+
+  fieldset {
+    border-bottom: 1px solid white;
+    &.double {
+      @include clearfix;
+      .control-group {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  .control-group + .control-group,
+  .control-group + .control-group.focus {
+    border-left: 1px solid white;
+  }
+
+  .control-group {
+    padding: 4px 8px;
+    position: relative;
+    z-index: 10;
+    @include transition(all .25s);
+
+    &:before {
+      border: 1px solid transparent;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      z-index: 0;
+      @include transition(all .25s);
+    }
+
+    &.focus {
+      border-color: transparent;
+      z-index: 12;
+      background: rgba(white, .08);
+      &:before {
+        z-index: 11;
+        content: '';
+      }
+      label {
+        color: $green;
+        text-shadow: 1px 1px 0 rgba(black, .3);
+      }
+    }
+    + .control-group.focus:before {
+      left: -1px;
+    }
+
+    &.invalid {
+      border-color: transparent;
+      z-index: 12;
+      &:before {
+        border: 1px solid $secondary;
+        z-index: 11;
+        content: '';
+      }
+    }
+
+    &.invalid.focus {
+      label { color: white; }
+    }
+
+    input,
+    textarea {
+      position: relative;
+      z-index: 15;
+    }
+  }
+
+  label {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    width: 100%;
+    display: block;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  input,
+  textarea {
+    color: white;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    font-family: $body-font;
+    font-weight: normal;
+    margin-top: -5px;
+    padding: 7px 0;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 120px;
+  }
+}
+
+
+
+@include mq($tablet) {
+  .form-wrap {
+    @include span-columns(12);
+    @include shift(0);
+  }
+}
+
+@include mq($mobile) {
+  form {
+    fieldset {
+      &.double {
+        .control-group {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+
+    .control-group + .control-group,
+    .control-group + .control-group.focus {
+      border-top: 1px solid white;
+      border-left: none;
+    }
+  }
+  textarea {
+    min-height: 150px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// **********************************************************************
+// DROPDOWNS
+// **********************************************************************
+
+.selectize-control.single,
+.selectize-control.multi {
+  z-index: 100;
+  margin-bottom: -5px;
+
+  .selectize-input,
+  .selectize-dropdown {
+    font-size: 22px;
+    line-height: 1.2em;
+    font-family: $body-font;
+  }
+
+  .selectize-input {
+    background: none;
+    color: white;
+    border-color: transparent;
+    box-shadow: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    &.focus {
+      background: white;
+      color: $gray-darken;
+    }
+  }
+}
+
+.selectize-control.multi {
+  .selectize-input [data-value] {
+    background: $off-white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    text-shadow: none;
+    color: $gray;
+    font-size: 18px;
+    padding: 3px 12px;
+  }
+}
+
+
+
+
+
+
+
+
+// **********************************************************************
+// FOOTER
+// **********************************************************************
+
+div.form-footer {
+  @include span-columns(10);
+  @include shift(1);
+  margin-top: 30px;
+  margin-bottom: 50px;
+  button {
+    float: right;
+    min-width: 200px;
+  }
+}
+
+@include mq($tablet) {
+  div.form-footer {
+    @include span-columns(12);
+    @include shift(0);
+  }
+}
+
+@include mq($mobile) {
+  div.form-footer {
+    button {
+      display: block;
+      width: 100%;
+      float: none;
+      min-width: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+// **********************************************************************
+// MODALS
+// **********************************************************************
+
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba($primary, .7);
+  z-index: 1000;
+  display: none;
+
+  &.show-modal {
+    display: block;
+  }
+}
+
+.modal {
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  margin: 150px 0 0 -250px;
+}
+
+.modal_content {
+  background: $bg;
+  border-radius: 5px;
+  padding: 50px 20px;
+  color: $gray;
+  text-align: center;
+
+  h2 {
+    font-family: $body-font;
+    font-weight: 300;
+    line-height: 1.1em;
+    margin-bottom: 5px;
+  }
+  p {
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  a {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+

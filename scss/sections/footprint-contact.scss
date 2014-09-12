@@ -1,0 +1,74 @@
+@import "../config/variables";
+
+.contact-content {
+  position: relative;
+  background: none;
+  .bg-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+    background: url('/img/footprint/footprint-bw.jpg') center center no-repeat #555;
+    background-size: cover;
+    background-attachment: fixed;
+    @include filter(blur(3px));
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    @include background(linear-gradient(rgba(#3f4a4e, .6), rgba(#677980, .4)));
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.contact-intro_title {
+  @include span-columns(5);
+  @include shift(1);
+  margin-top: 0;
+}
+
+.contact-intro_about {
+  @include span-columns(5);
+  margin-top: 30px;
+}
+
+
+@include mq($tablet) {
+  .contact-intro_title {
+    @include span-columns(5);
+    @include shift(0);
+  }
+
+  .contact-intro_about {
+    @include span-columns(7);
+  }
+}
+
+@include mq($mobile) {
+  .contact-intro_title {
+    @include span-columns(12);
+    @include shift(0);
+    text-align: center;
+  }
+
+  .contact-intro_about {
+    @include span-columns(12);
+    text-align: center;
+  }
+}
+
+

@@ -1,0 +1,593 @@
+@import "../config/variables";
+
+
+// **********************************************************************
+// Base Landing page styles
+// **********************************************************************
+
+div.landing-page {
+  background: $bg;
+  p {
+    font-weight: 300;
+    font-size: 20px;
+  }
+}
+
+section.content-section {
+  padding: 100px 0;
+}
+
+section {
+  position: relative;
+  background: $bg;
+  z-index: 10;
+
+  .container {
+    @include container;
+  }
+}
+
+section.dark {
+  background: $primary-light;
+  .hr-wrap h3 {
+    background: $primary-light;
+  }
+}
+
+section.hr {
+  padding-top: 0;
+  .hr-wrap {
+    margin-bottom: 50px;
+  }
+}
+
+
+// **********************************************************************
+// Landing Hero
+// **********************************************************************
+
+$hero-height: 850px;
+
+.hero-wrap {
+  position: relative;
+}
+
+.hero {
+  height: $hero-height;
+  position: relative;
+  overflow: visible;
+  top: 0;
+  z-index: 0;
+
+  &.fixed-logo .hero-overlay {
+    opacity: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $bg;
+    opacity: 0;
+    z-index: 10;
+    @include transition(opacity .5s);
+  }
+}
+
+.video-wrapper {
+  min-height: $hero-height;
+  position: relative;
+  .bgvid {
+    position: fixed;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: $hero-height;
+    z-index: -2;
+    background: url(/img/trees.jpg) no-repeat;
+    background-size: cover;
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #596F6E;
+    @include background-image(radial-gradient(#6b8684,#3c4a49));
+    opacity: .7;
+    z-index: -1;
+  }
+}
+
+
+.landing-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 15;
+  img {
+    display: block;
+    position: fixed;
+    margin-left: -180px;
+    left: 50%;
+    width: 360px;
+    top: 200px;
+  }
+
+  img.fixed {
+    position: absolute;
+    top: $hero-height - 140;
+  }
+}
+
+
+section.top-text {
+  padding-top: 200px;
+  padding-bottom: 110px;
+  margin: 0;
+  text-align: center;
+
+  .section-content {
+    @include span-columns(8);
+    @include shift(2);
+  }
+
+
+  h2 {
+    font-size: 34px;
+    margin: 0 0 24px;
+    line-height: 1.2em;
+  }
+  p {
+    font-size: 26px;
+    line-height: 1.5em;
+    margin-bottom: 0;
+  }
+
+  .buttons-wrap {
+    text-align: center;
+    button {
+      display: inline-block;
+    }
+  }
+
+}
+
+
+
+@include mq($mobile) {
+  $hero-height: 500px;
+  .hero {
+    height: $hero-height;
+  }
+
+  .video-wrapper {
+    min-height: $hero-height;
+    .bgvid {
+      min-height: $hero-height;
+    }
+  }
+
+
+  .landing-hero-image img {
+    width: 280px;
+    margin-left: -140px;
+    top: 120px;
+    &.fixed {
+      top: $hero-height - 140;
+    }
+  }
+
+  section.top-text {
+    padding-top: 120px;
+    padding-bottom: 80px;
+
+    .section-content {
+      @include span-columns(10);
+      @include shift(1);
+    }
+    h2 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+}
+
+
+@include mq($mobile-sm) {
+  section.top-text {
+    .section-content {
+      @include span-columns(12);
+      @include shift(0);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// **********************************************************************
+// CASE STUDIES
+// **********************************************************************
+
+
+section.case-studies {
+  padding-top: 0;
+
+  .hr-wrap {
+    margin-bottom: 50px;
+  }
+
+  .studies {
+    .case {
+      @include span-columns(3);
+      .case-content {
+        height: 230px;
+      }
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
+
+
+@include mq($tablet) {
+  section.case-studies {
+    .studies .case {
+      @include span-columns(6);
+      @include omega(2n);
+      .case-content {
+        height: 320px;
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  section.case-studies {
+    padding-bottom: 30px;
+    .studies .case {
+      .case-content {
+        height: 180px;
+      }
+    }
+  }
+}
+
+@include mq($mobile-sm) {
+  section.case-studies {
+    .studies .case {
+      @include span-columns(12);
+      .case-content {
+        height: 220px;
+      }
+    }
+  }
+}
+
+
+
+
+// **********************************************************************
+// SERVICES
+// **********************************************************************
+
+.services-list {
+  @include row;
+  margin: 90px 0 80px;
+}
+
+.services-list_item {
+  @include span-columns(4);
+  padding-right: 30px;
+  border: 1px solid $off-white;
+  background: white;
+  padding: 20px;
+  text-align: center;
+
+  h3 {
+    margin: 10px 0 20px;
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  a.btn {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+.services-list .services-list_item--main {
+  margin-top: -40px;
+  background: $primary;
+  color: white;
+  border-color: $primary;
+
+  h3 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 1.4em;
+  }
+}
+
+
+@include mq($tablet) {
+  .services-list_item {
+    @include span-columns(8);
+    @include shift(2);
+  }
+  .services-list .services-list_item--main {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+@include mq($mobile) {
+  section.services {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    .hr-wrap {
+      margin-bottom: 10px;
+    }
+  }
+  .services-list {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  .services-list_item {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  .services-list .services-list_item--main {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@include mq($mobile-sm) {
+  .services-list_item {
+    @include span-columns(12);
+    @include shift(0);
+    h3 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .services-list .services-list_item--main {
+    @include span-columns(12);
+    @include shift(0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    h3 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+
+
+
+
+// **********************************************************************
+// ABOUT
+// **********************************************************************
+
+section.about {
+  @include container;
+  padding: 150px 0;
+  color: white;
+
+  h2 {
+    line-height: 1em;
+  }
+  p {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  div.about-us {
+    @include span-columns(7);
+    p {
+      font-size: 20px;
+      margin: 0 0 25px;
+    }
+  }
+
+  div.profile {
+    @include span-columns(2);
+    &.first { @include shift(1); }
+  }
+
+  div.profile > p {
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  img.profile {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: $teal-light;
+  }
+
+  div.profile:first-child {
+    text-align: right;
+
+    > p {
+      padding: 0;
+      padding-left: 20px;
+    }
+  }
+}
+
+div.social-links {
+  margin-bottom: 30px;
+  > a {
+    position: relative;
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    margin-left: 5px;
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .9;
+    @include transition(opacity .25s ease-in);
+  }
+}
+
+
+@include mq($tablet) {
+  section.about {
+    div.about-us {
+      @include span-columns(10);
+      @include shift(1);
+    }
+    div.profile {
+      margin-top: 70px;
+      @include span-columns(4);
+      @include shift(1);
+      text-align: center;
+      img {
+        max-width: 130px;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  section.about.content-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  section.about {
+    div.about-us {
+      @include span-columns(12);
+      @include shift(0);
+      a.btn {
+        display: block;
+        width: 100%;
+      }
+    }
+    div.profile {
+      margin-left: 0;
+      padding: 0 15px;
+      @include span-columns(6);
+      @include shift(0);
+      &.first {
+        @include shift(0);
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  section.about {
+    div.profile {
+      margin: 30px 0;
+      padding: 0 15px;
+      @include span-columns(12);
+      &.first {
+        margin-top: 60px;
+        margin-bottom: -30px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+// **********************************************************************
+// FOOTER WRAP
+// **********************************************************************
+
+div.footer-wrap {
+  background: url('/img/camp-footer.jpg') center center no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 50;
+
+  section { background: none; }
+  > .row { @include clearfix; }
+
+  .logo-wrap {
+    float: left;
+  }
+
+  .footer-nav {
+    float: right;
+
+    a.active {
+      background: $primary;
+    }
+  }
+  .footer {
+    padding-bottom: 30px;
+  }
+}
+
+
+section.footer {
+  padding: 0;
+
+  > .row {
+    border-top: 1px solid $light-gray;
+    padding: 35px 0 30px;
+  }
+}
+
+@include mq($mobile) {
+  section.footer {
+    display: none;
+  }
+}
+
+
+
+
+
+
+

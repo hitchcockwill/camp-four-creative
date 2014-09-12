@@ -1,0 +1,339 @@
+@import "../config/variables";
+
+// **********************************************************************
+// HERO
+// **********************************************************************
+
+$banner-height: 910px;
+.case-study-banner {
+  position: fixed;
+  height: $banner-height;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-top: 80px;
+  z-index: 0;
+  .color-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .5;
+  }
+}
+
+.case-study-hero {
+  padding-top: 80px;
+  position: relative;
+  background-size: cover;
+  background-position: bottom center;
+  height: $banner-height;
+  overflow: hidden;
+
+  .row { position: relative; }
+
+  h2 {
+    margin-bottom: 13px;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(black, .2);
+  }
+
+  .hero-interface-single {
+    width: 80%;
+    position: absolute;
+    top: 320px;
+    left: 10%;
+  }
+
+  .hero-interface-1,
+  .hero-interface-2 {
+    max-width: 700px;
+    position: absolute;
+  }
+
+  .hero-interface-1 {
+    top: 320px;
+    left: 0;
+    z-index: 8;
+  }
+
+  .hero-interface-2 {
+    top: 420px;
+    right: 0;
+    z-index: 10;
+  }
+
+}
+
+.case-study-hero-intro {
+  @include span-columns(6);
+  @include shift(3);
+  color: $off-white;
+  text-align: center;
+  z-index: 15;
+  margin-top: 50px;
+
+  img {
+    display: block;
+    max-width: 220px;
+    margin: 0 auto 30px;
+  }
+}
+
+.case-study-interfaces {
+  @include container;
+  img {
+    max-width: 100%;
+  }
+}
+
+.section {
+  background: $bg;
+  position: relative;
+  z-index: 1;
+}
+
+#case-study-content {
+
+}
+
+.case-study-content {
+
+  .intro {
+    div.services {
+      margin-top: 50px;
+      text-align: center;
+      p {
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;
+        font-size: 24px;
+        line-height: 1.1em;
+        margin: 0 40px 20px 0;
+        @include fa-before(plus-circle);
+        &:before {
+          opacity: .4;
+          left: 0;
+          top: -1px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 300;
+  }
+}
+
+
+@include mq($tablet) {
+  .case-study-hero {
+    height: 750px;
+
+    .hero-interface-1,
+    .hero-interface-2 {
+      max-width: 65%;
+      position: absolute;
+    }
+  }
+  .case-study-hero .case-study-hero-intro {
+    @include span-columns(8);
+    @include shift(2);
+    margin-top: 60px;
+  }
+}
+
+@include mq($mobile) {
+  .case-study-hero {
+    height: 630px;
+  }
+  .case-study-hero .case-study-hero-intro {
+    @include span-columns(10);
+    @include shift(1);
+    margin-top: 40px;
+  }
+  .case-study-hero .hero-interface-single {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@include mq($mobile-md) {
+  .case-study-hero {
+    height: 540px;
+  }
+  .case-study-hero .case-study-hero-intro {
+    @include span-columns(12);
+    @include shift(0);
+    margin-top: 30px;
+  }
+  .case-study-content {
+    .intro {
+      p {
+        font-size: 20px;
+      }
+
+      div.services {
+        margin-top: 50px;
+        text-align: left;
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// **********************************************************************
+// CASE STUDIES INDEX
+// **********************************************************************
+
+.case-studies-index {
+  margin-top: 130px;
+}
+
+.case-studies_head {
+  text-align: center;
+}
+
+.case-studies_footer {
+  h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: $gray-lighten;
+  }
+  .btn {
+    margin: 20px auto 0;
+    padding: 18px 30px;
+  }
+}
+
+div.studies-wrap {
+  @include row;
+  margin-bottom: 50px;
+}
+ul.studies {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  li.case {
+    margin-bottom: 20px;
+
+    &:hover {
+      .overlay-color {
+        opacity: .75;
+      }
+    }
+
+    .case-content {
+      overflow: hidden;
+      position: relative;
+      height: 340px;
+    }
+
+    img {
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+      width: 50%;
+    }
+
+    .overlay-image {
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      top: -10px;
+      bottom: -10px;
+      z-index: 2;
+      background-size: cover;
+      @include filter(blur(1px));
+    }
+
+    .overlay-color {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: .7;
+      @include transition(opacity .25s .05s);
+      z-index: 5;
+    }
+  }
+}
+
+
+
+
+
+// **********************************************************************
+// CASE STUDY PAGE
+// **********************************************************************
+
+._case-studies .studies {
+  @include span-columns(8);
+  @include shift(2);
+
+  .case {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+}
+
+@include mq($tablet) {
+  ._case-studies .studies {
+    @include span-columns(10);
+    @include shift(1);
+
+    .case .case-content {
+      height: 280px;
+    }
+  }
+}
+
+@include mq($mobile) {
+  ._case-studies .studies {
+    @include span-columns(12);
+    @include shift(0);
+
+    .case .case-content {
+      height: 230px;
+    }
+  }
+}
+
+@include mq($mobile-md) {
+  ._case-studies .studies {
+    @include span-columns(12);
+    @include shift(0);
+
+    .case {
+      @include span-columns(12);
+      @include omega();
+    }
+
+    .case .case-content {
+      height: 230px;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.case-study-footer-wrap {
+  margin-top: -3px;
+  background: $primary;
+  padding: 50px 0;
+  color: white;
+  position: relative;
+  z-index: 10;
+
+  h3 {
+    border-bottom: 1px solid lighten($primary, 10%);
+    padding-bottom: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.2em;
+    font-weight: 300;
+  }
+
+  .footer_links {
+    text-align: center;
+  }
+  .footer_links--mobile {
+    display: none;
+    @include clearfix;
+  }
+  .footer_links_link-wrap {
+    width: 50%;
+    float: left;
+  }
+
+  p {
+    display: inline-block;
+    .btn {
+      margin: 0 10px;
+      position: relative;
+      top: 5px;
+    }
+  }
+}
+
+@include mq(900px) {
+  .case-study-footer-wrap {
+    .footer_links--web { display: none; }
+    .footer_links--mobile  { display: block; }
+
+    p {
+      max-width: 300px;
+      margin: 0 0 0 40%;
+
+      a {
+        display: block;
+      }
+    }
+
+    .footer_links_link-wrap {
+      &:last-child p {
+        margin: 0 40% 0 0;
+      }
+    }
+  }
+}
+
+
+@include mq($tablet) {
+  .case-study-footer-wrap {
+    p {
+      margin: 0 0 0 30%;
+    }
+
+    .footer_links_link-wrap {
+      &:last-child p {
+        margin: 0 30% 0 0;
+      }
+    }
+  }
+}
+
+@include mq($mobile) {
+  .case-study-footer-wrap {
+    p {
+      margin: 0;
+    }
+
+    .footer_links_link-wrap {
+      &:last-child p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include mq($mobile-md) {
+  .case-study-footer-wrap {
+    .footer_links_link-wrap {
+      width: 100%;
+      float: none;
+      margin-bottom: 30px;
+    }
+  }
+}

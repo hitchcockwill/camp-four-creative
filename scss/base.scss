@@ -1,12 +1,59 @@
-@import "config";
+@import "plugins/selectize";
+@import "plugins/selectize.default";
+@import "plugins/slicknav";
+
+@import "config/variables";
+@import "config/responsive";
+
+@import "components/buttons";
+@import "components/type";
+@import "components/ui";
+@import "components/dropdowns";
+@import "components/plugins";
+@import "components/forms";
+@import "components/header";
+@import "components/footer";
+
+@import "sections/case-study";
+
+
+// **********************************************************************
+// SCAFFOLDING
+// **********************************************************************
+
+.container {
+  @include container;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.row {
+  @include row;
+}
 
 // ************************************************************************************************
 // Body Styles
 // **************************************************************************************************
 
-body {
+
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+html,
+button,
+input,
+select,
+textarea {
   font-family: $body-font;
   color:$gray;
+  font-size: 16px;
+  line-height: 1.4em;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 footer {
@@ -21,48 +68,55 @@ footer {
   }
 }
 
+ul.bulleted {
+  list-style: disc;
+  margin-left: 20px;
+}
+
 
 // **********************************************************************
-// Components
+// COMPONENTS
 // **********************************************************************
 
-a.btn {
-  display: inline-block;
-  padding: 14px 20px;
-  border: 2px solid $blue-gray;
-  color: $blue-gray;
-  border-radius: 2px;
-  text-align: center;
-  @include transition(background .25s ease-in, color .25s ease-in);
-  &:hover {
-    background: $blue-gray;
-    color: $off-white;
+$hero-height: 500px;
+$header-height: 60px;
+
+.hero {
+  height: $hero-height;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 60px;
+  z-index: 0;
+  background: $primary;
+
+  div.image-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $primary;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($primary, .5);
+    }
   }
 }
 
-span.icon {
-  display: inline-block;
+.first-section {
+  margin-top: ($hero-height + $header-height);
 }
 
-
-// Browser Chrome
-
-div.browser-chrome {
-  border-radius: 3px 3px 0 0;
-  background: darken($off-white, 5%);
-  padding: 10px;
-  @include clearfix;
-  > span {
-    float: left;
-    height: 10px;
-    width: 10px;
-    border-radius: 10px;
-    background: $gray-lighten;
-    margin-right: 5px;
-  }
-}
-
-div.browser-chrome-wrap {
-  border: 4px solid darken($off-white, 5%);
-  border-top: none;
+.content-section {
+  position: relative;
+  z-index: 10;
 }

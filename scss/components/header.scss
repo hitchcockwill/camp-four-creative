@@ -1,0 +1,183 @@
+// **********************************************************************
+// HEADER
+// **********************************************************************
+
+#primary-header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  background: $primary;
+  z-index: 100;
+  @include transition(background .25s);
+
+  &.trans {
+    background: none;
+  }
+}
+
+#primary-header,
+.footer {
+  padding: 10px 0;
+
+  > .row {
+    @include outer-container;
+    @include clearfix;
+  }
+
+  .logo-wrap {
+    float: left;
+    img {
+      width: 190px;
+      margin-top: 7px;
+    }
+  }
+
+  .header-nav,
+  .footer-nav {
+    float: right;
+
+    a.active {
+      background: $primary;
+    }
+  }
+
+  .nav-wrapper {
+    @include transition(top .15s eas-in);
+
+    .main-nav {
+      margin-left: -20px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: white;
+      border-radius: 3px;
+      opacity: .9;
+      @include transition(color .25s ease-in .2s, background .25s ease-in .2s, opacity .25s .2s);
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        background: rgba(white, .2);
+      }
+    }
+
+  }
+}
+
+#serviceDrop {
+  &:before {
+    left: 40px;
+  }
+  &:after {
+    left: 39px;
+  }
+}
+
+
+// **********************************************************************
+// SLICKNAV
+// **********************************************************************
+
+.slicknav_menu {
+  background: none;
+  position: relative;
+  padding: 0;
+
+  .slicknav_btn {
+    background: rgba($bg, .8);
+    padding: 8px 10px;
+    display: inline-block;
+    margin-right: 0;
+    @include transition(background .25s .05s);
+
+    &:hover {
+      background: rgba($bg, .9);
+    }
+    span {
+      color: $gray;
+      text-shadow: none;
+    }
+    .slicknav_icon {
+      float: none;
+      display: block;
+      height: 13px;
+      position: relative;
+      width: 25px;
+    }
+    .slicknav_icon-bar {
+      position: absolute;
+      background: darken($bg, 30%);
+      left: 0;
+      right: 0;
+      height: 2px;
+      top: 50%;
+      margin-top: -1px;
+      border-radius: 10px;
+      display: block;
+      width: 100%;
+      box-shadow: none;
+      &:first-child {
+        top: 0;
+        margin: 0;
+      }
+      &:last-child {
+        bottom: 0;
+        top: auto;
+        margin: 0;
+      }
+    }
+  }
+
+  .slicknav_nav {
+    background: $bg;
+    border-radius: 3px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    box-shadow: 1px 1px 5px 0 rgba(black, .2);
+    a {
+      color: $gray;
+      display: block;
+      min-width: 200px;
+      background: $bg;
+      border-radius: 0;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.4em;
+      padding: 8px 14px;
+      @include transition(background .25s .05s);
+
+      &:hover {
+        background: darken($bg, 8%);
+      }
+    }
+  }
+}
+
+#primary-header .slicknav_menu {
+  float: right;
+}
+
+
+// **********************************************************************
+// RESPONSIVE
+// **********************************************************************
+
+
+@include media(min-width $tablet) {
+  .slicknav_menu {
+    display: none;
+  }
+}
+
+@include mq($tablet) {
+  .header-nav {
+    display: none;
+  }
+}

@@ -1,0 +1,121 @@
+@import "../config/variables";
+
+
+// **********************************************************************
+// SPINNAKR VARIABLES
+// **********************************************************************
+
+$text:        #524d56;
+$text-dark:   #555555;
+
+$blue:        #479dc0;
+
+// **********************************************************************
+// SPINNAKR BASE
+// **********************************************************************
+
+body {
+  color: $text;
+}
+
+// **********************************************************************
+// HERO
+// **********************************************************************
+
+.spinnakr-hero {
+  .case-study-hero-intro {
+    margin-top: 70px;
+    img {
+      max-width: 250px;
+    }
+  }
+  .hero-interface-single {
+    top: 310px;
+  }
+}
+
+// **********************************************************************
+// SECTIONS
+// **********************************************************************
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: white;
+
+  &:nth-child(even) {
+    background: $bg;
+    border-top: 1px solid darken($bg, 8%);
+    border-bottom: 1px solid darken($bg, 8%);
+  }
+}
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.section.intro {
+  padding: 80px 0;
+  text-align: center;
+  background: white;
+  .container {
+    @include row;
+  }
+  .section-content {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  p {
+    margin: 0 0 30px;
+  }
+}
+
+
+// **********************************************************************
+// HOME
+// **********************************************************************
+
+.section.home,
+.section.about,
+.section.case-studies {
+  .section-content {
+    @include span-columns(3);
+  }
+  .section-img {
+    @include span-columns(9);
+    border: 1px solid darken($bg, 15%);
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+@include mq($tablet) {
+  .section.home,
+  .section.about,
+  .section.case-studies {
+    .section-content {
+      @include span-columns(8);
+      @include shift(2);
+      margin-bottom: 30px;
+    }
+    .section-img {
+      @include span-columns(10);
+      @include shift(1);
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+@include mq($mobile-md) {
+  .section.home,
+  .section.about,
+  .section.case-studies {
+    .section-content {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+

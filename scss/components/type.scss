@@ -1,0 +1,103 @@
+// **********************************************************************
+// TYPE
+// **********************************************************************
+
+h1, h2, h3, h4, h5, h5 {
+  margin: 0 0 .5em;
+}
+
+h1, h2 {
+  font-size: 42px;
+  line-height: 1em;
+  font-family: $body-serif;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+p,
+ul,
+li {
+  font-weight: normal;
+  line-height: 1.4em;
+  &.p-large {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $fw-light;
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+::-moz-selection { background: #d0e7e3; color: #444; text-shadow: none; }
+::selection { background: #d0e7e3; color: #444; text-shadow: none; }
+
+
+
+
+
+
+// **********************************************************************
+// TYPE FORMATTING CLASSES
+// **********************************************************************
+
+.two-col {
+  @include column-count(2);
+  @include column-gap(30px);
+  text-align: justify;
+
+  @include mq($mobile) {
+    @include column-count(1);
+    @include column-gap(0);
+    text-align: left;
+  }
+}
+
+
+
+
+
+div.hr-wrap {
+  position: relative;
+  &.hr-centered {
+    text-align: center;
+  }
+  &.hr-left {
+    h3 {
+      padding-left: 0;
+    }
+  }
+  &.hr-right {
+    h3 {
+      padding-right: 0;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    background: $bg;
+    padding: 0 20px;
+    display: inline-block;
+    color: $light-gray;
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: '';
+    border-top: 1px solid $light-gray;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    z-index: 8;
+  }
+}

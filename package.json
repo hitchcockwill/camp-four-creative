@@ -1,13 +1,17 @@
 {
-  "name": "Camp Four Creative",
-  "version": "0.0.1",
+  "name": "camp-four-creative",
+  "version": "0.0.2",
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-sass": "*",
-    "grunt-jekyll": "*",
+    "grunt-jekyll": "~0.4.2",
     "grunt-contrib-compass": "~0.4.1",
-    "grunt-contrib-uglify": "~0.2.4"
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-newer": "~0.7.0",
+    "load-grunt-tasks": "~0.6.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-concurrent": "~0.5.0"
   }
 }

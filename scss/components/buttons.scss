@@ -1,0 +1,89 @@
+// **********************************************************************
+// BUTTONS
+// **********************************************************************
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  color: $blue-gray;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: none;
+  font-size: 18px;
+  -webkit-appearance: none;
+  vertical-align: bottom;
+  font-weight: normal;
+  @include transition(background .25s ease-in, color .25s ease-in);
+  &:hover {
+    background: $blue-gray;
+    color: $off-white;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &.disabled,
+  [disabled],
+  [disabled="disabled"] {
+    background: #f1f1f1 !important;
+    color: $gray-lighten !important;
+    cursor: default !important;
+    border-color: darken(#f1f1f1, 8%) !important;
+  }
+}
+
+// **********************************************************************
+// BUTTON TYPES
+// **********************************************************************
+
+.btn.btn-primary {
+  background: $primary;
+  color: white;
+  border: 1px solid $primary;
+  &:hover {
+    background: darken($primary, 5%);
+  }
+}
+
+.btn.btn-secondary {
+  background: $secondary;
+  color: white;
+  border: 1px solid $secondary;
+  &:hover {
+    background: darken($secondary, 5%);
+  }
+}
+
+.btn.btn-inverse {
+  background: none;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn.btn-default {
+  background: #f1f1f1;
+  color: $gray;
+
+  &:hover {
+    background: darken(#f1f1f1, 5%);
+    color: $gray;
+  }
+}
+
+// **********************************************************************
+// BUTTON CHARACTERISTICS
+// **********************************************************************
+
+.btn.btn-wide {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn.btn-slim {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+span.icon {
+  display: inline-block;
+}

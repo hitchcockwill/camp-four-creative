@@ -1,3 +1,3 @@
-exclude: 		    [coffee, scss, node_modules, Gruntfile.js, package.json, README.md]
-pygments:       true
-permalink:      none
+exclude: 		     [coffee, scss, node_modules, Gruntfile.js, package.json, README.md, npm-debug.log, camp-four-creative.sublime-project, camp-four-creative.sublime-workspace]
+highlighter:      true
+permalink:        none

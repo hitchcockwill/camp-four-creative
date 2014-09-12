@@ -1,0 +1,127 @@
+// **********************************************************************
+// PLUGINS
+// **********************************************************************
+
+@import "../bourbon/bourbon";
+@import "../neat/neat";
+@import "../fontawesome/font-awesome";
+
+// **********************************************************************
+// Colors
+// **********************************************************************
+
+$gray:          #524d56;
+$gray-lighten:  #999999;
+$gray-darken:   #333333;
+$blue:          #1685be;
+$light-gray:    #aebdbb;
+$off-white:     #f1f1f1;
+$dull-white:    #fafafa;
+
+$primary:       #475958;
+$primary-light: #6f747d;
+
+$secondary:     #D14830;
+
+$bg:            #f8f8f8;
+
+$green:           #71C8B9;
+$orange:          #f09232;
+$blue-gray:       #3D4451;
+$blue-gray-dark:  #1a1d23;
+$teal:            #71C8B9;
+$teal-light:      #d0e7e3;
+$red:             #f05329;
+$link:            #2393e2;
+
+// **********************************************************************
+// Fonts
+// **********************************************************************
+
+$body-font: "source-sans-pro", sans-serif;
+$body-serif: "minion-pro", serif;
+
+$fw-light:     300;
+$fw-sbold:     600;
+$fw-bold:      bold;
+
+// **********************************************************************
+// Mixins
+// **********************************************************************
+
+@mixin container {
+  @include outer-container;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@mixin shadow($opacity: .25) {
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, $opacity);
+}
+
+@mixin shadow-inset($opacity: .25) {
+  box-shadow:inset 0 1px 1px 0px rgba(0, 0, 0, $opacity);
+}
+@mixin box {
+  background: url('/img/bg-snow.png') repeat #eee;
+  border-radius: 3px;
+  border: 1px solid #dedede\9;
+  @include shadow;
+  padding:18px;
+}
+
+@mixin clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
+
+@mixin fa-before($fa) {
+  &:before {
+    position: absolute;
+    @extend .fa;
+    @extend .fa-#{$fa};
+  }
+}
+
+
+
+
+// **********************************************************************
+// MEDIA QUERIES
+// **********************************************************************
+
+$full:         1020px;
+$desktop:      960px;
+$tablet:       768px;
+$mobile:       568px;
+$mobile-md:    450px;
+$mobile-sm:    320px;
+
+@mixin mq($media) {
+  @if $media == webkit {
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      @content;
+    }
+  }
+
+  @else if $media == moz {
+    @media (-moz-min-device-pixel-ratio: 0) {
+      @content;
+    }
+  }
+
+  @else if $media == retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (max-width: $media) {
+      @content;
+    }
+  }
+}

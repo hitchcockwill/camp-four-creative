@@ -1,0 +1,423 @@
+@import "../config/variables";
+
+// **********************************************************************
+// MOTOROSO VARIABLES
+// **********************************************************************
+
+$text:        #524d56;
+$text-dark:   #555555;
+
+$red:         #d43c28;
+$brownred:    #fdf2f1;
+$background:  "/img/case-studies/thumbnails/motoroso_banner.jpg";
+
+// **********************************************************************
+// MOTOROSO BASE
+// **********************************************************************
+
+body {
+  color: $text;
+}
+
+// **********************************************************************
+// HERO
+// **********************************************************************
+
+.motoroso-hero {
+  overflow: hidden;
+  .row { position: relative; }
+}
+
+.hero-interface-1,
+.hero-interface-2 {
+  max-width: 700px;
+  position: absolute;
+}
+
+.hero-interface-1 {
+  top: 320px;
+  left: 0;
+  z-index: 8;
+}
+
+.hero-interface-2 {
+  top: 420px;
+  right: 0;
+  z-index: 10;
+}
+
+// **********************************************************************
+// SECTIONS
+// **********************************************************************
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+
+
+
+// **********************************************************************
+// INTRO
+// **********************************************************************
+
+.section.intro {
+  padding: 80px 0;
+  text-align: center;
+  .container {
+    @include row;
+  }
+  .section-content {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  p {
+    margin: 0;
+  }
+}
+
+
+
+
+
+// **********************************************************************
+// SORTING & FILTERING
+// **********************************************************************
+
+.section.sorting {
+  padding-top: 110px;
+  padding-bottom: 0;
+  color: $text-dark;
+  background: $brownred;
+  border-top: 1px solid darken($brownred, 8%);
+
+  img {
+    max-width: 100%;
+  }
+
+  .sorting-img {
+    @include span-columns(3);
+  }
+  .sorting-content {
+    @include span-columns(9);
+    position: relative;
+    padding-left: 30px;
+    img {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include mq($tablet) {
+  .section.sorting {
+    padding-top: 70px;
+    .sorting-img {
+      display: none;
+    }
+    .sorting-content {
+      @include span-columns(10);
+      @include shift(1);
+      padding-left: 0;
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.sorting {
+    padding-top: 50px;
+    .sorting-content {
+      @include span-columns(12);
+      @include shift(0);
+      padding-left: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// **********************************************************************
+// PULL QUOTE
+// **********************************************************************
+
+.section.pull-quote {
+  padding: 80px 0;
+  position: relative;
+  background: url(#{$background}) center bottom no-repeat;
+  background-size: cover;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba($red, .85),
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  div.quote {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  p {
+    font-size: 36px;
+    line-height: 1.15em;
+    font-weight: 200;
+    color: white;
+  }
+
+  p.quote {
+    text-indent: -10px;
+  }
+
+  p.by-line {
+    font-size: 30px;
+    text-align: right;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .profile-img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: url('/img/case-studies/motoroso/alex-profile.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid darken($red, 20%);
+    margin: 0 10px -14px 0;
+  }
+}
+
+@include mq($mobile-md) {
+  .section.pull-quote p {
+    font-size: 26px;
+
+    &.by-line {
+      font-size: 24px;
+    }
+  }
+  .section.pull-quote .profile-img {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: -6px;
+  }
+}
+
+
+// **********************************************************************
+// VIEW MOTOR
+// **********************************************************************
+
+.section.single-motor {
+  position: relative;
+  background: #30353c;
+  .top-strip {
+    height: 100px;
+    background: #1c2228;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  h2, p {
+    color: white;
+  }
+  img {
+    max-width: 100%;
+  }
+  .row {
+    z-index: 10;
+    position: relative;
+  }
+  .about {
+    @include span-columns(3);
+    margin-top: 200px;
+  }
+  .interface {
+    @include span-columns(9);
+  }
+}
+
+@include mq($tablet) {
+  .section.single-motor {
+    .about {
+      @include span-columns(10);
+      @include shift(1);
+      margin-top: 40px;
+    }
+    .interface {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.single-motor {
+    .about {
+      @include span-columns(12);
+      @include shift(0);
+      margin-top: 40px;
+      padding: 0 14px;
+    }
+    .interface {
+      @include span-columns(12);
+      @include shift(0);
+    }
+  }
+}
+
+
+
+
+
+
+// **********************************************************************
+// BRAND ENGAGEMENT
+// **********************************************************************
+
+.section.brand-engagement {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  .about {
+    @include span-columns(5);
+  }
+  .logos {
+    @include span-columns(7);
+    position: relative;
+  }
+  .auto-logo {
+    max-width: 260px;
+    float: left;
+    margin: 0 20px 40px;
+  }
+  .bmw {
+    max-width: 150px;
+  }
+  .ducati {
+    margin-top: 15px;
+    float: right;
+  }
+  .porsche {
+    margin-left: 40px;
+  }
+  .suzuki {
+    margin-top: 14px;
+    float: right;
+  }
+}
+
+@include mq($tablet) {
+  .section.brand-engagement {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    .about {
+      @include span-columns(6);
+    }
+    .logos {
+      @include span-columns(6);
+      padding-left: 30px;
+    }
+    .auto-logo {
+      margin: 0 0 40px;
+    }
+    .ducati {
+      margin-top: 0;
+      float: left;
+    }
+    .porsche {
+      margin-left: 0;
+    }
+    .suzuki {
+      margin-top: 0;
+      float: left;
+    }
+  }
+}
+
+@include mq($mobile) {
+  .section.brand-engagement {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    .about {
+      @include span-columns(10);
+      @include shift(1);
+    }
+    .logos {
+      @include span-columns(10);
+      @include shift(1);
+      @include clearfix;
+      padding: 0;
+      margin-top: 30px;
+
+      .auto-logo {
+        float: none;
+        margin: 0 auto 30px;
+        display: block;
+      }
+    }
+  }
+}
+
+
+// **********************************************************************
+// ACCOLADES
+// **********************************************************************
+
+.section.accolades {
+  padding-bottom: 80px;
+  padding-top: 80px;
+  background: $brownred;
+  border-top: 1px solid darken($brownred, 8%);
+
+  .about {
+    @include span-columns(8);
+    @include shift(2);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  li {
+    @include clearfix;
+    p {
+      float: left;
+      max-width: 55%;
+    }
+    img {
+      float: right;
+    }
+  }
+}
+
+@include mq($tablet) {
+  .section.accolades {
+    li {
+      @include clearfix;
+      text-align: center;
+      p {
+        float: none;
+        margin-bottom: 10px;
+        max-width: 100%;
+      }
+      img {
+        float: none;
+        margin-top: 0;
+      }
+    }
+  }
+}

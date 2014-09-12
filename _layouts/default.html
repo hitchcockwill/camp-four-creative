@@ -4,16 +4,28 @@
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> {% if page.title %} {{ page.title }} | {% endif %} Camp Four Creative</title>
-  <link rel="stylesheet" href="/css/foundation.css">
-  <link rel="stylesheet" href="/css/icons.css">
-  <link rel="stylesheet" href="/css/reset.css">
+
+
+  <!--
+
+    Welcome to Camp Four Creative's website. If you're curious about how everything is built, you should check out the source code at:
+
+    https://github.com/hitchcockwill/camp-four-creative
+
+  -->
+
+
+  <link rel="stylesheet" href="/css/lib/reset.css">
   <link rel="stylesheet" href="/css/base.css">
 
   {% for style in page.styles %}
     <link rel="stylesheet" href="/css/{{style}}">
   {% endfor %}
+  {% for style in page.post_styles %}
+    <link rel="stylesheet" href="/css/{{style}}">
+  {% endfor %}
 
-  <script type="text/javascript" src="//use.typekit.net/lrn3emk.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/rqn7vnt.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <link rel="icon" sizes="16x16 32x32" href="/img/favicon.ico">
@@ -23,38 +35,30 @@
   <!--[if lte IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <div id="content" class="{% if page.className %}{{page.className}}{% endif %}">
     {{ content }}
-    <footer>
-      <div class="row">
-        <div>&copy;2013 Camp Four Creative &nbsp;|&nbsp; <a href="http://campfourcreative.com">campfourcreative.com</a></div>
-      </div>
-    </footer>
   </div> <!-- end of content -->
 
-  <script src="/javascripts/libs/jquery-1.10.2.min.js"></script>
+  <!-- dev dependencies -->
+  <script src="/javascripts/libs/jquery-2.1.1.js"></script>
+  <script src="/javascripts/libs/underscore.js"></script>
 
-  <script>
+  <!-- prod dependencies -->
+  <!-- script type="text/javascript" src="/javascripts/min/lib.min.js"></script -->
+  <!-- script type="text/javascript" src="/javascripts/min/scripts.min.js"></script -->
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-52387647-1']);
-    _gaq.push(['_trackPageview']);
+  <!-- plugins -->
+  <script src="/javascripts/libs/selectize.js"></script>
+  <script src="/javascripts/libs/jquery.slicknav.js"></script>
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-
-  <script type="text/javascript" src="/javascripts/min/lib.min.js"></script>
-  <script type="text/javascript" src="/javascripts/min/scripts.min.js"></script>
-
-  <!--<script src="/javascripts/libs/categorizr.js"></script>
-
+  <!-- app scripts -->
   <script type="text/javascript" src="/javascripts/base.js"></script>
+
   {% for script in page.scripts %}
     <script type="text/javascript" src="/javascripts/{{script}}"></script>
-  {% endfor %}-->
+  {% endfor %}
+
+  {% for script in page.post_scripts %}
+    <script type="text/javascript" src="/javascripts/{{script}}"></script>
+  {% endfor %}
 
 
 </body>
