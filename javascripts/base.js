@@ -48,6 +48,8 @@
   };
 
   $(document).ready(function() {
+    console.log("Welcome to Camp Four Creative's website. If you're curious about how everything is built, you should check out the source code at:");
+    console.log("https://github.com/hitchcockwill/camp-four-creative");
     backgroundImageLoad($(".image-wrapper"));
     initHeaderResponsiveness();
     if (window.devicePixelRatio >= 2) {

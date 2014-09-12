@@ -2502,6 +2502,13 @@
     color: #f1f1f1; }
   .btn:focus {
     outline: none; }
+  .btn.disabled,
+  .btn [disabled],
+  .btn [disabled="disabled"] {
+    background: #f1f1f1 !important;
+    color: #999999 !important;
+    cursor: default !important;
+    border-color: #dddddd !important; }
 
 .btn.btn-primary {
   background: #475958;

@@ -21,6 +21,15 @@
   &:focus {
     outline: none;
   }
+
+  &.disabled,
+  [disabled],
+  [disabled="disabled"] {
+    background: #f1f1f1 !important;
+    color: $gray-lighten !important;
+    cursor: default !important;
+    border-color: darken(#f1f1f1, 8%) !important;
+  }
 }
 
 // **********************************************************************

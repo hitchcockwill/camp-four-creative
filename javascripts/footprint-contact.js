@@ -1,5 +1,7 @@
 (function() {
-  var clearValidationErrors, initDropdowns, initFormListeners, scrapeForm, setWindowHeight, showValidationErrors, submitForm, validateForm;
+  var $packageDropdown, clearLoadingButton, clearValidationErrors, formSubmitSuccess, initDropdowns, initFormListeners, loadingButton, scrapeForm, setWindowHeight, showValidationErrors, submitForm, validateForm;
+
+  $packageDropdown = null;
 
   setWindowHeight = function() {
     var $content, $win;
@@ -32,6 +34,10 @@
     });
   };
 
+  initDropdowns = function() {
+    return $packageDropdown = $('#packages').selectize();
+  };
+
   submitForm = function(event) {
     var formData, valid;
     event.preventDefault();
@@ -42,18 +48,32 @@
       showValidationErrors(valid);
       return false;
     } else {
+      loadingButton();
       return $.ajax({
         type: 'post',
         url: 'send_footprint_form.php',
         data: formData,
         success: function(data) {
-          return console.log('php success');
+          clearLoadingButton();
+          return formSubmitSuccess();
         },
         error: function(data, log) {
-          return console.log('there was an error: ', data, log);
+          return console.log('There was an error with the form: ', data, log);
         }
       });
     }
+  };
+
+  formSubmitSuccess = function() {
+    return $('.success-modal-wrap').addClass('show-modal');
+  };
+
+  loadingButton = function() {
+    return $('button[type="submit"]').attr('disabled', 'disabled').addClass('disabled').text('Sending...');
+  };
+
+  clearLoadingButton = function() {
+    return $('button[type="submit"]').removeAttr('disabled').removeClass('disabled').text('Send!');
   };
 
   showValidationErrors = function(errors) {
@@ -108,11 +128,11 @@
     _.each(data, function(f) {
       return dataObject[f.name] = f.value;
     });
+    dataObject.packages = $packageDropdown[0].selectize.getValue();
+    if (dataObject.packages.length) {
+      dataObject.packages = dataObject.packages.join(', ');
+    }
     return dataObject;
-  };
-
-  initDropdowns = function() {
-    return $('select').selectize();
   };
 
   $(document).ready(function() {

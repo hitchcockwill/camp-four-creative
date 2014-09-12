@@ -1910,5 +1910,41 @@ div.form-footer {
     width: 100%;
     float: none;
     min-width: 0; } }
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(71, 89, 88, 0.7);
+  z-index: 1000;
+  display: none; }
+  .modal-wrap.show-modal {
+    display: block; }
+
+.modal {
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  margin: 150px 0 0 -250px; }
+
+.modal_content {
+  background: #f8f8f8;
+  border-radius: 5px;
+  padding: 50px 20px;
+  color: #524d56;
+  text-align: center; }
+  .modal_content h2 {
+    font-family: "source-sans-pro", sans-serif;
+    font-weight: 300;
+    line-height: 1.1em;
+    margin-bottom: 5px; }
+  .modal_content p {
+    font-weight: 300;
+    margin-bottom: 40px; }
+  .modal_content a {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto; }
 
 /*# sourceMappingURL=contact.css.map */

@@ -6,7 +6,7 @@ setWindowHeight = ->
   $content.css
     'min-height': if $win.height() > 500 then $win.height() else 750
 
-
+# inits
 initFormListeners = ->
   $form = $('form')
   $fields = $form.find('input, textarea')
@@ -26,7 +26,12 @@ initFormListeners = ->
   $form.on 'submit', (e) ->
     submitForm(e)
 
+initDropdowns = ->
+  $('select').selectize()
 
+
+
+# submit
 submitForm = (event) ->
   event.preventDefault()
 
@@ -37,17 +42,37 @@ submitForm = (event) ->
     showValidationErrors(valid)
     return false
   else
+    loadingButton()
+
     $.ajax
       type: 'post'
       url: 'send_basic_form.php'
       data: formData
       success: (data) ->
-        console.log 'php success'
+        clearLoadingButton()
+        formSubmitSuccess()
       error: (data, log) ->
-        console.log 'there was an error: ', data, log
+        console.log 'There was an error with the form: ', data, log
 
 
 
+# success
+formSubmitSuccess = ->
+  $('.success-modal-wrap').addClass('show-modal')
+
+
+
+# loading
+loadingButton = ->
+  $('button[type="submit"]').attr('disabled', 'disabled').addClass('disabled').text('Sending...')
+
+clearLoadingButton = ->
+  $('button[type="submit"]').removeAttr('disabled').removeClass('disabled').text('Send!')
+
+
+
+
+# validation
 showValidationErrors = (errors) ->
   $form = $('form')
   for error of errors
@@ -69,6 +94,10 @@ validateForm = (formData) ->
 
   return if _.isEmpty(errors) then true else errors
 
+
+
+
+# form scraping
 scrapeForm = ->
   data = $('form').serializeArray();
   dataObject = {}
@@ -77,8 +106,7 @@ scrapeForm = ->
   return dataObject
 
 
-initDropdowns = ->
-  $('select').selectize()
+
 
 $(document).ready ->
   setWindowHeight()

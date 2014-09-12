@@ -27,7 +27,6 @@
     logoHeight = $logo.height();
     logoBottom = $logo.position().top + logoHeight;
     logoTarget = $('.js--logo-target').offset().top - 30;
-    console.log('logo height: ', $logo.height());
     $doc = $(document);
     return setInterval(function() {
       return scrollHandle();

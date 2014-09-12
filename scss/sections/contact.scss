@@ -315,3 +315,61 @@ div.form-footer {
     }
   }
 }
+
+
+
+
+
+
+
+// **********************************************************************
+// MODALS
+// **********************************************************************
+
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba($primary, .7);
+  z-index: 1000;
+  display: none;
+
+  &.show-modal {
+    display: block;
+  }
+}
+
+.modal {
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  margin: 150px 0 0 -250px;
+}
+
+.modal_content {
+  background: $bg;
+  border-radius: 5px;
+  padding: 50px 20px;
+  color: $gray;
+  text-align: center;
+
+  h2 {
+    font-family: $body-font;
+    font-weight: 300;
+    line-height: 1.1em;
+    margin-bottom: 5px;
+  }
+  p {
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  a {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
