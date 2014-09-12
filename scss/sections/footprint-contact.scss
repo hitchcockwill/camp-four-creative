@@ -22,7 +22,7 @@
     top: 0;
     bottom: 0;
     z-index: -1;
-    @include background(linear-gradient(rgba(#89a594, .6), rgba(#758e7f, .4)));
+    @include background(linear-gradient(rgba(#3f4a4e, .6), rgba(#677980, .4)));
   }
   .container {
     position: relative;
@@ -38,10 +38,12 @@
 .contact-intro_title {
   @include span-columns(5);
   @include shift(1);
+  margin-top: 0;
 }
 
 .contact-intro_about {
   @include span-columns(5);
+  margin-top: 30px;
 }
 
 

@@ -48,12 +48,16 @@ section.hr {
 
 $hero-height: 850px;
 
+.hero-wrap {
+  position: relative;
+}
+
 .hero {
   height: $hero-height;
   position: relative;
   overflow: visible;
   top: 0;
-  z-index: 1;
+  z-index: 0;
 
   &.fixed-logo .hero-overlay {
     opacity: 1;
@@ -100,8 +104,11 @@ $hero-height: 850px;
 
 
 .landing-hero-image {
-  position: relative;
-  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
   z-index: 15;
   img {
     display: block;
@@ -109,13 +116,12 @@ $hero-height: 850px;
     margin-left: -180px;
     left: 50%;
     width: 360px;
-    bottom: 430px;
+    top: 200px;
   }
 
   img.fixed {
     position: absolute;
-    top: auto;
-    bottom: -164px;
+    top: $hero-height - 140;
   }
 }
 
@@ -169,11 +175,11 @@ section.top-text {
 
 
   .landing-hero-image img {
-    bottom: 610px;
     width: 280px;
     margin-left: -140px;
+    top: 120px;
     &.fixed {
-      bottom: -100px;
+      top: $hero-height - 140;
     }
   }
 

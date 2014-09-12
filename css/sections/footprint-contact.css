@@ -1683,8 +1683,8 @@
     top: 0;
     bottom: 0;
     z-index: -1;
-    background: -webkit-linear-gradient(rgba(137, 165, 148, 0.6), rgba(117, 142, 127, 0.4));
-    background: linear-gradient(rgba(137, 165, 148, 0.6), rgba(117, 142, 127, 0.4)); }
+    background: -webkit-linear-gradient(rgba(63, 74, 78, 0.6), rgba(103, 121, 128, 0.4));
+    background: linear-gradient(rgba(63, 74, 78, 0.6), rgba(103, 121, 128, 0.4)); }
   .contact-content .container {
     position: relative;
     z-index: 10; }
@@ -1694,7 +1694,8 @@
   display: block;
   margin-right: 2.35765%;
   width: 40.29137%;
-  margin-left: 8.5298%; }
+  margin-left: 8.5298%;
+  margin-top: 0; }
   .contact-intro_title:last-child {
     margin-right: 0; }
 
@@ -1702,7 +1703,8 @@
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 40.29137%; }
+  width: 40.29137%;
+  margin-top: 30px; }
   .contact-intro_about:last-child {
     margin-right: 0; }
 

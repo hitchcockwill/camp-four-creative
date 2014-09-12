@@ -88,7 +88,7 @@ $header-height: 60px;
   right: 0;
   top: 60px;
   z-index: 0;
-  background: $blue-gray;
+  background: $primary;
 
   div.image-wrapper {
     display: none;
@@ -97,7 +97,7 @@ $header-height: 60px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $blue-gray;
+    background-color: $primary;
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -107,7 +107,7 @@ $header-height: 60px;
       top: 0;
       right: 0;
       bottom: 0;
-      background: rgba($blue-gray, .5);
+      background: rgba($primary, .5);
     }
   }
 }

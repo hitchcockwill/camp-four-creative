@@ -10,17 +10,40 @@ styles: ["sections/case-study.css"]
   <div class="container">
     <div class="case-studies_head">
       <h1>Featured Case Studies</h1>
-      <p class="p-large">Some of our recent work that we're really proud of.</p>
     </div>
 
     {% include case-studies.html %}
 
-    <div class="case-studies_footer">
-      <h2>Impressed with our work?</h2>
-      <p>
-        We're always looking for new opportunities.
-      </p>
-      <a href="/contact/" class="btn btn-secondary">Get in touch now</a>
+  </div>
+  <div class="case-study-footer-wrap">
+    <div class="footer-container container">
+      <h3>We&rsquo;re always looking for new opportunities.</h3>
+      <div class="footer_links footer_links--web">
+        <p>
+          Check out our
+          <a href="/#services" class="btn btn-inverse btn-slim">Services</a>
+          or
+        </p>
+        <p>
+          <a href="/contact/" class="btn btn-secondary btn-slim">Get in Touch</a>
+          to start your project now.
+        </p>
+      </div>
+
+      <div class="footer_links footer_links--mobile">
+        <div class="footer_links_link-wrap">
+          <p>
+            See what we can do for you.
+            <a href="/#services" class="btn btn-inverse btn-slim">Services</a>
+          </p>
+        </div>
+        <div class="footer_links_link-wrap">
+          <p>
+            Start you project now.
+            <a href="/contact/" class="btn btn-secondary btn-slim">Get in Touch</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

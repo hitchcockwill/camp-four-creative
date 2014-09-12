@@ -1695,12 +1695,15 @@ section.hr {
   section.hr .hr-wrap {
     margin-bottom: 50px; }
 
+.hero-wrap {
+  position: relative; }
+
 .hero {
   height: 850px;
   position: relative;
   overflow: visible;
   top: 0;
-  z-index: 1; }
+  z-index: 0; }
   .hero.fixed-logo .hero-overlay {
     opacity: 1; }
   .hero .hero-overlay {
@@ -1741,8 +1744,11 @@ section.hr {
     z-index: -1; }
 
 .landing-hero-image {
-  position: relative;
-  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
   z-index: 15; }
   .landing-hero-image img {
     display: block;
@@ -1750,11 +1756,10 @@ section.hr {
     margin-left: -180px;
     left: 50%;
     width: 360px;
-    bottom: 430px; }
+    top: 200px; }
   .landing-hero-image img.fixed {
     position: absolute;
-    top: auto;
-    bottom: -164px; }
+    top: 710px; }
 
 section.top-text {
   padding-top: 200px;
@@ -1792,11 +1797,11 @@ section.top-text {
       min-height: 500px; }
 
   .landing-hero-image img {
-    bottom: 610px;
     width: 280px;
-    margin-left: -140px; }
+    margin-left: -140px;
+    top: 120px; }
     .landing-hero-image img.fixed {
-      bottom: -100px; }
+      top: 360px; }
 
   section.top-text {
     padding-top: 120px;

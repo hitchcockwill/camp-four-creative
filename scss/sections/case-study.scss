@@ -214,8 +214,6 @@ $banner-height: 910px;
 }
 
 .case-studies_footer {
-  text-align: center;
-  padding-bottom: 80px;
   h2 {
     font-size: 32px;
     margin-bottom: 10px;
@@ -231,6 +229,7 @@ $banner-height: 910px;
 
 div.studies-wrap {
   @include row;
+  margin-bottom: 50px;
 }
 ul.studies {
   margin-top: 50px;
